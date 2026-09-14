@@ -1,0 +1,544 @@
+/* Approved Option B: a shared visual shell over the existing connected workflows. */
+.cp-root.cp-rethink {
+  --cp-canvas: #f6f7fb;
+  --cp-surface: #ffffff;
+  --cp-border: #e0e3ed;
+  --cp-control-border: #b6bbd3;
+  --cp-ink: #252b45;
+  --cp-secondary: #646982;
+  --cp-muted: #646982;
+  --cp-brand-deep: #343d69;
+  --cp-action: #515d96;
+  --cp-action-tint: #eef0f8;
+  --cp-agent: #515d96;
+  --cp-agent-tint: #eef0f8;
+  --cp-blue-soft: #e5e8f4;
+  --cp-blue-mid: #a6aed0;
+  --cp-blue-strong: #747fac;
+  --cp-blue-light: #d7dcef;
+  --cp-summary-start: #e1e4f2;
+  --cp-summary-mid: #eeeff7;
+  --cp-summary-end: #f5f6fb;
+  --cp-gradient-brand: linear-gradient(90deg, #252b50 0%, #565f94 50%, #252b50 100%);
+  --cp-gradient-summary: linear-gradient(108deg, #e1e4f2, #eeeff7);
+  --cp-gradient-canvas: linear-gradient(180deg, #f1f2f9 0, #f6f7fb 420px);
+  --cp-radius-panel: 18px;
+  --cp-radius-control: 9px;
+}
+.cp-rethink .cp-header {
+  min-height: 90px;
+  padding: 16px max(28px, calc((100vw - 1600px) / 2));
+  gap: 30px;
+}
+.cp-rethink .cp-masthead-brand {
+  gap: 4px;
+}
+.cp-rethink .cp-brand {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+.cp-rethink .cp-brand-symbol i {
+  background: #fff;
+}
+.cp-rethink .cp-product-name {
+  color: #e6e8f4;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.cp-rethink .cp-global-search {
+  max-width: 500px;
+  flex-basis: 330px;
+}
+.cp-rethink .cp-global-search > input {
+  border-color: #dfe2f1;
+  background: #ffffffed;
+  box-shadow: 0 2px 8px #262e5610;
+}
+.cp-rethink .cp-header-actions {
+  gap: 12px;
+}
+.cp-rethink .cp-header :focus-visible {
+  outline-color: #fff;
+}
+.cp-rethink .cp-nav {
+  padding-inline: max(28px, calc((100vw - 1600px) / 2));
+  gap: 30px;
+  min-height: 58px;
+  background: #fff;
+}
+.cp-rethink .cp-nav a {
+  font-size: 15px;
+  gap: 9px;
+  padding-block: 17px 14px;
+  border-bottom-width: 3px;
+}
+.cp-rethink .cp-nav a.active {
+  color: var(--cp-action);
+  background: transparent;
+}
+.cp-rethink .cp-layout {
+  display: block;
+  max-width: 1544px;
+  margin: 0 auto;
+  padding: 26px 42px 108px;
+}
+.cp-rethink .cp-layout > main {
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+.cp-rethink .cp-heading {
+  margin-bottom: 28px;
+  gap: 30px;
+}
+.cp-rethink .cp-heading h1 {
+  font-size: clamp(29px, 2.7vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -1.4px;
+  font-weight: 650;
+}
+.cp-rethink .cp-heading p {
+  max-width: 880px;
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.cp-rethink .cp-eyebrow {
+  color: #636c99;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cp-rethink .cp-section-heading {
+  margin-bottom: 18px;
+}
+.cp-rethink .cp-section-heading h2 {
+  font-size: 23px;
+  letter-spacing: -0.75px;
+}
+.cp-rethink .cp-section-heading p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.cp-rethink .cp-primary {
+  background: var(--cp-action);
+  border-color: var(--cp-action);
+  color: #fff;
+  box-shadow: 0 3px 7px #30396a12;
+}
+.cp-rethink :is(input, select, textarea) {
+  border-color: #cbcfe7;
+}
+.cp-rethink .cp-filters {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cp-rethink .cp-filters :is(input, select) {
+  background: #fff;
+}
+.cp-rethink .cp-table-wrap {
+  background: #fff;
+}
+.cp-rethink .cp-modal {
+  border-radius: 18px;
+}
+.cp-rethink .cp-modal > header {
+  background: #f8f9fc;
+}
+.cp-rethink .cp-concierge-dock {
+  border-color: #414b79;
+  background: var(--cp-gradient-brand);
+  color: #fff;
+}
+.cp-rethink .cp-concierge-dock :is(button, small, strong) {
+  color: #fff;
+}
+.cp-rethink .cp-concierge-dock button:hover {
+  background: #ffffff18;
+}
+.cp-rethink .cp-concierge-dock .cp-dock-open {
+  color: var(--cp-brand-deep);
+  background: var(--cp-surface);
+  border-color: var(--cp-surface);
+  font-weight: 600;
+}
+.cp-rethink .cp-concierge-dock .cp-dock-open:hover {
+  background: var(--cp-action-tint);
+  border-color: var(--cp-action-tint);
+}
+.cp-rethink .cp-concierge-dock .cp-minimal-mic {
+  background: #ffffffed;
+  color: #37427b;
+  border-color: #ffffffb0;
+}
+.cp-rethink .cp-chat-window > header {
+  background: var(--cp-gradient-brand);
+  color: #fff;
+}
+.cp-rethink .cp-chat-window > header h2 {
+  color: white;
+}
+.cp-rethink .cp-secondary-content {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--cp-border);
+}
+.cp-rethink .cp-secondary-content > summary {
+  font-size: 13px;
+  color: #5e6793;
+}
+/* Overview: program context, active work, verified outcome. */
+.cp-rethink .rb-read-context {
+  margin-bottom: 10px;
+}
+.cp-rethink .rb-read-context .cp-connection {
+  margin-bottom: 0;
+}
+.cp-rethink .rb-overview > .cp-heading {
+  align-items: flex-end;
+}
+.cp-rethink .rb-overview > .cp-heading .cp-heading-action {
+  flex: none;
+}
+.cp-rethink .rb-program-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 24px;
+  background: var(--cp-gradient-summary);
+  border: 1px solid #e1e3f1;
+  border-radius: 14px;
+  margin: 0 0 24px;
+}
+.cp-rethink .rb-ribbon-program {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 230px;
+}
+.cp-rethink .rb-ribbon-program > svg {
+  color: #435094;
+  flex: none;
+}
+.cp-rethink .rb-program-ribbon strong {
+  font-size: 15px;
+  line-height: 1.4;
+  display: block;
+}
+.cp-rethink .rb-program-ribbon small {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+}
+.cp-rethink .rb-program-ribbon > .cp-status {
+  font-size: 13px;
+  flex: none;
+}
+.cp-rethink .rb-ribbon-gate {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 1px solid #ccd1e8;
+  padding-left: 24px;
+  flex: 1.4 1 280px;
+}
+.cp-rethink .rb-ribbon-gate > svg {
+  color: #4c599c;
+  flex: none;
+}
+.cp-rethink .rb-ribbon-gate strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.cp-rethink .rb-program-ribbon > a {
+  white-space: nowrap;
+  font-size: 12px;
+  margin-left: auto;
+}
+.cp-rethink .rb-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(340px, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 0;
+}
+.cp-rethink .rb-work-grid > :is(.aw-workspace, .cp-section) {
+  margin: 0;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #e7e9f4;
+  box-shadow: 0 3px 16px #2f396903;
+}
+.cp-rethink .rb-work-grid > .cp-section {
+  padding: 22px 24px;
+}
+.cp-rethink .rb-attention-panel .cp-section-heading {
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.cp-rethink .rb-attention-panel .cp-section-heading h2 {
+  font-size: 21px;
+}
+.cp-rethink .rb-status-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #616991;
+}
+.cp-rethink .rb-status-filter select {
+  font-size: 12px;
+  min-height: 32px;
+  padding: 5px 22px 5px 6px;
+  border: 0;
+  border-bottom: 1px solid #dde0f0;
+  border-radius: 0;
+  max-width: 190px;
+}
+.cp-rethink .rb-attention-panel .cp-attention {
+  display: block;
+  max-height: 448px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.cp-rethink .rb-attention-panel .cp-attention > li {
+  padding: 16px 0;
+  border-bottom: 1px solid #eaecf5;
+}
+.cp-rethink .rb-attention-panel .cp-attention > li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.cp-rethink .rb-attention-panel .cp-attention-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.cp-rethink .rb-attention-panel .cp-attention-main > strong {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+.cp-rethink .rb-attention-panel .cp-attention-main > .cp-status {
+  font-size: 11px;
+  order: -1;
+}
+.cp-rethink .rb-attention-panel .cp-attention-main > p {
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 0;
+}
+.cp-rethink .rb-attention-panel .cp-attention-followup {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 5px;
+}
+.cp-rethink .rb-attention-panel .cp-attention-followup small {
+  font-size: 11px;
+  color: #565f8b;
+}
+.cp-rethink .rb-attention-panel .cp-attention-followup a {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.cp-rethink .rb-review-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #805400;
+  background: #fff6e5;
+  margin-bottom: 5px;
+}
+.cp-rethink .rb-outcomes {
+  margin-top: 30px;
+}
+.cp-rethink .rb-outcome-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+.cp-rethink .rb-outcome-list article {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+}
+.cp-rethink .rb-outcome-check {
+  display: grid;
+  place-items: center;
+  height: 30px;
+  width: 30px;
+  flex: none;
+  background: #e5f3ed;
+  color: #237d56;
+  border-radius: 50%;
+}
+.cp-rethink .rb-outcome-list strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.cp-rethink .rb-outcome-list p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+.cp-rethink .rb-outcome-list .cp-text-link {
+  font-size: 11px;
+}
+.cp-rethink .rb-outcome-empty {
+  font-size: 13px;
+  padding: 10px 0 4px;
+}
+.cp-rethink .rb-focus-programs {
+  margin-top: 30px;
+}
+.cp-rethink .cp-program-row {
+  background: #fff;
+  border-radius: 13px;
+  padding: 22px;
+  gap: 12px;
+}
+.cp-rethink .cp-card-title strong {
+  font-size: 17px;
+}
+.cp-rethink .cp-card-status {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 16px;
+}
+.cp-rethink .cp-card-status :is(small, .cp-status) {
+  font-size: 12px;
+}
+.cp-rethink .cp-card-gate small {
+  font-size: 11px;
+}
+.cp-rethink .cp-card-gate span {
+  font-size: 13px;
+}
+.cp-rethink .cp-program-row > p {
+  font-size: 12px;
+}
+.cp-rethink .rb-health-summary {
+  display: flex;
+  gap: 40px;
+  margin: 18px 0;
+}
+.cp-rethink .rb-health-summary > div {
+  display: grid;
+  gap: 4px;
+}
+.cp-rethink .rb-health-summary strong {
+  font-size: 24px;
+}
+.cp-rethink .rb-health-summary span {
+  font-size: 12px;
+  color: var(--cp-secondary);
+}
+.cp-rethink .rb-portfolio-context .cp-milestones {
+  margin-top: 20px;
+}
+@media (min-width: 1700px) {
+  .cp-rethink .cp-layout {
+    max-width: 1680px;
+    padding-inline: 50px;
+  }
+  .cp-rethink .rb-work-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(420px, 1fr);
+  }
+}
+@media (max-width: 1100px) {
+  .cp-rethink .cp-layout {
+    padding-inline: 26px;
+  }
+  .cp-rethink .rb-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cp-rethink .rb-attention-panel .cp-attention {
+    max-height: none;
+  }
+  .cp-rethink .rb-program-ribbon {
+    flex-wrap: wrap;
+  }
+  .cp-rethink .rb-ribbon-gate {
+    flex-basis: 50%;
+  }
+  .cp-rethink .cp-header {
+    gap: 18px;
+  }
+}
+@media (max-width: 650px) {
+  .cp-rethink .cp-header {
+    padding: 16px 20px;
+  }
+  .cp-rethink .cp-nav {
+    gap: 20px;
+    padding-inline: 20px;
+  }
+  .cp-rethink .cp-layout {
+    padding: 20px 18px 105px;
+  }
+  .cp-rethink .cp-heading h1 {
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+  .cp-rethink .cp-heading p {
+    font-size: 14px;
+  }
+  .cp-rethink .rb-overview > .cp-heading {
+    display: block;
+  }
+  .cp-rethink .rb-overview .cp-heading-action {
+    margin-top: 18px;
+  }
+  .cp-rethink .rb-program-ribbon {
+    padding: 18px;
+    gap: 15px;
+  }
+  .cp-rethink .rb-ribbon-program {
+    flex-basis: 100%;
+  }
+  .cp-rethink .rb-ribbon-gate {
+    border: 0;
+    padding: 0;
+    flex-basis: 100%;
+  }
+  .cp-rethink .rb-outcome-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .cp-rethink .rb-work-grid > .cp-section {
+    padding: 20px;
+  }
+  .cp-rethink .cp-filters :is(input, select) {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* Matching dark banner edges retain readable profile and utility controls. */
+.cp-rethink .cp-header-actions :is(.cp-account, .cp-bell, .cp-source-switch) { color: #fff; }
+.cp-rethink .cp-header-actions .cp-active-identity small { color: #e8eaf4; }
+
+/* One accent family for primary actions and selections on every control page. */
+.cp-rethink .cp-primary:hover:not(:disabled) {
+  background: var(--cp-brand-deep);
+  border-color: var(--cp-brand-deep);
+}
+.cp-rethink .cp-nav a.active {
+  color: var(--cp-action);
+  border-bottom-color: var(--cp-action);
+}
+.cp-rethink :is(input, select, textarea) { accent-color: var(--cp-action); }
+.cp-rethink :is(.cp-text-link, .cp-source-link) { color: var(--cp-action); }

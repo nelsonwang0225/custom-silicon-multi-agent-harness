@@ -1,0 +1,907 @@
+{
+  "phase": "09.4",
+  "completed": true,
+  "method": "Offline and scripted local HTTP integration; existing live adapter configured but never invoked by startup smoke; deterministic model/speech doubles for workflow regressions; no paid model or actual human approval.",
+  "browser_environment": {
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE": "/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+  },
+  "commands": [
+    {
+      "name": "full source/backend",
+      "command": "PYTHONPATH=src:. .venv/bin/python -m pytest tests -q --basetemp=.cache/phase09-4/source",
+      "cwd": ".",
+      "log": ".cache/phase09-4/source.log",
+      "result": [
+        "483 passed in 164.09s (0:02:44)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "initial coordinator architecture guard",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase09-4/coordinator",
+      "cwd": ".",
+      "log": ".cache/phase09-4/coordinator.log",
+      "result": "735 passed",
+      "exit_code": 1
+    },
+    {
+      "name": "full coordinator final",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase09-4/coordinator-final",
+      "cwd": ".",
+      "log": ".cache/phase09-4/coordinator-final.log",
+      "result": [
+        "737 passed in 347.33s (0:05:47)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "final matching-configuration reset guard and runtime boundary",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase09_demo_harness.py coordinator/tests/test_mcp_boundary.py -q --basetemp=.cache/phase09-4/final-guards",
+      "cwd": ".",
+      "log": ".cache/phase09-4/final-guards.log",
+      "result": [
+        "32 passed in 1.29s"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "full MCP",
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase09-4/mcp",
+      "cwd": ".",
+      "log": ".cache/phase09-4/mcp.log",
+      "result": [
+        "56 passed in 14.07s"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "all offline eval families",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase09-4-full",
+      "cwd": ".",
+      "log": ".cache/phase09-4/offline.log",
+      "result": {
+        "hard_gate_status": "PASS",
+        "passed": 112,
+        "failed": 0,
+        "total": 112,
+        "critical_failures": [],
+        "semantic_score_average": null,
+        "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase07/phase09-4-full",
+        "skipped_checks": [
+          "Paid live agents not run. No live-model reasoning baseline measured.",
+          "Optional model-based semantic grader not run; semantic score is null."
+        ]
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "full foundation browser/frontend",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts",
+      "cwd": "mock_apps_ui",
+      "log": ".cache/phase09-4/browser-foundation.log",
+      "result": [
+        "56 passed (5.1m)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "foundation after isolated unavailable-host port correction",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts e2e/control-plane.spec.ts",
+      "cwd": "mock_apps_ui",
+      "log": ".cache/phase09-4/browser-foundation-isolated-port.log",
+      "result": [
+        "9 passed (1.3m)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "cr017",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.phase08.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 156.5,
+      "log": ".cache/phase09-4/browser-cr017.log",
+      "result": [
+        "8 passed (2.6m)"
+      ]
+    },
+    {
+      "name": "cr019",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.standard.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 19.5,
+      "log": ".cache/phase09-4/browser-cr019.log",
+      "result": [
+        "1 passed (19.2s)"
+      ]
+    },
+    {
+      "name": "concierge",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.concierge.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 38.4,
+      "log": ".cache/phase09-4/browser-concierge.log",
+      "result": [
+        "2 passed (38.1s)"
+      ]
+    },
+    {
+      "name": "quality-comparable",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "comparable"
+      },
+      "exit_code": 0,
+      "seconds": 25.8,
+      "log": ".cache/phase09-4/browser-quality-comparable.log",
+      "result": [
+        "1 passed (25.4s)"
+      ]
+    },
+    {
+      "name": "quality-incomparable",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "incomparable"
+      },
+      "exit_code": 0,
+      "seconds": 26.6,
+      "log": ".cache/phase09-4/browser-quality-incomparable.log",
+      "result": [
+        "1 passed (26.3s)"
+      ]
+    },
+    {
+      "name": "quality-no_alternative_supply",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "no_alternative_supply"
+      },
+      "exit_code": 0,
+      "seconds": 25.4,
+      "log": ".cache/phase09-4/browser-quality-no_alternative_supply.log",
+      "result": [
+        "1 passed (25.1s)"
+      ]
+    },
+    {
+      "name": "delivery-base",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "base"
+      },
+      "exit_code": 0,
+      "seconds": 24.2,
+      "log": ".cache/phase09-4/browser-delivery-base.log",
+      "result": [
+        "1 passed (23.9s)"
+      ]
+    },
+    {
+      "name": "delivery-technical_blocked",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "technical_blocked"
+      },
+      "exit_code": 0,
+      "seconds": 11.4,
+      "log": ".cache/phase09-4/browser-delivery-technical_blocked.log",
+      "result": [
+        "1 passed (11.1s)"
+      ]
+    },
+    {
+      "name": "delivery-future_conditional",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "future_conditional"
+      },
+      "exit_code": 0,
+      "seconds": 14.3,
+      "log": ".cache/phase09-4/browser-delivery-future_conditional.log",
+      "result": [
+        "1 passed (14.0s)"
+      ]
+    },
+    {
+      "name": "delivery-wrong_configuration",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "wrong_configuration"
+      },
+      "exit_code": 0,
+      "seconds": 17.0,
+      "log": ".cache/phase09-4/browser-delivery-wrong_configuration.log",
+      "result": [
+        "1 passed (16.7s)"
+      ]
+    },
+    {
+      "name": "delivery-partial_failure",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "partial_failure"
+      },
+      "exit_code": 0,
+      "seconds": 21.3,
+      "log": ".cache/phase09-4/browser-delivery-partial_failure.log",
+      "result": [
+        "1 passed (20.8s)"
+      ]
+    },
+    {
+      "name": "delivery-stale_proposal",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "stale_proposal"
+      },
+      "exit_code": 0,
+      "seconds": 14.5,
+      "log": ".cache/phase09-4/browser-delivery-stale_proposal.log",
+      "result": [
+        "1 passed (14.2s)"
+      ]
+    },
+    {
+      "name": "operations-base",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "base"
+      },
+      "exit_code": 0,
+      "seconds": 29.6,
+      "log": ".cache/phase09-4/browser-operations-base.log",
+      "result": [
+        "1 skipped",
+        "1 passed (29.3s)"
+      ]
+    },
+    {
+      "name": "operations-partial",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "partial"
+      },
+      "exit_code": 0,
+      "seconds": 9.4,
+      "log": ".cache/phase09-4/browser-operations-partial.log",
+      "result": [
+        "1 skipped",
+        "1 passed (9.1s)"
+      ]
+    },
+    {
+      "name": "operations-mismatch",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "mismatch"
+      },
+      "exit_code": 0,
+      "seconds": 9.4,
+      "log": ".cache/phase09-4/browser-operations-mismatch.log",
+      "result": [
+        "1 skipped",
+        "1 passed (9.1s)"
+      ]
+    },
+    {
+      "name": "product",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.product.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 35.4,
+      "log": ".cache/phase09-4/browser-product.log",
+      "result": [
+        "1 passed (35.1s)"
+      ]
+    },
+    {
+      "name": "reset",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.reset.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 41.6,
+      "log": ".cache/phase09-4/browser-reset.log",
+      "result": [
+        "1 passed (41.3s)"
+      ]
+    },
+    {
+      "name": "polish",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.polish.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "exit_code": 0,
+      "seconds": 69.2,
+      "log": ".cache/phase09-4/browser-polish.log",
+      "result": [
+        "5 passed (1.1m)"
+      ]
+    },
+    {
+      "name": "final cold-start/source-persistence/reset/browser smoke",
+      "command": "./node_modules/.bin/playwright test --config playwright.harness.config.ts",
+      "cwd": "mock_apps_ui",
+      "log": ".cache/phase09-4/browser-harness-final-report.log",
+      "result": [
+        "1 passed (1.0m)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "typecheck",
+      "command": "npm --prefix mock_apps_ui run typecheck",
+      "cwd": ".",
+      "log": ".cache/phase09-4/typecheck.log",
+      "result": "tsc --noEmit",
+      "exit_code": 0
+    },
+    {
+      "name": "final build with typecheck",
+      "command": "npm --prefix mock_apps_ui run build",
+      "cwd": ".",
+      "log": ".cache/phase09-4/build-current.log",
+      "result": "built in",
+      "exit_code": 0
+    },
+    {
+      "name": "hidden polling and retained epoch/focus refresh",
+      "command": "node .cache/phase09-4/poll-check.cjs",
+      "cwd": ".",
+      "log": ".cache/phase09-4/poll-check.log",
+      "result": "hidden_case_polls: 0",
+      "exit_code": 0
+    },
+    {
+      "name": "owned review start",
+      "command": "./scripts/demo --state-dir .demo/phase09-4-review start",
+      "cwd": ".",
+      "log": ".cache/phase09-4/harness-review-current.log",
+      "result": "started",
+      "exit_code": 0
+    },
+    {
+      "name": "retained review preflight",
+      "command": "./scripts/demo --state-dir .demo/phase09-4-review --json check",
+      "cwd": ".",
+      "log": ".cache/phase09-4/harness-review-current.json",
+      "result": {
+        "services_available": true,
+        "source_apps_reachable": true,
+        "baseline_valid": true,
+        "canonical_cases_present": true,
+        "no_stale_executable_proposal": true,
+        "no_running_work": true,
+        "reset_consistent": true,
+        "concierge_available": true,
+        "model_configured": true,
+        "background_inactive": true,
+        "owned_services": true
+      },
+      "exit_code": 0
+    }
+  ],
+  "results": {
+    "source_backend_passed": 483,
+    "coordinator_passed": 737,
+    "mcp_passed": 56,
+    "offline_evals_passed": 112,
+    "critical_failures": 0,
+    "unique_frontend_browser_passed": 87,
+    "intentional_operations_variant_skips": 3,
+    "focused_final_guards_passed": 32,
+    "typecheck": "PASS",
+    "production_build": "PASS",
+    "hidden_polling_check": "PASS",
+    "semantic_score": null,
+    "counting_note": "56 foundation + 23 canonical matrix + product + reset + five polish + startup = 87. Nine foundation and 32 backend focused reruns overlap. Final exact configuration/reset guard is covered by the focused suite and final cold-start run."
+  },
+  "startup": {
+    "helper": "scripts/demo",
+    "implementation": "src/program_coordinator/control_host/demo_harness.py",
+    "default_state": ".demo/interview",
+    "default_ports": {
+      "source": 8000,
+      "mcp": 9000,
+      "host": 18082,
+      "ui": 5188
+    },
+    "verified_review_ports": {
+      "source": 18231,
+      "mcp": 19231,
+      "host": 18230,
+      "ui": 5195
+    },
+    "cold_start_artifact": "docs/PHASE09_4_COLD_START.json",
+    "cold_start_logs": ".cache/phase09-4/cold-start-5ceed6f6-6824-4369-99b1-38e87517426e",
+    "model": "gpt-6-astra",
+    "credential_presence": true,
+    "provider_connectivity_checked": false,
+    "background_workers": "not_installed"
+  },
+  "performance": {
+    "previous_entry_kb": 513.48,
+    "final_entry_kb": 268.46,
+    "entry_reduction_percent": 47.7,
+    "source_apps_chunk_kb": 236.78,
+    "control_app_chunk_kb": 249.37,
+    "operations_chunk_kb": 19.34,
+    "bundle_advisory": "resolved",
+    "dependencies_added": 0,
+    "overview_loads_source_app_or_operations_chunk": false,
+    "overview_loads_operations_eval_dataset": false,
+    "polling": {
+      "hidden_case_polls": 0,
+      "epoch_checks_preserved": true,
+      "focus_refresh": true,
+      "paid_model": false,
+      "method": "Scripted local browser check with simulated visibility; no microphone or model invocation"
+    },
+    "route_measurements": [
+      {
+        "route": "/control/overview",
+        "settled_ms": 1279
+      },
+      {
+        "route": "/control/programs/PRG-A17",
+        "settled_ms": 1224
+      },
+      {
+        "route": "/control/programs/PRG-A17/cases/CR-017",
+        "settled_ms": 1213
+      },
+      {
+        "route": "/control/programs/PRG-A17/cases/CR-019",
+        "settled_ms": 1136
+      },
+      {
+        "route": "/control/programs/PRG-A17/cases/QE-004",
+        "settled_ms": 1276
+      },
+      {
+        "route": "/control/programs/PRG-A17/cases/DR-009",
+        "settled_ms": 1271
+      },
+      {
+        "route": "/control/workflows",
+        "settled_ms": 1254
+      },
+      {
+        "route": "/control/decisions",
+        "settled_ms": 1218
+      },
+      {
+        "route": "/control/operations",
+        "settled_ms": 1413
+      },
+      {
+        "route": "/engineering",
+        "settled_ms": 1320
+      },
+      {
+        "route": "/validation",
+        "settled_ms": 1284
+      },
+      {
+        "route": "/manufacturing",
+        "settled_ms": 1343
+      },
+      {
+        "route": "/erp",
+        "settled_ms": 1343
+      },
+      {
+        "route": "/programs",
+        "settled_ms": 1333
+      }
+    ],
+    "measurement_note": "Local observations include network-idle waits and concurrent regression activity; not an SLA."
+  },
+  "console_network": {
+    "normal_routes": 14,
+    "console_errors": [],
+    "failed_requests": [],
+    "failed_http_statuses": [],
+    "intentional_failures": "Lazy-asset abort, service shutdown/restart and reset admission conflicts are separately labeled in the cold-start record; legitimate errors are not suppressed."
+  },
+  "initial_findings": [
+    {
+      "log": ".cache/phase09-4/harness-start.log",
+      "finding": "Source API reports ready, not ok; initial readiness wait timed out and owned children were cleaned up. Corrected per-service checks."
+    },
+    {
+      "log": ".cache/phase09-4/build-initial.log",
+      "finding": "Operations still had static imports. Moved only lightweight shared helpers to operations-data; verified independent lazy chunk."
+    },
+    {
+      "log": ".cache/phase09-4/coordinator.log",
+      "finding": "1 failed, 735 passed. Existing architecture guard correctly rejected subprocess/source imports in the agent package. Moved launcher to control_host without weakening the guard; 737-test rerun passed."
+    },
+    {
+      "log": ".cache/phase09-4/browser-harness.log",
+      "finding": "Normal production preview had a favicon.ico 404. Added explicit local SVG; final normal-route console/network audit is clean."
+    },
+    {
+      "log": ".cache/phase09-4/browser-harness-final.log",
+      "finding": "Restart mistook TIME_WAIT sockets for active listeners. Corrected bind semantics while still refusing a real listener; added regression."
+    },
+    {
+      "logs": [
+        ".cache/phase09-4/browser-harness-restart.log",
+        ".cache/phase09-4/browser-harness-verified.log",
+        ".cache/phase09-4/browser-harness-source-persistence.log"
+      ],
+      "finding": "Successful intermediate startup runs retained. Final journey additionally verifies source plan/digest/idempotency persistence and separates normal-route observations from deliberate restart errors."
+    },
+    {
+      "finding": "Final review added exact saved-configuration matching before reset, verified in 32 focused tests and final cold start; preserved the Phase 09.1 boundary."
+    },
+    {
+      "finding": "Baseline screenshot exposed singular evidence-record copy; corrected without changing source values."
+    }
+  ],
+  "preservation": {
+    "baseline_files": 1170,
+    "protected_files_unchanged": 158,
+    "protected_prefixes": [
+      "src/mock_enterprise/",
+      "src/enterprise_api/",
+      "src/stratos_mcp/",
+      "src/program_investigator/",
+      "src/program_coordinator/application/",
+      "src/program_coordinator/infrastructure/",
+      "fixtures/",
+      "coordinator/evals/phase07/",
+      "mcp_server/",
+      "tests/"
+    ],
+    "prior_agent_runtime_root_files": "unchanged",
+    "historical_docs_prompts_unchanged": 822,
+    "prior_png_files_restored_byte_for_byte": 711,
+    "regenerated_pngs_retained_separately": 177,
+    "prior_capture_index_restored": "docs/screenshots/phase09-3/capture-index.json",
+    "regenerated_directory": ".cache/phase09-4/regenerated-captures/",
+    "working_demo": "Not reset, copied or migrated; owned initialization/reset only in dedicated test/review storage. Prior 09.3 preview remains available.",
+    "historical_eval_truth": "Original success/failure artifacts and allowlist unchanged; new offline output uses .cache/phase07/phase09-4-full."
+  },
+  "screenshots": [
+    {
+      "path": "docs/screenshots/phase09-4/PRG-A17-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "a1c90cb46da02560a80071bb7cd85ad19ad69b283839d12adc53e42d3b705421",
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-4/operations-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "36a55e82e3dfb3b62bca9a5a8abd57e7159e801ab79b84f278b9fcdaab565990",
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-4/overview-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "06894197aca4e8b30d1f7ad353770ba7beb7f54d0728eda125f83a9d92e61c22",
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-4/workspace-load-failure-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "8e42712089c696bcd6ee15faf5716cdacca8c575649db0a970174b5e22f7547b",
+      "inspected": true
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "AGENTS.md",
+      "status": "modified",
+      "sha256": "9f40d91c64379129192a370689e0043ee9d39df5abe1978883433887f16dc8a5"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "sha256": "5f31efe57a9c5a29d10243152ae549160e7bced971b7c2b7c0319e7ccc17743e"
+    },
+    {
+      "path": "coordinator/tests/test_phase09_demo_harness.py",
+      "status": "added",
+      "sha256": "00f61581b9d2040743c119ec9bc46477fb357b386a9f8c55aadadc505764013d"
+    },
+    {
+      "path": "docs/DEMO_RUNBOOK.md",
+      "status": "added",
+      "sha256": "a0e40c8ddf30f9a206807a82effca66ecedc0a1189eacd7c29004302d1f9a389"
+    },
+    {
+      "path": "docs/PHASE09_4_COLD_START.json",
+      "status": "added",
+      "sha256": "8dd8b3bfb786d164f1c98223b098b5eefa67357593bb55bfe68b2f4120d612ae"
+    },
+    {
+      "path": "docs/PHASE09_4_HANDOFF.md",
+      "status": "added",
+      "sha256": "e09f1664de33967df612ae0241c2a8ffd94ff6ed01a112d0cd840bd4a200696f"
+    },
+    {
+      "path": "docs/PHASE09_4_RECORDED_FALLBACK.md",
+      "status": "added",
+      "sha256": "cd3b21c6b272863183714e18952be030306e815eb370d853634c06063821ba1c"
+    },
+    {
+      "path": "docs/screenshots/phase09-4/PRG-A17-1440.png",
+      "status": "added",
+      "sha256": "a1c90cb46da02560a80071bb7cd85ad19ad69b283839d12adc53e42d3b705421"
+    },
+    {
+      "path": "docs/screenshots/phase09-4/README.md",
+      "status": "added",
+      "sha256": "e1ae060f8aaca3337697eef6da7a0b4e2700477c1d09fd6897078c2dcb2478ab"
+    },
+    {
+      "path": "docs/screenshots/phase09-4/operations-1440.png",
+      "status": "added",
+      "sha256": "36a55e82e3dfb3b62bca9a5a8abd57e7159e801ab79b84f278b9fcdaab565990"
+    },
+    {
+      "path": "docs/screenshots/phase09-4/overview-1440.png",
+      "status": "added",
+      "sha256": "06894197aca4e8b30d1f7ad353770ba7beb7f54d0728eda125f83a9d92e61c22"
+    },
+    {
+      "path": "docs/screenshots/phase09-4/workspace-load-failure-1440.png",
+      "status": "added",
+      "sha256": "8e42712089c696bcd6ee15faf5716cdacca8c575649db0a970174b5e22f7547b"
+    },
+    {
+      "path": "mock_apps_ui/e2e-harness/startup.spec.ts",
+      "status": "added",
+      "sha256": "77f6dfb0f0671d90d46d92e5748fd48ed99230a77ff458e82d8c210cfc9de7e1"
+    },
+    {
+      "path": "mock_apps_ui/index.html",
+      "status": "modified",
+      "sha256": "faad88c6f268117ae5642534bda28501e47dec2801c6c2d3d3ac80bbc98c14fd"
+    },
+    {
+      "path": "mock_apps_ui/playwright.config.ts",
+      "status": "modified",
+      "sha256": "fe79baadfe8f8037fe7bb0d92d93363416c655a873f385399b72a3f5305013a3"
+    },
+    {
+      "path": "mock_apps_ui/playwright.harness.config.ts",
+      "status": "added",
+      "sha256": "601249d01026ca91948b93b9c6708205798cef160a9d353ff5fb15f68da5f9f2"
+    },
+    {
+      "path": "mock_apps_ui/public/favicon.svg",
+      "status": "added",
+      "sha256": "4dd0f9603a0dc60ba1daa968abade709cdef02f540ea47053e5266bda9fce23e"
+    },
+    {
+      "path": "mock_apps_ui/src/control/app.tsx",
+      "status": "modified",
+      "sha256": "c5c97899a56f68428995692307899213148f44660afc8f49d29f04e31ad15e17"
+    },
+    {
+      "path": "mock_apps_ui/src/control/case.tsx",
+      "status": "modified",
+      "sha256": "625aba45a785655e8db7ec94ae8e0ea47543946cc79cc9958405e71ff0de4092"
+    },
+    {
+      "path": "mock_apps_ui/src/control/experience-model.ts",
+      "status": "modified",
+      "sha256": "be8ca24b362fbd3d74874054e8613c1c9ac79bbd8ee79a55041575099fb8ebee"
+    },
+    {
+      "path": "mock_apps_ui/src/control/host.tsx",
+      "status": "modified",
+      "sha256": "1f5ded724567038af98ef454ee27c5e35a18cf432a544382b57e0592ad01479c"
+    },
+    {
+      "path": "mock_apps_ui/src/control/masthead.tsx",
+      "status": "modified",
+      "sha256": "c87dd70bb1a22e14076c7f34dbddc8538af9b78a4bf0169e239a222000878a0a"
+    },
+    {
+      "path": "mock_apps_ui/src/control/operations-data.tsx",
+      "status": "added",
+      "sha256": "404a9a11cf7af53a63eca38306a8b4dcd7c7301b950972f12e36235456642587"
+    },
+    {
+      "path": "mock_apps_ui/src/control/operations.tsx",
+      "status": "modified",
+      "sha256": "c1002b688dd6a9cfb6b6a48416309004dacc7532494faefe58f260408bb366a6"
+    },
+    {
+      "path": "mock_apps_ui/src/control/workflows.tsx",
+      "status": "modified",
+      "sha256": "02adc6ab361d994214031fe9358638961222ebb8dbaeae5d416cada0d5745f5d"
+    },
+    {
+      "path": "mock_apps_ui/src/main.tsx",
+      "status": "modified",
+      "sha256": "7095a7f6c72615b714718350c6d78e023afd1076782da98b8ab281fe687e3c6e"
+    },
+    {
+      "path": "mock_apps_ui/src/source-app.tsx",
+      "status": "added",
+      "sha256": "640dc7c0bb2257a6cf65672b7df1a7c46b9407d370e1f9c24a04400acd2a3d71"
+    },
+    {
+      "path": "mock_apps_ui/src/workspace-boundary.tsx",
+      "status": "added",
+      "sha256": "02e85c9b726b1c9eace8f7a72e6b1c6e93fd556916e3030b53a4485be79eeba4"
+    },
+    {
+      "path": "prompts/09_4_DEMO_HARNESS.md",
+      "status": "added",
+      "sha256": "4449267975577e329550dbbf698b430d0ce770b9b6631bc2afe33f15ea2ab5f0"
+    },
+    {
+      "path": "scripts/demo",
+      "status": "added",
+      "sha256": "54773eea460343b733933aa3824bb075abaa4eac66be8f94a7fdf2f5135374b3"
+    },
+    {
+      "path": "src/program_coordinator/control_host/demo_harness.py",
+      "status": "added",
+      "sha256": "f9beb20e61d3932c839b5a4d36158cfddd549759ad72e4403f8430ae1b0e5334"
+    },
+    {
+      "path": "src/program_coordinator/control_host/readiness.py",
+      "status": "added",
+      "sha256": "efb0fb5b7acf557d4eda3bfc0ece1afd0542ed0b94fec9f9540b29c3cb4d1188"
+    },
+    {
+      "path": "src/program_coordinator/control_host/server.py",
+      "status": "modified",
+      "sha256": "fc1c80cfb68b1d7ac0cdc50c603558a9d4efdfe057ec2dc76210cfa5a7379511"
+    },
+    {
+      "path": "docs/PHASE09_4_VERIFICATION.json",
+      "status": "added",
+      "note": "This report; no recursive self-hash."
+    }
+  ],
+  "skipped": [
+    "Paid live-model invocation",
+    "Paid semantic grader",
+    "Real microphone/external speech",
+    "Human-operated full live walkthrough",
+    "Git operations",
+    "Phase 09.5 work"
+  ],
+  "limitations": [
+    "Credential presence/format is not provider access, quota or connectivity verification.",
+    "Long real findings, slow live investigations and real speech require Phase 09.5.",
+    "Local preview is not production/remote hosting; stop/start rebuilds after code changes.",
+    "Hard-killed orphaned processes require explicit operator identification; no unsafe kill-by-port fallback.",
+    "Independent source/host reads are not a distributed transaction; exact action revalidation remains authoritative."
+  ],
+  "runbook": "docs/DEMO_RUNBOOK.md",
+  "handoff": "docs/PHASE09_4_HANDOFF.md",
+  "stopped_after": "09.4",
+  "code_freeze": false,
+  "final_artifact_checks": {
+    "reported_hashes": "all match",
+    "handoff_and_runbook_links": "all resolve",
+    "helper_executable": true,
+    "review_frontend": "HTTP 200",
+    "review_baseline_valid": true,
+    "review_active_workflows": 0,
+    "review_model_invoked": false,
+    "normal_route_console_and_network": "clean; intentional restart errors separately labeled"
+  }
+}

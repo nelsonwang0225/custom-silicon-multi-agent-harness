@@ -1,0 +1,176 @@
+{
+  "phase": "10.2",
+  "date": "2026-09-12",
+  "result": "PASS",
+  "mode": "isolated deterministic scripted integration testing, not a paid AI run or actual human approval",
+  "suites": [
+    {
+      "suite": "Coordinator",
+      "passed": 779,
+      "failed": 0,
+      "seconds": 344.59,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase10-2/coordinator-tests",
+      "log": ".cache/phase10-2/coordinator-tests.log"
+    },
+    {
+      "suite": "Focused workspace adapter",
+      "passed": 15,
+      "failed": 0,
+      "overlaps": "Coordinator",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase10_workspace.py -q --basetemp=.cache/phase10-2/workspace-final",
+      "log": ".cache/phase10-2/workspace-tests.log"
+    },
+    {
+      "suite": "Current offline evals",
+      "passed": 112,
+      "failed": 0,
+      "hard_gate_status": "PASS",
+      "semantic_score_average": null,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --mode offline --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase10-2-verification",
+      "log": ".cache/phase10-2/offline-evals.log"
+    },
+    {
+      "suite": "workspace browser",
+      "passed": 12,
+      "failed": 0,
+      "seconds": 37.9,
+      "cwd": "mock_apps_ui",
+      "command": "npx playwright test --config playwright.workspace.config.ts",
+      "log": ".cache/phase10-2/browser.log"
+    },
+    {
+      "suite": "persona browser",
+      "passed": 8,
+      "failed": 0,
+      "seconds": 44.6,
+      "cwd": "mock_apps_ui",
+      "command": "npx playwright test --config playwright.persona.config.ts --reporter line --output ../.cache/phase10-2/persona-results",
+      "log": ".cache/phase10-2/persona-browser.log"
+    },
+    {
+      "suite": "concierge browser",
+      "passed": 2,
+      "failed": 0,
+      "seconds": 42.3,
+      "cwd": "mock_apps_ui",
+      "command": "npx playwright test --config playwright.concierge.config.ts --reporter line --output ../.cache/phase10-2/concierge-results",
+      "log": ".cache/phase10-2/concierge-browser.log"
+    },
+    {
+      "suite": "reset browser",
+      "passed": 1,
+      "failed": 0,
+      "seconds": 53.0,
+      "cwd": "mock_apps_ui",
+      "command": "npx playwright test --config playwright.reset.config.ts --reporter line --output ../.cache/phase10-2/reset-results",
+      "log": ".cache/phase10-2/reset-browser.log"
+    },
+    {
+      "suite": "typecheck",
+      "result": "PASS",
+      "command": "npm run typecheck",
+      "cwd": "mock_apps_ui",
+      "log": ".cache/phase10-2/typecheck.log"
+    },
+    {
+      "suite": "build",
+      "result": "PASS",
+      "command": "npm run build",
+      "cwd": "mock_apps_ui",
+      "log": ".cache/phase10-2/build.log"
+    }
+  ],
+  "generated_schema_check": "Current create_app OpenAPI equals docs/phase10-2-host-openapi.json. Every previous Phase 10.1 path and model remains equal.",
+  "browser_executable": "/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+  "browser_executable_env": "PLAYWRIGHT_CHROMIUM_EXECUTABLE",
+  "visualize": "Skill read; no callable Visualize tool discovered. Two local React/Lucide concepts were built and inspected instead.",
+  "visual_review": {
+    "concepts": 2,
+    "final_fixture_screenshots": 15,
+    "viewports": [
+      "1440x900",
+      "1280x800",
+      "390x844"
+    ],
+    "enlarged_text": "workspace names 22px, states 20px, heading 30px",
+    "reduced_motion": "emulated; computed animation none",
+    "gallery": "docs/screenshots/phase10-2/README.md"
+  },
+  "historical_screenshots_restored": 16,
+  "restoration_manifest": ".cache/phase10-2/restored-screenshots.json",
+  "preview": {
+    "url": "http://127.0.0.1:5203/control/overview",
+    "mode": "deterministic_test",
+    "storage": ".cache/phase09-3/phase10-2-preview",
+    "concept_url": "http://127.0.0.1:5205/preview.html",
+    "launch_instructions": "docs/DEMO_RUNBOOK.md#phase-102-agent-workspace-preview",
+    "prepared_state": "One deterministic CR-017 investigation through HTTP, completed and awaiting Engineering review; no paid model calls."
+  },
+  "skipped": [
+    "Paid models/live matrix and semantic model grading",
+    "Real microphone/external speech",
+    "Standalone source and MCP suites; unchanged boundaries covered by existing HTTP/MCP coordinator regressions",
+    "Full five-source-system UI suite; source UI implementation unchanged",
+    "Git work, background execution and additional phases"
+  ],
+  "changed_files": {
+    "modified": [
+      "AGENTS.md",
+      "README.md",
+      "docs/ACCEPTANCE_TESTS.md",
+      "docs/API_CONTRACT.md",
+      "docs/DEMO_RUNBOOK.md",
+      "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+      "mock_apps_ui/src/control/agent-activity.tsx",
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/assistant.tsx",
+      "mock_apps_ui/src/control/concierge-chat.tsx",
+      "mock_apps_ui/src/control/host-schema.d.ts",
+      "mock_apps_ui/src/control/masthead.tsx",
+      "mock_apps_ui/src/control/portfolio.tsx",
+      "src/program_coordinator/control_host/server.py"
+    ],
+    "added": [
+      "coordinator/tests/test_phase10_workspace.py",
+      "docs/PHASE10_2_AGENT_WORKSPACE.md",
+      "docs/PHASE10_2_HANDOFF.md",
+      "docs/PHASE10_2_VERIFICATION.json",
+      "docs/phase10-2-host-openapi.json",
+      "docs/phase10-2/concepts/preview.css",
+      "docs/phase10-2/concepts/preview.html",
+      "docs/phase10-2/concepts/preview.tsx",
+      "docs/phase10-2/concepts/vite.config.mjs",
+      "docs/screenshots/phase10-2/README.md",
+      "docs/screenshots/phase10-2/concepts/agent-ensemble.png",
+      "docs/screenshots/phase10-2/concepts/agent-stage.png",
+      "docs/screenshots/phase10-2/concepts/comparison.png",
+      "docs/screenshots/phase10-2/fixtures/business-inspector-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/concurrent-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/enlarged-text-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/failed-specialist-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/human-handoff-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/idle-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/narrow-390x844.png",
+      "docs/screenshots/phase10-2/fixtures/narrow-enlarged-text-390x844.png",
+      "docs/screenshots/phase10-2/fixtures/narrow-inspector-390x844.png",
+      "docs/screenshots/phase10-2/fixtures/parallel-1280x800.png",
+      "docs/screenshots/phase10-2/fixtures/parallel-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/reduced-motion-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/stale-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/standard-handoff-1440x900.png",
+      "docs/screenshots/phase10-2/fixtures/unavailable-1440x900.png",
+      "mock_apps_ui/src/control/agent-roles.ts",
+      "mock_apps_ui/src/control/agent-workspace-data.ts",
+      "mock_apps_ui/src/control/agent-workspace.css",
+      "mock_apps_ui/src/control/agent-workspace.tsx",
+      "src/program_coordinator/control_host/agent_workspace.py"
+    ],
+    "other_changed": [
+      "mock_apps_ui/e2e-concierge/concierge.spec.ts",
+      "mock_apps_ui/e2e-reset/reset.spec.ts",
+      "mock_apps_ui/e2e-workspace/workspace.spec.ts",
+      "mock_apps_ui/playwright.workspace.config.ts",
+      "prompts/10_2_VISUAL_AGENT_WORKSPACE.md"
+    ]
+  }
+}

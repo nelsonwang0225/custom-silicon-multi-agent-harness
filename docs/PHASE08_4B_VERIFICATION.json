@@ -1,0 +1,560 @@
+{
+  "phase": "08.4B",
+  "label": "OFFLINE SCRIPTED INTEGRATION TESTING; DETERMINISTIC MODEL RESPONSES; LOCAL DEMO IDENTITIES",
+  "verified_at_utc": "2026-09-12T05:51:10.039376+00:00",
+  "checks": [
+    {
+      "label": "Source API and CR-017/CR-019 regressions",
+      "command": "PYTHONPATH=src:. .venv/bin/pytest tests --basetemp=.cache/phase08-4b/source-final -q",
+      "log": ".cache/phase08-4b/source-final.log",
+      "log_sha256": "700353894cd64be4f437b2323b88174ac87bebb4306a5abba977c40ffba8912d",
+      "passed": 458,
+      "result": "passed"
+    },
+    {
+      "label": "Complete coordinator suite, including Phase 06, Phase 07 and 08.4A",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/pytest coordinator/tests --basetemp=.cache/phase08-4b/coord-all -q",
+      "log": ".cache/phase08-4b/coordinator-tests.log",
+      "log_sha256": "0b94df8879d2f491ebffe90303ffa16d8101cf409b284648532ab5238a24499f",
+      "passed": 650,
+      "result": "passed",
+      "note": "Full suite followed by the focused 28-test rerun below after explicit configuration revision fields were added."
+    },
+    {
+      "label": "Final quality lifecycle, fault recovery and Phase 07 runtime regression",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/pytest coordinator/tests/test_phase08_4b_quality.py coordinator/tests/test_phase07_runtime.py --basetemp=.cache/phase08-4b/quality-final -q",
+      "log": ".cache/phase08-4b/quality-final.log",
+      "log_sha256": "2cb0130ee82e0f199d71d07c71c4242ac7e7aab1db5b2604ef8c0ee4d7c36eea",
+      "passed": 28,
+      "result": "passed"
+    },
+    {
+      "label": "MCP discovery, scopes and real HTTP integration; 27 read tools",
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/pytest mcp_server/tests --basetemp=.cache/phase08-4b/mcp-final -q",
+      "log": ".cache/phase08-4b/mcp-final.log",
+      "log_sha256": "fd7e7bc01eff11347224f65f3496a06b48392b24278f2c6b27380f41ab299a81",
+      "passed": 56,
+      "result": "passed"
+    },
+    {
+      "label": "Original Phase 07 dataset plus standard and connected QE runtime probes",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --mode offline --include-standard --include-quality",
+      "log": ".cache/phase08-4b/evals-final.log",
+      "log_sha256": "b4b4fb9c4c4f66fe4873a3023f09b04f98167e75bb0ed0b1219b67f2675bd0d1",
+      "passed": 77,
+      "result": "passed"
+    },
+    {
+      "label": "Original source UI, component/view-model and browser regressions",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.config.ts",
+      "log": ".cache/phase08-4b/playwright-base.log",
+      "log_sha256": "04898d0d517ba50390e32c27321f11300fc85b094a844c6cc467356d49cc7433",
+      "passed": 54,
+      "result": "passed after targeted correction",
+      "note": "54 passed initially; two tests still expected QE to be Preview. Corrected assertions were rerun below. 56 unique scenarios verified."
+    },
+    {
+      "label": "Corrected Preview-count and unavailable-workflow assertions",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.config.ts -g 'control journey, evidence provenance|secondary programs, capability previews'",
+      "log": ".cache/phase08-4b/playwright-base-corrected.log",
+      "log_sha256": "89d49afd941bf95a725df7de3db4aae6c53b228c376a3525b7adb1ed6c83c9ed",
+      "passed": 2,
+      "result": "passed"
+    },
+    {
+      "label": "Original connected governance/workflow browser regressions",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.phase08.config.ts",
+      "log": ".cache/phase08-4b/playwright-connected.log",
+      "log_sha256": "d5fde9e38d1fefe9221fc74dcc7c7c99ed6bd3afa8b1548edff8032a98348276",
+      "passed": 7,
+      "result": "passed after targeted correction",
+      "note": "One old Yield-is-Preview expectation failed; changed to an actually unconnected workflow and reran below. Eight unique scenarios verified."
+    },
+    {
+      "label": "Corrected event/configuration preview regression",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.phase08.config.ts -g 'event and condition previews'",
+      "log": ".cache/phase08-4b/playwright-connected-corrected.log",
+      "log_sha256": "430c727f5e1f62445f84ab763b5b40622a48428ec91d3a3f1e1f2d2a2ef930b0",
+      "passed": 1,
+      "result": "passed"
+    },
+    {
+      "label": "08.4A CR-019 connected browser regression",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.standard.config.ts",
+      "log": ".cache/phase08-4b/playwright-standard.log",
+      "log_sha256": "0ce0302283022a414623f5365eabcc2e8deab1d39173088faafb09805ea23237",
+      "passed": 1,
+      "result": "passed"
+    },
+    {
+      "label": "QE browser end-to-end: comparable",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.quality.config.ts",
+      "log": ".cache/phase08-4b/playwright-quality-final.log",
+      "log_sha256": "efe55eb07014cfd9d38d4d5eef0c342e703ad59ef29321403f7df4490ac77660",
+      "passed": 1,
+      "result": "passed",
+      "note": "Real local HTTP/MCP with deterministic SDK responses; wrong-role denial, exact review, write/readback, protected source equality, blocked release, search/run/decision/Overview/alert updates, inactive watch and mobile overflow."
+    },
+    {
+      "label": "QE browser end-to-end: incomparable",
+      "command": "cd mock_apps_ui && QUALITY_VARIANT=incomparable PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.quality.config.ts",
+      "log": ".cache/phase08-4b/playwright-quality-incomparable-final.log",
+      "log_sha256": "9947c26f92acd6650936d03f7308aae0d797d2bd424c79f102995f15fe8f1595",
+      "passed": 1,
+      "result": "passed",
+      "note": "Real local HTTP/MCP with deterministic SDK responses; wrong-role denial, exact review, write/readback, protected source equality, blocked release, search/run/decision/Overview/alert updates, inactive watch and mobile overflow."
+    },
+    {
+      "label": "QE browser end-to-end: no_alternative_supply",
+      "command": "cd mock_apps_ui && QUALITY_VARIANT=no_alternative_supply PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' npx playwright test -c playwright.quality.config.ts",
+      "log": ".cache/phase08-4b/playwright-quality-no-supply-final.log",
+      "log_sha256": "3d7ca71509bedea9916b308102fbab32ba061189a6a72dcb411b46bbe506d731",
+      "passed": 1,
+      "result": "passed",
+      "note": "Real local HTTP/MCP with deterministic SDK responses; wrong-role denial, exact review, write/readback, protected source equality, blocked release, search/run/decision/Overview/alert updates, inactive watch and mobile overflow."
+    },
+    {
+      "label": "TypeScript typecheck",
+      "command": "cd mock_apps_ui && npm run typecheck",
+      "log": ".cache/phase08-4b/typecheck.log",
+      "log_sha256": "6a4da5662e48c2d8d3c36d049e4be6231c93c100aba474b520fe8f6b4b60c4d4",
+      "passed": null,
+      "result": "passed"
+    },
+    {
+      "label": "Production TypeScript/Vite build",
+      "command": "cd mock_apps_ui && npm run build",
+      "log": ".cache/phase08-4b/build.log",
+      "log_sha256": "b9ccd6c2cf7632e8a200fa729ce8f864ed7ef16adf913b73833242fdf95bffc5",
+      "passed": null,
+      "result": "passed",
+      "note": "Passed; Vite warns that the main minified JavaScript chunk is 506.24 kB, above its 500 kB advisory threshold."
+    }
+  ],
+  "totals": {
+    "source_tests": 458,
+    "coordinator_tests": 650,
+    "final_focused_coordinator_rerun": 28,
+    "mcp_tests": 56,
+    "offline_eval_cases": 77,
+    "quality_critical_eval_cases": 14,
+    "browser_unique_scenarios": 68
+  },
+  "offline_eval_artifact": ".cache/phase07/eval_f3ea458a599f4d18970f3bf77490e1a2/report.md",
+  "hard_gate_status": "PASS",
+  "critical_failures": [],
+  "corrections_and_retained_artifacts": [
+    "Three legacy browser assertions updated for Yield now being Connected; all corrected tests pass.",
+    "QE browser locators and screenshot readiness corrected; all three final variants pass.",
+    "An intermediate offline run overlapped source-contract editing and failed variant initialization; retained at .cache/phase07/eval_6fb28fefb9a2424e88ab284bd47dc687. The final stable-code run passed 77/77.",
+    "103 prior-phase screenshot files were restored from pre-run backups; new regression captures retained in .cache/phase08-4b/legacy-captures."
+  ],
+  "preserved_files": [
+    {
+      "file": "fixtures/seed.json",
+      "sha1": "28e9715d38599f58eb6f695fae3957ebfd2a50ce",
+      "unchanged": true
+    },
+    {
+      "file": "src/program_coordinator/application/execution.py",
+      "sha1": "1b3fcc4f03d05ac440129e7e7fc1bc3d5cfa1e80",
+      "unchanged": true
+    },
+    {
+      "file": "src/program_coordinator/application/execution_policy.py",
+      "sha1": "0b0304c417cfefbe4a762d9df1a6a417ac033141",
+      "unchanged": true
+    },
+    {
+      "file": "src/mock_enterprise/approvals.py",
+      "sha1": "ec745dbe8b62712f1f3df4b04ef491d85534a086",
+      "unchanged": true
+    }
+  ],
+  "files_changed": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "80cf3cdb1d6aa496b65a7b3cd19502c622dc6533cec0cce1aedf347964ee5149"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbee1bc73127369000da0a98c8d2fdd2d9f76c8f88af1c80f5215be9799693d3"
+    },
+    {
+      "path": "coordinator/evals/phase07/quality.py",
+      "sha256": "97105df7fb20d370c1e361c7fda1396431dbdf4aabc93a48002a6b7342b4130d"
+    },
+    {
+      "path": "coordinator/evals/phase07/runner.py",
+      "sha256": "51054b27bd2ffbe62eb6cc47c776a921488d177e90cb6c3fa5fc9ab9409db855"
+    },
+    {
+      "path": "coordinator/evals/phase08_4b/doubles.py",
+      "sha256": "5f33792e7a560dcd977a8af2b100bec01a8d6d3e0e9e8e0e1cb4449d2556dad7"
+    },
+    {
+      "path": "coordinator/evals/phase08_4b/fixtures.py",
+      "sha256": "7476ce03b3175285ef2e6b11e56f1ac9034342b61e62318d7380e96bc735587d"
+    },
+    {
+      "path": "coordinator/evals/phase08_4b/probe.py",
+      "sha256": "ed0abe1062d0bdf13ea45ecd91adb7767895202a511a5a4c656ec296c1d4efc5"
+    },
+    {
+      "path": "coordinator/evals/phase08_4b/serve.py",
+      "sha256": "5838bf06af272e8a3e8194c49b2e197854a232db79bad17c228a8dd8583163cd"
+    },
+    {
+      "path": "coordinator/tests/test_mcp_boundary.py",
+      "sha256": "b396dfb330189e4982cbcae740504a7ed51b9b10868db58f7ca7f00a81d39512"
+    },
+    {
+      "path": "coordinator/tests/test_phase07_runtime.py",
+      "sha256": "113bc1d6bb21299f0f54705dcef8fd8aa62f593bbc7cd236618405a8e4cc446c"
+    },
+    {
+      "path": "coordinator/tests/test_phase08_4b_quality.py",
+      "sha256": "ecad3dd7d58ca0d4c2a2539e99e244c6b1275a4850e139beb13564ac1737b89d"
+    },
+    {
+      "path": "coordinator/tests/test_phase08_workflows.py",
+      "sha256": "4bab43793332e1306d2c4d691ff567e5582597a84295f8f18c6245c4fbb985d3"
+    },
+    {
+      "path": "coordinator/tests/test_workflow_cli.py",
+      "sha256": "4c6291086fc586d5f6380beac82aebf47356fbfd9c3baa98b082c0bf87289fd4"
+    },
+    {
+      "path": "coordinator/tests/test_workflow_service.py",
+      "sha256": "4eb16e621a0968225df605c2659fa56d10ca912c455af4c8846da9cf8c2e250e"
+    },
+    {
+      "path": "docs/ACCEPTANCE_TESTS.md",
+      "sha256": "6427fa2f9eda66d68ca5721a0ab146f021b4349ca073029c5e230c8c4166cff6"
+    },
+    {
+      "path": "docs/API_CONTRACT.md",
+      "sha256": "a008a7c8caf91e80e6624803ca39fe3c1625b3bec48b4dc387b030823e4eed0c"
+    },
+    {
+      "path": "docs/PHASE08_4B_HANDOFF.md",
+      "sha256": "e2d1dd87b57576794a6f79ec764c8eef80024f357805f67b99c36b52f84198f5"
+    },
+    {
+      "path": "docs/SCENARIO.md",
+      "sha256": "58e65ebf95390fd70e6da25f7917969f99179362c562e4cf2ca0a2f754460587"
+    },
+    {
+      "path": "docs/openapi.json",
+      "sha256": "e4e0390ca6e53f37ee9c306952ff4d5ac5e93114a521114c69b3a5dbb3ef4074"
+    },
+    {
+      "path": "docs/phase08-4b-host-openapi.json",
+      "sha256": "10fe2e30cd45e2718168812739482e4f766198f3bb9b0422038c714807a966dc"
+    },
+    {
+      "path": "docs/screenshots/phase08-4b/comparable.png",
+      "sha256": "e475fcc98de4c12809622c77c211f94f8f6bd0167f3ab24543f309c7c2c14ab2"
+    },
+    {
+      "path": "docs/screenshots/phase08-4b/incomparable.png",
+      "sha256": "b997005ab1f61e20a30a35c1fa1d4f59dc1e3dfff063149de650cb82b5d1efd9"
+    },
+    {
+      "path": "docs/screenshots/phase08-4b/no_alternative_supply.png",
+      "sha256": "c188300db9dc9a311f772e307ed70c68c1294f753bc9ea88577fc00b42c48a60"
+    },
+    {
+      "path": "fixtures/quality_exception.json",
+      "sha256": "55d266e1a13762aea66621a8b979a6be9814916639687cf2ba34f8fa1a51addb"
+    },
+    {
+      "path": "mcp_server/backend_fixture.py",
+      "sha256": "895f2de10358bc7e4bdc0c6b7fc6d3e38f7e8e5a3269432df744b74e15ac73d4"
+    },
+    {
+      "path": "mcp_server/check_mcp.py",
+      "sha256": "47a18c26d56b80c6d6d9c718ad05ce697c10fabff2e14906d27c18746079ea0f"
+    },
+    {
+      "path": "mcp_server/testing.py",
+      "sha256": "0c14423c5b6d0efe686d5b95d6d28d80187cb853e40ac4a334cacc6e558d9a32"
+    },
+    {
+      "path": "mcp_server/tests/test_mcp.py",
+      "sha256": "bef29692e60003eae607c69f4e92c224ee0d2568c674e2578cdcac69df377b64"
+    },
+    {
+      "path": "mock_apps_ui/e2e-connected/workflows.spec.ts",
+      "sha256": "4532bdc3c53a0b92e1fdeb509fd7b521e4cce7cd060a00a808f082fc89506ce0"
+    },
+    {
+      "path": "mock_apps_ui/e2e-quality/quality.spec.ts",
+      "sha256": "77233cbb85584f02d35228ed2f9bd176480c37f67c007bf7635325e6c46ad53d"
+    },
+    {
+      "path": "mock_apps_ui/e2e/control-plane.spec.ts",
+      "sha256": "e2d6fc485510263a3949bbdd6052312ae3bfdfeabb5401fc43c89578f53b0893"
+    },
+    {
+      "path": "mock_apps_ui/playwright.quality.config.ts",
+      "sha256": "47c07fce359f1d36d78945a40b6554da8cef9d0f9d23f87277facf2064f11031"
+    },
+    {
+      "path": "mock_apps_ui/src/api.ts",
+      "sha256": "65a2d9f722dc1958b80f2c4beedb1d70ad0ead10ce9651ced0a2e98d596a3d21"
+    },
+    {
+      "path": "mock_apps_ui/src/control/assistant.tsx",
+      "sha256": "5cd8b11acc3d7976358856bd82a58b8f1d24b5325eac667a89507ab132c1c0cb"
+    },
+    {
+      "path": "mock_apps_ui/src/control/case.tsx",
+      "sha256": "ae551587c958a3bb07ca22ae86d8d7433da53466ab5e09427e420784aaa74d83"
+    },
+    {
+      "path": "mock_apps_ui/src/control/data.tsx",
+      "sha256": "30783a7237da901c39a1fef88a936f52b670475f1d1432f088e1854094c929d6"
+    },
+    {
+      "path": "mock_apps_ui/src/control/decisions.tsx",
+      "sha256": "0c4077ce8757418568132b00d7775ca18669c84572eb1cdc7f351cd9d833971c"
+    },
+    {
+      "path": "mock_apps_ui/src/control/host-presentation.ts",
+      "sha256": "8058431609ceca1c6c306400266326948c0c87c54e3a460b086165d682b2c840"
+    },
+    {
+      "path": "mock_apps_ui/src/control/host-schema.d.ts",
+      "sha256": "b77d563107fe1b1b615f12c11770572f02988566af522ee408b2bceba6a36734"
+    },
+    {
+      "path": "mock_apps_ui/src/control/host.tsx",
+      "sha256": "4afbcd1da3e99f218d8907886178362aaf3e9de5f30de9099dd02e01bcddaae1"
+    },
+    {
+      "path": "mock_apps_ui/src/control/portfolio.tsx",
+      "sha256": "db99b9fba50b0245e28a6b87798147ddee8457d441bb72624aea65ba6a071a78"
+    },
+    {
+      "path": "mock_apps_ui/src/control/previews.tsx",
+      "sha256": "69e264fa399e38fff3efb61434708de9e3f93a6413a032276ce04af7cea381d3"
+    },
+    {
+      "path": "mock_apps_ui/src/control/program.tsx",
+      "sha256": "3c0a8d7a5f564da9efbb1827b152d4821eb7586993a4b80fc6dfcef3d76fa90c"
+    },
+    {
+      "path": "mock_apps_ui/src/control/quality-case.tsx",
+      "sha256": "e1fa2123935a6ea05327d8738558fbaa0ab11f1e58e250b2f4851622a5901bad"
+    },
+    {
+      "path": "mock_apps_ui/src/control/style.css",
+      "sha256": "13ef86fe1d2472c6282b1e42d6eb22ffa2c340f2c1944965db5dbc73b74acd11"
+    },
+    {
+      "path": "mock_apps_ui/src/control/workflow-catalog.json",
+      "sha256": "eccb8ec3731819d85aebc3453f3378158f496e4b3f8ad575bfde78158adbcc4d"
+    },
+    {
+      "path": "mock_apps_ui/src/control/workflows.tsx",
+      "sha256": "2792973423c256eb00ebced97fb7cc96c1d4e5c9d59db9e099c9344b76e7ef5f"
+    },
+    {
+      "path": "mock_apps_ui/src/main.tsx",
+      "sha256": "ec382e16ae637b12c72e408e7e214c47a9a0b354fd12aa2b0f7b3c7e5760ce56"
+    },
+    {
+      "path": "mock_apps_ui/src/quality-source.tsx",
+      "sha256": "6ee134237e0c18e92a48cd22167291af5173c1ad949d609ba090e0ccd9a5cae7"
+    },
+    {
+      "path": "mock_apps_ui/src/schema.d.ts",
+      "sha256": "6aa964300e50f324826570f799b047478d30aa850f8e7bd1237f05107528a4d0"
+    },
+    {
+      "path": "prompts/08_4B_QUALITY_RECOVERY.md",
+      "sha256": "b308e2fcf45088bc4ea1e2f71d02353e203acdfdc9c70397be8cea84db15cdc7"
+    },
+    {
+      "path": "scripts/export_phase08_quality.py",
+      "sha256": "d2bf26400339dc61f57e064281c904ddc311bb4d7a71f2dc514667d767404b44"
+    },
+    {
+      "path": "src/enterprise_api/client.py",
+      "sha256": "4ca11e6cfcea34d96c47fb1aad1b40d115771e38166c8ac39c30561c7d47b4d3"
+    },
+    {
+      "path": "src/enterprise_api/endpoints.py",
+      "sha256": "f169ef544ff335e36562d7e398a78919b212bb250267f60f6e344d59b23ce8b4"
+    },
+    {
+      "path": "src/enterprise_api/quality_models.py",
+      "sha256": "b70ffb1240336cd99baa5d16343ba5c2aa5a293582e298012f6d76308d94daad"
+    },
+    {
+      "path": "src/enterprise_api/quality_policy.py",
+      "sha256": "4f5b63b5db4404c17a6340f7d6ff6a00607d8138efb696552aa19ee911d1305f"
+    },
+    {
+      "path": "src/mock_enterprise/app.py",
+      "sha256": "085586a29eec20444c49defb97f83eea78a4ed6d6ab16d15868bb5e9b831b7a8"
+    },
+    {
+      "path": "src/mock_enterprise/cli.py",
+      "sha256": "3989778caf0834e931fc2fd38e701bfa3f8b244dee85d0b7a621e2c18d016208"
+    },
+    {
+      "path": "src/mock_enterprise/core.py",
+      "sha256": "dbee5c93cab27877383fe16cb59b48240c922a1c67259f3b22cd9702bb72a6d6"
+    },
+    {
+      "path": "src/mock_enterprise/db.py",
+      "sha256": "08bf50f9e729c5f58c444e1269fc6e9ce07c08b18205a33d1c44170eaccc3f2f"
+    },
+    {
+      "path": "src/mock_enterprise/domains/quality.py",
+      "sha256": "c5b1923ec0031b15123a8dd626c27bbd149078b1bad49939c3344ab2b00b39fc"
+    },
+    {
+      "path": "src/mock_enterprise/http.py",
+      "sha256": "3d80b9c8785d883993d0e3d0e64645ea201beb289d640c2d749bfaa7ef53a8d7"
+    },
+    {
+      "path": "src/mock_enterprise/quality_upgrade.py",
+      "sha256": "7d93539aa6783197fd803ab134992ea52f72a8b5f9068a906b67254f1f679668"
+    },
+    {
+      "path": "src/program_coordinator/__main__.py",
+      "sha256": "c648a783193f9307a3120ee909d250871b37edcb9799eb40c765ab1ffc7bcd57"
+    },
+    {
+      "path": "src/program_coordinator/agents.py",
+      "sha256": "c56008f9424800566328922d36cd0990b192e1017303acea82e66b2c92d72010"
+    },
+    {
+      "path": "src/program_coordinator/application/automations.py",
+      "sha256": "fcbac95eb853be1db0f180d18d4adc6063ac3a97fe5e0987e62b2252e7183614"
+    },
+    {
+      "path": "src/program_coordinator/application/demo_identity.py",
+      "sha256": "dcfa79f2dd7d5ccbb2fbe7fffd6c0c4981a0b1c6f8f012635709b3265ffa649c"
+    },
+    {
+      "path": "src/program_coordinator/application/quality_recovery.py",
+      "sha256": "451479c524f10fcc805aa7311eda1f3dc2ec16e7985a7c53ecda3c163393b821"
+    },
+    {
+      "path": "src/program_coordinator/application/quality_recovery_models.py",
+      "sha256": "e8a01c12c044ac1a3b52c2d7ee52d9bd815b075825f481cd023ca7ad6c00cf91"
+    },
+    {
+      "path": "src/program_coordinator/application/registry.py",
+      "sha256": "62278cf0cc1f0b9861dc0661fde63f37b33475c2a75b3bfbaa25d85301983ef9"
+    },
+    {
+      "path": "src/program_coordinator/application/store.py",
+      "sha256": "1501ac0bd93086a9ea6b6af1342cffddc6ff7cfc63d35d82ad92334f380d2a5d"
+    },
+    {
+      "path": "src/program_coordinator/application/workflow_catalog.py",
+      "sha256": "40cb20373deab6076e2a8122ee197d075371a2527f1357df38a64f6f790b6dde"
+    },
+    {
+      "path": "src/program_coordinator/control_host/models.py",
+      "sha256": "413314fa847e194a55262d39dc6825720a636b58436a52f54c10a464b8ffdb84"
+    },
+    {
+      "path": "src/program_coordinator/control_host/quality.py",
+      "sha256": "2440f06298ade5d0d643866a23e45cb80c089f01cbf4136cbcf976601ddc4229"
+    },
+    {
+      "path": "src/program_coordinator/control_host/server.py",
+      "sha256": "ba5d5a0d579b847f8328e61f58c8fad9b92ae21ccd16d3fadeaed0c62c9926c6"
+    },
+    {
+      "path": "src/program_coordinator/harness.py",
+      "sha256": "6e642a1c85d3f099bea25fe0a27bcd050f15789534589e5f0b103fa10ce6e9da"
+    },
+    {
+      "path": "src/program_coordinator/infrastructure/source_gateway.py",
+      "sha256": "81c6508039fdf7e99cf6a8112eaaa7cab0c8d4b0271269fed22f3d06676d4498"
+    },
+    {
+      "path": "src/program_coordinator/mcp.py",
+      "sha256": "976ec84219e2b6dce122fef7766e1bd47e166f82d0b7386154e739a7d9ac7678"
+    },
+    {
+      "path": "src/program_coordinator/models.py",
+      "sha256": "d1644531f770af1ff2ec32fbaca04c1125ecf1a5d2df2d32cd36641eb8161a58"
+    },
+    {
+      "path": "src/program_coordinator/policy.py",
+      "sha256": "e459e52c225602a1e08093762e29717a74031661cd5d04ae7cdd1c46f77c2652"
+    },
+    {
+      "path": "src/program_coordinator/quality.py",
+      "sha256": "ba4cb72163c129c0836b782e1b8611ef1f941f4c95a7c26f9bddf2e7c50cf3dd"
+    },
+    {
+      "path": "src/program_coordinator/sources.py",
+      "sha256": "3288b8a17e5a35a987df53db81e65c07187ab8a19ac165e05e7f0766a559b77c"
+    },
+    {
+      "path": "src/stratos_mcp/catalog.py",
+      "sha256": "5c9d51b2958c051f9448713708a116e729ca3a6e7743abcbe1bf9db14e896559"
+    },
+    {
+      "path": "tests/test_enterprise_api.py",
+      "sha256": "edf2ed3a3ac45df72ccadd9cfa862895cf5bafe66a527957ee2515dc9cb44cb4"
+    },
+    {
+      "path": "tests/test_interface_edges.py",
+      "sha256": "b4fed43754c204764438e02c867bdd47bb96eb8174e18abacf81016fc10acbc3"
+    },
+    {
+      "path": "tests/test_quality_recovery.py",
+      "sha256": "315de2320b2c649471f425155185e2fdafca1be6a33e4314bf5dbc879f11907d"
+    },
+    {
+      "path": "docs/PHASE08_4B_VERIFICATION.json",
+      "sha256": null,
+      "note": "This verification record; no self-referential hash."
+    }
+  ],
+  "source_write_boundary": [
+    {
+      "path": "/api/v1/manufacturing/quality-investigations",
+      "role": "automation",
+      "effect": "Source-defined standard investigation"
+    },
+    {
+      "path": "/api/v1/manufacturing/recovery-plans",
+      "role": "automation",
+      "effect": "Immutable current-source recovery proposal"
+    },
+    {
+      "path": "/api/v1/manufacturing/recovery-decisions",
+      "role": "program_owner",
+      "effect": "Exact version/digest approve or reject"
+    },
+    {
+      "path": "/api/v1/programs/recovery-tasks",
+      "role": "automation",
+      "effect": "Exact approved Planner recovery metadata only"
+    }
+  ],
+  "skipped": [
+    "No paid model invocation.",
+    "No optional model-based semantic grader.",
+    "Existing running demo source database was not reset or migrated; use the explicit additive installation/manual path in the handoff."
+  ],
+  "limitations": [
+    "Synthetic local source systems and mock role identities are not production authentication or actual human approval.",
+    "Exact comparability policy is not statistical process qualification; site correlation cannot establish root cause.",
+    "No lot release, disposition, inventory allocation, shipment, technical change, retest execution or ERP commitment writer.",
+    "Planning costs/timing remain unknown where not source-modeled.",
+    "Vite main chunk size advisory remains."
+  ],
+  "next_step": "08.4C Delivery Readiness only after a new user request; no event listener, connected freeform Concierge or Operations implementation."
+}

@@ -1,0 +1,172 @@
+{
+  "manufacturing.lot": [
+    {
+      "id": "LOT-B-219",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [
+        "quality_hold"
+      ],
+      "owning_system": "manufacturing",
+      "hold_details": [
+        {
+          "restriction": "quality_hold",
+          "rationale": "Final-test anomaly QE-011; entire 100-device lot held pending Quality disposition.",
+          "responsible_team": "Product Quality",
+          "release_conditions": "Separate Quality lead disposition and release; no release action is exposed by the recovery workflow."
+        }
+      ]
+    }
+  ],
+  "erp.order": [
+    {
+      "id": "ORD-QE-011",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "quantity": 100,
+      "quantity_unit": "accelerator_units",
+      "committed_delivery_at": "2026-11-23T18:00:00Z",
+      "status": "open",
+      "owning_system": "erp"
+    }
+  ],
+  "planner.milestone": [
+    {
+      "id": "MS-QE-011",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "order_id": "ORD-QE-011",
+      "name": "Autonomous opening \u2014 isolated 100-unit planning scope",
+      "baseline_at": "2026-11-23T18:00:00Z",
+      "current_forecast_at": "2026-11-23T18:00:00Z",
+      "forecast_status": "not_reassessed_for_new_request",
+      "record_version": 1,
+      "dependencies": [],
+      "owning_system": "planner",
+      "owner": "Ilan Reyes",
+      "health": "at_risk",
+      "next_action": "Assess QE-011 held-lot exposure"
+    }
+  ],
+  "manufacturing.quality_exception": [
+    {
+      "id": "QE-011",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-219",
+      "configuration_id": "CFG-B-01",
+      "milestone_id": "MS-QE-011",
+      "order_id": "ORD-QE-011",
+      "observation_id": "OBS-QE-011",
+      "baseline_id": "BASE-FT-B-72",
+      "investigation_procedure_id": "PROC-QE-011-STD",
+      "exception_type": "final_test_anomaly",
+      "requested_actions": ["route_standard_investigation"],
+      "evidence_ids": [
+        "RES-BASELINE-B"
+      ],
+      "material_ids": [
+        "MAT-B-219"
+      ],
+      "request_source": "manufacturing",
+      "requested_by": "Product Quality / final-test monitoring",
+      "received_at": "2026-11-16T09:00:00Z",
+      "summary": "Final-test anomaly on LOT-B-219; 88 of 100 devices passed. Entire lot held for investigation and separate Quality disposition.",
+      "status": "open"
+    }
+  ],
+  "engineering.quality_procedure": [
+    {
+      "id": "PROC-QE-011-STD", "owning_system": "engineering",
+      "program_id": "PRG-A17", "customer_id": "CUST-FML01", "content_version": 1,
+      "synthetic": true, "updated_at": "2026-11-16T09:00:00Z",
+      "configuration_id": "CFG-B-01", "status": "approved",
+      "queue_id": "QUEUE-PRODUCT-QUALITY", "owner": "Product / Test Engineering",
+      "tasks": ["Collect final-test logs by site and equipment", "Check test-program and baseline comparability", "Review failure concentration with Quality; do not infer root cause", "Prepare evidence for separate Quality disposition"],
+      "evidence_ids": ["RES-BASELINE-B"], "recovery_owner": "Ilan Reyes",
+      "investigation_hours": 8,
+      "standard_policy": {
+        "route": "standard_quality_investigation_handoff", "exception_type": "final_test_anomaly",
+        "exception_id": "QE-011", "lot_id": "LOT-B-219",
+        "queue_id": "QUEUE-PRODUCT-QUALITY", "queue_status": "active", "owner": "Product / Test Engineering",
+        "permitted_actions": ["route_standard_investigation"],
+        "approved_tasks": ["Collect final-test logs by site and equipment", "Check test-program and baseline comparability", "Review failure concentration with Quality; do not infer root cause", "Prepare evidence for separate Quality disposition"]
+      }
+    }
+  ],
+  "manufacturing.quality_observation": [
+    {
+      "id": "OBS-QE-011",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-219",
+      "configuration_id": "CFG-B-01",
+      "test_stage": "packaged_final_test",
+      "test_program_version": "FT-B-7.2",
+      "conditions_id": "COND-FT-B-NOMINAL",
+      "population": "packaged REV-B production devices",
+      "equipment_family": "ATE-FAMILY-B",
+      "sites": [
+        "SITE-1",
+        "SITE-2"
+      ],
+      "tested_quantity": 100,
+      "passed_quantity": 88,
+      "failed_quantity": 12,
+      "site_counts": {
+        "SITE-1": [
+          50,
+          44
+        ],
+        "SITE-2": [
+          50,
+          44
+        ]
+      },
+      "root_cause": null,
+      "configuration_content_version": 1,
+      "product_revision": "REV-B"
+    }
+  ],
+  "manufacturing.quality_material": [
+    {
+      "id": "MAT-B-219",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-219",
+      "configuration_id": "CFG-B-01",
+      "disposition": "hold",
+      "physical_quantity": 100,
+      "first_pass_pass_quantity": 88,
+      "released_quantity": 0,
+      "held_quantity": 100,
+      "allocated_quantity": 0,
+      "eligible_unallocated_quantity": 0,
+      "expected_milestone_id": "MS-QE-011",
+      "allocation_order_id": null
+    }
+  ]
+}

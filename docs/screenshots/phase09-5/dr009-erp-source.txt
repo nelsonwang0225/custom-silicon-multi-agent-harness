@@ -1,0 +1,26 @@
+DR-009 · Source records
+Refresh source records
+
+PRG-A17 · ORD-HEL-800 / LINE-HEL-800-1
+
+Delivery request & commercial commitment
+
+800 requested · 2026-11-23T18:00:00Z arrival · Helios Austin receiving
+
+Plan the 800-unit delivery release against the original order date; any revised partial promise requires exact commercial approval and separate customer agreement.
+
+Original order date 2026-11-23T18:00:00Z. Revised release commitment is recorded separately below.
+
+Authorized release commitment
+
+delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c · 600 units · 2026-11-23T18:00:00Z arrival · Remaining 200 uncommitted · Customer agreement pending
+
+Existing allocations
+
+ALLOC-HEL-150 · 150 units · ORD-HEL-150 · Helios compatible release HEL-150; preserve its existing obligation
+
+Exact proposals & decisions
+
+commitment-plan-0ee111a521654fdfb7185b3daa0c4930 · v1 · 600 units · 2026-11-23T18:00:00Z · approve
+
+Open connected delivery workbench

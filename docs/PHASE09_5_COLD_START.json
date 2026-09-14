@@ -1,0 +1,351 @@
+{
+  "method": "Scripted integration testing, live adapter configured but never invoked; no paid model, no real microphone",
+  "state": ".demo/phase09-4-e2e-b327311f-d7df-4b81-9333-3cdec97de9eb",
+  "logs": ".cache/phase09-4/cold-start-b327311f-d7df-4b81-9333-3cdec97de9eb",
+  "initial": {
+    "result": "Demo ready",
+    "checks": {
+      "services_available": true,
+      "source_apps_reachable": true,
+      "baseline_valid": true,
+      "canonical_cases_present": true,
+      "no_stale_executable_proposal": true,
+      "no_running_work": true,
+      "reset_consistent": true,
+      "concierge_available": true,
+      "model_configured": true,
+      "background_inactive": true,
+      "owned_services": true
+    },
+    "services": {
+      "source": true,
+      "mcp": true,
+      "control_host": true,
+      "frontend": true
+    },
+    "source_apps": {
+      "Engineering Hub": true,
+      "Validation Lab": true,
+      "Manufacturing Portal": true,
+      "Commercial ERP": true,
+      "Program Planner": true
+    },
+    "baseline_state": "valid",
+    "baseline": {
+      "scope": "full",
+      "demo_baseline_version": "phase09-v1",
+      "baseline_valid": true,
+      "checked_at": "2026-09-12T19:56:34.673513Z",
+      "discrepancies": [],
+      "quantities": {
+        "physical_quantity": 1000,
+        "held_quantity": 250,
+        "allocated_quantity": 150,
+        "eligible_unallocated_quantity": 600,
+        "requested_quantity": 800,
+        "gap_quantity": 200
+      },
+      "source_digest": "5ff45501536e505e62709da628d9f27244f010d107670db2a0760add19fedaa4",
+      "control_digest": "f75718307bffbb869adacbbb2faba1bbc9407e32de8bf27b82204590dbded64d",
+      "source_readback": {
+        "engineering": "read_succeeded",
+        "validation": "read_succeeded",
+        "manufacturing": "read_succeeded",
+        "erp": "read_succeeded",
+        "planner": "read_succeeded"
+      },
+      "scenario_checks": {
+        "CR-017": true,
+        "CR-019": true,
+        "DR-009": true,
+        "QE-004": true
+      }
+    },
+    "demo_controls": {
+      "enabled": true,
+      "demo_baseline_version": "phase09-v1",
+      "epoch": "reset_e3c801653c5d4963b4627b736a075d12",
+      "recovery_required": false,
+      "pending_scope": null,
+      "scopes": [
+        "full",
+        "CR-017",
+        "CR-019",
+        "QE-004",
+        "DR-009"
+      ],
+      "latest": {
+        "reset_id": "reset_e3c801653c5d4963b4627b736a075d12",
+        "scope": "full",
+        "timestamp": "2026-09-12T19:56:33.374699Z",
+        "actor": "demo-maintainer",
+        "result": "restored",
+        "stage": "complete",
+        "affected_systems": [
+          "engineering",
+          "erp",
+          "manufacturing",
+          "planner",
+          "validation"
+        ],
+        "baseline_valid": true,
+        "error_code": null
+      },
+      "archived_reset_count": 1
+    },
+    "cases": {
+      "CR-017": {
+        "state": "New",
+        "source_available": true
+      },
+      "CR-019": {
+        "state": "New",
+        "source_available": true
+      },
+      "QE-004": {
+        "state": "New",
+        "source_available": true
+      },
+      "DR-009": {
+        "state": "New",
+        "source_available": true
+      }
+    },
+    "model_configuration": {
+      "model": "gpt-6-astra",
+      "credential_present": true,
+      "status": "configured",
+      "connectivity": "not_checked",
+      "paid_call_made": false
+    },
+    "background_execution": {
+      "schedulers": "not_installed",
+      "event_listeners": "not_installed",
+      "condition_evaluators": "not_installed"
+    },
+    "running_workflows": [],
+    "stale_or_unverified_decisions": [],
+    "urls": {
+      "source": "http://127.0.0.1:18241",
+      "mcp": "http://127.0.0.1:19241",
+      "host": "http://127.0.0.1:18240",
+      "ui": "http://127.0.0.1:5196"
+    },
+    "supervisor_status": "running",
+    "model_connectivity_note": "Credential format/presence only; provider access, quota and live behavior are not verified."
+  },
+  "reset": {
+    "result": "Demo ready",
+    "checks": {
+      "services_available": true,
+      "source_apps_reachable": true,
+      "baseline_valid": true,
+      "canonical_cases_present": true,
+      "no_stale_executable_proposal": true,
+      "no_running_work": true,
+      "reset_consistent": true,
+      "concierge_available": true,
+      "model_configured": true,
+      "background_inactive": true,
+      "owned_services": true
+    },
+    "services": {
+      "source": true,
+      "mcp": true,
+      "control_host": true,
+      "frontend": true
+    },
+    "source_apps": {
+      "Engineering Hub": true,
+      "Validation Lab": true,
+      "Manufacturing Portal": true,
+      "Commercial ERP": true,
+      "Program Planner": true
+    },
+    "baseline_state": "valid",
+    "baseline": {
+      "scope": "full",
+      "demo_baseline_version": "phase09-v1",
+      "baseline_valid": true,
+      "checked_at": "2026-09-12T19:57:07.754424Z",
+      "discrepancies": [],
+      "quantities": {
+        "physical_quantity": 1000,
+        "held_quantity": 250,
+        "allocated_quantity": 150,
+        "eligible_unallocated_quantity": 600,
+        "requested_quantity": 800,
+        "gap_quantity": 200
+      },
+      "source_digest": "5ff45501536e505e62709da628d9f27244f010d107670db2a0760add19fedaa4",
+      "control_digest": "f75718307bffbb869adacbbb2faba1bbc9407e32de8bf27b82204590dbded64d",
+      "source_readback": {
+        "engineering": "read_succeeded",
+        "validation": "read_succeeded",
+        "manufacturing": "read_succeeded",
+        "erp": "read_succeeded",
+        "planner": "read_succeeded"
+      },
+      "scenario_checks": {
+        "CR-017": true,
+        "CR-019": true,
+        "DR-009": true,
+        "QE-004": true
+      }
+    },
+    "demo_controls": {
+      "enabled": true,
+      "demo_baseline_version": "phase09-v1",
+      "epoch": "reset_1efbafb37bac4d95bc3685b88ef4eb6f",
+      "recovery_required": false,
+      "pending_scope": null,
+      "scopes": [
+        "full",
+        "CR-017",
+        "CR-019",
+        "QE-004",
+        "DR-009"
+      ],
+      "latest": {
+        "reset_id": "reset_1efbafb37bac4d95bc3685b88ef4eb6f",
+        "scope": "full",
+        "timestamp": "2026-09-12T19:57:06.365261Z",
+        "actor": "demo-maintainer",
+        "result": "restored",
+        "stage": "complete",
+        "affected_systems": [
+          "engineering",
+          "erp",
+          "manufacturing",
+          "planner",
+          "validation"
+        ],
+        "baseline_valid": true,
+        "error_code": null
+      },
+      "archived_reset_count": 2
+    },
+    "cases": {
+      "CR-017": {
+        "state": "New",
+        "source_available": true
+      },
+      "CR-019": {
+        "state": "New",
+        "source_available": true
+      },
+      "QE-004": {
+        "state": "New",
+        "source_available": true
+      },
+      "DR-009": {
+        "state": "New",
+        "source_available": true
+      }
+    },
+    "model_configuration": {
+      "model": "gpt-6-astra",
+      "credential_present": true,
+      "status": "configured",
+      "connectivity": "not_checked",
+      "paid_call_made": false
+    },
+    "background_execution": {
+      "schedulers": "not_installed",
+      "event_listeners": "not_installed",
+      "condition_evaluators": "not_installed"
+    },
+    "running_workflows": [],
+    "stale_or_unverified_decisions": [],
+    "urls": {
+      "source": "http://127.0.0.1:18241",
+      "mcp": "http://127.0.0.1:19241",
+      "host": "http://127.0.0.1:18240",
+      "ui": "http://127.0.0.1:5196"
+    },
+    "supervisor_status": "running",
+    "model_connectivity_note": "Credential format/presence only; provider access, quota and live behavior are not verified."
+  },
+  "route_measurements": [
+    {
+      "route": "/control/overview",
+      "settled_ms": 1304
+    },
+    {
+      "route": "/control/programs/PRG-A17",
+      "settled_ms": 1218
+    },
+    {
+      "route": "/control/programs/PRG-A17/cases/CR-017",
+      "settled_ms": 1226
+    },
+    {
+      "route": "/control/programs/PRG-A17/cases/CR-019",
+      "settled_ms": 1127
+    },
+    {
+      "route": "/control/programs/PRG-A17/cases/QE-004",
+      "settled_ms": 1220
+    },
+    {
+      "route": "/control/programs/PRG-A17/cases/DR-009",
+      "settled_ms": 1183
+    },
+    {
+      "route": "/control/workflows",
+      "settled_ms": 1211
+    },
+    {
+      "route": "/control/decisions",
+      "settled_ms": 1176
+    },
+    {
+      "route": "/control/operations",
+      "settled_ms": 1397
+    },
+    {
+      "route": "/engineering",
+      "settled_ms": 1299
+    },
+    {
+      "route": "/validation",
+      "settled_ms": 1301
+    },
+    {
+      "route": "/manufacturing",
+      "settled_ms": 1344
+    },
+    {
+      "route": "/erp",
+      "settled_ms": 1354
+    },
+    {
+      "route": "/programs",
+      "settled_ms": 1323
+    }
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "failed_http_statuses": [],
+  "intentional_restart_observations": {
+    "note": "The open page can observe refused connections or reset admission conflicts while the test deliberately stops/restarts/resets services. These legitimate errors are retained separately from the normal 14-route audit.",
+    "console_errors": [
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED http://127.0.0.1:5196/control-api/demo",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED http://127.0.0.1:5196/control-api/demo",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED http://127.0.0.1:5196/control-api/demo",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED http://127.0.0.1:5196/control-api/demo"
+    ],
+    "failed_requests": [
+      "http://127.0.0.1:5196/control-api/demo",
+      "http://127.0.0.1:5196/control-api/demo",
+      "http://127.0.0.1:5196/control-api/demo",
+      "http://127.0.0.1:5196/control-api/demo"
+    ],
+    "failed_http_statuses": []
+  },
+  "cold_start": "passed",
+  "persistence": "Source plan, plan digest, idempotency receipt and saved configuration retained across restart",
+  "baseline_restoration": "passed",
+  "baseline_restart": "passed",
+  "ownership_stop": "passed"
+}

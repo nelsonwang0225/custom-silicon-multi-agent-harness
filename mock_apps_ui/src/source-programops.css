@@ -1,0 +1,216 @@
+.app-shell.programs .programops-portfolio-summary {
+  background: linear-gradient(110deg, #fff, #f2f3f7);
+  border-left: 3px solid var(--accent);
+}
+.app-shell.programs .programops-object-summary {
+  border-radius: 4px;
+  margin-top: -4px;
+}
+.app-shell.programs .programops-object-summary strong {
+  font-size: 14px;
+}
+.app-shell.programs .programops-object-summary .badge {
+  font-size: 14px;
+}
+.app-shell.programs .programops-timeline {
+  margin-bottom: 24px;
+}
+.app-shell.programs .programops-timeline-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  color: #5b6675;
+  flex-wrap: wrap;
+}
+.app-shell.programs .programops-timeline-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.app-shell.programs .baseline-symbol {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #8b97a8;
+  transform: rotate(45deg);
+}
+.app-shell.programs .forecast-symbol {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+.app-shell.programs .programops-timeline-axis {
+  display: grid;
+  grid-template-columns: minmax(240px, 35%) 1fr;
+  padding: 12px 20px;
+  background: #fafbfc;
+  color: #647080;
+  font-size: 10px;
+  border-bottom: 1px solid #e8ecf0;
+  gap: 30px;
+}
+.app-shell.programs .programops-timeline-axis > div {
+  display: flex;
+  justify-content: space-between;
+}
+.app-shell.programs .programops-timeline-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 35%) 1fr;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 30px;
+  border-bottom: 1px solid #edf0f3;
+}
+.app-shell.programs .programops-timeline-row:last-child {
+  border-bottom: 0;
+}
+.app-shell.programs .programops-timeline-row > div > a {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 550;
+}
+.app-shell.programs .programops-timeline-row small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #627080;
+}
+.app-shell.programs .programops-timeline-track {
+  position: relative;
+  height: 37px;
+  min-width: 0;
+}
+.app-shell.programs .programops-timeline-track:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 11px;
+  height: 1px;
+  background: #dfe4eb;
+}
+.app-shell.programs .programops-base-marker {
+  position: absolute;
+  top: 7px;
+  left: var(--milestone-base);
+  width: 8px;
+  height: 8px;
+  background: #8b97a8;
+  transform: translateX(-50%) rotate(45deg);
+}
+.app-shell.programs .programops-forecast-marker {
+  position: absolute;
+  top: 6px;
+  left: var(--milestone-forecast);
+  width: 11px;
+  height: 11px;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.app-shell.programs .programops-timeline-date {
+  position: absolute;
+  top: 21px;
+  left: var(--milestone-forecast);
+  transform: translateX(-50%);
+  font-size: 10px;
+  white-space: nowrap;
+  color: #536076;
+}
+.app-shell.programs .programops-dependency-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  margin: 30px 0 17px;
+}
+.app-shell.programs .program-case {
+  border-radius: 5px;
+  border-color: #dfe4e9;
+  background: white;
+}
+.app-shell.programs .program-case > summary {
+  padding: 16px 18px;
+  font-size: 12px;
+  color: #3c4b63;
+}
+.app-shell.programs .milestone-strip {
+  border-color: #dfe4e9;
+  border-radius: 7px;
+}
+.app-shell.programs .milestone-strip > div {
+  padding: 20px;
+}
+.app-shell.programs .milestone-strip .forecast {
+  background: #f1f2f7;
+}
+.app-shell.programs .milestone-strip strong {
+  font-size: 16px;
+  color: #374059;
+}
+.app-shell.programs .programops-workstreams {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 16px 0;
+}
+.app-shell.programs .programops-workstreams article {
+  border: 1px solid #e2e5eb;
+  border-radius: 6px;
+  padding: 17px;
+  background: #fafbfc;
+}
+.app-shell.programs .programops-workstreams article > svg {
+  color: var(--accent);
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.app-shell.programs .programops-workstreams article strong {
+  font-size: 13px;
+}
+.app-shell.programs .programops-workstreams li {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+@media (max-width: 1300px) {
+  .app-shell.programs .programops-timeline-axis,
+  .app-shell.programs .programops-timeline-row {
+    grid-template-columns: minmax(230px, 38%) 1fr;
+    gap: 20px;
+  }
+  .app-shell.programs .programops-timeline-legend {
+    gap: 10px;
+  }
+}
+@media (max-width: 850px) {
+  .app-shell.programs .programops-timeline-axis,
+  .app-shell.programs .programops-timeline-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .app-shell.programs .programops-workstreams {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.programs .programops-timeline-axis > span {
+    display: none;
+  }
+}
+.app-shell.programs .programops-timeline-track {
+  height: 45px;
+}
+.app-shell.programs .programops-base-marker {
+  top: 4px;
+}
+.app-shell.programs .programops-forecast-marker {
+  top: 13px;
+}
+.app-shell.programs .programops-timeline-date {
+  top: 29px;
+}

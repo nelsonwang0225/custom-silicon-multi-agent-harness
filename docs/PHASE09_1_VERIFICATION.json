@@ -1,0 +1,508 @@
+{
+  "phase": "09.1",
+  "baseline_version": "phase09-v1",
+  "recorded_at": "2026-09-12T17:34:09.652288+00:00",
+  "status": "PASS",
+  "verification_type": "Isolated offline and scripted integration testing; no paid model or actual human approval.",
+  "checks": [
+    {
+      "name": "source/backend final",
+      "command": ".venv/bin/python -m pytest tests -q --basetemp=.cache/phase09-1/source-final",
+      "cwd": ".",
+      "result": "483 passed",
+      "log": ".cache/phase09-1/source-final.log"
+    },
+    {
+      "name": "coordinator full",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase09-1/coordinator-final",
+      "cwd": ".",
+      "result": "716 passed",
+      "log": ".cache/phase09-1/coordinator-final.log",
+      "note": "Collected before the final two additional Phase 09.1 regressions. Final focused suite below covers all 24 reset tests and the final maintenance barrier."
+    },
+    {
+      "name": "Phase 09.1 final reset regressions",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase09_demo_reset.py -q --basetemp=.cache/phase09-1/reset-final-24",
+      "cwd": ".",
+      "result": "24 passed",
+      "log": ".cache/phase09-1/reset-final-24.log"
+    },
+    {
+      "name": "MCP",
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase09-1/mcp",
+      "cwd": ".",
+      "result": "56 passed",
+      "log": ".cache/phase09-1/mcp.log"
+    },
+    {
+      "name": "offline evals",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase09-1-full",
+      "cwd": ".",
+      "result": "\"hard_gate_status\": \"PASS\"",
+      "log": ".cache/phase09-1/offline.log",
+      "passed": 112,
+      "failed": 0,
+      "critical_failures": 0,
+      "semantic_score": null,
+      "results": ".cache/phase07/phase09-1-full/results.json"
+    },
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "cwd": "mock_apps_ui",
+      "result": "tsc --noEmit",
+      "log": ".cache/phase09-1/typecheck-final.log"
+    },
+    {
+      "name": "production build",
+      "command": "npm run build",
+      "cwd": "mock_apps_ui",
+      "result": "built in",
+      "log": ".cache/phase09-1/build-final.log",
+      "advisory": "Existing entry bundle size advisory: 513.25 kB minified, threshold 500 kB."
+    },
+    {
+      "name": "existing source/control UI browser suite",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts",
+      "cwd": "mock_apps_ui",
+      "result": "56 passed",
+      "log": ".cache/phase09-1/browser-legacy-final.log"
+    },
+    {
+      "name": "reset/restart browser journey",
+      "command": "./node_modules/.bin/playwright test --config playwright.reset.config.ts",
+      "cwd": "mock_apps_ui",
+      "result": "1 passed",
+      "log": ".cache/phase09-1/browser-reset-reviewed.log",
+      "scope": "Real local source/MCP/host HTTP, deterministic SDK/manager doubles, mocked speech; scripted simulated approvals. Four mutations, restart persistence, reset, stale-tab invalidation, current search/alerts/Decisions/Operations, second restart and mobile."
+    },
+    {
+      "name": "connected workflow/Concierge/Operations browser matrix",
+      "runs": [
+        {
+          "name": "cr017",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.phase08.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {},
+          "exit_code": 0,
+          "seconds": 154.9,
+          "log": ".cache/phase09-1/browser-cr017.log",
+          "passed": 8,
+          "skipped": 0
+        },
+        {
+          "name": "cr019",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.standard.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {},
+          "exit_code": 0,
+          "seconds": 18.1,
+          "log": ".cache/phase09-1/browser-cr019.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "concierge",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.concierge.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {},
+          "exit_code": 0,
+          "seconds": 34.7,
+          "log": ".cache/phase09-1/browser-concierge.log",
+          "passed": 2,
+          "skipped": 0
+        },
+        {
+          "name": "quality-comparable",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.quality.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "QUALITY_VARIANT": "comparable"
+          },
+          "exit_code": 0,
+          "seconds": 23.6,
+          "log": ".cache/phase09-1/browser-quality-comparable.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "quality-incomparable",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.quality.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "QUALITY_VARIANT": "incomparable"
+          },
+          "exit_code": 0,
+          "seconds": 23.3,
+          "log": ".cache/phase09-1/browser-quality-incomparable.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "quality-no_alternative_supply",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.quality.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "QUALITY_VARIANT": "no_alternative_supply"
+          },
+          "exit_code": 0,
+          "seconds": 22.7,
+          "log": ".cache/phase09-1/browser-quality-no_alternative_supply.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-base",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "base"
+          },
+          "exit_code": 0,
+          "seconds": 24.4,
+          "log": ".cache/phase09-1/browser-delivery-base.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-technical_blocked",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "technical_blocked"
+          },
+          "exit_code": 0,
+          "seconds": 12.4,
+          "log": ".cache/phase09-1/browser-delivery-technical_blocked.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-future_conditional",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "future_conditional"
+          },
+          "exit_code": 0,
+          "seconds": 16.5,
+          "log": ".cache/phase09-1/browser-delivery-future_conditional.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-wrong_configuration",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "wrong_configuration"
+          },
+          "exit_code": 0,
+          "seconds": 13.7,
+          "log": ".cache/phase09-1/browser-delivery-wrong_configuration.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-partial_failure",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "partial_failure"
+          },
+          "exit_code": 0,
+          "seconds": 18.4,
+          "log": ".cache/phase09-1/browser-delivery-partial_failure.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "delivery-stale_proposal",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.delivery.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "DELIVERY_VARIANT": "stale_proposal"
+          },
+          "exit_code": 0,
+          "seconds": 13.9,
+          "log": ".cache/phase09-1/browser-delivery-stale_proposal.log",
+          "passed": 1,
+          "skipped": 0
+        },
+        {
+          "name": "operations-base",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.operations.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "OPERATIONS_VARIANT": "base"
+          },
+          "exit_code": 0,
+          "seconds": 25.4,
+          "log": ".cache/phase09-1/browser-operations-base.log",
+          "passed": 1,
+          "skipped": 1,
+          "skip_reason": "Existing mutually exclusive Operations variant tests: base and failure variants intentionally skip the inapplicable test."
+        },
+        {
+          "name": "operations-partial",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.operations.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "OPERATIONS_VARIANT": "partial"
+          },
+          "exit_code": 0,
+          "seconds": 9.9,
+          "log": ".cache/phase09-1/browser-operations-partial.log",
+          "passed": 1,
+          "skipped": 1,
+          "skip_reason": "Existing mutually exclusive Operations variant tests: base and failure variants intentionally skip the inapplicable test."
+        },
+        {
+          "name": "operations-mismatch",
+          "command": [
+            "./node_modules/.bin/playwright",
+            "test",
+            "--config",
+            "playwright.operations.config.ts"
+          ],
+          "cwd": "mock_apps_ui",
+          "env": {
+            "OPERATIONS_VARIANT": "mismatch"
+          },
+          "exit_code": 0,
+          "seconds": 9.2,
+          "log": ".cache/phase09-1/browser-operations-mismatch.log",
+          "passed": 1,
+          "skipped": 1,
+          "skip_reason": "Existing mutually exclusive Operations variant tests: base and failure variants intentionally skip the inapplicable test."
+        }
+      ],
+      "passed": 23,
+      "skipped": 3
+    },
+    {
+      "name": "actual CLI reset / verify / stop / restart / verify",
+      "server_command": "DEMO_MODE=true PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase09_1.serve --root .cache/phase09-1/cli-check --port 18291 --source-port 18292 --mcp-port 19292 --ui-origin http://127.0.0.1:5193",
+      "commands": [
+        "DEMO_MODE=true PYTHONPATH=src:. coordinator/.venv/bin/python -m program_coordinator.control_host.demo_cli --host-url http://127.0.0.1:18291 --ui-origin http://127.0.0.1:5193 reset --scope full --yes",
+        "DEMO_MODE=true PYTHONPATH=src:. coordinator/.venv/bin/python -m program_coordinator.control_host.demo_cli --host-url http://127.0.0.1:18291 --ui-origin http://127.0.0.1:5193 verify --scope full"
+      ],
+      "result": "All CLI commands exited 0; independent verify before and after same-storage service restart returned baseline_valid=true with identical source/control digests. Private CLI services stopped afterwards.",
+      "logs": [
+        ".cache/phase09-1/cli-reset.json",
+        ".cache/phase09-1/cli-verify.json",
+        ".cache/phase09-1/cli-restart-verify.json"
+      ]
+    }
+  ],
+  "browser_environment": {
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE": "/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "total_passed": 80,
+    "intentional_variant_skips": 3,
+    "screenshots_inspected": [
+      "docs/screenshots/phase09-1/baseline.png",
+      "docs/screenshots/phase09-1/confirmation.png",
+      "docs/screenshots/phase09-1/mobile.png",
+      "docs/screenshots/phase09-1/preserved-history.png"
+    ],
+    "note": "Brief Vite source-host proxy disconnects are expected during deliberate service stop/restart. Final browser journeys passed."
+  },
+  "preservation": {
+    "working_demo_databases_reset": false,
+    "historical_eval_results_verified_byte_identical_across_reset": [
+      {
+        "id": "live-original",
+        "label": "Historical full smoke",
+        "path": ".cache/phase07/eval_6740fdbd4c984ca9a64740d4d17fdde0/results.json",
+        "sha256": "63690d25ff0f27674ff00f1ccd96680578e52dbe922a38a66832f7b26fa8cb46"
+      },
+      {
+        "id": "live-full-followup",
+        "label": "Historical full smoke \u00b7 follow-up",
+        "path": ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/results.json",
+        "sha256": "bd8f1b3da6b8af682b9af54b8e7e930e9a2f28ed84fc6dce4fa0cb2485c8e726"
+      },
+      {
+        "id": "live-covered",
+        "label": "Later targeted validation \u00b7 cr017_covered",
+        "path": ".cache/phase07/eval_13433d0c5b77431981e79e0f51ff39fa/results.json",
+        "sha256": "97bb20d9a38c4439965a98014f3ed577e4810a04513f38b39723e071268c0527"
+      },
+      {
+        "id": "live-scheduled",
+        "label": "Later targeted validation \u00b7 cr017_scheduled",
+        "path": ".cache/phase07/eval_7232aeb309cd4715ac5055ad23956e0a/results.json",
+        "sha256": "679ea7d962141cfcd7f3e8e74c616a8f1d656ffa121e0656d91316bd31417ce4"
+      },
+      {
+        "id": "offline-08-5",
+        "label": "Phase 08.5 offline",
+        "path": ".cache/phase07/phase08-5-full/results.json",
+        "sha256": "f50afd65edf1c043a8c0ab2c428bccab734a9ae4783a149c9d48324be0755869"
+      },
+      {
+        "id": "offline-08-6",
+        "label": "Phase 08.6 integrated offline",
+        "path": ".cache/phase07/phase08-6-full/results.json",
+        "sha256": "14196ba898bcca0def6044ec39a255feeca9100db95766ed24ec851597869d94"
+      }
+    ],
+    "generated_run_trace_files_verified_byte_identical": true,
+    "prior_screenshots_preserved": 662,
+    "regression_captures_relocated": 148,
+    "missing_prior_manifest_files": [],
+    "regenerated_previous_phase_captures": ".cache/phase09-1/regenerated-captures"
+  },
+  "files_changed": {
+    "modified": [
+      "AGENTS.md",
+      "README.md",
+      "coordinator/evals/phase08_5/probe.py",
+      "docs/ACCEPTANCE_TESTS.md",
+      "docs/API_CONTRACT.md",
+      "mock_apps_ui/src/api.ts",
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/host-schema.d.ts",
+      "mock_apps_ui/src/control/host.tsx",
+      "mock_apps_ui/src/control/operations.tsx",
+      "mock_apps_ui/src/control/style.css",
+      "mock_apps_ui/src/main.tsx",
+      "src/mock_enterprise/app.py",
+      "src/program_coordinator/application/automations.py",
+      "src/program_coordinator/application/store.py",
+      "src/program_coordinator/control_host/__main__.py",
+      "src/program_coordinator/control_host/server.py"
+    ],
+    "added": [
+      "coordinator/evals/phase09_1/__init__.py",
+      "coordinator/evals/phase09_1/serve.py",
+      "coordinator/tests/test_phase09_demo_reset.py",
+      "docs/PHASE09_1_DEMO_BASELINE.md",
+      "docs/PHASE09_1_HANDOFF.md",
+      "docs/PHASE09_1_VERIFICATION.json",
+      "docs/phase09-1-host-openapi.json",
+      "docs/screenshots/phase09-1/baseline.png",
+      "docs/screenshots/phase09-1/confirmation.png",
+      "docs/screenshots/phase09-1/mobile.png",
+      "docs/screenshots/phase09-1/preserved-history.png",
+      "mock_apps_ui/e2e-reset/reset.spec.ts",
+      "mock_apps_ui/playwright.reset.config.ts",
+      "mock_apps_ui/src/control/demo-controls.tsx",
+      "mock_apps_ui/src/demo-epoch.ts",
+      "prompts/09_1_DEMO_RESET.md",
+      "src/mock_enterprise/demo_management.py",
+      "src/program_coordinator/control_host/demo_cli.py",
+      "src/program_coordinator/control_host/demo_management.py",
+      "src/program_coordinator/control_host/demo_models.py"
+    ],
+    "deleted": [],
+    "excluded_generated_outputs": [
+      ".cache/",
+      "pytest caches",
+      "Python bytecode",
+      "mock_apps_ui/dist/",
+      "Playwright reports/results"
+    ]
+  },
+  "resolved_verification_findings": [
+    {
+      "finding": "Initial full coordinator run: 706 passed, 1 failed in the existing Concierge integration probe.",
+      "resolution": "The developer-only wait helper now waits for the existing host preparation task to finish as well as the run status. This removes premature next-case invocation. Runtime prompts, graders and orchestration remain unchanged. Full rerun: 716 passed."
+    },
+    {
+      "finding": "Initial existing UI browser run exposed Node evaluation of the new epoch helper without sessionStorage.",
+      "resolution": "Guard sessionStorage access for browser environments; existing 56-test UI suite passed."
+    },
+    {
+      "finding": "Initial reset browser attempts exposed overly serialized host reads and test selector/startup assumptions.",
+      "resolution": "Normal HTTP requests remain concurrent; reset alone drains in-flight requests. Corrected the scripted cwd and selectors to actual UI labels and current-record search results. Final journey passed."
+    },
+    {
+      "finding": "Visual inspection found the initial mobile capture occurred before page data was ready.",
+      "resolution": "The final browser test waits for the loaded controls and successful validation before capture; mobile horizontal overflow is checked."
+    }
+  ],
+  "skipped_checks": [
+    "No paid model calls, live full smoke or model-based semantic grader. Offline results do not measure live reasoning quality.",
+    "No real microphone or external speech provider calls; browser speech is mocked.",
+    "No Git operations, application redesign, scheduler, Phase 09.2 or later work."
+  ],
+  "limitations": [
+    "One local host owns a source/metadata pair; this is not production administration or distributed coordination.",
+    "After partial reset, explicit same-scope/full retry is required; no automatic rollback across source and host stores is claimed.",
+    "Archives accumulate and are not exposed as executable current state; retention and an archive browser are outside this slice.",
+    "Historical source/trace/eval artifacts and working demo databases are preserved. The operator must explicitly enable controls and run reset before a walkthrough.",
+    "Existing bundle-size advisory remains."
+  ],
+  "next_phase": "09.2 only on explicit request: follow the handoff pre-demo sequence, require baseline_valid=true, then begin golden-path walkthrough/fixes."
+}

@@ -1,0 +1,533 @@
+[
+  {
+    "workflow_id": "requirement_change_analysis",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Requirement Change Analysis",
+    "purpose": "Investigate changed requirements, evidence, options and program impact.",
+    "mode": "Connected",
+    "registry_entry": true,
+    "definition_version": 1,
+    "manual_available": true,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [
+      "change_impact",
+      "validation_evidence",
+      "program_commercial",
+      "manufacturing"
+    ],
+    "source_systems": [
+      "Engineering Hub",
+      "Validation Lab",
+      "Manufacturing Portal",
+      "Commercial ERP",
+      "Program Planner"
+    ],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [
+      "CR-017",
+      "CR-019"
+    ],
+    "inputs": [
+      "CR-017 material change or CR-019 standard package",
+      "Exact program and customer scope",
+      "Current source evidence"
+    ],
+    "outputs": [
+      "Recorded findings and specialist assessments",
+      "Exact proposal when supported; separate engineering decision",
+      "Governed handoff through the existing case workbench"
+    ],
+    "actions": [
+      "Read-only agent investigation",
+      "Existing host may prepare an exact proposal for review",
+      "Execute only separately approved actions in the case workbench"
+    ],
+    "approvals": "CR-017: exact engineering approval before execution. CR-019: prior approved policy permits intake handoff only; no new approval.",
+    "limits": "Cannot approve itself, author lab results, release holds, change criteria or customer commitments.",
+    "story": "1A / 1B \u00b7 Connected change-management family",
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "yield_exception_recovery",
+    "invocation_workflow_id": "yield_exception_recovery",
+    "connected_route": "quality_recovery",
+    "name": "Yield / Quality Exception Recovery",
+    "purpose": "Validate a Manufacturing quality exception, quantify eligible supply and prepare governed recovery.",
+    "mode": "Connected",
+    "registry_entry": true,
+    "definition_version": 1,
+    "manual_available": true,
+    "authority": "bounded_execution",
+    "configuration_authorities": [
+      "read_only",
+      "proposal_only"
+    ],
+    "specialists": [
+      "manufacturing",
+      "validation_evidence",
+      "program_commercial"
+    ],
+    "source_systems": [
+      "Engineering Hub",
+      "Validation Lab",
+      "Manufacturing Portal",
+      "Commercial ERP",
+      "Program Planner"
+    ],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [
+      "QE-004"
+    ],
+    "inputs": [
+      "QE-004 Manufacturing exception or explicitly armed QE-011 event",
+      "Exact source program/configuration/test context",
+      "Milestone and customer demand"
+    ],
+    "outputs": [
+      "Validated comparison and supply exposure",
+      "Standard investigation handoff",
+      "Exact human recovery plan and verified Planner task"
+    ],
+    "actions": [
+      "Read-only specialist investigation",
+      "Route approved standard investigation",
+      "Record Planner recovery task only after exact Program Owner approval"
+    ],
+    "approvals": "QE-004: Program Owner reviews the exact recovery plan. QE-011: approved standard investigation handoff needs no new human approval. Quality disposition, allocation and customer commitments retain separate authority.",
+    "limits": "No lot release, test changes, inventory allocation or ERP writes. Only explicitly prepared QE-011 can start from a source event. Saved generic automations remain configuration-only.",
+    "story": "2 \u00b7 Yield / quality recovery",
+    "latest_run_id": null,
+    "source_event_scope": "Connected for bounded quality_exception_created demo trigger \u00b7 QE-011 only"
+  },
+  {
+    "workflow_id": "delivery_readiness",
+    "invocation_workflow_id": "delivery_readiness",
+    "connected_route": "delivery_commitment",
+    "name": "Delivery Readiness / Commitment Planning",
+    "purpose": "Assess exact customer demand, technical readiness and supply; prepare a governed commitment.",
+    "mode": "Connected",
+    "registry_entry": true,
+    "definition_version": 1,
+    "manual_available": true,
+    "authority": "bounded_execution",
+    "configuration_authorities": [
+      "read_only",
+      "proposal_only"
+    ],
+    "specialists": [
+      "manufacturing",
+      "validation_evidence",
+      "program_commercial"
+    ],
+    "source_systems": [
+      "Engineering Hub",
+      "Validation Lab",
+      "Manufacturing Portal",
+      "Commercial ERP",
+      "Program Planner"
+    ],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [
+      "DR-009"
+    ],
+    "inputs": [
+      "Exact ERP order/release quantity and arrival or ship date",
+      "Engineering/Validation readiness",
+      "Shared Manufacturing material and ERP allocations",
+      "Planner logistics"
+    ],
+    "outputs": [
+      "Deterministic readiness and supply calculation",
+      "Exact partial commitment proposal",
+      "Approved ERP commitment and verified Planner link"
+    ],
+    "actions": [
+      "Read-only specialist analysis",
+      "Draft source-bound commitment",
+      "Execute exact ERP and Planner updates after Program Owner approval"
+    ],
+    "approvals": "Exact Program Owner approval for quantity/date commitment. Allocation changes require separate authority and are analysis-only.",
+    "limits": "No reallocation, quality release, manufacturing or validation change, shipment or customer acceptance. Schedule saved; background scheduler not enabled.",
+    "story": "3 \u00b7 Delivery readiness",
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "standard_change",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": "standard_touchless_handoff",
+    "name": "Standard Change / Touchless Handoff",
+    "purpose": "Verify exact approved scope and deliver the standard package to Validation Operations.",
+    "mode": "Connected",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": true,
+    "authority": "bounded_execution",
+    "configuration_authorities": [
+      "read_only",
+      "bounded_execution"
+    ],
+    "specialists": [
+      "change_impact",
+      "validation_evidence",
+      "program_commercial"
+    ],
+    "source_systems": [
+      "Engineering Hub",
+      "Validation Lab",
+      "Program Planner"
+    ],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [
+      "CR-019"
+    ],
+    "inputs": [
+      "CR-019 approved-profile package request",
+      "Exact approved procedure/configuration and evidence",
+      "Nominated sample and timing"
+    ],
+    "outputs": [
+      "Verified applicability and reusable evidence",
+      "Execution-ready standard package",
+      "Independently verified Validation Operations intake"
+    ],
+    "actions": [
+      "Shared requirement-change Coordinator investigation",
+      "Deterministic standard policy check",
+      "Create one bounded standard intake and read it back"
+    ],
+    "approvals": "No new human approval for the pre-authorized intake handoff. Lab authorization and acceptance remain downstream.",
+    "limits": "Connected route within Requirement Change Analysis. Cannot schedule or authorize a lab job, change criteria, grant acceptance or commitments.",
+    "story": "1A \u00b7 Standard change",
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "specification_drift",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Specification Drift Detection",
+    "purpose": "Compare changing specifications with approved program scope.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "tapeout_readiness",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Tapeout Readiness Review",
+    "purpose": "Bring evidence and unresolved gates into a readiness review.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "platform_ip_errata",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Platform IP / Errata Propagation",
+    "purpose": "Identify programs affected by shared IP or errata changes.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "supply_manufacturing",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Supply & Manufacturing Signals",
+    "purpose": "Relate supply exceptions to program constraints.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "post_silicon",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Post-Silicon Bring-Up / Errata",
+    "purpose": "Connect bring-up observations, applicability and follow-up.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "customer_commitment",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Customer Commitment Review",
+    "purpose": "Review readiness against recorded customer commitments.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "portfolio_risk",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Portfolio Risk / Early Warning",
+    "purpose": "Review risk signals and dependencies across program scope.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "scenario_capacity",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Scenario / Capacity Planning",
+    "purpose": "Compare illustrative resource and timing scenarios.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  },
+  {
+    "workflow_id": "next_generation_requirements",
+    "invocation_workflow_id": "requirement_change_analysis",
+    "connected_route": null,
+    "name": "Next-Generation Requirements Harvest",
+    "purpose": "Organize future requirements for authorized human review.",
+    "mode": "Preview",
+    "registry_entry": false,
+    "definition_version": 1,
+    "manual_available": false,
+    "authority": "read_only",
+    "configuration_authorities": [
+      "read_only"
+    ],
+    "specialists": [],
+    "source_systems": [],
+    "programs": [
+      "PRG-A17"
+    ],
+    "cases": [],
+    "inputs": [
+      "Illustrative PRG-A17 program context"
+    ],
+    "outputs": [
+      "Future findings or review packet"
+    ],
+    "actions": [
+      "Save configuration previews only"
+    ],
+    "approvals": "Any future consequential action requires an installed policy and authorized human review.",
+    "limits": "Product concept only. No executor, source access or interactive simulation is installed.",
+    "story": null,
+    "latest_run_id": null,
+    "source_event_scope": null
+  }
+]

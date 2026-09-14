@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-INCOMPLETE-019",
+  "change_id": null,
+  "customer_id": null,
+  "program_id": null,
+  "source_system": "customer_intake",
+  "change_type_hint": null,
+  "priority": "high",
+  "requested_by": "Unverified synthetic intake mailbox",
+  "received_at": "2026-11-16T09:00:00Z",
+  "request_summary": "Please move the acceptance date and confirm compatibility for the new firmware. The customer, program, change record, firmware revision and requested acceptance date have not been supplied.",
+  "linked_record_ids": [],
+  "correlation_id": "corr-phase05-incomplete-019"
+}

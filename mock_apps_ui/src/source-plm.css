@@ -1,0 +1,508 @@
+/* Engineering-only presentation. Source records and authority stay in the existing views. */
+.app-shell.engineering .plm-registry-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.app-shell.engineering .plm-registry-main {
+  min-width: 0;
+}
+
+.app-shell.engineering .plm-structure {
+  border: 1px solid #dfe4e9;
+  border-radius: 5px;
+  background: #f9fafb;
+  overflow: hidden;
+}
+
+.app-shell.engineering .plm-structure-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 17px 13px 9px;
+  color: #355e81;
+}
+
+.app-shell.engineering .plm-structure-heading h2 {
+  font-size: 14px;
+  letter-spacing: -0.15px;
+}
+
+.app-shell.engineering .plm-structure-heading svg {
+  flex-shrink: 0;
+}
+
+.app-shell.engineering .plm-structure-caption {
+  color: #647180;
+  font-size: 12px;
+  line-height: 1.45;
+  padding: 0 13px 13px;
+  margin: 0;
+  border-bottom: 1px solid #e4e8ec;
+}
+
+.app-shell.engineering .plm-structure-tree {
+  padding: 9px 10px 16px;
+  max-height: 680px;
+  overflow: auto;
+}
+
+.app-shell.engineering .plm-structure-tree details {
+  margin: 4px 0 13px;
+}
+
+.app-shell.engineering .plm-structure-tree summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  color: #30465b;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.app-shell.engineering .plm-structure-tree summary svg {
+  vertical-align: -3px;
+  margin-right: 5px;
+  color: #6a7d90;
+}
+
+.app-shell.engineering .plm-structure-tree ul {
+  list-style: none;
+  margin: 9px 0 0 7px;
+  padding: 0 0 0 12px;
+  border-left: 1px solid #d6dfe7;
+}
+
+.app-shell.engineering .plm-structure-tree li {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.app-shell.engineering .plm-structure-tree li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -12px;
+  width: 8px;
+  border-top: 1px solid #d6dfe7;
+}
+
+.app-shell.engineering .plm-tree-config span,
+.app-shell.engineering .plm-tree-config strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.app-shell.engineering .plm-tree-config span {
+  color: #6b7683;
+}
+
+.app-shell.engineering .plm-structure-tree li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 1px 2px;
+  font-size: 12px;
+}
+
+.app-shell.engineering .plm-registry .toolbar {
+  background: #fff;
+  border: 1px solid #dfe4e9;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  padding: 13px;
+  margin: 0;
+  gap: 8px;
+}
+
+.app-shell.engineering .plm-registry .toolbar select {
+  min-width: 0;
+  max-width: 220px;
+  font-size: 12px;
+}
+
+.app-shell.engineering .plm-registry .toolbar .search {
+  flex: 1 1 210px;
+  min-width: 160px;
+}
+
+.app-shell.engineering .plm-registry .toolbar > .muted {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.app-shell.engineering .plm-worklist {
+  border-radius: 0 0 5px 5px;
+  box-shadow: none;
+}
+
+.app-shell.engineering .plm-worklist .panel-heading {
+  padding: 12px 14px;
+  min-height: 47px;
+}
+
+.app-shell.engineering .plm-worklist table {
+  min-width: 730px;
+}
+
+.app-shell.engineering .plm-worklist th {
+  padding: 11px 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  background: #f5f7f9;
+}
+
+.app-shell.engineering .plm-worklist td {
+  padding: 13px 12px;
+  line-height: 1.45;
+  font-size: 13px;
+}
+
+.app-shell.engineering .plm-worklist td:first-child {
+  width: 22%;
+  min-width: 150px;
+}
+
+.app-shell.engineering .plm-worklist td:last-child {
+  width: 22%;
+  min-width: 155px;
+}
+
+.app-shell.engineering .plm-worklist td p,
+.app-shell.engineering .plm-worklist .cell-secondary {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.app-shell.engineering .plm-worklist .strong-link {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 12px;
+}
+
+.app-shell.engineering .plm-registry-support {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(200px, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.app-shell.engineering .plm-registry-support .panel-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.app-shell.engineering .plm-registry-support .link-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.app-shell.engineering .plm-registry-support .link-list > a {
+  min-width: 0;
+  padding: 14px;
+  font-size: 13px;
+}
+
+.app-shell.engineering .plm-registry-support .link-list > a > svg {
+  flex-shrink: 0;
+}
+
+.app-shell.engineering .plm-review-boundary {
+  padding: 16px 0 0 18px;
+  border-left: 2px solid #d5dfe8;
+  align-self: start;
+}
+
+.app-shell.engineering .plm-review-boundary h2 {
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.app-shell.engineering .plm-review-boundary p {
+  font-size: 12px;
+  color: #5b6675;
+  line-height: 1.65;
+}
+
+.app-shell.engineering .plm-object-header {
+  background: #fff;
+  border: 1px solid #dfe4e9;
+  border-top: 3px solid #355e81;
+  border-bottom: 0;
+  padding: 22px 23px 0;
+}
+
+.app-shell.engineering .plm-object-header .page-heading {
+  margin-bottom: 15px;
+}
+
+.app-shell.engineering .plm-object-header .page-heading h1 {
+  font-size: clamp(23px, 1.6vw, 29px);
+  max-width: 850px;
+}
+
+.app-shell.engineering .plm-object-header .page-heading > .button {
+  white-space: nowrap;
+}
+
+.app-shell.engineering .plm-object-header .case-state {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.app-shell.engineering .plm-object-header > .facts {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  padding: 0;
+  border-top: 1px solid #e7ebef;
+  margin: 0;
+}
+
+.app-shell.engineering .plm-object-header > .facts > div {
+  display: block;
+  min-width: 0;
+  border: 0;
+  padding: 15px 16px 15px 0;
+}
+
+.app-shell.engineering .plm-object-header > .facts dt {
+  font-size: 11px;
+  margin-bottom: 6px;
+  color: #65717d;
+}
+
+.app-shell.engineering .plm-object-header > .facts dd {
+  font-size: 13px;
+  font-weight: 560;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.app-shell.engineering .plm-section-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 5px;
+  background: #fff;
+  border: 1px solid #dfe4e9;
+  padding: 0 15px;
+  margin-bottom: 18px;
+}
+
+.app-shell.engineering .plm-section-nav a {
+  padding: 13px 12px;
+  border-radius: 0;
+  color: #4a5d70;
+  font-size: 13px;
+  font-weight: 550;
+  border-bottom: 2px solid transparent;
+}
+
+.app-shell.engineering .plm-section-nav a:hover,
+.app-shell.engineering .plm-section-nav a:focus-visible {
+  color: #244f76;
+  background: #f4f7fa;
+  border-bottom-color: #557d9f;
+}
+
+.app-shell.engineering .plm-applicability {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+      0,
+      0.7fr
+    ) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 17px;
+  padding: 17px 20px;
+  margin-bottom: 20px;
+  background: #edf2f6;
+  border-left: 3px solid #b7c9d9;
+}
+
+.app-shell.engineering .plm-applicability-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #556d82;
+  font-size: 12px;
+  padding-right: 13px;
+}
+
+.app-shell.engineering .plm-applicability > svg {
+  color: #8a9cad;
+}
+
+.app-shell.engineering .plm-applicability small,
+.app-shell.engineering .plm-applicability strong {
+  display: block;
+  line-height: 1.5;
+}
+
+.app-shell.engineering .plm-applicability small {
+  font-size: 11px;
+  color: #607284;
+  margin-bottom: 3px;
+}
+
+.app-shell.engineering .plm-applicability strong {
+  color: #304e67;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app-shell.engineering .plm-object-page [id^="plm-"] {
+  scroll-margin-top: 20px;
+}
+
+.app-shell.engineering .plm-object-page .panel {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.app-shell.engineering .plm-object-page .requirement-comparison th {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.app-shell.engineering .plm-object-page .requirement-comparison td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
+.app-shell.engineering .plm-object-page .requirement-comparison td:first-child {
+  width: 27%;
+  color: #5b6675;
+  font-size: 12px;
+}
+
+.app-shell.engineering .plm-object-page .requirement-comparison .changed-value {
+  background: #eef4f9;
+  color: #28597c;
+}
+
+.app-shell.engineering .plm-object-page .facts {
+  font-variant-numeric: tabular-nums;
+}
+
+.app-shell.engineering .plm-object-page .engineering-decision {
+  border-top: 3px solid #456d8d;
+}
+
+@media (max-width: 1350px) {
+  .app-shell.engineering .plm-registry-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .app-shell.engineering .plm-structure {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .app-shell.engineering .plm-structure-heading {
+    align-self: start;
+  }
+
+  .app-shell.engineering .plm-structure-caption {
+    grid-column: 1;
+    border-bottom: 0;
+    margin-top: -7px;
+  }
+
+  .app-shell.engineering .plm-structure-tree {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    max-height: 158px;
+    padding: 13px 15px 6px;
+    border-left: 1px solid #e4e8ec;
+  }
+
+  .app-shell.engineering .plm-applicability {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .app-shell.engineering .plm-applicability-label {
+    display: none;
+  }
+
+  .app-shell.engineering .plm-applicability {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+        0,
+        0.7fr
+      ) auto minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1050px) {
+  .app-shell.engineering .plm-object-header > .facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .app-shell.engineering .plm-registry-support,
+  .app-shell.engineering .plm-configuration-grid,
+  .app-shell.engineering .plm-reference-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .app-shell.engineering .plm-structure-tree {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell.engineering .plm-object-header {
+    padding: 17px 15px 0;
+  }
+
+  .app-shell.engineering .plm-object-header .page-heading {
+    flex-direction: column;
+  }
+
+  .app-shell.engineering .plm-object-header .page-heading > .button {
+    margin-top: 0;
+    white-space: normal;
+  }
+
+  .app-shell.engineering .plm-object-header > .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-shell.engineering .plm-applicability {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .app-shell.engineering .plm-applicability > svg {
+    display: none;
+  }
+
+  .app-shell.engineering .plm-structure {
+    display: block;
+  }
+
+  .app-shell.engineering .plm-structure-tree {
+    display: block;
+    border-left: 0;
+    max-height: 220px;
+  }
+
+  .app-shell.engineering .plm-registry-support .link-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

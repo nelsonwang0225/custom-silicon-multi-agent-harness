@@ -1,0 +1,423 @@
+Connected demo · Current read
+Refresh
+Operations
+DR-009 · Workflow run
+Workflow run
+
+DR-009 · Execution verified
+
+Open DR-009
+Execution verified
+
+Recorded runtime and business outcome are separate. Current source facts are read independently.
+
+Refresh run detail
+
+Plan the 800-unit delivery release against the original order date; any revised partial promise requires exact commercial approval and separate customer agreement.
+
+Runtime state
+Completed
+Business outcome
+Execution verified
+Workflow
+Delivery readiness
+Program / case
+PRG-A17 / DR-009
+Invocation source
+Manual
+Trusted demo actor
+demo-automation
+Started
+Sep 12, 2026, 08:15 PM UTC
+Completed
+Sep 12, 2026, 08:17 PM UTC
+Decision
+Approved
+Verification
+Verified
+Agent participation
+
+Only recorded invocations appear. Missing participation is unavailable, never assumed completed.
+
+Program Coordinator
+Completed
+Coordinator-owned run · 1.9 min
+
+Manufacturing
+Completed
+From Program Coordinator · 42.4 s
+
+Manufacturing verification supports only the source-calculated 600-unit partial proposal. The entire QE-004 lot remains held, and the separate 150-unit allocation remains protected. No source-supported supply/date plan exists for the 200-unit remainder. No commitment or allocation was changed.
+
+Validation & Evidence
+Completed
+From Program Coordinator · 39.7 s
+
+Baseline technical readiness is READY: recorded applicable validation and exact Engineering clearance support CFG-B-01 under REQ-042-V1. Customer technical acceptance remains pending. Only the calculated 600-unit partial arrival proposal is supportable; the full 800-unit request is not. No commitment or allocation was changed.
+
+Program & Commercial
+Completed
+From Program Coordinator · 39.0 s
+
+The original obligation remains 800 units due November 23, 2026. Source calculations support proposing 600 units arriving by that date, leaving 200 units without a supported supply/date plan. No delivery-release commitment exists. Exact Program Owner approval and separate customer agreement are required; this assessment changes neither commitments nor allocations.
+
+Business timeline
+Analysis started
+Sep 12, 2026, 08:15 PM UTC · demo-automation
+Proposal retained
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+analysis_complete
+Action started
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+prepare_started
+Action record retained
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+prepare_action_succeeded
+Source state verified
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+prepare_action_succeeded
+Approval requested
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+awaiting_review
+Analysis completed
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+Recommendation recorded
+Sep 12, 2026, 08:17 PM UTC · demo-automation
+Action started
+Sep 12, 2026, 08:20 PM UTC · demo-program-owner
+review_started
+Action record retained
+Sep 12, 2026, 08:20 PM UTC · demo-program-owner
+review_action_succeeded
+Source state verified
+Sep 12, 2026, 08:20 PM UTC · demo-program-owner
+review_action_succeeded
+Proposal approved
+Sep 12, 2026, 08:20 PM UTC · demo-program-owner
+approved
+Action started
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+erp_started
+Action record retained
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+erp_action_succeeded
+Source state verified
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+erp_action_succeeded
+Action started
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+planner_started
+Action record retained
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+planner_action_succeeded
+Source state verified
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+planner_action_succeeded
+Execution completed
+Sep 12, 2026, 08:20 PM UTC · demo-automation
+verified
+Evidence used
+
+Historical references and versions from this investigation; applicability is not inferred from retrieval.
+
+SOURCE / RECORD	VERSION	APPLICABILITY
+PRG-A17
+get_program
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+src_0002
+get_delivery_context
+	Content unavailable · Record unavailable	Referenced in analysis; inspect source for applicability
+ORD-HEL-800
+get_customer_order
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+LOT-B-203
+get_manufacturing_lot
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+MS-HEL-800
+get_program_milestone
+	Content 1 · Record 1	Referenced in analysis; inspect source for applicability
+LOT-B-204
+get_manufacturing_lot
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+ORD-HEL-150
+get_customer_order
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+LOT-B-202
+get_manufacturing_lot
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+src_0009
+get_delivery_context
+	Content unavailable · Record unavailable	Referenced in analysis; inspect source for applicability
+CFG-B-01
+get_configuration
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+REQ-042-V1
+get_requirement_revision
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+RES-BASELINE-B
+get_validation_result
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+WF-LC-V1
+get_workload_profile
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+CRIT-BASE-V1
+get_acceptance_criteria
+	Content 1 · Record unavailable	Referenced in analysis; inspect source for applicability
+src_0015
+get_delivery_context
+	Content unavailable · Record unavailable	Referenced in analysis; inspect source for applicability
+Tools & services
+Tools & services
+OPERATION	CALLER / TARGET	RESULT	LATENCY
+get_program
+PRG-A17
+	Program Coordinator
+Program Planner
+	Succeeded	144 ms
+get_delivery_context
+DR-009
+	Program Coordinator
+Commercial ERP
+	Succeeded	223 ms
+get_customer_order
+ORD-HEL-800
+	Program & Commercial
+Commercial ERP
+	Succeeded	105 ms
+get_manufacturing_lot
+LOT-B-203
+	Manufacturing
+Manufacturing Portal
+	Succeeded	104 ms
+get_program_milestone
+PRG-A17 · MS-HEL-800
+	Program & Commercial
+Program Planner
+	Succeeded	219 ms
+get_manufacturing_lot
+LOT-B-204
+	Manufacturing
+Manufacturing Portal
+	Succeeded	211 ms
+get_customer_order
+ORD-HEL-150
+	Program & Commercial
+Commercial ERP
+	Succeeded	331 ms
+get_manufacturing_lot
+LOT-B-202
+	Manufacturing
+Manufacturing Portal
+	Succeeded	332 ms
+get_delivery_context
+DR-009
+	Manufacturing
+Commercial ERP
+	Succeeded	404 ms
+get_configuration
+CFG-B-01
+	Validation & Evidence
+Engineering Hub
+	Succeeded	70 ms
+get_requirement_revision
+REQ-042-V1
+	Validation & Evidence
+Engineering Hub
+	Succeeded	143 ms
+get_validation_result
+RES-BASELINE-B
+	Validation & Evidence
+Validation Lab
+	Succeeded	203 ms
+get_workload_profile
+WF-LC-V1
+	Validation & Evidence
+Engineering Hub
+	Succeeded	266 ms
+get_acceptance_criteria
+CRIT-BASE-V1
+	Validation & Evidence
+Engineering Hub
+	Succeeded	327 ms
+get_delivery_context
+DR-009
+	Validation & Evidence
+Commercial ERP
+	Succeeded	384 ms
+Prepare source plan
+commitment-plan-0ee111a521654fdfb7185b3daa0c4930
+	Trusted host
+Commercial ERP
+	Execution verified	Unavailable
+Record source decision
+commitment-decision-95c59bdfd9f4497a87dc1e5e9057d8c2
+	Trusted host
+Commercial ERP
+	Execution verified	Unavailable
+ERP commitment update
+delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c
+	Trusted host
+Commercial ERP
+	Execution verified	Unavailable
+Planner update
+delivery-link-cf737911c87c4037b4dedb7f9d5e24b7
+	Trusted host
+Program Planner
+	Execution verified	Unavailable
+Decision & authorized manifest
+Execution & independent verification
+
+A successful action response does not establish a matching readback.
+
+Prepare
+Action
+Succeeded
+Readback
+Verified
+Expected
+Exact source plan commitment-plan-0ee111a521654fdfb7185b3daa0c4930
+Actual
+Independent source record commitment-plan-0ee111a521654fdfb7185b3daa0c4930 matched
+Source record
+commitment-plan-0ee111a521654fdfb7185b3daa0c4930
+Attempts & idempotency
+Review
+Action
+Succeeded
+Readback
+Verified
+Expected
+Exact source plan commitment-plan-0ee111a521654fdfb7185b3daa0c4930
+Actual
+Independent source record commitment-decision-95c59bdfd9f4497a87dc1e5e9057d8c2 matched
+Source record
+commitment-decision-95c59bdfd9f4497a87dc1e5e9057d8c2
+Attempts & idempotency
+ERP commitment
+Action
+Succeeded
+Readback
+Verified
+Expected
+{'plan_id': 'commitment-plan-0ee111a521654fdfb7185b3daa0c4930', 'quantity': 600, 'committed_at': '2026-11-23T18:00:00Z', 'destination': 'Helios Austin receiving'}
+Actual
+{'id': 'delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c', 'plan_id': 'commitment-plan-0ee111a521654fdfb7185b3daa0c4930', 'quantity': 600, 'committed_at': '2026-11-23T18:00:00Z', 'destination': 'Helios Austin receiving'}
+Source record
+delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c
+Attempts & idempotency
+Planner update
+Action
+Succeeded
+Readback
+Verified
+Expected
+Exact source plan commitment-plan-0ee111a521654fdfb7185b3daa0c4930
+Actual
+Independent source record delivery-link-cf737911c87c4037b4dedb7f9d5e24b7 matched
+Source record
+delivery-link-cf737911c87c4037b4dedb7f9d5e24b7
+Attempts & idempotency
+Current business context
+
+Source read Sep 12, 2026, 08:24 PM UTC
+
+Current case state
+waiting_external
+Current source
+Commitment and Planner link verified; 200 gap remains.
+Next step
+Resolve the remaining supply gap; customer agreement stays separate.
+Technical readiness
+READY
+Eligible quantity
+600
+Requested quantity
+800
+Gap quantity
+200
+Customer ready quantity
+600
+Held quantity
+250
+Allocated quantity
+150
+Timing status
+supported
+Proposed at
+2026-11-23T18:00:00Z
+Blockers
+None recorded
+Customer agreement
+pending
+Commercial commitment
+600
+Boundary
+Technical acceptance, commercial commitment and physical delivery are separate.
+Full quantity/date
+Full request is not supported; no full-delivery date promised.
+Disposition
+released
+Held quantity
+0
+Allocated quantity
+0
+Eligible unallocated quantity
+600
+Disposition
+hold
+Held quantity
+250
+Allocated quantity
+0
+Eligible unallocated quantity
+0
+Disposition
+released
+Held quantity
+0
+Allocated quantity
+150
+Eligible unallocated quantity
+0
+Runtime
+completed
+Business outcome
+verified
+Run
+run_39bb048d7dd94ba5b2d86f5da7301082
+Invocation
+ui_17fb7fc281f74ac18529dd23b674009a
+Basis
+Persisted run; completion alone is not business success
+Open DR-009
+Open program
+View decisions
+Technical details
+Trace ID
+trace_ecb23d2420de475589168c84d10b2196
+Model
+gpt-6-astra
+Mode
+Live model
+Agent execution elapsed
+1.9 min
+Model calls cumulative latency
+3.1 min
+Human wait
+2.5 min
+External wait
+Unavailable
+Input tokens
+83,397
+Output tokens
+14,138
+Total tokens
+97,535
+Artifacts
+Available
+
+Token totals cover completed recorded generations. Concurrent model latencies are cumulative, not elapsed runtime. Human wait is separate. No cost estimate or platform trace availability is inferred.
+
+Stratos Silicon · Fictional enterprise
+Demo identities · Not production authentication
+Current read · Sep 12, 2026, 08:24 PM UTC

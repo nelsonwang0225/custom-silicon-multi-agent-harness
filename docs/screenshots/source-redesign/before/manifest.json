@@ -1,0 +1,62 @@
+[
+  {
+    "name": "plm-home",
+    "path": "/engineering",
+    "title": "Change requests",
+    "errors": []
+  },
+  {
+    "name": "plm-cr017",
+    "path": "/engineering/changes/CR-017",
+    "title": "Long-context workload acceptance evidence",
+    "errors": []
+  },
+  {
+    "name": "testops-home",
+    "path": "/validation",
+    "title": "Evidence & coverage",
+    "errors": []
+  },
+  {
+    "name": "testops-job",
+    "path": "/validation/jobs/job-P01-1",
+    "title": "Validation job",
+    "errors": []
+  },
+  {
+    "name": "mes-home",
+    "path": "/manufacturing",
+    "title": "Unit inventory",
+    "errors": []
+  },
+  {
+    "name": "mes-qe004",
+    "path": "/manufacturing/quality/QE-004",
+    "title": "QE-004 · Source records",
+    "errors": []
+  },
+  {
+    "name": "erp-home",
+    "path": "/erp",
+    "title": "Customer orders",
+    "errors": []
+  },
+  {
+    "name": "erp-ord1204",
+    "path": "/erp/orders/ORD-1204",
+    "title": "ORD-1204",
+    "errors": []
+  },
+  {
+    "name": "programops-home",
+    "path": "/programs",
+    "title": "Program workspaces",
+    "errors": []
+  },
+  {
+    "name": "programops-prga17",
+    "path": "/programs/PRG-A17",
+    "title": "ACCELERATOR-X program",
+    "errors": []
+  }
+]

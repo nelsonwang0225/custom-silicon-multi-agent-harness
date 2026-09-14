@@ -1,0 +1,186 @@
+{
+  "phase": "08.4A",
+  "label": "OFFLINE SCRIPTED INTEGRATION TESTING; DETERMINISTIC MODEL DOUBLES; DEMO IDENTITIES",
+  "checks": [
+    {
+      "label": "Source/backend, including standard contracts and critical-source preservation",
+      "command": "PYTHONPATH=src:. .venv/bin/python -m pytest tests -q --basetemp=.cache/phase08-4a/source-scope-final",
+      "log": ".cache/phase08-4a/source-scope-final.log",
+      "passed": 434,
+      "log_sha256": "25f9a3a4aec75869bda8711045b45b20caf3dfba6bd3c03b487acb96c2b0b810",
+      "result": "passed"
+    },
+    {
+      "label": "Coordinator, standard route, Phase 06 governance and Phase 07 regressions",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase08-4a/coordinator-scope-final",
+      "log": ".cache/phase08-4a/coordinator-scope-final.log",
+      "passed": 636,
+      "log_sha256": "26edcd165b064454fe8f39d68b6bcac084ca8b420e612dedc36d92eef9efabd1",
+      "result": "passed"
+    },
+    {
+      "label": "MCP discovery and real HTTP integration, all 26 scoped read tools",
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase08-4a/mcp-complete",
+      "log": ".cache/phase08-4a/mcp-complete.log",
+      "passed": 56,
+      "log_sha256": "c3e681541081ca493adaf0d8e98fcc799fdd9a2ba2fbe4d62ecf23c80169f796",
+      "result": "passed"
+    },
+    {
+      "label": "Phase 07 original dataset plus standard runtime probes",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --output .cache/phase07/phase08-4a-complete",
+      "log": ".cache/phase08-4a/evals-complete.log",
+      "passed": 63,
+      "log_sha256": "3257c8c3adda956b0469bd8b1310fb84e6eb64776f020f10a2b1dbd78aaa1b85",
+      "result": "passed"
+    },
+    {
+      "label": "Source UI/component/browser suite",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npm run test:e2e",
+      "log": ".cache/phase08-4a/browser-regressions.log",
+      "passed": 55,
+      "log_sha256": "cfc832d2ca3f0ab1f3277e9781d3d6ba2376163a07f55a834011ccb49869ee04",
+      "result": "corrected by targeted rerun"
+    },
+    {
+      "label": "Corrected preview-count control journey regression",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test e2e/control-plane.spec.ts -g \"control journey\"",
+      "log": ".cache/phase08-4a/browser-control-corrected.log",
+      "passed": 1,
+      "log_sha256": "20d0b49eb30fbea0527035f8272130b0dc8bdc4bacf4cea1b1cbedc551f7a27d",
+      "result": "passed"
+    },
+    {
+      "label": "Existing connected CR-017/browser suite",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test -c playwright.phase08.config.ts",
+      "log": ".cache/phase08-4a/browser-connected-regressions.log",
+      "passed": 6,
+      "log_sha256": "eacfcdc2c5e9a65eb292e165414185d99a76de7bb1750283c4232269b127e0c9",
+      "result": "corrected by targeted rerun"
+    },
+    {
+      "label": "Updated connected catalog/workflow regressions",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test -c playwright.phase08.config.ts e2e-connected/workflows.spec.ts",
+      "log": ".cache/phase08-4a/browser-workflows-final.log",
+      "passed": 3,
+      "log_sha256": "4b9e54584633446866312f5384d45f623cb16e52b934e17e546a90bc24c8ad4e",
+      "result": "passed"
+    },
+    {
+      "label": "Standard browser success, repeat invocation, source readback, search and mobile",
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test -c playwright.standard.config.ts",
+      "log": ".cache/phase08-4a/browser-standard-complete.log",
+      "passed": 1,
+      "log_sha256": "d76347e34194c9cb9eb86974924d13a3de3d3fa472751b34614ba801d43f2480",
+      "result": "passed"
+    },
+    {
+      "label": "Ineligible wrong-firmware browser path, zero intake write",
+      "command": "cd mock_apps_ui && STANDARD_VARIANT=wrong_firmware PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test -c playwright.standard.config.ts",
+      "log": ".cache/phase08-4a/browser-standard-blocked.log",
+      "passed": 1,
+      "log_sha256": "1c3e7459ab1ed7d371fa932de4fed6298d44685d573175012a9a700c89970097",
+      "result": "passed"
+    },
+    {
+      "label": "TypeScript type check",
+      "command": "npm --prefix mock_apps_ui run typecheck",
+      "log": ".cache/phase08-4a/typecheck-complete.log",
+      "passed": null,
+      "log_sha256": "6a4da5662e48c2d8d3c36d049e4be6231c93c100aba474b520fe8f6b4b60c4d4",
+      "result": "passed"
+    },
+    {
+      "label": "Production build",
+      "command": "npm --prefix mock_apps_ui run build",
+      "log": ".cache/phase08-4a/build-complete.log",
+      "passed": null,
+      "log_sha256": "1ae73ff3fd01e9a9478ccbf1fcd3783188084b6962877a0f494f37a940812828",
+      "result": "passed"
+    }
+  ],
+  "resolved_failures": [
+    "Deprecated Pydantic instance model_fields access raised under strict test warnings; use class metadata.",
+    "Standard Program assessment now requires milestone context without forcing unrelated ERP commitments; original route still requires its original full assessment.",
+    "Expected API/tool/catalog counts and preview counts updated for the explicitly connected route, with strict boundary tests retained.",
+    "Source OpenAPI regenerated with its own locked backend environment.",
+    "Distinct standard documents excluded from CR-017 critical snapshot expansion; original records/versions and explicit assessment references remain bound.",
+    "Browser profile/search locators corrected to existing accessible labels; source critical-procedure mutation test uses the mutable procedure record, preserving document immutability."
+  ],
+  "final_unique_browser_scenarios": 66,
+  "browser_result_detail": "56 original source/component/browser scenarios (55 first pass plus corrected journey); 8 original connected scenarios (6 first pass, then 3 workflow tests pass including one repeat); 2 new standard outcome scenarios pass.",
+  "phase07": {
+    "hard_gate_status": "PASS",
+    "passed": 63,
+    "failed": 0,
+    "total": 63,
+    "critical_failures": [],
+    "semantic_score_average": null,
+    "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase07/phase08-4a-complete",
+    "skipped_checks": [
+      "Paid live agents not run. No live-model reasoning baseline measured.",
+      "Optional model-based semantic grader not run; semantic score is null."
+    ]
+  },
+  "manual_demo_preservation": {
+    "checks": {
+      "proposals": true,
+      "downstream": true,
+      "activity": true,
+      "cases": true,
+      "runs": true,
+      "existing_source_rows_preserved": true,
+      "host_index_byte_identical": true,
+      "standard_case_ready": true
+    },
+    "original_run": "run_528395b95a9242a0950e2bd21f85af22",
+    "original_plan": "plan-ff6f19a4a7ff4cfa9a6465bc1886ffff",
+    "physical_result": null,
+    "new_case": "CR-019",
+    "note": "Added projection fields only; original source records and host index unchanged."
+  },
+  "protected_files_unchanged": {
+    "fixtures/seed.json": true,
+    "coordinator/evals/phase07/graders.py": true,
+    "coordinator/evals/phase07/data/cases.json": true,
+    "coordinator/evals/phase07/data/observations.json": true,
+    "src/program_coordinator/application/execution.py": true,
+    "src/program_coordinator/application/execution_policy.py": true,
+    "src/mock_enterprise/approvals.py": true
+  },
+  "skipped": [
+    "Paid model inference",
+    "Paid semantic grader",
+    "Real microphone / external speech",
+    "Standard-route downstream lab authorization, scheduling and physical testing (outside scope)",
+    "08.4B/08.4C, active background triggers, freeform Concierge, Operations implementation, Git operations"
+  ],
+  "limitations": [
+    "Live reasoning quality remains unmeasured.",
+    "One explicit synthetic standard procedure and bounded source intake contract.",
+    "Production build reports an approximately 501 kB main-chunk advisory; build succeeds."
+  ],
+  "current_services": {
+    "source": {
+      "port": 18028,
+      "pid": 59233
+    },
+    "mcp": {
+      "port": 19084
+    },
+    "host": {
+      "port": 18084,
+      "pid": 58539
+    },
+    "ui": {
+      "port": 5189
+    }
+  },
+  "artifact_links": {
+    "handoff": "docs/PHASE08_4A_HANDOFF.md",
+    "host_openapi": "docs/phase08-4a-host-openapi.json",
+    "source_openapi": "docs/openapi.json",
+    "screenshots": "docs/screenshots/phase08-4a",
+    "phase07_report": ".cache/phase07/phase08-4a-complete/report.md"
+  }
+}

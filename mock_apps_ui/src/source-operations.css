@@ -1,0 +1,647 @@
+/* Source-system record composition. Never applied to the control plane. */
+.app-shell .source-record-page {
+  min-width: 0;
+}
+.app-shell .source-field-label {
+  display: block;
+  color: #657380;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.app-shell .source-anchor-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 25px;
+  border-bottom: 1px solid #dbe1e5;
+  margin: 0 0 22px;
+}
+.app-shell .source-anchor-nav a {
+  padding: 15px 0 12px;
+  color: #53626f;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+}
+.app-shell .source-anchor-nav a:hover,
+.app-shell .source-anchor-nav a:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.app-shell .source-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 23px 0 12px;
+}
+.app-shell .source-section-heading h2 {
+  margin: 0;
+}
+.app-shell .source-section-heading a {
+  font-size: 12px;
+}
+.app-shell .source-boundary {
+  font-size: 12px;
+  color: #64727e;
+  line-height: 1.55;
+  background: #fafbfc;
+}
+.app-shell .source-work-list {
+  padding: 0 20px;
+}
+.app-shell .source-work-list > article {
+  padding: 19px 0;
+  border-bottom: 1px solid #e8ecef;
+}
+.app-shell .source-work-list > article:last-child {
+  border-bottom: 0;
+}
+.app-shell .source-work-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 14px;
+}
+.app-shell .source-work-heading h3 {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.app-shell .source-work-list p,
+.app-shell .source-work-list li {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.app-shell .source-work-list ul {
+  padding-left: 19px;
+}
+.app-shell .source-work-list .facts {
+  padding-left: 0;
+  padding-right: 0;
+}
+.app-shell .source-record-disclosure {
+  margin-top: 14px;
+  padding: 13px 16px;
+  background: #f7f9fa;
+  border-radius: 4px;
+}
+.app-shell .source-record-disclosure summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+.app-shell .source-footer-actions {
+  border-top: 1px solid #dfe5e9;
+  padding: 18px 0 3px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+.app-shell .source-footer-actions > a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.app-shell .source-record-chain {
+  padding: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: #fafbfc;
+}
+.app-shell .source-record-chain > div,
+.app-shell .source-record-chain > a {
+  flex: 1 1 135px;
+  min-width: 0;
+  text-decoration: none;
+  border-left: 2px solid #c7d4dc;
+  padding: 5px 12px;
+}
+.app-shell .source-record-chain span:not([aria-hidden]) {
+  display: block;
+  font-size: 11px;
+  color: #647581;
+  margin-bottom: 5px;
+}
+.app-shell .source-record-chain strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.app-shell .source-record-page [id] {
+  scroll-margin-top: 24px;
+}
+.app-shell .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.app-shell .strong-number {
+  font-weight: 650;
+}
+.app-shell tr.material-held {
+  background: #fffbf1;
+}
+.app-shell tr.material-held td:first-child {
+  box-shadow: inset 3px 0 #b58a39;
+}
+.app-shell .material-held .strong-number {
+  color: #886326;
+}
+
+/* MES: compact production census, lot identity, hold and measured yield. */
+.app-shell.manufacturing .mes-register-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid #dae1e5;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 22px;
+}
+.app-shell.manufacturing .mes-register-summary > div {
+  padding: 19px 23px;
+  border-right: 1px solid #e2e7ea;
+}
+.app-shell.manufacturing .mes-register-summary > div:last-child {
+  border-right: 0;
+}
+.app-shell.manufacturing .mes-register-summary span {
+  display: block;
+  color: #657580;
+  font-size: 12px;
+}
+.app-shell.manufacturing .mes-register-summary strong {
+  display: block;
+  font-size: 29px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin: 4px 0;
+}
+.app-shell.manufacturing .mes-register-summary small {
+  color: #73808a;
+  font-size: 11px;
+}
+.app-shell.manufacturing .mes-register-summary .has-holds strong {
+  color: #916e29;
+}
+.app-shell.manufacturing .mes-quality-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-left: 3px solid #a57e38;
+  background: #faf7ef;
+  margin-bottom: 20px;
+}
+.app-shell.manufacturing .mes-quality-entry > div {
+  flex: 1;
+  min-width: 0;
+}
+.app-shell.manufacturing .mes-quality-entry strong {
+  display: block;
+  font-size: 14px;
+}
+.app-shell.manufacturing .mes-quality-entry p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #6d726e;
+}
+.app-shell.manufacturing .mes-quality-entry > a {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.app-shell.manufacturing .mes-lot-focus {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 2fr);
+  background: #fff;
+  border: 1px solid #dce2e5;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.app-shell.manufacturing .mes-lot-identity {
+  padding: 24px;
+  background: #f3f6f7;
+  border-right: 1px solid #dde4e7;
+}
+.app-shell.manufacturing .mes-lot-focus.is-held .mes-lot-identity {
+  background: #fbf7ed;
+  border-left: 4px solid #aa8132;
+}
+.app-shell.manufacturing .mes-lot-identity h2 {
+  font-size: clamp(23px, 2vw, 31px);
+  font-weight: 600;
+  margin: 8px 0;
+  letter-spacing: -0.04em;
+}
+.app-shell.manufacturing .mes-lot-identity p {
+  color: #586b76;
+  font-size: 13px;
+  margin: 5px 0 18px;
+}
+.app-shell.manufacturing .mes-lot-identity small {
+  color: #657078;
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+}
+.app-shell.manufacturing .mes-disposition {
+  display: inline-flex;
+  font-weight: 750;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  gap: 8px;
+  align-items: center;
+}
+.app-shell.manufacturing .mes-disposition::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: currentColor;
+}
+.app-shell.manufacturing .mes-disposition.held {
+  color: #926a22;
+}
+.app-shell.manufacturing .mes-yield-comparison {
+  padding: 27px 29px 20px;
+  min-width: 0;
+}
+.app-shell.manufacturing .mes-yield-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 22px;
+}
+.app-shell.manufacturing .mes-yield-numbers > div > span {
+  color: #5f707d;
+  font-size: 12px;
+}
+.app-shell.manufacturing .mes-yield-numbers strong {
+  display: block;
+  color: #2f4753;
+  margin: 9px 0;
+  font-size: clamp(29px, 3vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -0.055em;
+  font-weight: 570;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell.manufacturing .mes-yield-numbers em {
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: -0.03em;
+}
+.app-shell.manufacturing .mes-yield-numbers .yield-below strong {
+  color: #966923;
+}
+.app-shell.manufacturing .mes-yield-numbers small {
+  display: block;
+  color: #7b858b;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.app-shell.manufacturing .mes-yield-bars {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 8px 11px;
+  align-items: center;
+  margin-top: 25px;
+  color: #6c7b84;
+  font-size: 10px;
+}
+.app-shell.manufacturing .mes-yield-bars > div {
+  height: 5px;
+  background: #f0f2f3;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.app-shell.manufacturing .mes-yield-bars i {
+  display: block;
+  height: 100%;
+  background: #a27c36;
+}
+.app-shell.manufacturing .mes-yield-bars .baseline i {
+  background: #8fa4b0;
+}
+.app-shell.manufacturing .mes-observation-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+.app-shell.manufacturing .mes-root-cause {
+  padding: 18px 21px;
+}
+.app-shell.manufacturing .mes-root-cause strong {
+  display: block;
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 550;
+}
+.app-shell.manufacturing .mes-root-cause p {
+  font-size: 12px;
+  margin: 8px 0 0;
+  color: #74808a;
+}
+.app-shell.manufacturing .mes-provenance-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+  padding: 20px 23px;
+  margin-bottom: 20px;
+  background: #edf2f4;
+  border-top: 3px solid #687f8b;
+}
+.app-shell.manufacturing .mes-provenance-header > div {
+  flex: 1;
+}
+.app-shell.manufacturing .mes-provenance-header strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 16px;
+}
+.app-shell.manufacturing .genealogy {
+  background: #f6f8f9;
+  border-color: #dce4e8;
+}
+.app-shell.manufacturing .hold-context {
+  border-left: 3px solid #b18a42;
+  background: #fffbf4;
+}
+
+/* ERP: object header, line items, accounting and commitment are distinct. */
+.app-shell.erp .erp-list-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 0 24px;
+  border-bottom: 1px solid #dfe5eb;
+  margin-bottom: 23px;
+}
+.app-shell.erp .erp-list-summary > div {
+  min-width: 140px;
+}
+.app-shell.erp .erp-list-summary span {
+  display: block;
+  font-size: 12px;
+  color: #657789;
+}
+.app-shell.erp .erp-list-summary strong {
+  font-size: 29px;
+  font-weight: 550;
+  display: block;
+  color: #274863;
+  margin-top: 4px;
+}
+.app-shell.erp .erp-list-summary a {
+  margin-left: auto;
+  font-size: 13px;
+}
+.app-shell.erp .erp-object-header {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.3fr) repeat(3, minmax(130px, 1fr));
+  gap: 24px;
+  padding: 24px 26px;
+  border-top: 3px solid #51738f;
+  background: #f0f5f8;
+}
+.app-shell.erp .erp-object-header > div > span,
+.app-shell.erp .erp-commitment-summary > div > span {
+  font-size: 12px;
+  color: #657887;
+  display: block;
+  margin-bottom: 10px;
+}
+.app-shell.erp .erp-object-header > div > strong {
+  font-size: 24px;
+  color: #2e4a60;
+  font-weight: 550;
+  line-height: 1.35;
+}
+.app-shell.erp .erp-object-header small,
+.app-shell.erp .erp-commitment-summary small {
+  font-size: 13px;
+  font-weight: 400;
+}
+.app-shell.erp .erp-object-header .object-date,
+.app-shell.erp .object-date {
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 600;
+}
+.app-shell.erp .erp-object-identity h2 {
+  font-size: 27px;
+  letter-spacing: -0.035em;
+  margin: 0 0 7px;
+  font-weight: 600;
+}
+.app-shell.erp .erp-object-identity p {
+  margin: 0;
+  color: #6a7c8b;
+  font-size: 12px;
+}
+.app-shell.erp .erp-supply-accounting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 195px;
+  margin-bottom: 24px;
+  border: 1px solid #dbe4ea;
+  background: #fff;
+  border-radius: 5px;
+}
+.app-shell.erp .erp-supply-equation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 25px 23px;
+}
+.app-shell.erp .erp-supply-equation > div {
+  flex: 1 1 65px;
+}
+.app-shell.erp .erp-supply-equation div > span,
+.app-shell.erp .erp-demand-gap span {
+  display: block;
+  font-size: 12px;
+  color: #657989;
+}
+.app-shell.erp .erp-supply-equation strong {
+  display: block;
+  font-size: clamp(25px, 2.7vw, 36px);
+  letter-spacing: -0.045em;
+  font-weight: 550;
+  margin: 7px 0;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell.erp .erp-supply-equation small {
+  font-size: 10px;
+  color: #7b8994;
+  line-height: 1.4;
+  display: block;
+}
+.app-shell.erp .erp-supply-equation .held strong {
+  color: #9a702a;
+}
+.app-shell.erp .erp-supply-equation .eligible strong {
+  color: #315d7c;
+}
+.app-shell.erp .accounting-operator {
+  color: #99a5ad;
+  font-size: 21px;
+}
+.app-shell.erp .erp-demand-gap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 19px;
+  background: #f2f6f8;
+  border-left: 1px solid #e1e7ec;
+}
+.app-shell.erp .erp-demand-gap strong {
+  display: block;
+  font-size: 29px;
+  font-weight: 550;
+  margin-top: 9px;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell.erp .erp-demand-gap .gap strong {
+  color: #976e2c;
+}
+.app-shell.erp .accounting-note {
+  grid-column: 1 / -1;
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 12px;
+  color: #936b2b;
+  border-top: 1px solid #e6e4df;
+  background: #fcf9f3;
+}
+.app-shell.erp .erp-commitment-summary {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 24px;
+  padding: 22px;
+  background: #f4f8fa;
+}
+.app-shell.erp .erp-commitment-summary strong {
+  font-size: 25px;
+  color: #355871;
+  font-weight: 550;
+}
+.app-shell.erp .erp-commitment-summary strong.object-date {
+  font-size: 15px;
+}
+.app-shell.erp .erp-exposure {
+  padding: 23px;
+}
+.app-shell.erp .erp-exposure > strong {
+  display: block;
+  margin: 11px 0;
+  font-size: 31px;
+  color: #365975;
+  font-weight: 550;
+}
+.app-shell.erp .erp-exposure p {
+  font-size: 13px;
+  margin: 0;
+  color: #6d7c87;
+}
+.app-shell.erp .erp-order-facts {
+  margin: 0 0 22px;
+}
+.app-shell.erp .erp-order-facts .facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.app-shell.erp .erp-order-facts .facts > div {
+  border: 0;
+  padding: 11px 0;
+}
+.app-shell.erp .erp-rate-description {
+  max-width: 430px;
+}
+
+@media (max-width: 1180px) {
+  .app-shell.manufacturing .mes-yield-comparison {
+    padding: 24px 20px;
+  }
+  .app-shell.manufacturing .mes-yield-numbers {
+    gap: 13px;
+  }
+  .app-shell.erp .erp-object-header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .app-shell.erp .erp-supply-accounting {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .app-shell.erp .erp-demand-gap {
+    border-left: 0;
+    border-top: 1px solid #dfe6eb;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 16px 23px;
+  }
+  .app-shell.erp .erp-demand-gap > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .app-shell.erp .erp-demand-gap strong {
+    margin: 0;
+  }
+}
+@media (max-width: 800px) {
+  .app-shell.manufacturing .mes-lot-focus,
+  .app-shell.manufacturing .mes-observation-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.manufacturing .mes-lot-identity {
+    border-right: 0;
+  }
+  .app-shell.manufacturing .mes-quality-entry {
+    flex-wrap: wrap;
+  }
+  .app-shell.manufacturing .mes-register-summary > div {
+    padding: 14px;
+  }
+  .app-shell .source-record-chain > [aria-hidden] {
+    display: none;
+  }
+  .app-shell.erp .erp-commitment-summary {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .app-shell.erp .erp-order-facts .facts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .app-shell.manufacturing .mes-yield-numbers {
+    grid-template-columns: 1fr 1fr;
+  }
+  .app-shell.manufacturing .mes-register-summary {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.manufacturing .mes-register-summary > div {
+    border-right: 0;
+    border-bottom: 1px solid #e2e7ea;
+  }
+  .app-shell.erp .erp-object-header {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.erp .erp-supply-equation {
+    gap: 14px;
+  }
+  .app-shell.erp .erp-supply-equation > div {
+    min-width: 86px;
+  }
+}

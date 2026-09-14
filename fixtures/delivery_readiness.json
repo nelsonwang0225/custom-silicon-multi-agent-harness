@@ -1,0 +1,165 @@
+{
+  "manufacturing.lot": [
+    {
+      "id": "LOT-B-202",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "inventory_state": null,
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [],
+      "hold_details": []
+    }
+  ],
+  "erp.order": [
+    {
+      "id": "ORD-HEL-150",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "erp",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "quantity": 150,
+      "quantity_unit": "accelerator_units",
+      "committed_delivery_at": "2026-11-23T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "manufacturing.quality_material": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "MAT-B-202",
+      "owning_system": "manufacturing",
+      "lot_id": "LOT-B-202",
+      "configuration_id": "CFG-B-01",
+      "disposition": "released",
+      "physical_quantity": 150,
+      "first_pass_pass_quantity": 150,
+      "released_quantity": 150,
+      "held_quantity": 0,
+      "allocated_quantity": 150,
+      "eligible_unallocated_quantity": 0,
+      "expected_milestone_id": null,
+      "allocation_order_id": "ORD-HEL-150"
+    }
+  ],
+  "erp.delivery_allocation": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "ALLOC-HEL-150",
+      "owning_system": "erp",
+      "material_id": "MAT-B-202",
+      "order_id": "ORD-HEL-150",
+      "quantity": 150,
+      "release_reference": "Helios compatible release HEL-150; preserve its existing obligation"
+    }
+  ],
+  "engineering.delivery_clearance": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "CLEAR-HEL-BASE",
+      "owning_system": "engineering",
+      "configuration_id": "CFG-B-01",
+      "requirement_revision_id": "REQ-042-V1",
+      "evidence_ids": [
+        "RES-BASELINE-B"
+      ],
+      "review_digest": "de245649fdefde77884c74623168f2f035e5ac891bc3e09c780e2ac1ec4e7cc1",
+      "status": "approved",
+      "signer_role": "engineer",
+      "signer_identity": "demo-engineer",
+      "acceptance_blockers": [],
+      "customer_technical_acceptance": "pending"
+    }
+  ],
+  "planner.delivery_logistics": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "LOG-HEL-800",
+      "owning_system": "planner",
+      "milestone_id": "MS-HEL-800",
+      "destination": "Helios Austin receiving",
+      "state": "confirmed",
+      "material_ready_at": "2026-11-18T06:00:00Z",
+      "preparation_minutes": 120,
+      "loading_minutes": 60,
+      "transit_minutes": 2880,
+      "owner": "Atlas Logistics",
+      "calendar": "elapsed_UTC"
+    }
+  ],
+  "erp.delivery_request": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "DR-009",
+      "owning_system": "erp",
+      "order_id": "ORD-HEL-800",
+      "line_id": "LINE-HEL-800-1",
+      "milestone_id": "MS-HEL-800",
+      "configuration_id": "CFG-B-01",
+      "requirement_revision_id": "REQ-042-V1",
+      "clearance_id": "CLEAR-HEL-BASE",
+      "technical_change_id": null,
+      "logistics_id": "LOG-HEL-800",
+      "material_ids": [
+        "MAT-B-203",
+        "MAT-B-204",
+        "MAT-B-202"
+      ],
+      "allocation_ids": [
+        "ALLOC-HEL-150"
+      ],
+      "future_supply_ids": [],
+      "quantity": 800,
+      "requested_at": "2026-11-23T18:00:00Z",
+      "date_semantics": "arrival",
+      "destination": "Helios Austin receiving",
+      "request_source": "erp",
+      "requested_by": "Helios AI / delivery release coordination",
+      "received_at": "2026-11-16T09:00:00Z",
+      "summary": "Plan the 800-unit delivery release against the original order date; any revised partial promise requires exact commercial approval and separate customer agreement.",
+      "commitment_owner": "Ilan Reyes",
+      "customer_agreement": "pending"
+    }
+  ],
+  "erp.delivery_state": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "id": "STATE-DR-009",
+      "owning_system": "erp",
+      "delivery_id": "DR-009",
+      "record_version": 1,
+      "current_commitment_id": null
+    }
+  ]
+}

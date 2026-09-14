@@ -1,0 +1,259 @@
+{
+  "$defs": {
+    "Assertion": {
+      "additionalProperties": false,
+      "properties": {
+        "dimension": {
+          "enum": [
+            "evidence_grounding",
+            "applicability",
+            "factual_correctness",
+            "uncertainty",
+            "unsupported_claims",
+            "tool_selection",
+            "governance",
+            "proposal_quality",
+            "execution_truthfulness",
+            "escalation",
+            "completeness"
+          ],
+          "title": "Dimension",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "op": {
+          "default": "eq",
+          "enum": [
+            "eq",
+            "contains",
+            "not_contains",
+            "nonempty",
+            "absent"
+          ],
+          "title": "Op",
+          "type": "string"
+        },
+        "value": {
+          "default": null,
+          "title": "Value"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "critical_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Critical Code"
+        }
+      },
+      "required": [
+        "dimension",
+        "path",
+        "description"
+      ],
+      "title": "Assertion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "case_id": {
+      "pattern": "^[a-z0-9_]+$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "workflow_type": {
+      "enum": [
+        "requirement_change_analysis",
+        "yield_exception_recovery",
+        "delivery_readiness"
+      ],
+      "title": "Workflow Type",
+      "type": "string"
+    },
+    "scenario_family": {
+      "title": "Scenario Family",
+      "type": "string"
+    },
+    "input_facts": {
+      "additionalProperties": true,
+      "title": "Input Facts",
+      "type": "object"
+    },
+    "source_fixture": {
+      "title": "Source Fixture",
+      "type": "string"
+    },
+    "expected_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Evidence",
+      "type": "array"
+    },
+    "irrelevant_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Irrelevant Evidence",
+      "type": "array"
+    },
+    "expected_applicability": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "title": "Expected Applicability",
+      "type": "object"
+    },
+    "expected_tools": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Tools",
+      "type": "array"
+    },
+    "prohibited_tools": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Prohibited Tools",
+      "type": "array"
+    },
+    "prohibited_actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Prohibited Actions",
+      "type": "array"
+    },
+    "expected_conclusions": {
+      "additionalProperties": true,
+      "title": "Expected Conclusions",
+      "type": "object"
+    },
+    "forbidden_conclusions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Forbidden Conclusions",
+      "type": "array"
+    },
+    "escalation_expected": {
+      "title": "Escalation Expected",
+      "type": "boolean"
+    },
+    "approval_required": {
+      "title": "Approval Required",
+      "type": "boolean"
+    },
+    "downstream_state": {
+      "additionalProperties": true,
+      "title": "Downstream State",
+      "type": "object"
+    },
+    "grading_criteria": {
+      "items": {
+        "$ref": "#/$defs/Assertion"
+      },
+      "minItems": 1,
+      "title": "Grading Criteria",
+      "type": "array"
+    },
+    "severity": {
+      "enum": [
+        "critical",
+        "high",
+        "medium"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "deterministic": {
+      "const": true,
+      "default": true,
+      "title": "Deterministic",
+      "type": "boolean"
+    },
+    "live_fixture": {
+      "anyOf": [
+        {
+          "enum": [
+            "gap",
+            "covered",
+            "wrong_software",
+            "bypass",
+            "scheduled",
+            "ambiguous"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Live Fixture"
+    },
+    "smoke": {
+      "default": false,
+      "title": "Smoke",
+      "type": "boolean"
+    },
+    "runtime_probe": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Runtime Probe"
+    }
+  },
+  "required": [
+    "case_id",
+    "title",
+    "workflow_type",
+    "scenario_family",
+    "input_facts",
+    "source_fixture",
+    "expected_evidence",
+    "irrelevant_evidence",
+    "expected_applicability",
+    "expected_tools",
+    "prohibited_tools",
+    "prohibited_actions",
+    "expected_conclusions",
+    "forbidden_conclusions",
+    "escalation_expected",
+    "approval_required",
+    "downstream_state",
+    "grading_criteria",
+    "severity"
+  ],
+  "title": "EvalCase",
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+DR-009 · Source records
+Refresh source records
+
+PRG-A17 · ORD-HEL-800 / LINE-HEL-800-1
+
+Configuration & Engineering clearance
+
+CFG-B-01 · FW-2.3 / RT-4.1 · REQ-042-V1
+
+CLEAR-HEL-BASE · approved · Review digest de245649fdefde77884c74623168f2f035e5ac891bc3e09c780e2ac1ec4e7cc1
+
+Technical state READY · Approved baseline scope, applicable evidence and exact Engineering clearance
+
+Open connected delivery workbench

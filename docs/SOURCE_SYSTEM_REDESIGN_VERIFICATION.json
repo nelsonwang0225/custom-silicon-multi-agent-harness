@@ -1,0 +1,311 @@
+{
+  "scope": "Source-system UI redesign verification only; no backend or control-plane fixes authorized or made by this subtask.",
+  "paid_model_calls": false,
+  "coordinator": {
+    "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -c coordinator/pyproject.toml --basetemp=.cache/source-redesign/pytest-coordinator -o tmp_path_retention_policy=failed --junitxml=.cache/source-redesign/coordinator-tests.xml --tb=short -rA",
+    "exit_code": 1,
+    "collected": 866,
+    "passed": 848,
+    "failed": 18,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 552.28,
+    "log": ".cache/source-redesign/coordinator-tests.log",
+    "junit": ".cache/source-redesign/coordinator-tests.xml",
+    "classification_counts": {
+      "stale_workflow_helper_or_expectation": 16,
+      "stale_exact_copy_assertion": 1,
+      "existing_backend_null_handling_defect": 1
+    },
+    "scope_impact": "This is a complete current-suite result, not a pass. The 16 workflow-helper failures miss the existing Operator escalation contract and therefore do not verify their later target behavior. One copy assertion is stale. The fresh Overview Concierge path has a distinct existing null-handling defect. These Python host/eval paths do not depend on the changed source UI; parent independently verified protected backend/control-file hashes unchanged.",
+    "earlier_attempt": {
+      "status": "storage failure; incomplete report",
+      "preserved_log": ".cache/source-redesign/coordinator-tests-storage-failure2.log"
+    },
+    "failures": [
+      {
+        "node_id": "coordinator/tests/test_phase08_5_concierge.py::test_a_to_q_connected_concierge_hard_gates",
+        "category": "existing_backend_null_handling_defect",
+        "explanation": "The fresh Overview attention question fails with CHAT_INVALID_OUTPUT before CR-019 has been investigated. Its eligibility is None, but grounded_cards dereferences it. The base A\u2013Q variant then aborts; later missing base observations are counted as hard-gate violations, not independent exercised failures. This is a backend read defect, not merely a stale assertion.",
+        "evidence_refs": [
+          "null_eligibility",
+          "invalid_output_handler",
+          "eval_abort"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_5_concierge.py:124: in test_a_to_q_connected_concierge_hard_gates\n    assert all(r.passed for r in result),[(r.case_id,r.critical_failures) for r in result if not r.passed]\nE   AssertionError: [('concierge_b_cross_case', ['concierge_b_cross_case_violation']), ('concierge_c_routing', ['concierge_c_routing_viola...erge_f_wrong_role', ['concierge_f_wrong_role_violation']), ('concierge_g_stale', ['concierge_g_stale_violation']), ...]\nE   assert False\nE    +  where False = all(<generator object test_a_to_q_connected_concierge_hard_gates.<locals>.<genexpr> at 0x1121c8ac0>)"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase08_6_operations.py::test_runtime_complete_is_not_success_and_human_wait",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expects Waiting for human review immediately after investigation. Actual completed run correctly reports Human review required \u00b7 proposal not recorded because no Operator escalation was submitted.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_probe_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_6_operations.py:77: in test_runtime_complete_is_not_success_and_human_wait\n    assert d['run']['runtime_state']=='completed' and d['run']['business_outcome']=='Waiting for human review'\nE   AssertionError: assert ('completed' == 'completed'\nE     \nE       completed and 'Human review... not recorded' == 'Waiting for human review'\nE     \nE     - Waiting for human review\nE     + Human review required \u00b7 proposal not recorded)"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase08_6_operations.py::test_concierge_decision_confirmation_automation_and_sanitization",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Approval preview has no action_id because no exact CR-017 proposal was prepared; the old confirm helper concatenates None into a URL and raises TypeError.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_probe_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_6_operations.py:113: in test_concierge_decision_confirmation_automation_and_sanitization\n    t,b=ask(env,'Approve it','CR-017',role='engineer');assert confirm(env,t,b,'engineer').status_code==200\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\ncoordinator/evals/phase08_5/probe.py:73: in confirm\n    return post(env[0],'concierge/'+body['session_id']+'/actions/'+turn['cards'][0]['action_id'],{'context':body['context'],'confirmed':True},role)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   TypeError: can only concatenate str (not \"NoneType\") to str"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase08_6_operations.py::test_manual_run_referenced_by_chat_retains_origin_and_completed_decision",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Waits for an automatically prepared proposal, but none is created without Operator escalation; next(proposals) raises StopIteration.",
+        "evidence_refs": [
+          "proposal_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_6_operations.py:201: in test_manual_run_referenced_by_chat_retains_origin_and_completed_decision\n    ref=next(p for p in state['proposals'] if p['proposal']['origin']['run_id']==run)['execution']['reference']\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   StopIteration"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase08_downstream.py::test_lost_engineering_review_reply_recovers_without_second_write",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expected injected lost-write response 503, but review is rejected earlier with 409 because the exact evidence escalation was not submitted.",
+        "evidence_refs": [
+          "review_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_downstream.py:117: in test_lost_engineering_review_reply_recovers_without_second_write\n    assert post(client,'cases/CR-017/evidence-review',review,'engineer').status_code==503\nE   AssertionError: assert 409 == 503\nE    +  where 409 = <Response [409 Conflict]>.status_code\nE    +    where <Response [409 Conflict]> = post(<starlette.testclient.TestClient object at 0x1122ace30>, 'cases/CR-017/evidence-review', {'expected_evidence_digest': 'b598245d83b45f602315b61d31c093acb47da677d16a2044a5260928f73de9dd', 'decision': 'approve', 'comment': 'Review survives a lost response.'}, 'engineer')"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase08_workflows.py::test_downstream_history_and_separate_customer_acceptance",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expected evidence approval 200, but exact evidence escalation is missing and the existing authority guard returns 409.",
+        "evidence_refs": [
+          "review_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase08_workflows.py:215: in test_downstream_history_and_separate_customer_acceptance\n    assert post(client,'cases/CR-017/evidence-review',{'expected_evidence_digest':physical['evidence_digest'],'decision':'approve','comment':'Scripted exact evidence review.'},'engineer').status_code==200\nE   AssertionError: assert 409 == 200\nE    +  where 409 = <Response [409 Conflict]>.status_code\nE    +    where <Response [409 Conflict]> = post(<starlette.testclient.TestClient object at 0x1129c5820>, 'cases/CR-017/evidence-review', {'expected_evidence_digest': '5c86383bf1a4763e45ed5ef181953e2daffdde7fbdb87502e98f58195858e915', 'decision': 'approve', 'comment': 'Scripted exact evidence review.'}, 'engineer')"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_full_reset_mutated_all_scenarios_and_history",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "The setup flow reviews QE-004 before Operator escalation and receives 409 OPERATOR_ESCALATION_REQUIRED; reset assertions are not reached.",
+        "evidence_refs": [
+          "old_run_helper",
+          "review_escalation",
+          "quality_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:100: in test_full_reset_mutated_all_scenarios_and_history\n    execute(demo,case,run_case(demo,case))\ncoordinator/tests/test_phase09_demo_reset.py:79: in execute\n    assert reviewed.status_code==200,reviewed.text\nE   AssertionError: {\"error\":{\"code\":\"OPERATOR_ESCALATION_REQUIRED\"}}\nE   assert 409 == 200\nE    +  where 409 = <Response [409 Conflict]>.status_code"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_single_scenario_resets_and_preserves_unrelated[CR-017]",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup indexes proposals[0] after analysis without Operator escalation; IndexError precedes the reset assertions.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:150: in test_single_scenario_resets_and_preserves_unrelated\n    if case!='CR-019':execute(demo,case,value)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^\ncoordinator/tests/test_phase09_demo_reset.py:68: in execute\n    body = {'reference':value['proposals'][0]['execution']['reference']}\n                        ^^^^^^^^^^^^^^^^^^^^^\nE   IndexError: list index out of range"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_single_scenario_resets_and_preserves_unrelated[QE-004]",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup directly reviews QE-004 and receives 409 OPERATOR_ESCALATION_REQUIRED before reset verification.",
+        "evidence_refs": [
+          "old_run_helper",
+          "review_escalation",
+          "quality_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:150: in test_single_scenario_resets_and_preserves_unrelated\n    if case!='CR-019':execute(demo,case,value)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^\ncoordinator/tests/test_phase09_demo_reset.py:79: in execute\n    assert reviewed.status_code==200,reviewed.text\nE   AssertionError: {\"error\":{\"code\":\"OPERATOR_ESCALATION_REQUIRED\"}}\nE   assert 409 == 200\nE    +  where 409 = <Response [409 Conflict]>.status_code"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_cr017_technical_dependency_and_touchless_resource_conflicts",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup indexes proposals[0] before the required Operator handoff; IndexError prevents the intended dependency/reset checks.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:202: in test_cr017_technical_dependency_and_touchless_resource_conflicts\n    execute(demo,'CR-017',run_case(demo,'CR-017'))\ncoordinator/tests/test_phase09_demo_reset.py:68: in execute\n    body = {'reference':value['proposals'][0]['execution']['reference']}\n                        ^^^^^^^^^^^^^^^^^^^^^\nE   IndexError: list index out of range"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_real_source_restore_rollback_preserves_immutable_protections",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup indexes proposals[0] before Operator escalation, so the rollback/protection assertions are not reached.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:292: in test_real_source_restore_rollback_preserves_immutable_protections\n    execute(demo,'CR-017',run_case(demo,'CR-017'))\ncoordinator/tests/test_phase09_demo_reset.py:68: in execute\n    body = {'reference':value['proposals'][0]['execution']['reference']}\n                        ^^^^^^^^^^^^^^^^^^^^^\nE   IndexError: list index out of range"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_demo_reset.py::test_single_reset_invalidates_concierge_card_and_preserves_unrelated_history",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "The test expects an approval action card immediately after analysis; action_id is None because no exact proposal was escalated.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_probe_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_demo_reset.py:325: in test_single_reset_invalidates_concierge_card_and_preserves_unrelated_history\n    assert turn['cards'][0]['action_id']\nE   assert None"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_product_integration.py::test_all_four_cases_have_current_semantics_exact_decisions_and_operations",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expects CR-017, QE-004 and DR-009 all to be needs_review immediately after analysis. CR-017/QE-004 now require an explicit Operator handoff first.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper",
+          "quality_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_product_integration.py:48: in test_all_four_cases_have_current_semantics_exact_decisions_and_operations\n    assert all(cases[c]['state']=='needs_review' for c in ('CR-017','QE-004','DR-009'))\nE   assert False\nE    +  where False = all(<generator object test_all_four_cases_have_current_semantics_exact_decisions_and_operations.<locals>.<genexpr> at 0x11335c1e0>)"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_product_integration.py::test_complete_material_flow_keeps_v1_delivery_independent_then_v2_dependency",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup indexes CR-017 proposals[0] before Operator escalation, raising IndexError before the material/dependency checks.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_product_integration.py:83: in test_complete_material_flow_keeps_v1_delivery_independent_then_v2_dependency\n    execute(product,'CR-017',run_case(product,'CR-017'))\ncoordinator/tests/test_phase09_demo_reset.py:68: in execute\n    body = {'reference':value['proposals'][0]['execution']['reference']}\n                        ^^^^^^^^^^^^^^^^^^^^^\nE   IndexError: list index out of range"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_product_integration.py::test_partial_failure_exposes_verified_first_step_and_pending_second[QE-004-quality_execute-quality-recovery]",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expected QE-004 review 200, but it receives 409 because the Operator escalation step was omitted; the intended partial-write probe is not reached.",
+        "evidence_refs": [
+          "review_escalation",
+          "old_run_helper",
+          "quality_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_product_integration.py:122: in test_partial_failure_exposes_verified_first_step_and_pending_second\n    assert post(product[0],prefix+'/review',{**ref,'decision':'approve','comment':'Bounded metadata only'},'program_owner').status_code==200\nE   AssertionError: assert 409 == 200\nE    +  where 409 = <Response [409 Conflict]>.status_code\nE    +    where <Response [409 Conflict]> = post(<starlette.testclient.TestClient object at 0x11285b410>, ('quality-recovery' + '/review'), {'run_id': 'run_fd4a22feb0b64bb48c924692cc84ecb4', 'plan_id': 'recovery-2b4a82004729426fbbff4f2bd7bb42c6', 'plan_version': 1, 'plan_digest': 'bd575e6c8885ca728615fb4dc628417716ea46b8fb6d1489a190adb2d569c330', ...}, 'program_owner')"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase09_product_integration.py::test_historical_applicable_evidence_is_not_a_hardcoded_gap",
+        "category": "stale_exact_copy_assertion",
+        "explanation": "Actual detail is Applicable workload evidence is available. The test requires contiguous evidence available, so its wording assertion fails despite source coverage_satisfied being true.",
+        "evidence_refs": [
+          "copy_expectation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase09_product_integration.py:157: in test_historical_applicable_evidence_is_not_a_hardcoded_gap\n    assert 'evidence available' in case['detail'] and 'evidence gap' not in case['detail']\nE   AssertionError: assert ('evidence available' in 'Applicable workload evidence is available.')"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase10_master_reset.py::test_master_reset_restores_all_sources_and_restarts_only_qe011",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Setup uses old run_case/execute helpers and indexes an absent CR-017 proposal; reset/restart assertions are not reached.",
+        "evidence_refs": [
+          "proposal_escalation",
+          "old_run_helper"
+        ],
+        "short_traceback": "coordinator/tests/test_phase10_master_reset.py:22: in test_master_reset_restores_all_sources_and_restarts_only_qe011\n    execute(env, case, run_case(env, case))\ncoordinator/tests/test_phase09_demo_reset.py:68: in execute\n    body = {'reference':value['proposals'][0]['execution']['reference']}\n                        ^^^^^^^^^^^^^^^^^^^^^\nE   IndexError: list index out of range"
+      },
+      {
+        "node_id": "coordinator/tests/test_phase10_touchless_concurrency.py::test_scoped_autonomous_reset_preserves_concurrent_cr017",
+        "category": "stale_workflow_helper_or_expectation",
+        "explanation": "Expects an execution record after concurrent CR-017 analysis alone; executions remains empty until the Operator escalates the completed analysis.",
+        "evidence_refs": [
+          "proposal_escalation"
+        ],
+        "short_traceback": "coordinator/tests/test_phase10_touchless_concurrency.py:108: in test_scoped_autonomous_reset_preserves_concurrent_cr017\n    assert data.executions\nE   AssertionError: assert {}\nE    +  where {} = MetadataIndex(concierge_sessions={}, schema_version=1, cases={'case_600abb2237c548d6bf4be9380875ebc9': CaseRecord(case..., execution_attempts=[], delivery_commitments={}, quality_recoveries={}, standard_handoffs={}, operator_escalations={}).executions"
+      }
+    ],
+    "concierge_observation_artifact": ".cache/source-redesign/pytest-coordinator/test_a_to_q_connected_concierg0/concierge/observations.json"
+  },
+  "mcp": {
+    "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -c mcp_server/pyproject.toml --basetemp=.cache/source-redesign/pytest-mcp -o tmp_path_retention_policy=failed --junitxml=.cache/source-redesign/mcp-tests.xml --tb=short -rA",
+    "exit_code": 0,
+    "collected": 56,
+    "passed": 56,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 13.29,
+    "log": ".cache/source-redesign/mcp-tests.log",
+    "junit": ".cache/source-redesign/mcp-tests.xml"
+  },
+  "source_references": {
+    "proposal_escalation": {
+      "path": "src/program_coordinator/control_host/server.py",
+      "lines": [
+        168,
+        175,
+        209,
+        220
+      ],
+      "finding": "Proposal preparation requires a recorded Operator escalation. Submission of the Operator-authored handoff prepares the CR-017 proposal."
+    },
+    "review_escalation": {
+      "path": "src/program_coordinator/control_host/server.py",
+      "lines": [
+        476,
+        477,
+        521,
+        527
+      ],
+      "finding": "Plan and evidence review reject missing Operator escalation with OPERATOR_ESCALATION_REQUIRED; evidence escalation is bound to the exact evidence digest."
+    },
+    "updated_helper": {
+      "path": "coordinator/tests/test_phase08_control_host.py",
+      "lines": [
+        47,
+        72
+      ],
+      "finding": "The current investigate helper submits the explicit Operator escalation after completed analysis. The affected older helpers do not."
+    },
+    "old_run_helper": {
+      "path": "coordinator/tests/test_phase09_demo_reset.py",
+      "lines": [
+        50,
+        79
+      ],
+      "finding": "run_case returns completed analysis without submitting escalation; execute then assumes proposals[0] or directly reviews QE-004."
+    },
+    "old_probe_helper": {
+      "path": "coordinator/evals/phase08_5/probe.py",
+      "lines": [
+        56,
+        73
+      ],
+      "finding": "wait_run waits for analysis/task completion only; confirm assumes a non-null action_id."
+    },
+    "null_eligibility": {
+      "path": "src/program_coordinator/control_host/concierge_reads.py",
+      "lines": [
+        111,
+        115
+      ],
+      "finding": "CR-019 grounded cards dereference v.eligibility.touchless_eligible and v.eligibility.checks without checking the initial None state."
+    },
+    "invalid_output_handler": {
+      "path": "src/program_coordinator/control_host/concierge.py",
+      "lines": [
+        125,
+        128
+      ],
+      "finding": "The existing handler converts AttributeError/TypeError/ValidationError to CHAT_INVALID_OUTPUT with no fallback answer."
+    },
+    "eval_abort": {
+      "path": "coordinator/evals/phase07/concierge.py",
+      "lines": [
+        16,
+        25,
+        80,
+        83,
+        85
+      ],
+      "finding": "The base variant catches its first exception, aborts the remaining base sequence, and missing observations become failed invariant results."
+    },
+    "copy_expectation": {
+      "path": "coordinator/tests/test_phase09_product_integration.py",
+      "lines": [
+        155,
+        158
+      ],
+      "finding": "The test demands the exact substring evidence available; actual detail is Applicable workload evidence is available."
+    },
+    "quality_escalation": {
+      "path": "src/program_coordinator/application/quality_recovery.py",
+      "lines": [
+        175,
+        178
+      ],
+      "finding": "Program Owner review requires the exact recovery plan plus a previously recorded Operator submission_id and submitted_at."
+    }
+  },
+  "follow_up": "Fix the pre-investigation Concierge None-eligibility handling separately, and update the older test/eval setup flows to submit explicit Operator escalations while preserving all authority and intended assertions. No fixes, assertion weakening, or further reruns performed in this classification subtask."
+}

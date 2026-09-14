@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "request": "prompts/10_AUTONOMOUS_OPENING.md",
+  "mode": "isolated deterministic HTTP/MCP/SDK integration; browser speech mocked",
+  "paid_models_run": false,
+  "real_speech_run": false,
+  "hosted_indexing_run": false,
+  "git_operations_run": false,
+  "results": [
+    {
+      "suite": "source",
+      "status": "PASS",
+      "passed": 494,
+      "command": "PYTHONPATH=src .venv/bin/python -m pytest tests -q --basetemp=.cache/phase10-autonomous/source-final",
+      "log": ".cache/phase10-autonomous/source-final.log",
+      "cwd": "."
+    },
+    {
+      "suite": "coordinator_full",
+      "status": "PASS",
+      "passed": 836,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase10-autonomous/coordinator-verified",
+      "log": ".cache/phase10-autonomous/coordinator-verified.log",
+      "cwd": "."
+    },
+    {
+      "suite": "mcp",
+      "status": "PASS",
+      "passed": 56,
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase10-autonomous/mcp-verified",
+      "log": ".cache/phase10-autonomous/mcp-verified.log",
+      "cwd": "."
+    },
+    {
+      "suite": "autonomous_and_quality_corpus_focused",
+      "status": "PASS",
+      "passed": 31,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase10_autonomous.py coordinator/tests/test_quality_knowledge_corpus.py -q --basetemp=.cache/phase10-autonomous/focused-verified",
+      "log": ".cache/phase10-autonomous/focused-verified.log",
+      "cwd": "."
+    },
+    {
+      "suite": "partial_reset_additional",
+      "status": "PASS",
+      "passed": 1,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase10_autonomous.py -k partial_reset -q --basetemp=.cache/phase10-autonomous/partial-reset",
+      "log": ".cache/phase10-autonomous/partial-reset.log",
+      "cwd": "."
+    },
+    {
+      "suite": "offline_eval",
+      "status": "PASS",
+      "passed": 112,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --mode offline --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase10-autonomous",
+      "log": ".cache/phase10-autonomous/offline-evals.log",
+      "cwd": "."
+    },
+    {
+      "suite": "retrieval_integration",
+      "status": "PASS",
+      "passed": 15,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase10_knowledge_integration --output .cache/phase10-autonomous/rag-integration",
+      "log": ".cache/phase10-autonomous/rag-integration.log",
+      "cwd": "."
+    },
+    {
+      "suite": "quality_corpus",
+      "status": "PASS",
+      "passed": 12,
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase10_quality_knowledge --output .cache/phase10-autonomous/quality-corpus",
+      "log": ".cache/phase10-autonomous/quality-corpus.log",
+      "cwd": "."
+    },
+    {
+      "suite": "workspace_browser",
+      "status": "PASS",
+      "passed": 14,
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test --config playwright.workspace.config.ts",
+      "log": ".cache/phase10-autonomous/workspace-browser.log",
+      "cwd": "mock_apps_ui"
+    },
+    {
+      "suite": "autonomous_browser",
+      "status": "PASS",
+      "passed": 2,
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx --prefix mock_apps_ui playwright test --config mock_apps_ui/playwright.autonomous.config.ts",
+      "log": ".cache/phase10-autonomous/browser-final-verified.log",
+      "cwd": "."
+    },
+    {
+      "suite": "reset_browser",
+      "status": "PASS",
+      "passed": 1,
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test --config playwright.reset.config.ts",
+      "log": ".cache/phase10-autonomous/reset-browser-passed.log",
+      "cwd": "mock_apps_ui"
+    },
+    {
+      "suite": "knowledge_browser",
+      "status": "PASS",
+      "passed": 4,
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" npx playwright test --config playwright.knowledge.config.ts --output ../.cache/phase10-autonomous/knowledge-browser-results",
+      "log": ".cache/phase10-autonomous/knowledge-browser-passed.log",
+      "cwd": "mock_apps_ui"
+    },
+    {
+      "suite": "typecheck_build",
+      "status": "PASS",
+      "passed": null,
+      "command": "npm --prefix mock_apps_ui run build",
+      "log": ".cache/phase10-autonomous/build-complete.log",
+      "cwd": "."
+    }
+  ],
+  "count_notes": [
+    "Focused coordinator tests overlap the full suite; do not add all counts.",
+    "The partial-reset test was added after full-suite collection and is reported separately.",
+    "The 15 retrieval gates also compare all four canonical workflow conclusions with zero unexpected changes.",
+    "The 12 Quality corpus gates are backed by 14 test observations.",
+    "21 unique browser tests: 14 workspace, 2 autonomous, 4 knowledge, 1 reset.",
+    "836 full-suite coordinator tests plus the separately added partial-reset test cover 837 unique current coordinator tests."
+  ],
+  "screenshots": "docs/screenshots/phase10-autonomous/",
+  "viewports": [
+    "1440x900",
+    "1920x1080",
+    "1280x800",
+    "390x844"
+  ],
+  "review_preview": {
+    "url": "http://127.0.0.1:5211/control/overview",
+    "mode": "deterministic_test",
+    "status_on_handoff": "idle",
+    "runs_on_handoff": 0,
+    "storage": ".cache/phase09-3/phase10-autonomous-review-20260912-a",
+    "owned_server_session": 25008,
+    "owned_ui_session": 90316
+  },
+  "prior_failures_and_resolution": [
+    "Source suite initially had a hardcoded 57-operation expectation; updated for the single GET-only event route. Final 494 passed.",
+    "MCP schema comparison initially used an export generated with the coordinator Pydantic environment. Re-exported with source environment; final 56 passed.",
+    "Full coordinator suite first reported 830 passes and two older Quality snapshot fixture failures. Optional autonomous-quality view now tolerates absent fields; focused Quality corpus passed.",
+    "New restart probe exposed a misleading stopped/interrupted status while hardening cancellation; preserved persisted restart failure and derived stopped state separately. Focused regression passed.",
+    "Browser integration revealed selected-persona reset behavior and a host-poll cleanup bug at completion; scoped autonomous reset now preserves persona, full reset still signs out, and poll lifetime no longer invalidates workspace reads.",
+    "Overview QE-011 initially fell through to DR-009 quantity copy; explicit quality case mapping now uses its own 100 held / 100 gap source context.",
+    "Mobile reset-scope text overflow corrected with concise scope label and constrained control width; full reset browser passed.",
+    "Two concurrently launched browser suites collided in default trace output storage. Unique output directories now isolate artifacts; both suites passed.",
+    "One final browser invocation used repository cwd for screenshots; known generated images were moved into the repository and the test now resolves its screenshot directory from the spec file."
+  ],
+  "skipped_checks": [
+    "Optional paid live QE-011 analysis and semantic grading not run.",
+    "Production broker/worker delivery and real authentication are not implemented or tested.",
+    "Existing working demo and unrelated user state were not reset or used for verification."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "label": "Read-only visual check; no model or microphone calls",
+  "checks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "brand": "linear-gradient(90deg, rgb(111, 152, 194) 0%, rgb(184, 207, 229) 50%, rgb(111, 152, 194) 100%)",
+      "summary": "linear-gradient(90deg, rgb(159, 190, 220) 0%, rgb(197, 217, 235) 50%, rgb(159, 190, 220) 100%)",
+      "dock": "linear-gradient(90deg, rgb(111, 152, 194) 0%, rgb(184, 207, 229) 50%, rgb(111, 152, 194) 100%)"
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "brand": "linear-gradient(90deg, rgb(111, 152, 194) 0%, rgb(184, 207, 229) 50%, rgb(111, 152, 194) 100%)",
+      "summary": "linear-gradient(90deg, rgb(159, 190, 220) 0%, rgb(197, 217, 235) 50%, rgb(159, 190, 220) 100%)",
+      "dock": "linear-gradient(90deg, rgb(111, 152, 194) 0%, rgb(184, 207, 229) 50%, rgb(111, 152, 194) 100%)"
+    }
+  ],
+  "errors": []
+}

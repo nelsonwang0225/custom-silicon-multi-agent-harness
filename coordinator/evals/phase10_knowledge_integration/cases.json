@@ -1,0 +1,17 @@
+[
+  {"id":"A","name":"Correct approved procedure","test":"test_approved_current_version_exact_and_empty"},
+  {"id":"B","name":"Wrong product excluded","test":"test_wrong_configuration_product_and_score_cannot_override"},
+  {"id":"C","name":"Superseded procedure is not normative","test":"test_superseded_and_historical_policy"},
+  {"id":"D","name":"Historical guidance labeled","test":"test_history_injection_source_precedence_and_revocation"},
+  {"id":"E","name":"Correct document/version citation","test":"test_sdk_tools_exact_receipts_and_forgery"},
+  {"id":"F","name":"Exact verification before reliance","test":"test_verification_rechecks_source_change_and_metadata"},
+  {"id":"G","name":"High score cannot override applicability","test":"test_wrong_configuration_product_and_score_cannot_override"},
+  {"id":"H","name":"Empty retrieval stays unknown","test":"test_empty_failure_and_budgets_are_not_facts"},
+  {"id":"I","name":"No fabricated verified policy","test":"test_empty_retrieval_cannot_fabricate_verified_policy"},
+  {"id":"J","name":"Current structured HOLD wins","test":"test_current_hold_and_injection_cannot_change_typed_operational_claims"},
+  {"id":"K","name":"Injection cannot change policy/claims","test":"test_current_hold_and_injection_cannot_change_typed_operational_claims"},
+  {"id":"L","name":"Restricted persona cannot see passage","test":"test_concierge_same_service_verified_explanation_access_and_cache"},
+  {"id":"M","name":"Coordinator has no broadened retrieval","test":"test_persona_and_coordinator_scope"},
+  {"id":"N","name":"Operational quantity uses structured tools","test":"test_operational_quantity_does_not_trigger_search"},
+  {"id":"O","name":"Failure cannot create a verified conclusion","test":"test_empty_failure_and_budgets_are_not_facts"}
+]

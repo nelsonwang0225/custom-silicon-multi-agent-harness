@@ -1,0 +1,65 @@
+[
+  {
+    "fg": "ink",
+    "bg": "surface",
+    "foreground": "#1d1d1f",
+    "background": "#ffffff",
+    "ratio": 16.83
+  },
+  {
+    "fg": "secondary",
+    "bg": "canvas",
+    "foreground": "#5f6368",
+    "background": "#f7f8fa",
+    "ratio": 5.69
+  },
+  {
+    "fg": "secondary",
+    "bg": "surface",
+    "foreground": "#5f6368",
+    "background": "#ffffff",
+    "ratio": 6.05
+  },
+  {
+    "fg": "surface",
+    "bg": "action",
+    "foreground": "#ffffff",
+    "background": "#0066cc",
+    "ratio": 5.57
+  },
+  {
+    "fg": "action",
+    "bg": "action-tint",
+    "foreground": "#0066cc",
+    "background": "#eaf3ff",
+    "ratio": 4.97
+  },
+  {
+    "fg": "agent",
+    "bg": "agent-tint",
+    "foreground": "#6d28d9",
+    "background": "#f3edff",
+    "ratio": 6.21
+  },
+  {
+    "fg": "success",
+    "bg": "success-tint",
+    "foreground": "#16794b",
+    "background": "#eaf7ef",
+    "ratio": 4.92
+  },
+  {
+    "fg": "warning",
+    "bg": "warning-tint",
+    "foreground": "#9a5b00",
+    "background": "#fff4df",
+    "ratio": 4.98
+  },
+  {
+    "fg": "danger",
+    "bg": "danger-tint",
+    "foreground": "#b42318",
+    "background": "#fff0ee",
+    "ratio": 5.93
+  }
+]

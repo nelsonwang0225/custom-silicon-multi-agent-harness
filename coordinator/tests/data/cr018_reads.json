@@ -1,0 +1,360 @@
+[
+  {
+    "tool": "get_change_request",
+    "arguments": {
+      "change_id": "CR-018"
+    },
+    "data": {
+      "id": "CR-018",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "category": "Administrative runtime/firmware compatibility evidence reference",
+      "owner": "Mara Chen",
+      "priority": "low",
+      "next_action": "Assess existing evidence for an internal reference packet",
+      "customer_id": "CUST-FML01",
+      "baseline_requirement_revision_id": "REQ-042-V1",
+      "proposed_requirement_revision_id": "REQ-042-V1",
+      "configuration_id": "CFG-B-01",
+      "milestone_id": "MS-ACCEPT-01",
+      "order_id": "ORD-1204",
+      "request_document_id": "DOC-COORD-REQUEST-018",
+      "workflow_state": "new",
+      "record_version": 1,
+      "request_received_at": "2026-11-16T09:00:00Z",
+      "title": "Existing runtime compatibility evidence reference packet",
+      "current_plan_id": null,
+      "plans": [],
+      "execution_state": "not_scheduled"
+    }
+  },
+  {
+    "tool": "get_document",
+    "arguments": {
+      "document_id": "DOC-COORD-REQUEST-018"
+    },
+    "data": {
+      "id": "DOC-COORD-REQUEST-018",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "document_type": "coordination_request",
+      "status": "requested",
+      "document_version": "1",
+      "content": "{\n  \"request_kind\": \"evidence_reference_packet\",\n  \"customer_id\": \"CUST-FML01\",\n  \"program_id\": \"PRG-A17\",\n  \"change_id\": \"CR-018\",\n  \"policy_document_id\": \"DOC-COORD-POLICY-01\",\n  \"requirement_revision_id\": \"REQ-042-V1\",\n  \"requested_followthrough\": \"prepare_existing_evidence_packet\",\n  \"incremental_cost_cents\": 0,\n  \"changes_configuration\": false,\n  \"changes_requirements\": false,\n  \"changes_customer_commitment\": false,\n  \"description\": \"Synthetic administrative request to prepare an internal reference packet for the already approved CFG-B-01 / FW-2.3 / RT-4.1 / WF-LC-V1 baseline. No requirement revision, new test, customer communication, scheduling, spend, physical change or acceptance decision is requested. Existing authoritative evidence must fully cover that exact approved baseline. CR-017's separate WF-LC-V2 obligation is unaffected.\"\n}\n",
+      "content_hash": "e19f907c57a1fdb81483d7e6a394c56e0fcf65b31830c4c5dff3e95b911897c6"
+    }
+  },
+  {
+    "tool": "get_document",
+    "arguments": {
+      "document_id": "DOC-COORD-POLICY-01"
+    },
+    "data": {
+      "id": "DOC-COORD-POLICY-01",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "document_type": "coordination_policy",
+      "status": "approved",
+      "document_version": "1",
+      "content": "{\n  \"policy_kind\": \"evidence_reference_packet\",\n  \"policy_version\": 1,\n  \"customer_id\": \"CUST-FML01\",\n  \"program_id\": \"PRG-A17\",\n  \"permitted_followthrough\": \"prepare_existing_evidence_packet\",\n  \"requires_approved_identical_requirement\": true,\n  \"requires_sufficient_coverage\": true,\n  \"max_incremental_cost_cents\": 0,\n  \"permits_business_mutations\": false\n}\n",
+      "content_hash": "c09c1be3c4cbde5f1662ca0f1bdbd27df86edb3105934b18c045628d02953f86"
+    }
+  },
+  {
+    "tool": "get_requirement_revision",
+    "arguments": {
+      "requirement_revision_id": "REQ-042-V1"
+    },
+    "data": {
+      "id": "REQ-042-V1",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "summary": null,
+      "requirement_id": "REQ-042",
+      "revision": 1,
+      "customer_id": "CUST-FML01",
+      "status": "approved",
+      "configuration_id": "CFG-B-01",
+      "workload_profile_id": "WF-LC-V1",
+      "acceptance_limits_ref": "CRIT-BASE-V1"
+    }
+  },
+  {
+    "tool": "get_validation_coverage",
+    "arguments": {
+      "change_id": "CR-018"
+    },
+    "data": {
+      "synthetic": true,
+      "change_id": "CR-018",
+      "coverage_satisfied": true,
+      "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468",
+      "items": [
+        {
+          "result": {
+            "id": "RES-BASELINE-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-B-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V1",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-B",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-B-017",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              8192,
+              32768
+            ],
+            "actual_suite_minutes": 120,
+            "observed_minutes_by_context_bin": {
+              "32768": 60,
+              "8192": 60
+            },
+            "completed_at": "2026-11-12T16:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-B-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-B",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": "not_yet_demonstrated_for_WF-LC-V2"
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                8192,
+                32768
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 120
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": true,
+          "mismatch_reasons": []
+        },
+        {
+          "result": {
+            "id": "RES-LONG-A",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-A-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V2",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-A",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-A-010",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              32768,
+              65536,
+              131072
+            ],
+            "actual_suite_minutes": 480,
+            "observed_minutes_by_context_bin": {
+              "131072": 160,
+              "32768": 160,
+              "65536": 160
+            },
+            "completed_at": "2026-11-13T16:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-A-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-A",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": null
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V2",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                32768,
+                65536,
+                131072
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 480
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": false,
+          "mismatch_reasons": [
+            "INSUFFICIENT_DURATION",
+            "MISSING_CONTEXT_BINS",
+            "WRONG_CONFIGURATION",
+            "WRONG_PRODUCT_REVISION",
+            "WRONG_PROFILE"
+          ]
+        },
+        {
+          "result": {
+            "id": "RES-SHORT-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-B-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V2",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-B",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-B-017",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              32768,
+              65536,
+              131072
+            ],
+            "actual_suite_minutes": 60,
+            "observed_minutes_by_context_bin": {
+              "131072": 20,
+              "32768": 20,
+              "65536": 20
+            },
+            "completed_at": "2026-11-15T12:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-B-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-B",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": "not_yet_demonstrated_for_WF-LC-V2"
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V2",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                32768,
+                65536,
+                131072
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 480
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": false,
+          "mismatch_reasons": [
+            "INSUFFICIENT_DURATION",
+            "MISSING_CONTEXT_BINS",
+            "WRONG_PROFILE"
+          ]
+        }
+      ]
+    }
+  }
+]

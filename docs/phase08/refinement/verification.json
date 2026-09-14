@@ -1,0 +1,473 @@
+{
+  "label": "SCRIPTED LOCAL HTTP/BROWSER INTEGRATION TESTS; NO AI RUN OR ACTUAL HUMAN APPROVAL",
+  "previewUrl": "http://127.0.0.1:5188/control",
+  "screenshotTestBaseUrl": "http://127.0.0.1:5174",
+  "baselineScreenshotUrl": "http://127.0.0.1:5188/control",
+  "checks": {
+    "typecheck": "PASS",
+    "productionBuild": "PASS",
+    "fullPlaywright": {
+      "passed": 32,
+      "originalSourceAppRegressions": 20,
+      "controlBrowserTests": 9,
+      "viewModelTests": 3,
+      "duration": "3.0m"
+    },
+    "pytestSource": {
+      "passed": 15,
+      "durationSeconds": 0.47
+    },
+    "contrastPairs": 9,
+    "minimumContrast": 4.92
+  },
+  "copyComparison": {
+    "beforeWords": 421,
+    "afterWords": 196,
+    "reductionPercent": "53.4",
+    "method": "main.innerText whitespace tokens, default filters and collapsed details, 1440\u00d7900; includes labels and select option text, excludes header/chat"
+  },
+  "preservation": {
+    "inventoried": 459,
+    "unchanged": 448,
+    "changedExpected": [
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/style.css",
+      "mock_apps_ui/src/control/portfolio.tsx",
+      "mock_apps_ui/src/control/program.tsx",
+      "mock_apps_ui/src/control/ui.tsx",
+      "mock_apps_ui/e2e/control-plane.spec.ts",
+      "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+      "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+      "docs/PHASE08_1_HANDOFF.md",
+      "AGENTS.md",
+      "README.md"
+    ],
+    "unexpectedChanges": [],
+    "missing": [],
+    "legacyScreenshotsRestored": 59,
+    "previousPhase08ScreenshotsUnchanged": 21,
+    "preexistingDemoDatabaseFilesUnchanged": [
+      ".demo/ui-e2e-9de31aecb8ce4e20b65d95efc19bfcff.sqlite3.lock",
+      ".demo/verify-b0d290a555014dddb02bb68cf82fe79b.sqlite3",
+      ".demo/ui-e2e-ce438293683544e0ad64914c78deef13.sqlite3",
+      ".demo/verify-a36a581539ab4e289e90f4015197aadc.sqlite3",
+      ".demo/ui-e2e-d8c5af55a3764d33b80fc09078f3d303.sqlite3.lock",
+      ".demo/ui-e2e-64dbceaa3fea4761a0ece64e6c0196d8.sqlite3.lock",
+      ".demo/ui-e2e-c0eb001486a74911946ca5c6093aeb9f.sqlite3",
+      ".demo/verify-203b121744084918a7fb78e6a29c6f1e.sqlite3",
+      ".demo/ui-e2e-cbc18f008c244d6d9e1cbdd428494cac.sqlite3",
+      ".demo/ui-e2e-ce4d374635db4bccbc1be748b0a2b223.sqlite3",
+      ".demo/verify-fc3def03f3f94ce9974ad0e1b28d0f89.sqlite3.lock",
+      ".demo/ui-e2e-8659210d53924b85b9c4f411437dddc2.sqlite3.lock",
+      ".demo/ui-e2e-6e6cc08f910b48489c1d1b3ff6d6662b.sqlite3",
+      ".demo/ui-e2e-56bb766a23c541648f447a9ad42e10eb.sqlite3",
+      ".demo/ui-e2e-25d567d1c8f545a5ab8520b2ac1b7b8d.sqlite3",
+      ".demo/verify-ed3b2d8117a34662b3367efa63175662.sqlite3",
+      ".demo/ui-e2e-7670018b118c4f328c27381eff1cb255.sqlite3.lock",
+      ".demo/ui-e2e-3821cfc68d5540b7904ab589a56381e3.sqlite3.lock",
+      ".demo/verify-08b35775a4a74f279d01a59c859b6412.sqlite3.lock",
+      ".demo/ui-e2e-a4239580ed8e468288f3e449716f53c2.sqlite3.lock",
+      ".demo/ui-e2e-53e271c2c2d345efa875dd199d109c96.sqlite3",
+      ".demo/ui-e2e-addb071f4b1a46a489a6d240de8864b4.sqlite3",
+      ".demo/ui-e2e-14c9e98da0e4469b94a79e155290fbc0.sqlite3.lock",
+      ".demo/ui-e2e-f8f9abaf320348729c7167e94a092ba3.sqlite3",
+      ".demo/ui-e2e-e868ea1624f54e138df50e2e6688dabb.sqlite3.lock",
+      ".demo/ui-e2e-d6f8811ab58f4facbbb6e46366c1bdbf.sqlite3.lock",
+      ".demo/verify-62ca53be83ef455c88c3c716dc52e013.sqlite3.lock",
+      ".demo/verify-fc3def03f3f94ce9974ad0e1b28d0f89.sqlite3",
+      ".demo/ui-e2e-07805828281946a69df329beaa1226e1.sqlite3.lock",
+      ".demo/ui-e2e-ab1f446477b0477cbe63ba2b94f08377.sqlite3",
+      ".demo/ui-e2e-5b154254af134d14b47d6ec7beec42ac.sqlite3.lock",
+      ".demo/ui-e2e-f4df2b4d26fd4213a0f2be063ecd6cbd.sqlite3",
+      ".demo/ui-e2e-bb37d916954940a0acf6ced1e440b85d.sqlite3.lock",
+      ".demo/verify-ed3b2d8117a34662b3367efa63175662.sqlite3.lock",
+      ".demo/ui-e2e-a15325c0b59e48a2a98aa82c3d08d4c8.sqlite3.lock",
+      ".demo/ui-e2e-f78c3c905b3a49f5adbd26a6444b2387.sqlite3",
+      ".demo/ui-e2e-6e77ce7408e44e2f9e8f4555ca4de60a.sqlite3.lock",
+      ".demo/ui-e2e-9f35c44e239649ac8018565284d60729.sqlite3.lock",
+      ".demo/ui-e2e-0214d973186e4a61b8c21b85e75c4689.sqlite3",
+      ".demo/ui-e2e-ccc3192320e34a43b7574405bd6c96e7.sqlite3.lock",
+      ".demo/verify-2886af3c54be4221858829df4735c396.sqlite3.lock",
+      ".demo/verify-00ae13ef4a5b4265a755d9abd1ecf6b1.sqlite3.lock",
+      ".demo/verify-62ca53be83ef455c88c3c716dc52e013.sqlite3",
+      ".demo/ui-e2e-15c0762ef471460a9bb9a700200176a7.sqlite3",
+      ".demo/ui-e2e-addb071f4b1a46a489a6d240de8864b4.sqlite3.lock",
+      ".demo/ui-e2e-7233af3becc748889fc48c21951ecbaa.sqlite3",
+      ".demo/ui-e2e-25d567d1c8f545a5ab8520b2ac1b7b8d.sqlite3.lock",
+      ".demo/ui-e2e-a2bc95df5fdb464fbd4689f85da51910.sqlite3.lock",
+      ".demo/verify-3d52d5af557644d69cd43a322565c08c.sqlite3",
+      ".demo/ui-e2e-24431564c95f49fab014f4f7959caf38.sqlite3.lock",
+      ".demo/verify-d1c518280be84690847d27e8b92fb201.sqlite3.lock",
+      ".demo/ui-e2e-8cb6d9a2385e45de913c0f58b653e1c2.sqlite3",
+      ".demo/ui-e2e-2bec16c13bfa4865aab09c6c2054f0f8.sqlite3",
+      ".demo/verify-13200cab6dbe4649a2ad1f1bf099b5e8.sqlite3",
+      ".demo/ui-e2e-27a6d71d384b4d09817c1b6000bd6497.sqlite3.lock",
+      ".demo/enterprise.sqlite3",
+      ".demo/ui-e2e-d4f02c77075c4750b9b0f1b9165fb4b1.sqlite3.lock",
+      ".demo/ui-e2e-34af4ffa9f19461bb1df39fefa8853e9.sqlite3.lock",
+      ".demo/ui-e2e-a87ea8466f96431fb68342a7c6642c5f.sqlite3",
+      ".demo/verify-00ae13ef4a5b4265a755d9abd1ecf6b1.sqlite3",
+      ".demo/ui-e2e-ccc3192320e34a43b7574405bd6c96e7.sqlite3",
+      ".demo/ui-e2e-d6f8811ab58f4facbbb6e46366c1bdbf.sqlite3",
+      ".demo/verify-89d28b5ae5e14d42971e6edc4e57583d.sqlite3.lock",
+      ".demo/verify-4770d5e2d1c74a2988abd632ce8e2b3c.sqlite3",
+      ".demo/verify-95af10a8be544336b56a340b7ef088da.sqlite3",
+      ".demo/ui-e2e-14c9e98da0e4469b94a79e155290fbc0.sqlite3",
+      ".demo/ui-e2e-f78c3c905b3a49f5adbd26a6444b2387.sqlite3.lock",
+      ".demo/verify-17c466d6c5c04d34aeb41e9804722e9f.sqlite3",
+      ".demo/ui-e2e-5b154254af134d14b47d6ec7beec42ac.sqlite3",
+      ".demo/ui-e2e-24431564c95f49fab014f4f7959caf38.sqlite3",
+      ".demo/verify-cdc9ed796cc74468b8e403aa25284e17.sqlite3.lock",
+      ".demo/verify-db8608023c074fa2a9610029b67e5f03.sqlite3.lock",
+      ".demo/ui-e2e-9f35c44e239649ac8018565284d60729.sqlite3",
+      ".demo/verify-89d28b5ae5e14d42971e6edc4e57583d.sqlite3",
+      ".demo/verify-203b121744084918a7fb78e6a29c6f1e.sqlite3.lock",
+      ".demo/verify-4bce6f3fc1ae412b864d64f904530099.sqlite3",
+      ".demo/ui-e2e-1aa670e19a7a45d099076413fbebeb87.sqlite3.lock",
+      ".demo/ui-e2e-a0bea27f2646465995bd68033c18eb46.sqlite3.lock",
+      ".demo/ui-e2e-4a135a182a6a4c6d8385840d652677d8.sqlite3",
+      ".demo/ui-e2e-1b88360eeb5c4354a5c260d186ec7ca8.sqlite3.lock",
+      ".demo/verify-17c466d6c5c04d34aeb41e9804722e9f.sqlite3.lock",
+      ".demo/ui-e2e-9de31aecb8ce4e20b65d95efc19bfcff.sqlite3",
+      ".demo/mcp-step5.sqlite3",
+      ".demo/ui-e2e-82905dd88c2f466597148692775e9615.sqlite3",
+      ".demo/ui-e2e-27a6d71d384b4d09817c1b6000bd6497.sqlite3",
+      ".demo/ui-e2e-6e77ce7408e44e2f9e8f4555ca4de60a.sqlite3",
+      ".demo/ui-e2e-2bec16c13bfa4865aab09c6c2054f0f8.sqlite3.lock",
+      ".demo/verify-b37c7af5b6fc4ca7a679a56fc63d43c0.sqlite3",
+      ".demo/ui-e2e-64dbceaa3fea4761a0ece64e6c0196d8.sqlite3",
+      ".demo/ui-e2e-284800aecdad412c88bdc10b58dac6a0.sqlite3.lock",
+      ".demo/verify-d0cf00af2ebb412287bc17244b993541.sqlite3.lock",
+      ".demo/ui-e2e-ce4d374635db4bccbc1be748b0a2b223.sqlite3.lock",
+      ".demo/ui-e2e-d7f096362f694d92b558cc4e2f7c92f6.sqlite3.lock",
+      ".demo/ui-e2e-4a135a182a6a4c6d8385840d652677d8.sqlite3.lock",
+      ".demo/ui-e2e-8173d16c40af4aa4a39c27706aa219be.sqlite3.lock",
+      ".demo/ui-e2e-d4f02c77075c4750b9b0f1b9165fb4b1.sqlite3",
+      ".demo/verify-08b35775a4a74f279d01a59c859b6412.sqlite3",
+      ".demo/ui-e2e-7233af3becc748889fc48c21951ecbaa.sqlite3.lock",
+      ".demo/ui-e2e-ae5727c62af6419ba33721dffbba60d3.sqlite3.lock",
+      ".demo/ui-e2e-c0eb001486a74911946ca5c6093aeb9f.sqlite3.lock",
+      ".demo/ui-e2e-0214d973186e4a61b8c21b85e75c4689.sqlite3.lock",
+      ".demo/ui-e2e-53e271c2c2d345efa875dd199d109c96.sqlite3.lock",
+      ".demo/ui-e2e-cc43ff8eec254eca978e510cf6851240.sqlite3.lock",
+      ".demo/ui-e2e-8173d16c40af4aa4a39c27706aa219be.sqlite3",
+      ".demo/ui-e2e-f8f9abaf320348729c7167e94a092ba3.sqlite3.lock",
+      ".demo/ui-e2e-6f773884cb8044139ad513295ec24c7c.sqlite3.lock",
+      ".demo/ui-e2e-07805828281946a69df329beaa1226e1.sqlite3",
+      ".demo/ui-e2e-ab1f446477b0477cbe63ba2b94f08377.sqlite3.lock",
+      ".demo/ui-e2e-e868ea1624f54e138df50e2e6688dabb.sqlite3",
+      ".demo/verify-8cb3e60508ca4621b9728a6264f85e3e.sqlite3",
+      ".demo/verify-a36a581539ab4e289e90f4015197aadc.sqlite3.lock",
+      ".demo/enterprise.sqlite3.lock",
+      ".demo/ui-e2e-d61a8fde1deb4ed7822c7a075ac50498.sqlite3",
+      ".demo/ui-e2e-ce438293683544e0ad64914c78deef13.sqlite3.lock",
+      ".demo/ui-e2e-9e76069b730846aca853de00b5a937ae.sqlite3",
+      ".demo/verify-998c52d027ad4893801a3f6bc2a79e93.sqlite3.lock",
+      ".demo/ui-e2e-8659210d53924b85b9c4f411437dddc2.sqlite3",
+      ".demo/verify-bbed65e76905410fbadb20d06f8898c4.sqlite3",
+      ".demo/verify-d0cf00af2ebb412287bc17244b993541.sqlite3",
+      ".demo/ui-e2e-36ed81ce0fdb44ec993a4b0465425bc4.sqlite3",
+      ".demo/verify-8a924b02b46842c1ad891d6f01b49692.sqlite3.lock",
+      ".demo/ui-e2e-cb75931a2e8645eb845124644729bbb1.sqlite3",
+      ".demo/ui-e2e-a87ea8466f96431fb68342a7c6642c5f.sqlite3.lock",
+      ".demo/verify-998c52d027ad4893801a3f6bc2a79e93.sqlite3",
+      ".demo/ui-e2e-34af4ffa9f19461bb1df39fefa8853e9.sqlite3",
+      ".demo/ui-e2e-97d001d199694134b01837536586103e.sqlite3",
+      ".demo/verify-4bce6f3fc1ae412b864d64f904530099.sqlite3.lock",
+      ".demo/ui-e2e-a4239580ed8e468288f3e449716f53c2.sqlite3",
+      ".demo/ui-e2e-d8c5af55a3764d33b80fc09078f3d303.sqlite3",
+      ".demo/ui-e2e-d7f096362f694d92b558cc4e2f7c92f6.sqlite3",
+      ".demo/ui-e2e-7670018b118c4f328c27381eff1cb255.sqlite3",
+      ".demo/ui-e2e-cc43ff8eec254eca978e510cf6851240.sqlite3",
+      ".demo/verify-3d52d5af557644d69cd43a322565c08c.sqlite3.lock",
+      ".demo/verify-bbed65e76905410fbadb20d06f8898c4.sqlite3.lock",
+      ".demo/ui-e2e-bd45b2a1540f4e339a30221f8c5c8c32.sqlite3.lock",
+      ".demo/ui-e2e-ae5727c62af6419ba33721dffbba60d3.sqlite3",
+      ".demo/ui-e2e-c29ae6c3b95f4a838ee2609fb153395e.sqlite3.lock",
+      ".demo/ui-e2e-c29ae6c3b95f4a838ee2609fb153395e.sqlite3",
+      ".demo/ui-e2e-bb37d916954940a0acf6ced1e440b85d.sqlite3",
+      ".demo/verify-db8608023c074fa2a9610029b67e5f03.sqlite3",
+      ".demo/ui-e2e-15c0762ef471460a9bb9a700200176a7.sqlite3.lock",
+      ".demo/ui-e2e-97d001d199694134b01837536586103e.sqlite3.lock",
+      ".demo/ui-e2e-1b88360eeb5c4354a5c260d186ec7ca8.sqlite3",
+      ".demo/ui-e2e-a9c8efba8d1c4747aca6c13c9ff52201.sqlite3.lock",
+      ".demo/verify-2886af3c54be4221858829df4735c396.sqlite3",
+      ".demo/ui-e2e-a0bea27f2646465995bd68033c18eb46.sqlite3",
+      ".demo/verify-68a3d0a29b734036a8d2167f974b76c9.sqlite3.lock",
+      ".demo/ui-e2e-f4df2b4d26fd4213a0f2be063ecd6cbd.sqlite3.lock",
+      ".demo/ui-e2e-6f773884cb8044139ad513295ec24c7c.sqlite3",
+      ".demo/verify-b37c7af5b6fc4ca7a679a56fc63d43c0.sqlite3.lock",
+      ".demo/verify-13200cab6dbe4649a2ad1f1bf099b5e8.sqlite3.lock",
+      ".demo/ui-e2e-1aa670e19a7a45d099076413fbebeb87.sqlite3",
+      ".demo/verify-b72affe45d29458badeb9943d5a9fc28.sqlite3",
+      ".demo/ui-e2e-3821cfc68d5540b7904ab589a56381e3.sqlite3",
+      ".demo/ui-e2e-d61a8fde1deb4ed7822c7a075ac50498.sqlite3.lock",
+      ".demo/ui-e2e-bd45b2a1540f4e339a30221f8c5c8c32.sqlite3",
+      ".demo/mcp-step5.sqlite3.lock",
+      ".demo/verify-1fa688a868c54cf2ab5636bcc2efb96e.sqlite3",
+      ".demo/ui-e2e-36ed81ce0fdb44ec993a4b0465425bc4.sqlite3.lock",
+      ".demo/ui-e2e-9e76069b730846aca853de00b5a937ae.sqlite3.lock",
+      ".demo/verify-b72affe45d29458badeb9943d5a9fc28.sqlite3.lock",
+      ".demo/verify-1fa688a868c54cf2ab5636bcc2efb96e.sqlite3.lock",
+      ".demo/ui-e2e-b120e621fd3f4d3eaab352fec8e1c6ad.sqlite3",
+      ".demo/ui-e2e-a23ee4440d524d6580d52dba7ff33da3.sqlite3.lock",
+      ".demo/ui-e2e-b120e621fd3f4d3eaab352fec8e1c6ad.sqlite3.lock",
+      ".demo/ui-e2e-56bb766a23c541648f447a9ad42e10eb.sqlite3.lock",
+      ".demo/verify-68a3d0a29b734036a8d2167f974b76c9.sqlite3",
+      ".demo/ui-e2e-a9c8efba8d1c4747aca6c13c9ff52201.sqlite3",
+      ".demo/ui-e2e-a3d14df5a64148dfbecb1438be97042c.sqlite3",
+      ".demo/ui-e2e-6e6cc08f910b48489c1d1b3ff6d6662b.sqlite3.lock",
+      ".demo/verify-4770d5e2d1c74a2988abd632ce8e2b3c.sqlite3.lock",
+      ".demo/ui-e2e-cbc18f008c244d6d9e1cbdd428494cac.sqlite3.lock",
+      ".demo/ui-e2e-a15325c0b59e48a2a98aa82c3d08d4c8.sqlite3",
+      ".demo/verify-6b0ee51d6ec54786a58abebb388bdf38.sqlite3",
+      ".demo/ui-e2e-a2bc95df5fdb464fbd4689f85da51910.sqlite3",
+      ".demo/verify-8cb3e60508ca4621b9728a6264f85e3e.sqlite3.lock",
+      ".demo/ui-e2e-cb75931a2e8645eb845124644729bbb1.sqlite3.lock",
+      ".demo/ui-e2e-284800aecdad412c88bdc10b58dac6a0.sqlite3",
+      ".demo/ui-e2e-8cb6d9a2385e45de913c0f58b653e1c2.sqlite3.lock",
+      ".demo/ui-e2e-82905dd88c2f466597148692775e9615.sqlite3.lock",
+      ".demo/ui-e2e-a23ee4440d524d6580d52dba7ff33da3.sqlite3",
+      ".demo/verify-d1c518280be84690847d27e8b92fb201.sqlite3",
+      ".demo/ui-e2e-a3d14df5a64148dfbecb1438be97042c.sqlite3.lock",
+      ".demo/verify-6b0ee51d6ec54786a58abebb388bdf38.sqlite3.lock",
+      ".demo/verify-8a924b02b46842c1ad891d6f01b49692.sqlite3",
+      ".demo/verify-b0d290a555014dddb02bb68cf82fe79b.sqlite3.lock",
+      ".demo/verify-cdc9ed796cc74468b8e403aa25284e17.sqlite3",
+      ".demo/verify-95af10a8be544336b56a340b7ef088da.sqlite3.lock"
+    ],
+    "historicalPhase07FilesCheckedAgainstPriorInventory": 2277,
+    "historicalPhase07Changes": []
+  },
+  "newImplementationFiles": [
+    "mock_apps_ui/src/control/assistant.tsx",
+    "mock_apps_ui/src/control/agent-activity.tsx",
+    "mock_apps_ui/src/control/overview-model.ts",
+    "mock_apps_ui/e2e/control-view-model.spec.ts",
+    "prompts/08_1_VISUAL_REFINEMENT.md",
+    "docs/PHASE08_1_REFINEMENT_HANDOFF.md"
+  ],
+  "newScreenshots": [
+    "assistant-1024.png",
+    "assistant-1280.png",
+    "assistant-1440.png",
+    "assistant-1920.png",
+    "assistant-200-percent-zoom.png",
+    "assistant-375.png",
+    "assistant-640.png",
+    "assistant-short-375.png",
+    "before-portfolio-1440.png",
+    "case-1280.png",
+    "case-1440.png",
+    "case-200-percent-zoom.png",
+    "delivery-1280.png",
+    "delivery-1440.png",
+    "evidence-1280.png",
+    "evidence-1440.png",
+    "portfolio-1024.png",
+    "portfolio-1280.png",
+    "portfolio-1440.png",
+    "portfolio-1920.png",
+    "portfolio-375.png",
+    "portfolio-640.png",
+    "program-1280.png",
+    "program-1440.png"
+  ],
+  "readOnlyReceipt": {
+    "label": "SCRIPTED HTTP/BROWSER INTEGRATION TEST; NO AI",
+    "sourcePortfolioUnchanged": true,
+    "writes": [],
+    "errors": [],
+    "methods": [
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      }
+    ]
+  },
+  "notConnected": [
+    "Host agent activity reads",
+    "Chat sending",
+    "New approval or execution UI",
+    "Active scheduler"
+  ],
+  "skipped": [
+    "Paid agents or semantic graders",
+    "Full Coordinator/MCP/Phase06 and Phase07 reliability suites (implementations unchanged)",
+    "Physical iOS/Android keyboard testing",
+    "Cross-browser and screen-reader certification",
+    "Native browser zoom across platforms"
+  ]
+}

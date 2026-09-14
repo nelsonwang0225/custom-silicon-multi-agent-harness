@@ -1,0 +1,11 @@
+#!/bin/sh
+# One repository-owned interpreter; no activation or previous terminal required.
+set -eu
+DEMO_PROJECT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ ! -x "$DEMO_PROJECT/coordinator/.venv/bin/python" ]; then
+  echo 'Coordinator environment missing. Run: uv sync --project coordinator --locked' >&2
+  exit 1
+fi
+cd "$DEMO_PROJECT"
+export PYTHONPATH="$DEMO_PROJECT/src:$DEMO_PROJECT"
+exec "$DEMO_PROJECT/coordinator/.venv/bin/python" -m program_coordinator.control_host.demo_harness "$@"

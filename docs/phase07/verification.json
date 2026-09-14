@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "notice": "OFFLINE / SCRIPTED INTEGRATION TESTING; NO AI INFERENCE; REVIEW IDENTITIES SIMULATED",
+  "final_python_tests": 828,
+  "final_browser_tests": 20,
+  "total_unique_tests": 848,
+  "existing_regression_tests": 682,
+  "new_phase07_tests": 166,
+  "eval_cases": 40,
+  "final_failed": 0,
+  "final_skipped": 0,
+  "paid_model_calls": 0,
+  "live_eval_cases_run": 0,
+  "semantic_cases_run": 0,
+  "hard_gate_status": "PASS",
+  "checks": [
+    {
+      "check": "backend",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" .venv/bin/python -m pytest -q --tb=short --junitxml=.cache/phase07/backend.xml",
+      "passed": 385,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 8,
+      "evidence": ".cache/phase07/backend.xml"
+    },
+    {
+      "check": "coordinator-final",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" coordinator/.venv/bin/python -m pytest -c coordinator/pyproject.toml coordinator/tests -q --tb=short --junitxml=.cache/phase07/coordinator-final.xml",
+      "passed": 337,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 158,
+      "evidence": ".cache/phase07/coordinator-final.xml"
+    },
+    {
+      "check": "investigator",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" investigator/.venv/bin/python -m pytest -c investigator/pyproject.toml investigator/tests -q --tb=short --junitxml=.cache/phase07/investigator.xml",
+      "passed": 39,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 0,
+      "evidence": ".cache/phase07/investigator.xml"
+    },
+    {
+      "check": "mcp",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" mcp_server/.venv/bin/python -m pytest -c mcp_server/pyproject.toml mcp_server/tests -q --tb=short --junitxml=.cache/phase07/mcp.xml",
+      "passed": 56,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 0,
+      "evidence": ".cache/phase07/mcp.xml"
+    },
+    {
+      "check": "runtime-checks",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" .venv/bin/python -m pytest runtime_checks/test_openai_connection.py -q --tb=short --basetemp=.cache/phase07/runtime-check-pytest --junitxml=.cache/phase07/runtime-checks.xml",
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 0,
+      "evidence": ".cache/phase07/runtime-checks.xml"
+    },
+    {
+      "check": "Browser regression",
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run test:e2e (cwd mock_apps_ui)",
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "phase07_tests": 0,
+      "evidence": ".cache/phase07/ui-e2e-chrome.log"
+    },
+    {
+      "check": "UI TypeScript",
+      "command": "npm run typecheck (cwd mock_apps_ui)",
+      "result": "PASS",
+      "evidence": ".cache/phase07/ui-typecheck.log"
+    },
+    {
+      "check": "UI production build",
+      "command": "npm run build (cwd mock_apps_ui)",
+      "result": "PASS",
+      "evidence": ".cache/phase07/ui-build.log"
+    },
+    {
+      "check": "Python compilation",
+      "command": "PYTHONPATH=src coordinator/.venv/bin/python -m compileall -q src coordinator/evals/phase07 coordinator/tests/test_phase07_evals.py coordinator/tests/test_phase07_runtime.py tests/test_phase07_sources.py",
+      "result": "PASS",
+      "evidence": ".cache/phase07/compile-final.log"
+    },
+    {
+      "check": "Scenario validation",
+      "command": ".venv/bin/python scripts/validate_scenario.py",
+      "result": "PASS",
+      "evidence": ".cache/phase07/scenario.log"
+    },
+    {
+      "check": "Phase 06 real HTTP/restart smoke",
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" .venv/bin/python coordinator/evals/verify_phase06.py",
+      "result": "PASS",
+      "evidence": ".cache/phase07/phase06-http.log"
+    },
+    {
+      "check": "Phase 07 offline eval",
+      "command": "PYTHONPATH=src coordinator/.venv/bin/python -m coordinator.evals.phase07 --output .cache/phase07/handoff-baseline-20260911",
+      "result": "PASS",
+      "evidence": ".cache/phase07/handoff-baseline.log"
+    }
+  ],
+  "initial_environment_failure": {
+    "command": "npm run test:e2e (cwd mock_apps_ui)",
+    "reason": "Bundled Playwright headless shell missing",
+    "launch_failures": 15,
+    "dependent_not_run": 5,
+    "resolution": "Existing configured executable override used with installed Google Chrome; all 20 passed",
+    "evidence": ".cache/phase07/ui-e2e.log"
+  },
+  "preserved_baseline": {
+    "snapshot": ".cache/phase07/before-sha256.json",
+    "inspected_files": 96,
+    "changed_existing_files": [
+      "AGENTS.md",
+      "README.md"
+    ],
+    "runtime_source_tests_seed_api_dependency_hashes_unchanged": true
+  },
+  "skipped_live_checks": [
+    "Actual paid GPT-6 Astra multi-agent evaluation",
+    "Actual paid semantic grader requests"
+  ],
+  "offline_live_path_verification": [
+    "All six isolated source variants through real localhost HTTP and MCP",
+    "Existing CaseHarness artifact adapter using deterministic SDK responses",
+    "Optional semantic SDK wiring using a fake key and mocked Runner with network blocked"
+  ],
+  "baseline_run_id": "eval_ed6dbbca2bab4bfb94f8345dff695d33",
+  "baseline_directory": ".cache/phase07/handoff-baseline-20260911"
+}

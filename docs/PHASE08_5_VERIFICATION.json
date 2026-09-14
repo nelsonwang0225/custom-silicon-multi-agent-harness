@@ -1,0 +1,282 @@
+{
+  "phase": "08.5 Connected Stratos Concierge",
+  "verified_at": "2026-09-12T15:04:20.697985+00:00",
+  "repository": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome",
+  "verification": [
+    {
+      "check": "source_backend",
+      "command": ".venv/bin/python -m pytest tests -q --basetemp=.cache/phase08-5/source",
+      "passed": 483,
+      "log": ".cache/phase08-5/source.log"
+    },
+    {
+      "check": "coordinator_full",
+      "command": "coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase08-5/coordinator",
+      "passed": 681,
+      "log": ".cache/phase08-5/coordinator.log"
+    },
+    {
+      "check": "mcp",
+      "command": "mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase08-5/mcp",
+      "passed": 56,
+      "log": ".cache/phase08-5/mcp.log"
+    },
+    {
+      "check": "final_host_workflow_focus",
+      "command": "coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_5_concierge.py coordinator/tests/test_phase08_workflows.py coordinator/tests/test_phase08_control_host.py -q --basetemp=.cache/phase08-5/final-host",
+      "passed": 81,
+      "log": ".cache/phase08-5/final-host.log"
+    },
+    {
+      "check": "final_concierge",
+      "command": "coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_5_concierge.py -q --basetemp=.cache/phase08-5/concierge-final-v2",
+      "passed": 13,
+      "log": ".cache/phase08-5/concierge-final-v2.log"
+    },
+    {
+      "check": "browser_legacy",
+      "command": "playwright test --config playwright.config.ts",
+      "passed": 56,
+      "log": ".cache/phase08-5/browser-legacy.log"
+    },
+    {
+      "check": "browser_cr017",
+      "command": "playwright test --config playwright.phase08.config.ts",
+      "passed": 8,
+      "log": ".cache/phase08-5/browser-cr017.log"
+    },
+    {
+      "check": "browser_cr019",
+      "command": "playwright test --config playwright.standard.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-cr019.log"
+    },
+    {
+      "check": "browser_concierge_final",
+      "command": "playwright test --config playwright.concierge.config.ts",
+      "passed": 2,
+      "log": ".cache/phase08-5/browser-final-v3.log"
+    },
+    {
+      "check": "browser_voice_search_focus",
+      "command": "playwright test --config playwright.config.ts e2e/concierge-voice.spec.ts e2e/overview.spec.ts",
+      "passed": 23,
+      "log": ".cache/phase08-5/browser-focus-final.log"
+    },
+    {
+      "check": "browser_quality_comparable",
+      "command": "QUALITY_VARIANT=comparable playwright test --config playwright.quality.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-quality-comparable.log"
+    },
+    {
+      "check": "browser_quality_incomparable",
+      "command": "QUALITY_VARIANT=incomparable playwright test --config playwright.quality.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-quality-incomparable.log"
+    },
+    {
+      "check": "browser_quality_no_alternative_supply",
+      "command": "QUALITY_VARIANT=no_alternative_supply playwright test --config playwright.quality.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-quality-no_alternative_supply.log"
+    },
+    {
+      "check": "browser_delivery_base",
+      "command": "DELIVERY_VARIANT=base playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-base.log"
+    },
+    {
+      "check": "browser_delivery_technical_blocked",
+      "command": "DELIVERY_VARIANT=technical_blocked playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-technical_blocked.log"
+    },
+    {
+      "check": "browser_delivery_future_conditional",
+      "command": "DELIVERY_VARIANT=future_conditional playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-future_conditional.log"
+    },
+    {
+      "check": "browser_delivery_wrong_configuration",
+      "command": "DELIVERY_VARIANT=wrong_configuration playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-wrong_configuration.log"
+    },
+    {
+      "check": "browser_delivery_partial_failure",
+      "command": "DELIVERY_VARIANT=partial_failure playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-partial_failure.log"
+    },
+    {
+      "check": "browser_delivery_stale_proposal",
+      "command": "DELIVERY_VARIANT=stale_proposal playwright test --config playwright.delivery.config.ts",
+      "passed": 1,
+      "log": ".cache/phase08-5/browser-delivery-stale_proposal.log"
+    },
+    {
+      "check": "offline_evals",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase08-5-full",
+      "passed": 112,
+      "critical_failures": 0,
+      "log": ".cache/phase07/phase08-5-full/results.json"
+    },
+    {
+      "check": "typescript",
+      "command": "npm --prefix mock_apps_ui run typecheck; repeated by final build tsc --noEmit",
+      "status": "passed",
+      "log": ".cache/phase08-5/typecheck.log"
+    },
+    {
+      "check": "production_build",
+      "command": "npm --prefix mock_apps_ui run build",
+      "status": "passed",
+      "log": ".cache/phase08-5/build-final-v2.log",
+      "advisory": "Existing main chunk remains 511.91 kB, exceeding Vite 500 kB advisory."
+    }
+  ],
+  "browser_unique_tests": 76,
+  "browser_testing_label": "Scripted integration testing; real local HTTP/MCP and deterministic model responses; demo approval identities",
+  "coverage_note": "Full coordinator suite passed before final focused additions; final 81-test host/workflow and 13-test Concierge runs cover the later changes. Browser focus checks repeat 23 of the 76 unique tests.",
+  "paid_model_calls_run": 0,
+  "optional_live_smoke_run": false,
+  "live_smoke_cli_help_checked": true,
+  "preservation": {
+    "source_fixture_and_authority_files_unchanged": {
+      "fixtures/.DS_Store": true,
+      "fixtures/delivery_readiness.json": true,
+      "fixtures/standard_change.json": true,
+      "fixtures/quality_exception.json": true,
+      "fixtures/seed.json": true,
+      "fixtures/documents/change_control_playbook.md": true,
+      "fixtures/documents/standard_validation_procedure.md": true,
+      "fixtures/documents/standard_change_request.json": true,
+      "fixtures/documents/phase05_evidence_request.json": true,
+      "fixtures/documents/approval_policy.md": true,
+      "fixtures/documents/approved_baseline.md": true,
+      "fixtures/documents/supplemental_validation_procedure.md": true,
+      "fixtures/documents/customer_change_request.md": true,
+      "fixtures/documents/phase05_coordination_policy.json": true,
+      "fixtures/documents/standard_touchless_policy.md": true,
+      "fixtures/documents/configuration_scope.md": true,
+      "fixtures/documents/phase05_baseline_procedure.md": true,
+      "src/enterprise_api/config.py": true,
+      "src/enterprise_api/models.py": true,
+      "src/enterprise_api/standard_policy.py": true,
+      "src/enterprise_api/delivery_policy.py": true,
+      "src/enterprise_api/transport.py": true,
+      "src/enterprise_api/client.py": true,
+      "src/enterprise_api/__init__.py": true,
+      "src/enterprise_api/standard_models.py": true,
+      "src/enterprise_api/delivery_models.py": true,
+      "src/enterprise_api/quality_policy.py": true,
+      "src/enterprise_api/errors.py": true,
+      "src/enterprise_api/endpoints.py": true,
+      "src/enterprise_api/quality_models.py": true,
+      "src/mock_enterprise/db.py": true,
+      "src/mock_enterprise/snapshots.py": true,
+      "src/mock_enterprise/quality_upgrade.py": true,
+      "src/mock_enterprise/config.py": true,
+      "src/mock_enterprise/approvals.py": true,
+      "src/mock_enterprise/__init__.py": true,
+      "src/mock_enterprise/core.py": true,
+      "src/mock_enterprise/seed.py": true,
+      "src/mock_enterprise/schemas.py": true,
+      "src/mock_enterprise/cli.py": true,
+      "src/mock_enterprise/http.py": true,
+      "src/mock_enterprise/portfolio_views.py": true,
+      "src/mock_enterprise/app.py": true,
+      "src/mock_enterprise/standard_upgrade.py": true,
+      "src/mock_enterprise/downstream_upgrade.py": true,
+      "src/mock_enterprise/portfolio.py": true,
+      "src/mock_enterprise/delivery_upgrade.py": true,
+      "src/mock_enterprise/downstream_models.py": true,
+      "src/mock_enterprise/views.py": true,
+      "src/mock_enterprise/domains/delivery.py": true,
+      "src/mock_enterprise/domains/planner.py": true,
+      "src/mock_enterprise/domains/erp.py": true,
+      "src/mock_enterprise/domains/__init__.py": true,
+      "src/mock_enterprise/domains/validation_rules.py": true,
+      "src/mock_enterprise/domains/standard_change.py": true,
+      "src/mock_enterprise/domains/manufacturing.py": true,
+      "src/mock_enterprise/domains/engineering.py": true,
+      "src/mock_enterprise/domains/quality.py": true,
+      "src/mock_enterprise/domains/downstream.py": true,
+      "src/mock_enterprise/domains/validation.py": true,
+      "src/stratos_mcp/catalog.py": true,
+      "src/stratos_mcp/service.py": true,
+      "src/stratos_mcp/server.py": true,
+      "src/stratos_mcp/config.py": true,
+      "src/stratos_mcp/__init__.py": true,
+      "src/stratos_mcp/__main__.py": true,
+      "src/program_coordinator/application/execution.py": true,
+      "src/program_coordinator/application/execution_policy.py": true,
+      "src/program_coordinator/application/standard_handoff.py": true,
+      "src/program_coordinator/application/quality_recovery.py": true,
+      "src/program_coordinator/application/delivery_commitment.py": true
+    },
+    "prior_png_hashes_verified": 654,
+    "working_demo_reset_or_mutated": false,
+    "git_operations": false
+  },
+  "changed_files": [
+    "AGENTS.md",
+    "README.md",
+    "coordinator/evals/phase07/concierge.py",
+    "coordinator/evals/phase07/runner.py",
+    "coordinator/evals/phase08_5/doubles.py",
+    "coordinator/evals/phase08_5/live_smoke.py",
+    "coordinator/evals/phase08_5/probe.py",
+    "coordinator/evals/phase08_5/serve.py",
+    "coordinator/tests/test_phase08_5_concierge.py",
+    "docs/ACCEPTANCE_TESTS.md",
+    "docs/API_CONTRACT.md",
+    "docs/PHASE08_5_HANDOFF.md",
+    "docs/PHASE08_5_VERIFICATION.json",
+    "docs/phase08-3-host-openapi.json",
+    "docs/screenshots/phase08-5/automation-saved.png",
+    "docs/screenshots/phase08-5/execution-preview.png",
+    "docs/screenshots/phase08-5/mobile-draft.png",
+    "docs/screenshots/phase08-5/overview.png",
+    "docs/screenshots/phase08-5/quality.png",
+    "docs/screenshots/phase08-5/standard-handoff.png",
+    "docs/screenshots/phase08-5/wrong-role.png",
+    "mock_apps_ui/e2e-concierge/concierge.spec.ts",
+    "mock_apps_ui/playwright.concierge.config.ts",
+    "mock_apps_ui/src/control/assistant.tsx",
+    "mock_apps_ui/src/control/automation-editor.tsx",
+    "mock_apps_ui/src/control/concierge-chat.tsx",
+    "mock_apps_ui/src/control/host-schema.d.ts",
+    "mock_apps_ui/src/control/host.tsx",
+    "mock_apps_ui/src/control/style.css",
+    "mock_apps_ui/src/control/workflows.tsx",
+    "prompts/08_5_CONNECTED_CONCIERGE.md",
+    "src/program_coordinator/agents.py",
+    "src/program_coordinator/application/automations.py",
+    "src/program_coordinator/control_host/concierge.py",
+    "src/program_coordinator/control_host/concierge_models.py",
+    "src/program_coordinator/control_host/concierge_reads.py",
+    "src/program_coordinator/control_host/concierge_runtime.py",
+    "src/program_coordinator/control_host/server.py"
+  ],
+  "changed_file_count": 38,
+  "generated_artifacts_excluded": [
+    ".cache and .pytest_cache",
+    "Python bytecode",
+    "node_modules",
+    "dist",
+    "Playwright reports and temporary test results"
+  ],
+  "limitations": [
+    "Live manager semantic quality remains unmeasured until explicit paid smoke.",
+    "Browser speech-provider recognition is not live-tested; dictation lifecycle uses browser doubles.",
+    "Conversation is bounded process/session state; existing identity-switch reset remains.",
+    "Separate source reads are not a distributed transaction; actions revalidate.",
+    "Schedules/events/conditions stay inactive; Operations remains preview.",
+    "Restart the existing control host with its current arguments to load the new backend."
+  ],
+  "next_phase": "08.6 Operations / observability, not started"
+}

@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "proposals": true,
+    "downstream": true,
+    "activity": true,
+    "cases": true,
+    "runs": true,
+    "existing_source_rows_preserved": true,
+    "host_index_byte_identical": true,
+    "standard_case_ready": true
+  },
+  "original_run": "run_528395b95a9242a0950e2bd21f85af22",
+  "original_plan": "plan-ff6f19a4a7ff4cfa9a6465bc1886ffff",
+  "physical_result": null,
+  "new_case": "CR-019",
+  "note": "Added projection fields only; original source records and host index unchanged."
+}

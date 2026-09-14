@@ -1,0 +1,31 @@
+[project]
+name = "mock-enterprise"
+version = "0.1.0"
+description = "Local deterministic synthetic semiconductor enterprise APIs"
+requires-python = ">=3.12,<3.13"
+dependencies = ["fastapi>=0.115,<0.116", "pydantic>=2.10,<2.11", "uvicorn>=0.34,<1"]
+
+[project.optional-dependencies]
+enterprise-client = ["httpx>=0.28,<1"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "anyio>=4.8,<4.10"]
+openai-runtime = [
+    "openai>=2.54.0,<3",
+    "python-dotenv>=1.2.3,<2",
+]
+
+[project.scripts]
+mock-enterprise = "mock_enterprise.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --basetemp=.cache/pytest"
+filterwarnings = ["error"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mock_enterprise", "src/enterprise_api"]

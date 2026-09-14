@@ -1,0 +1,404 @@
+{
+  "label": "SCRIPTED LOCAL HTTP/BROWSER INTEGRATION TESTS; NO AI RUN OR ACTUAL HUMAN APPROVAL; SPEECH MOCKED",
+  "recordedAt": "2026-09-12T02:09:39.309742+00:00",
+  "previewUrl": "http://127.0.0.1:5188/control/overview",
+  "screenshotTestBaseUrl": "http://127.0.0.1:5174",
+  "sourceTestPort": 18000,
+  "reviewSourcePort": 18008,
+  "checks": {
+    "typecheck": "PASS",
+    "productionBuild": {
+      "result": "PASS",
+      "viteDurationSeconds": 1.23
+    },
+    "fullPlaywright": {
+      "passed": 55,
+      "duration": "3.8m",
+      "sourceAppRegressions": 20,
+      "controlBrowserTests": 9,
+      "viewModelTests": 4,
+      "conciergeSpeechAndModalTests": 14,
+      "overviewUtilityAndAdapterTests": 8
+    },
+    "finalTargetedPlaywright": {
+      "passed": 9,
+      "duration": "28.0s",
+      "overviewUtilityAndAdapterTests": 8,
+      "newSpeechContextCleanupTests": 1,
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run test:e2e -- e2e/overview.spec.ts e2e/concierge-voice.spec.ts --grep 'Overview|global search|Ask Concierge|demo access|source alerts|unavailable search|presentation adapters|required responsive'"
+    },
+    "uniquePassingBrowserTests": 56,
+    "pytestSource": {
+      "passed": 15,
+      "durationSeconds": 0.34,
+      "command": ".venv/bin/python -m pytest tests/test_phase07_sources.py -q --junitxml=.cache/phase08-1-overview/source-regression.xml"
+    },
+    "contrastPairs": 14,
+    "minimumSampledContrast": 5.15
+  },
+  "preservation": {
+    "inventoried": 4606,
+    "unchanged": 4589,
+    "changedExpected": [
+      "mock_apps_ui/src/main.tsx",
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/case.tsx",
+      "mock_apps_ui/src/control/assistant.tsx",
+      "mock_apps_ui/src/control/style.css",
+      "mock_apps_ui/src/control/portfolio.tsx",
+      "mock_apps_ui/src/control/agent-activity.tsx",
+      "mock_apps_ui/src/control/previews.tsx",
+      "mock_apps_ui/src/control/dictation.ts",
+      "mock_apps_ui/src/control/program.tsx",
+      "mock_apps_ui/e2e/control-plane.spec.ts",
+      "mock_apps_ui/e2e/concierge-voice.spec.ts",
+      "AGENTS.md",
+      "README.md",
+      "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+      "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+      "docs/PHASE08_1_CONCIERGE_HANDOFF.md"
+    ],
+    "unexpectedChanges": [],
+    "missing": [],
+    "unchangedByPrefix": {
+      "src/": 67,
+      "tests/": 14,
+      "fixtures/": 11,
+      "coordinator/": 22,
+      ".cache/phase07/": 4096,
+      "docs/ui_screenshots/": 59,
+      "docs/phase08/screenshots/": 21,
+      "docs/phase08/refinement/screenshots/": 24,
+      "docs/phase08/concierge/": 33,
+      ".demo/": 200
+    },
+    "legacyScreenshotsRestored": 59
+  },
+  "newImplementationFiles": [
+    "mock_apps_ui/src/control/catalog.ts",
+    "mock_apps_ui/src/control/presentation-model.ts",
+    "mock_apps_ui/src/control/masthead.tsx",
+    "mock_apps_ui/e2e/overview.spec.ts",
+    "prompts/08_1_OVERVIEW_REFINEMENT.md",
+    "docs/PHASE08_1_OVERVIEW_HANDOFF.md"
+  ],
+  "screenshots": [
+    "MOCKED-listening-1440.png",
+    "agent-workspace-1280.png",
+    "agent-workspace-1440.png",
+    "alerts-1280.png",
+    "alerts-1440.png",
+    "alerts-375.png",
+    "assistant-1024.png",
+    "assistant-1280.png",
+    "assistant-1440.png",
+    "assistant-1920.png",
+    "assistant-200-percent-zoom.png",
+    "assistant-375.png",
+    "assistant-640.png",
+    "assistant-short-375.png",
+    "before-1440.png",
+    "case-1280.png",
+    "case-1440.png",
+    "case-200-percent-zoom.png",
+    "concierge-1280.png",
+    "concierge-1440.png",
+    "concierge-375.png",
+    "delivery-1280.png",
+    "delivery-1440.png",
+    "demo-access-1280.png",
+    "demo-access-1440.png",
+    "demo-access-375.png",
+    "evidence-1280.png",
+    "evidence-1440.png",
+    "evidence-375.png",
+    "overview-1280.png",
+    "overview-1440.png",
+    "overview-375.png",
+    "portfolio-1024.png",
+    "portfolio-1280.png",
+    "portfolio-1440.png",
+    "portfolio-1920.png",
+    "portfolio-375.png",
+    "portfolio-640.png",
+    "profile-1440.png",
+    "program-1280.png",
+    "program-1440.png",
+    "search-1280.png",
+    "search-1440.png",
+    "search-375.png"
+  ],
+  "visuallyInspected": [
+    "overview-1440.png",
+    "search-1440.png",
+    "alerts-1440.png",
+    "demo-access-1440.png",
+    "concierge-1440.png",
+    "overview-1280.png",
+    "search-1280.png",
+    "alerts-1280.png",
+    "demo-access-1280.png",
+    "concierge-1280.png",
+    "overview-375.png",
+    "search-375.png",
+    "alerts-375.png",
+    "demo-access-375.png",
+    "concierge-375.png",
+    "before-1440.png",
+    "profile-1440.png",
+    "agent-workspace-1440.png"
+  ],
+  "visualFindings": [
+    "Lighter shared masthead/concierge gradients and dark ink; large real-data health panel replaces metric strip.",
+    "Compact programs and static agent role grid retain source status/context in details.",
+    "Search Ask option remains visible above the scrollable result list.",
+    "Demo access spacing was tightened for 375px; expanded concierge and overlays fit the viewport.",
+    "Measured masthead 80px; desktop title 40px; hero 280.58px; compact concierge 440x161px.",
+    "200% CSS zoom and short-view checks are scripted reflow approximations, not physical-device certification."
+  ],
+  "readOnlyReceipt": {
+    "label": "SCRIPTED HTTP/BROWSER INTEGRATION TEST; NO AI",
+    "sourcePortfolioUnchanged": true,
+    "writes": [],
+    "errors": [],
+    "methods": [
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      }
+    ]
+  },
+  "searchCoverage": "Existing loaded accessible record metadata and static workflow/agent definitions; no document bodies, arbitrary files, hidden records or host runs.",
+  "demoAccess": "Existing public mock profile labels only; fixed reader HTTP identity in control plane; no authentication or approval authority.",
+  "alerts": "Open accessible source case evidence gaps, missing Planner follow-through or current draft source plans; stable identity/version, source updated time; presentation-only unread set for this visit.",
+  "voice": {
+    "automatedRecognition": "Mock constructors and controlled speech events only",
+    "realMicrophoneCapture": false,
+    "externalSpeechCalls": false,
+    "paidModelCalls": false,
+    "liveProviderVerified": false,
+    "autoSend": false,
+    "searchAndProfileCleanupVerified": true
+  },
+  "skipped": [
+    "Paid models/evals",
+    "Six-case live smoke",
+    "Real microphone/provider check",
+    "Full unchanged Coordinator/MCP/Phase06/Phase07 reliability suites",
+    "Physical mobile keyboard testing",
+    "Cross-browser/screen-reader certification"
+  ],
+  "stoppedAfter": "Overview, masthead and Concierge refinement only; no later phase, Git operations or backend authority changes."
+}

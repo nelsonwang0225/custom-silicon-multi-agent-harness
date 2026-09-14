@@ -1,0 +1,419 @@
+.app-shell.validation .lab-completion .panel-heading {
+  border-bottom: 0;
+}
+.app-shell.validation .validation-final-check {
+  color: #243247;
+  padding: 2px 20px 0;
+}
+.app-shell.validation .vfc-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 18px;
+}
+.app-shell.validation .vfc-eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #617184;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+.app-shell.validation .vfc-heading strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.app-shell.validation .vfc-summary {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #526675;
+}
+.app-shell.validation .vfc-result-preview {
+  text-align: right;
+  font-size: 13px;
+}
+.app-shell.validation .vfc-result-preview span {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 7px;
+  color: #217454;
+  font-weight: 600;
+}
+.app-shell.validation .vfc-result-preview small {
+  display: block;
+  color: #617184;
+  margin-top: 5px;
+  font-size: 11px;
+}
+.app-shell.validation .vfc-intro {
+  font-size: 13px;
+  color: #526675;
+  margin: 15px 0 18px;
+}
+.app-shell.validation .vfc-toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.app-shell.validation .vfc-modes {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: #f6f8fa;
+  border: 1px solid #d8e0e8;
+  border-radius: 7px;
+}
+.app-shell.validation .vfc-modes button {
+  border-color: transparent;
+  background: transparent;
+  color: #526675;
+  padding: 5px 11px;
+  font-size: 12px;
+  min-height: 31px;
+  box-shadow: none;
+}
+.app-shell.validation .vfc-modes button[aria-pressed="true"] {
+  background: #fff;
+  border-color: #d8e0e8;
+  color: #007f83;
+}
+.app-shell.validation .vfc-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #617184;
+}
+.app-shell.validation .vfc-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.app-shell.validation .vfc-diagram {
+  min-width: 0;
+  border-right: 1px solid #d8e0e8;
+}
+.app-shell.validation .vfc-stage {
+  position: relative;
+  background: #f6f8fa;
+  border-bottom: 1px solid #d8e0e8;
+}
+.app-shell.validation .vfc-canvas {
+  display: block;
+  width: 100%;
+  height: 340px;
+  touch-action: none;
+  cursor: grab;
+}
+.app-shell.validation .vfc-stage-label {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  color: #617184;
+  pointer-events: none;
+  font:
+    11px/1.6 ui-monospace,
+    SFMono-Regular,
+    monospace;
+}
+.app-shell.validation .vfc-stage-label strong {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.app-shell.validation .vfc-stage-label strong,
+.app-shell.validation .vfc-stage-label span {
+  display: block;
+}
+.app-shell.validation .vfc-stage-legend {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  display: flex;
+  gap: 12px;
+  font-size: 10px;
+  color: #617184;
+  pointer-events: none;
+}
+.app-shell.validation .vfc-stage-legend span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.app-shell.validation .vfc-stage-legend span::before {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 2px;
+  background: #607e9c;
+}
+.app-shell.validation .vfc-stage-legend .vfc-legend-updated::before {
+  background: #007f83;
+}
+.app-shell.validation .vfc-camera {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 4px;
+}
+.app-shell.validation .vfc-camera button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 29px;
+  height: 29px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #d8e0e8;
+  border-radius: 5px;
+  color: #334b62;
+  font-size: 11px;
+  box-shadow: none;
+}
+.app-shell.validation .vfc-camera svg {
+  width: 14px;
+  height: 14px;
+}
+.app-shell.validation .vfc-regions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+}
+.app-shell.validation .vfc-regions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border-color: transparent;
+  font-size: 11px;
+  padding: 6px;
+  color: #526675;
+  box-shadow: none;
+}
+.app-shell.validation .vfc-regions button span {
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    monospace;
+}
+.app-shell.validation .vfc-regions button[aria-pressed="true"] {
+  background: #e2f1f0;
+  color: #007f83;
+}
+.app-shell.validation .vfc-inspector {
+  padding: 20px;
+  min-width: 0;
+  background: #fff;
+}
+.app-shell.validation .vfc-selection-heading h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.app-shell.validation .vfc-selection-heading > span {
+  color: #007f83;
+  font-size: 11px;
+}
+.app-shell.validation .vfc-inspector > p {
+  color: #617184;
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 10px 0 19px;
+}
+.app-shell.validation .vfc-comparison {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+.app-shell.validation .vfc-value-label {
+  color: #617184;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+.app-shell.validation .vfc-comparison strong {
+  display: block;
+  font:
+    500 17px/1.5 ui-monospace,
+    SFMono-Regular,
+    monospace;
+  letter-spacing: -0.65px;
+  overflow-wrap: anywhere;
+}
+.app-shell.validation .vfc-comparison small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #617184;
+}
+.app-shell.validation .vfc-comparison [data-scope="after"] strong {
+  color: #007f83;
+}
+.app-shell.validation .vfc-comparison .vfc-secondary-scope strong {
+  color: #617184;
+}
+.app-shell.validation .vfc-arrow {
+  color: #8193a3;
+  transform: rotate(90deg);
+}
+.app-shell.validation .vfc-facts {
+  margin: 17px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid #e3e9ed;
+  font-size: 11px;
+  display: grid;
+  gap: 9px;
+}
+.app-shell.validation .vfc-facts > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+.app-shell.validation .vfc-facts dt {
+  color: #617184;
+}
+.app-shell.validation .vfc-facts dd {
+  margin: 0;
+  color: #334b62;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.app-shell.validation .vfc-scope-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 14px 0 8px;
+  font-size: 11px;
+  color: #526675;
+}
+.app-shell.validation .vfc-scope-footer span,
+.app-shell.validation .vfc-scope-footer a {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.app-shell.validation .vfc-illustration-note {
+  font-size: 11px;
+  color: #617184;
+  margin-bottom: 16px;
+}
+.app-shell.validation .vfc-unavailable {
+  padding: 15px 20px;
+  color: #8b632b;
+  font-size: 13px;
+}
+.app-shell.validation .vfc-publish {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 20px;
+  border-top: 1px solid #dfe7e7;
+  background: #f8fafb;
+  border-radius: 0 0 6px 6px;
+}
+.app-shell.validation .vfc-publish label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+}
+.app-shell.validation .vfc-publish input[type="checkbox"] {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+}
+.app-shell.validation .vfc-publish p {
+  margin: 5px 0 0 24px;
+  font-size: 11px;
+  color: #617184;
+}
+.app-shell.validation .vfc-publish button {
+  flex-shrink: 0;
+}
+.app-shell.validation .lab-completion > .vfc-error {
+  margin: 14px 20px;
+}
+@media (max-width: 1280px) {
+  .app-shell.validation .vfc-workspace {
+    grid-template-columns: minmax(0, 1.4fr) minmax(290px, 1fr);
+  }
+  .app-shell.validation .vfc-stage-legend {
+    top: auto;
+    bottom: 15px;
+    left: 50px;
+    right: auto;
+  }
+}
+@media (max-width: 1050px) {
+  .app-shell.validation .vfc-workspace {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.validation .vfc-diagram {
+    border-right: 0;
+    border-bottom: 1px solid #d8e0e8;
+  }
+  .app-shell.validation .vfc-comparison {
+    grid-template-columns: 1fr 20px 1fr;
+    gap: 15px;
+  }
+  .app-shell.validation .vfc-arrow {
+    transform: none;
+    align-self: center;
+  }
+  .app-shell.validation .vfc-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .app-shell.validation .validation-final-check {
+    padding-inline: 14px;
+  }
+  .app-shell.validation .vfc-heading {
+    flex-direction: column;
+  }
+  .app-shell.validation .vfc-result-preview {
+    text-align: left;
+  }
+  .app-shell.validation .vfc-result-preview span {
+    justify-content: start;
+  }
+  .app-shell.validation .vfc-canvas {
+    height: 310px;
+  }
+  .app-shell.validation .vfc-stage-legend {
+    display: none;
+  }
+  .app-shell.validation .vfc-publish {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+  }
+  .app-shell.validation .vfc-inspector {
+    padding: 15px;
+  }
+  .app-shell.validation .vfc-comparison {
+    grid-template-columns: 1fr;
+  }
+  .app-shell.validation .vfc-arrow {
+    transform: rotate(90deg);
+  }
+}
+@media (pointer: coarse) {
+  .app-shell.validation .vfc-camera button {
+    min-height: 38px;
+    min-width: 38px;
+  }
+  .app-shell.validation .vfc-regions button,
+  .app-shell.validation .vfc-modes button {
+    min-height: 44px;
+  }
+}

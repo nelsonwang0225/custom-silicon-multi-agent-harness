@@ -1,0 +1,128 @@
+{
+  "tokens": {
+    "canvas": "#f4f7fb",
+    "surface": "#ffffff",
+    "ink": "#1b2b42",
+    "secondary": "#52647a",
+    "action": "#315fa9",
+    "blue-strong": "#8ab2d4",
+    "blue-soft": "#ddeaf7",
+    "success": "#176b45",
+    "warning": "#8a5200",
+    "control-border": "#52647a"
+  },
+  "computed": {
+    ".cp-header": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "width": 1440,
+      "height": 80,
+      "background": "linear-gradient(110deg, rgb(138, 178, 212) 0%, rgb(200, 221, 238) 55%, rgb(247, 250, 254) 100%)",
+      "color": "rgb(27, 43, 66)"
+    },
+    "h1": {
+      "fontSize": "40px",
+      "fontWeight": "700",
+      "width": 165.78125,
+      "height": 46,
+      "background": "none",
+      "color": "rgb(27, 43, 66)"
+    },
+    ".cp-overview-hero": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "width": 1376,
+      "height": 280.578125,
+      "background": "linear-gradient(110deg, rgb(182, 211, 235) 0%, rgb(224, 236, 248) 65%, rgb(255, 255, 255) 100%)",
+      "color": "rgb(27, 43, 66)"
+    },
+    ".cp-card-title strong": {
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "width": 199.5625,
+      "height": 30,
+      "background": "none",
+      "color": "rgb(27, 43, 66)"
+    },
+    ".cp-concierge-dock": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "width": 440,
+      "height": 161,
+      "background": "linear-gradient(110deg, rgb(138, 178, 212) 0%, rgb(200, 221, 238) 55%, rgb(247, 250, 254) 100%)",
+      "color": "rgb(27, 43, 66)"
+    }
+  },
+  "pairs": [
+    {
+      "fg": "ink",
+      "bg": "blue-strong",
+      "ratio": 6.39
+    },
+    {
+      "fg": "ink",
+      "bg": "surface",
+      "ratio": 14.28
+    },
+    {
+      "fg": "secondary",
+      "bg": "surface",
+      "ratio": 6.06
+    },
+    {
+      "fg": "secondary",
+      "bg": "canvas",
+      "ratio": 5.64
+    },
+    {
+      "fg": "action",
+      "bg": "surface",
+      "ratio": 6.29
+    },
+    {
+      "fg": "surface",
+      "bg": "action",
+      "ratio": 6.29
+    },
+    {
+      "fg": "action",
+      "bg": "blue-soft",
+      "ratio": 5.15
+    },
+    {
+      "fg": "warning",
+      "bg": "surface",
+      "ratio": 6.39
+    },
+    {
+      "fg": "success",
+      "bg": "surface",
+      "ratio": 6.51
+    },
+    {
+      "fg": "ink",
+      "bg": "blue-soft",
+      "ratio": 11.69
+    },
+    {
+      "fg": "control-border",
+      "bg": "surface",
+      "ratio": 6.06
+    },
+    {
+      "fg": "ink",
+      "bg": "#b6d3eb",
+      "ratio": 9.18
+    },
+    {
+      "fg": "ink",
+      "bg": "#e0ecf8",
+      "ratio": 11.91
+    },
+    {
+      "fg": "ink",
+      "bg": "#ffffff",
+      "ratio": 14.28
+    }
+  ]
+}

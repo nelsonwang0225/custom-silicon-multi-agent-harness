@@ -1,0 +1,117 @@
+{
+  "label": "Scripted layout/contrast review; no live microphone, AI or source writes",
+  "baseUrl": "http://127.0.0.1:5188",
+  "tokens": {
+    "ink": "#1b2b42",
+    "secondary": "#52647a",
+    "surface": "#ffffff",
+    "canvas": "#f7f8fa",
+    "action": "#315fa9",
+    "blue-strong": "#6f98c2",
+    "blue-mid": "#92b1d1",
+    "blue-end": "#cbdcee",
+    "summary-start": "#9fbedc",
+    "summary-mid": "#d4e3f1",
+    "summary-end": "#f2f6fa",
+    "success": "#176b45",
+    "warning": "#8a5200",
+    "border": "#e0e5ec"
+  },
+  "pairs": [
+    {
+      "fg": "ink",
+      "bg": "blue-strong",
+      "ratio": 4.72
+    },
+    {
+      "fg": "ink",
+      "bg": "blue-mid",
+      "ratio": 6.41
+    },
+    {
+      "fg": "ink",
+      "bg": "blue-end",
+      "ratio": 10.21
+    },
+    {
+      "fg": "ink",
+      "bg": "summary-start",
+      "ratio": 7.39
+    },
+    {
+      "fg": "ink",
+      "bg": "summary-mid",
+      "ratio": 10.92
+    },
+    {
+      "fg": "ink",
+      "bg": "summary-end",
+      "ratio": 13.15
+    },
+    {
+      "fg": "ink",
+      "bg": "surface",
+      "ratio": 14.28
+    },
+    {
+      "fg": "secondary",
+      "bg": "surface",
+      "ratio": 6.06
+    },
+    {
+      "fg": "secondary",
+      "bg": "canvas",
+      "ratio": 5.71
+    },
+    {
+      "fg": "surface",
+      "bg": "action",
+      "ratio": 6.29
+    },
+    {
+      "fg": "warning",
+      "bg": "surface",
+      "ratio": 6.39
+    },
+    {
+      "fg": "success",
+      "bg": "surface",
+      "ratio": 6.51
+    }
+  ],
+  "computed": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "heroHeight": 289.375,
+      "dockWidth": 440
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "heroHeight": 289.375,
+      "dockWidth": 440
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "heroHeight": 289.375,
+      "dockWidth": 440
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "viewport": 375,
+      "documentWidth": 375,
+      "heroHeight": 496.578125,
+      "dockWidth": 351
+    }
+  ],
+  "errors": []
+}

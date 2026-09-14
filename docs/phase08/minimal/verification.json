@@ -1,0 +1,477 @@
+{
+  "label": "SCRIPTED LOCAL BROWSER/HTTP INTEGRATION CHECKS; SYNTHETIC DATA AND SIMULATED IDENTITIES; NO AI OR REAL MICROPHONE",
+  "recordedAt": "2026-09-12T02:21:58.216248+00:00",
+  "preview": "http://127.0.0.1:5188/control/overview",
+  "checks": {
+    "typecheck": "PASS",
+    "build": "PASS (Vite 1.18s)",
+    "formatting": "PASS after formatting the modified capture path",
+    "initialFullBrowserSuite": {
+      "passed": 55,
+      "failed": 1,
+      "duration": "4.8m",
+      "failure": "Search test entered the next query before evidence close navigation committed."
+    },
+    "correctedSearchRegression": {
+      "passed": 3,
+      "failed": 0,
+      "duration": "11.1s",
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run test:e2e -- e2e/overview.spec.ts --grep 'search groups' --repeat-each=3"
+    },
+    "uniqueBrowserScenariosPassingAcrossRuns": 56,
+    "fullSuiteRepeatedAfterTestWaitCorrection": false
+  },
+  "preservation": {
+    "inventoried": 4693,
+    "unchanged": 4681,
+    "expectedChanges": [
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/assistant.tsx",
+      "mock_apps_ui/src/control/style.css",
+      "mock_apps_ui/src/control/portfolio.tsx",
+      "mock_apps_ui/src/control/ui.tsx",
+      "mock_apps_ui/e2e/overview.spec.ts",
+      "mock_apps_ui/e2e/control-plane.spec.ts",
+      "mock_apps_ui/e2e/concierge-voice.spec.ts",
+      "AGENTS.md",
+      "README.md",
+      "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+      "docs/PHASE08_IMPLEMENTATION_PLAN.md"
+    ],
+    "unexpected": [],
+    "missing": [],
+    "priorScreenshotsRestored": 103,
+    "unchangedByPrefix": {
+      "src/": 67,
+      "tests/": 14,
+      "fixtures/": 11,
+      "coordinator/": 52,
+      ".cache/phase07/": 4096,
+      "docs/ui_screenshots/": 59,
+      "docs/phase08/overview/": 46,
+      ".demo/": 206
+    }
+  },
+  "visual": {
+    "label": "Scripted layout/contrast review; no live microphone, AI or source writes",
+    "baseUrl": "http://127.0.0.1:5188",
+    "tokens": {
+      "ink": "#1b2b42",
+      "secondary": "#52647a",
+      "surface": "#ffffff",
+      "canvas": "#f7f8fa",
+      "action": "#315fa9",
+      "blue-strong": "#6f98c2",
+      "blue-mid": "#92b1d1",
+      "blue-end": "#cbdcee",
+      "summary-start": "#9fbedc",
+      "summary-mid": "#d4e3f1",
+      "summary-end": "#f2f6fa",
+      "success": "#176b45",
+      "warning": "#8a5200",
+      "border": "#e0e5ec"
+    },
+    "pairs": [
+      {
+        "fg": "ink",
+        "bg": "blue-strong",
+        "ratio": 4.72
+      },
+      {
+        "fg": "ink",
+        "bg": "blue-mid",
+        "ratio": 6.41
+      },
+      {
+        "fg": "ink",
+        "bg": "blue-end",
+        "ratio": 10.21
+      },
+      {
+        "fg": "ink",
+        "bg": "summary-start",
+        "ratio": 7.39
+      },
+      {
+        "fg": "ink",
+        "bg": "summary-mid",
+        "ratio": 10.92
+      },
+      {
+        "fg": "ink",
+        "bg": "summary-end",
+        "ratio": 13.15
+      },
+      {
+        "fg": "ink",
+        "bg": "surface",
+        "ratio": 14.28
+      },
+      {
+        "fg": "secondary",
+        "bg": "surface",
+        "ratio": 6.06
+      },
+      {
+        "fg": "secondary",
+        "bg": "canvas",
+        "ratio": 5.71
+      },
+      {
+        "fg": "surface",
+        "bg": "action",
+        "ratio": 6.29
+      },
+      {
+        "fg": "warning",
+        "bg": "surface",
+        "ratio": 6.39
+      },
+      {
+        "fg": "success",
+        "bg": "surface",
+        "ratio": 6.51
+      }
+    ],
+    "computed": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "viewport": 1920,
+        "documentWidth": 1920,
+        "heroHeight": 289.375,
+        "dockWidth": 440
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "heroHeight": 289.375,
+        "dockWidth": 440
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "viewport": 1280,
+        "documentWidth": 1280,
+        "heroHeight": 289.375,
+        "dockWidth": 440
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "viewport": 375,
+        "documentWidth": 375,
+        "heroHeight": 496.578125,
+        "dockWidth": 351
+      }
+    ],
+    "errors": []
+  },
+  "readOnlyReceipt": {
+    "label": "SCRIPTED HTTP/BROWSER INTEGRATION TEST; NO AI",
+    "sourcePortfolioUnchanged": true,
+    "writes": [],
+    "errors": [],
+    "methods": [
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/validation/options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/portfolio"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/programs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/units"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/manufacturing/lots"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/erp/orders"
+      }
+    ]
+  },
+  "screenshots": [
+    "MOCKED-listening-1440.png",
+    "agent-workspace-1280.png",
+    "agent-workspace-1440.png",
+    "alerts-1280.png",
+    "alerts-1440.png",
+    "alerts-375.png",
+    "assistant-1024.png",
+    "assistant-1280.png",
+    "assistant-1440.png",
+    "assistant-1920.png",
+    "assistant-200-percent-zoom.png",
+    "assistant-375.png",
+    "assistant-640.png",
+    "assistant-short-375.png",
+    "before-1440.png",
+    "case-1280.png",
+    "case-1440.png",
+    "case-200-percent-zoom.png",
+    "concierge-1280.png",
+    "concierge-1440.png",
+    "concierge-375.png",
+    "delivery-1280.png",
+    "delivery-1440.png",
+    "demo-access-1280.png",
+    "demo-access-1440.png",
+    "demo-access-375.png",
+    "evidence-1280.png",
+    "evidence-1440.png",
+    "evidence-375.png",
+    "overview-1280.png",
+    "overview-1440.png",
+    "overview-1920.png",
+    "overview-375.png",
+    "portfolio-1024.png",
+    "portfolio-1280.png",
+    "portfolio-1440.png",
+    "portfolio-1920.png",
+    "portfolio-375.png",
+    "portfolio-640.png",
+    "profile-1440.png",
+    "program-1280.png",
+    "program-1440.png",
+    "search-1280.png",
+    "search-1440.png",
+    "search-375.png",
+    "source-context-1280.png",
+    "source-context-375.png",
+    "workspace-1440.png"
+  ],
+  "visuallyInspected": [
+    "before-1440.png",
+    "overview-1920.png",
+    "overview-1440.png",
+    "overview-1280.png",
+    "overview-375.png",
+    "workspace-1440.png",
+    "source-context-375.png",
+    "search-1280.png",
+    "search-375.png",
+    "alerts-1440.png",
+    "alerts-375.png",
+    "demo-access-1440.png",
+    "demo-access-375.png",
+    "concierge-1440.png",
+    "concierge-375.png"
+  ],
+  "research": [
+    "https://developer.apple.com/design/human-interface-guidelines/color",
+    "https://developer.apple.com/design/human-interface-guidelines/typography",
+    "https://developers.openai.com/plugins/concepts/ui-guidelines"
+  ],
+  "skipped": [
+    "Paid calls/evals",
+    "Six-case live smoke",
+    "Real microphone/external speech",
+    "Unchanged backend pytest/Coordinator/MCP/Phase06/Phase07 suites",
+    "Physical devices/keyboards",
+    "Cross-browser/screen-reader certification"
+  ],
+  "noBusinessAuthorityChanges": true
+}

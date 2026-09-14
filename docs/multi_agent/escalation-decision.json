@@ -1,0 +1,85 @@
+{
+  "case_id": "case_b8a5a040e9834160bc2d35300c2a5e14",
+  "customer_id": null,
+  "program_id": null,
+  "classified_change_type": "other_or_unknown",
+  "change_summary": "The request appears to combine an acceptance-date change with firmware compatibility confirmation. Verified scope, authoritative records, firmware details and the requested date are missing, so classification and specialist routing remain premature.",
+  "affected_scope": [
+    {
+      "statement": "Acceptance scheduling and firmware compatibility may be affected; the customer, program and target configuration cannot yet be established.",
+      "basis": "inference",
+      "source_refs": [],
+      "facts": []
+    }
+  ],
+  "specialist_findings": [],
+  "confirmed_facts": [],
+  "evidence_gaps": [
+    {
+      "statement": "Customer, program and change identifiers, verified requester authority, and authoritative linked records are needed to establish permitted scope.",
+      "basis": "missing_information",
+      "source_refs": [],
+      "facts": []
+    },
+    {
+      "statement": "The new firmware revision, baseline revision, target hardware/software configuration and compatibility criteria are missing.",
+      "basis": "missing_information",
+      "source_refs": [],
+      "facts": []
+    },
+    {
+      "statement": "The requested acceptance date, current acceptance milestone and distinction between timing-only and acceptance-requirement changes are missing.",
+      "basis": "missing_information",
+      "source_refs": [],
+      "facts": []
+    }
+  ],
+  "available_options": [],
+  "relevant_constraints": [
+    {
+      "statement": "Keep the case in read-only intake review; do not move dates or confirm compatibility. Defer specialist requests until scope and authoritative record IDs support concrete domain questions.",
+      "basis": "recommendation",
+      "source_refs": [],
+      "facts": []
+    }
+  ],
+  "program_impact": [
+    {
+      "statement": "Schedule and technical impacts remain unassessed; neither a timing-only change nor a change to acceptance requirements can yet be established.",
+      "basis": "inference",
+      "source_refs": [],
+      "facts": []
+    }
+  ],
+  "risks": [
+    {
+      "statement": "Acting before scope and requester authority are verified could affect the wrong program or create an unsupported schedule commitment.",
+      "basis": "inference",
+      "source_refs": [],
+      "facts": []
+    },
+    {
+      "statement": "Compatibility remains unknown. Missing intake evidence does not establish a hardware or firmware failure.",
+      "basis": "inference",
+      "source_refs": [],
+      "facts": []
+    }
+  ],
+  "unresolved_questions": [
+    "Missing intake fields: change_id, customer_id, program_id",
+    "Customer ID and program ID, with verified request scope and requester authority.",
+    "Change ID and authoritative linked records.",
+    "New firmware revision and applicable baseline revision.",
+    "Target hardware/software configuration and the intended compatibility criteria.",
+    "Requested acceptance date, current acceptance milestone, and whether the request changes only timing or also acceptance requirements."
+  ],
+  "recommended_next_step": "The Program Coordinator should obtain the missing information through human intake review, verify requester authority and customer/program scope, then reclassify the request and route only concrete specialist questions supported by authoritative record IDs.",
+  "policy_path": "escalation_required",
+  "requires_human_review": true,
+  "escalation_reason": "The binding policy requires escalation for incomplete or uncertain intake: scope identifiers, requester authority, linked records, firmware/configuration details and acceptance timing or criteria are unresolved.",
+  "source_references": [],
+  "business_actions_executed": false,
+  "approval_granted": false,
+  "customer_accepted": false,
+  "new_validation_pass_claimed": false
+}

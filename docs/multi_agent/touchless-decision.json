@@ -1,0 +1,202 @@
+{
+  "case_id": "case_ccaaefa1d93449e7adfe4ce3f2b5385d",
+  "customer_id": "CUST-FML01",
+  "program_id": "PRG-A17",
+  "classified_change_type": "administrative_evidence_reference",
+  "change_summary": "CR-018 requests an internal reference packet for existing CFG-B-01 / FW-2.3 / RT-4.1 / WF-LC-V1 evidence. The approved requirement remains unchanged. This is not a runtime/firmware requirement change or a request for new validation.",
+  "affected_scope": [
+    {
+      "statement": "The bounded scope is CR-018 for CUST-FML01 / PRG-A17, configuration CFG-B-01, with identical baseline and proposed requirement REQ-042-V1.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0002"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0002",
+          "pointer": "/customer_id",
+          "value_json": "\"CUST-FML01\""
+        },
+        {
+          "source_id": "src_0002",
+          "pointer": "/program_id",
+          "value_json": "\"PRG-A17\""
+        },
+        {
+          "source_id": "src_0002",
+          "pointer": "/configuration_id",
+          "value_json": "\"CFG-B-01\""
+        },
+        {
+          "source_id": "src_0002",
+          "pointer": "/baseline_requirement_revision_id",
+          "value_json": "\"REQ-042-V1\""
+        },
+        {
+          "source_id": "src_0002",
+          "pointer": "/proposed_requirement_revision_id",
+          "value_json": "\"REQ-042-V1\""
+        }
+      ]
+    }
+  ],
+  "specialist_findings": [
+    {
+      "invocation_id": "work_df58ca4f384949c38c422af4d1a23aea",
+      "specialist": "validation_evidence",
+      "summary": "Validation found sufficient existing coverage for the approved unchanged baseline and identified RES-BASELINE-B as applicable. RES-LONG-A and RES-SHORT-B do not satisfy this scope. No evidence gaps or new scheduling options were reported. The packet does not constitute new testing, approval, delivery or customer acceptance."
+    }
+  ],
+  "confirmed_facts": [
+    {
+      "statement": "REQ-042-V1 is approved and specifies CFG-B-01, WF-LC-V1 and acceptance reference CRIT-BASE-V1.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0006"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0006",
+          "pointer": "/status",
+          "value_json": "\"approved\""
+        },
+        {
+          "source_id": "src_0006",
+          "pointer": "/configuration_id",
+          "value_json": "\"CFG-B-01\""
+        },
+        {
+          "source_id": "src_0006",
+          "pointer": "/workload_profile_id",
+          "value_json": "\"WF-LC-V1\""
+        },
+        {
+          "source_id": "src_0006",
+          "pointer": "/acceptance_limits_ref",
+          "value_json": "\"CRIT-BASE-V1\""
+        }
+      ]
+    },
+    {
+      "statement": "CFG-B-01 specifies FW-2.3 and RT-4.1; authoritative coverage for this request is satisfied.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0007",
+        "src_0005"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0007",
+          "pointer": "/firmware",
+          "value_json": "\"FW-2.3\""
+        },
+        {
+          "source_id": "src_0007",
+          "pointer": "/runtime",
+          "value_json": "\"RT-4.1\""
+        },
+        {
+          "source_id": "src_0005",
+          "pointer": "/coverage_satisfied",
+          "value_json": "true"
+        }
+      ]
+    }
+  ],
+  "evidence_gaps": [],
+  "available_options": [],
+  "relevant_constraints": [
+    {
+      "statement": "The administrative policy permits only preparation of an existing-evidence packet, requires an approved identical requirement and sufficient coverage, caps incremental cost at zero, and prohibits business mutations.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0004"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0004",
+          "pointer": "/content",
+          "value_json": "\"{\\n  \\\"policy_kind\\\": \\\"evidence_reference_packet\\\",\\n  \\\"policy_version\\\": 1,\\n  \\\"customer_id\\\": \\\"CUST-FML01\\\",\\n  \\\"program_id\\\": \\\"PRG-A17\\\",\\n  \\\"permitted_followthrough\\\": \\\"prepare_existing_evidence_packet\\\",\\n  \\\"requires_approved_identical_requirement\\\": true,\\n  \\\"requires_sufficient_coverage\\\": true,\\n  \\\"max_incremental_cost_cents\\\": 0,\\n  \\\"permits_business_mutations\\\": false\\n}\\n\""
+        }
+      ]
+    }
+  ],
+  "program_impact": [
+    {
+      "statement": "The bounded packet workflow does not change requirements, configuration or customer commitments and should not introduce testing, scheduling or spend. CR-017's separate WF-LC-V2 obligation remains unaffected.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0003",
+        "src_0004",
+        "src_0002"
+      ],
+      "facts": []
+    }
+  ],
+  "risks": [
+    {
+      "statement": "Reusing this packet outside its exact baseline could overstate evidence coverage. The separate WF-LC-V2 support limitation is not a gap for this WF-LC-V1 request, but the packet must not imply that the separate obligation is satisfied or that customer acceptance occurred.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0007",
+        "src_0006",
+        "src_0005",
+        "src_0003"
+      ],
+      "facts": []
+    }
+  ],
+  "unresolved_questions": [],
+  "recommended_next_step": "The Program Coordinator should prepare only the permitted future internal reference packet using RES-BASELINE-B and exact baseline source references. Retain the unchanged requirement and scope, preserve CR-017 separately, and make no new-test, approval or acceptance claim. No business execution is authorized in this assessment.",
+  "policy_path": "touchless_eligible",
+  "requires_human_review": false,
+  "escalation_reason": null,
+  "source_references": [
+    {
+      "source_id": "src_0002",
+      "tool_name": "get_change_request",
+      "record_id": "CR-018",
+      "content_version": 1,
+      "record_version": 1
+    },
+    {
+      "source_id": "src_0003",
+      "tool_name": "get_document",
+      "record_id": "DOC-COORD-REQUEST-018",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0004",
+      "tool_name": "get_document",
+      "record_id": "DOC-COORD-POLICY-01",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0005",
+      "tool_name": "get_validation_coverage",
+      "record_id": null,
+      "content_version": null,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0006",
+      "tool_name": "get_requirement_revision",
+      "record_id": "REQ-042-V1",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0007",
+      "tool_name": "get_configuration",
+      "record_id": "CFG-B-01",
+      "content_version": 1,
+      "record_version": null
+    }
+  ],
+  "business_actions_executed": false,
+  "approval_granted": false,
+  "customer_accepted": false,
+  "new_validation_pass_claimed": false
+}

@@ -1,0 +1,741 @@
+{
+  "meta": {
+    "schema_version": "1.1",
+    "synthetic": true,
+    "scenario_id": "SCN-LC-001",
+    "scenario_now": "2026-11-16T09:00:00Z",
+    "timezone": "UTC",
+    "currency": "USD",
+    "supplier_name": "STRATOS SILICON",
+    "customer_name": "HELIOS AI",
+    "review_calendar": "24x7 elapsed time, demo simplification",
+    "partner_freshness_limit_minutes": 1440,
+    "note": "Original fictional fixtures; no real performance, capacity, or financial claims."
+  },
+  "engineering": {
+    "suppliers": [
+      {
+        "id": "SUP-001",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "name": "STRATOS SILICON",
+        "owning_system": "engineering"
+      }
+    ],
+    "customers": [
+      {
+        "id": "CUST-FML01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "name": "HELIOS AI",
+        "kind": "frontier_model_lab",
+        "owning_system": "engineering"
+      }
+    ],
+    "configurations": [
+      {
+        "id": "CFG-B-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "model_bundle_id": "MODEL-LAB-07",
+        "device_count": 1,
+        "firmware": "FW-2.3",
+        "runtime": "RT-4.1",
+        "quantization": "QFMT-1",
+        "memory_configuration": "MEM-1",
+        "validation_support": "not_yet_demonstrated_for_WF-LC-V2",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "CFG-A-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-A",
+        "model_bundle_id": "MODEL-LAB-07",
+        "device_count": 1,
+        "firmware": "FW-2.3",
+        "runtime": "RT-4.1",
+        "quantization": "QFMT-1",
+        "memory_configuration": "MEM-1",
+        "owning_system": "engineering"
+      }
+    ],
+    "workload_profiles": [
+      {
+        "id": "WF-LC-V1",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "model_bundle_id": "MODEL-LAB-07",
+        "context_bins": [
+          8192,
+          32768
+        ],
+        "concurrency": 4,
+        "output_tokens": 1024,
+        "total_suite_minutes": 120,
+        "owning_system": "engineering"
+      },
+      {
+        "id": "WF-LC-V2",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "model_bundle_id": "MODEL-LAB-07",
+        "context_bins": [
+          32768,
+          65536,
+          131072
+        ],
+        "concurrency": 4,
+        "output_tokens": 1024,
+        "total_suite_minutes": 480,
+        "owning_system": "engineering"
+      }
+    ],
+    "requirement_revisions": [
+      {
+        "id": "REQ-042-V1",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "requirement_id": "REQ-042",
+        "revision": 1,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "status": "approved",
+        "configuration_id": "CFG-B-01",
+        "workload_profile_id": "WF-LC-V1",
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "REQ-042-V2",
+        "content_version": 1,
+        "updated_at": "2026-11-16T09:00:00Z",
+        "synthetic": true,
+        "requirement_id": "REQ-042",
+        "revision": 2,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "status": "requested",
+        "configuration_id": "CFG-B-01",
+        "workload_profile_id": "WF-LC-V2",
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "owning_system": "engineering"
+      }
+    ],
+    "changes": [
+      {
+        "id": "CR-017",
+        "content_version": 1,
+        "updated_at": "2026-11-16T09:00:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "baseline_requirement_revision_id": "REQ-042-V1",
+        "proposed_requirement_revision_id": "REQ-042-V2",
+        "configuration_id": "CFG-B-01",
+        "milestone_id": "MS-ACCEPT-01",
+        "order_id": "ORD-1204",
+        "request_document_id": "DOC-REQUEST-01",
+        "workflow_state": "pending_impact_assessment",
+        "record_version": 1,
+        "request_received_at": "2026-11-16T09:00:00Z",
+        "title": "Long-context workload acceptance evidence",
+        "owning_system": "engineering",
+        "category": "Long-context workload validation",
+        "owner": "Mara Chen",
+        "priority": "high",
+        "next_action": "Assess the requested evidence gap before engineering review"
+      }
+    ],
+    "procedures": [
+      {
+        "id": "PROC-LC-02",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "status": "approved",
+        "document_id": "DOC-PROC-01",
+        "supported_configuration_ids": [
+          "CFG-B-01"
+        ],
+        "workload_profile_id": "WF-LC-V2",
+        "setup_minutes": 120,
+        "suite_minutes": 480,
+        "per_bin_minutes": 160,
+        "review_minutes": 240,
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "owning_system": "engineering"
+      }
+    ],
+    "acceptance_criteria": [
+      {
+        "id": "CRIT-BASE-V1",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "status": "approved",
+        "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+        "writable": false,
+        "owning_system": "engineering"
+      }
+    ],
+    "approval_policies": [
+      {
+        "id": "POLICY-APP-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "status": "approved",
+        "permitted_procedure_ids": [
+          "PROC-LC-02"
+        ],
+        "approver_role": "engineer",
+        "max_incremental_cost_cents": 200000,
+        "currency": "USD",
+        "permitted_actions": [
+          "schedule_validation",
+          "link_program_plan"
+        ],
+        "document_id": "DOC-POLICY-01",
+        "owning_system": "engineering"
+      }
+    ],
+    "document_manifest": [
+      {
+        "id": "DOC-REQUEST-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T09:00:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "customer_request",
+        "status": "requested",
+        "document_version": "2",
+        "relative_path": "fixtures/documents/customer_change_request.md",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "DOC-BASELINE-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "requirement",
+        "status": "approved",
+        "document_version": "1",
+        "relative_path": "fixtures/documents/approved_baseline.md",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "DOC-CONFIG-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "configuration",
+        "status": "approved",
+        "document_version": "1",
+        "relative_path": "fixtures/documents/configuration_scope.md",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "DOC-PROC-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "procedure",
+        "status": "approved",
+        "document_version": "2",
+        "relative_path": "fixtures/documents/supplemental_validation_procedure.md",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "DOC-POLICY-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "policy",
+        "status": "approved",
+        "document_version": "1",
+        "relative_path": "fixtures/documents/approval_policy.md",
+        "owning_system": "engineering"
+      },
+      {
+        "id": "DOC-PLAYBOOK-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "document_type": "playbook",
+        "status": "approved",
+        "document_version": "1",
+        "relative_path": "fixtures/documents/change_control_playbook.md",
+        "owning_system": "engineering"
+      }
+    ],
+    "plans": [],
+    "decisions": []
+  },
+  "validation": {
+    "results": [
+      {
+        "id": "RES-BASELINE-B",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "configuration_id": "CFG-B-01",
+        "configuration_content_version": 1,
+        "product_revision": "REV-B",
+        "workload_profile_id": "WF-LC-V1",
+        "workload_profile_content_version": 1,
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "acceptance_criteria_content_version": 1,
+        "model_bundle_id": "MODEL-LAB-07",
+        "sample_id": "SAMPLE-B-017",
+        "status": "completed",
+        "criteria_passed": true,
+        "covered_context_bins": [
+          8192,
+          32768
+        ],
+        "actual_suite_minutes": 120,
+        "observed_minutes_by_context_bin": {
+          "8192": 60,
+          "32768": 60
+        },
+        "completed_at": "2026-11-12T16:00:00Z",
+        "owning_system": "validation"
+      },
+      {
+        "id": "RES-LONG-A",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "configuration_id": "CFG-A-01",
+        "configuration_content_version": 1,
+        "product_revision": "REV-A",
+        "workload_profile_id": "WF-LC-V2",
+        "workload_profile_content_version": 1,
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "acceptance_criteria_content_version": 1,
+        "model_bundle_id": "MODEL-LAB-07",
+        "sample_id": "SAMPLE-A-010",
+        "status": "completed",
+        "criteria_passed": true,
+        "covered_context_bins": [
+          32768,
+          65536,
+          131072
+        ],
+        "actual_suite_minutes": 480,
+        "observed_minutes_by_context_bin": {
+          "32768": 160,
+          "65536": 160,
+          "131072": 160
+        },
+        "completed_at": "2026-11-13T16:00:00Z",
+        "owning_system": "validation"
+      },
+      {
+        "id": "RES-SHORT-B",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "configuration_id": "CFG-B-01",
+        "configuration_content_version": 1,
+        "product_revision": "REV-B",
+        "workload_profile_id": "WF-LC-V2",
+        "workload_profile_content_version": 1,
+        "acceptance_limits_ref": "CRIT-BASE-V1",
+        "acceptance_criteria_content_version": 1,
+        "model_bundle_id": "MODEL-LAB-07",
+        "sample_id": "SAMPLE-B-017",
+        "status": "completed",
+        "criteria_passed": true,
+        "covered_context_bins": [
+          32768,
+          65536,
+          131072
+        ],
+        "actual_suite_minutes": 60,
+        "observed_minutes_by_context_bin": {
+          "32768": 20,
+          "65536": 20,
+          "131072": 20
+        },
+        "completed_at": "2026-11-15T12:00:00Z",
+        "owning_system": "validation"
+      }
+    ],
+    "labs": [
+      {
+        "id": "LAB-A",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "campus": "CAMPUS-1",
+        "supported_configuration_ids": [
+          "CFG-B-01"
+        ],
+        "supported_procedure_ids": [
+          "PROC-LC-02"
+        ],
+        "owning_system": "validation"
+      },
+      {
+        "id": "LAB-B",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "campus": "CAMPUS-1",
+        "supported_configuration_ids": [
+          "CFG-B-01"
+        ],
+        "supported_procedure_ids": [
+          "PROC-LC-02"
+        ],
+        "owning_system": "validation"
+      },
+      {
+        "id": "LAB-C",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "campus": "CAMPUS-1",
+        "supported_configuration_ids": [
+          "CFG-A-01"
+        ],
+        "supported_procedure_ids": [
+          "PROC-LC-02"
+        ],
+        "owning_system": "validation"
+      }
+    ],
+    "slots": [
+      {
+        "id": "SLOT-STANDARD",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "lab_id": "LAB-A",
+        "starts_at": "2026-11-20T08:00:00Z",
+        "ends_at": "2026-11-20T18:00:00Z",
+        "rate_id": "RATE-STANDARD",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      },
+      {
+        "id": "SLOT-PRIORITY",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "lab_id": "LAB-B",
+        "starts_at": "2026-11-18T06:00:00Z",
+        "ends_at": "2026-11-18T16:00:00Z",
+        "rate_id": "RATE-PRIORITY",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      },
+      {
+        "id": "SLOT-UNQUALIFIED",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "lab_id": "LAB-C",
+        "starts_at": "2026-11-17T06:00:00Z",
+        "ends_at": "2026-11-17T16:00:00Z",
+        "rate_id": "RATE-OTHER",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      }
+    ],
+    "samples": [
+      {
+        "id": "SAMPLE-B-017",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "unit_id": "UNIT-B-017",
+        "configuration_id": "CFG-B-01",
+        "campus": "CAMPUS-1",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      },
+      {
+        "id": "SAMPLE-B-018",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "unit_id": "UNIT-B-018",
+        "configuration_id": "CFG-B-01",
+        "campus": "CAMPUS-1",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      },
+      {
+        "id": "SAMPLE-A-010",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "unit_id": "UNIT-A-010",
+        "configuration_id": "CFG-A-01",
+        "campus": "CAMPUS-1",
+        "availability": "available",
+        "availability_version": 1,
+        "owning_system": "validation"
+      }
+    ],
+    "jobs": [],
+    "reservations": []
+  },
+  "manufacturing": {
+    "lots": [
+      {
+        "id": "LOT-4491",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "restrictions": [],
+        "owning_system": "manufacturing"
+      },
+      {
+        "id": "LOT-4492",
+        "content_version": 2,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "restrictions": [
+          "engineering_hold"
+        ],
+        "owning_system": "manufacturing",
+        "hold_details": [
+          {
+            "restriction": "engineering_hold",
+            "rationale": "Pilot-lot traceability documentation is awaiting engineering disposition. This administrative restriction is not a recorded hardware failure.",
+            "responsible_team": "Pilot Manufacturing Engineering",
+            "release_conditions": "Complete the traceability review and record an authorized disposition in the manufacturing source system before releasing the lot. No release action is available in this demo."
+          }
+        ]
+      },
+      {
+        "id": "LOT-4480",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-A",
+        "restrictions": [],
+        "owning_system": "manufacturing"
+      }
+    ],
+    "units": [
+      {
+        "id": "UNIT-B-017",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "source_lot_id": "LOT-4491",
+        "restrictions": [],
+        "owning_system": "manufacturing"
+      },
+      {
+        "id": "UNIT-B-018",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "source_lot_id": "LOT-4492",
+        "restrictions": [],
+        "owning_system": "manufacturing"
+      },
+      {
+        "id": "UNIT-A-010",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-A",
+        "source_lot_id": "LOT-4480",
+        "restrictions": [],
+        "owning_system": "manufacturing"
+      }
+    ]
+  },
+  "erp": {
+    "orders": [
+      {
+        "id": "ORD-1204",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "customer_id": "CUST-FML01",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "quantity": 100,
+        "quantity_unit": "accelerator_units",
+        "committed_delivery_at": "2026-11-23T18:00:00Z",
+        "status": "open",
+        "owning_system": "erp"
+      }
+    ],
+    "cost_rates": [
+      {
+        "id": "RATE-STANDARD",
+        "content_version": 2,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "currency": "USD",
+        "incremental_cost_cents": 0,
+        "status": "approved",
+        "effective_from": "2026-11-01T00:00:00Z",
+        "effective_to": "2026-12-01T00:00:00Z",
+        "owning_system": "erp",
+        "service_name": "Standard internal lab reservation",
+        "service_description": "Scheduled use of the qualified internal lab at no incremental program charge; setup and test execution are included."
+      },
+      {
+        "id": "RATE-PRIORITY",
+        "content_version": 2,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "currency": "USD",
+        "incremental_cost_cents": 180000,
+        "status": "approved",
+        "effective_from": "2026-11-01T00:00:00Z",
+        "effective_to": "2026-12-01T00:00:00Z",
+        "owning_system": "erp",
+        "service_name": "Priority internal lab reservation",
+        "service_description": "Earlier reservation in the qualified internal lab, including setup and test execution. The incremental charge applies to the complete reservation."
+      },
+      {
+        "id": "RATE-OTHER",
+        "content_version": 2,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "currency": "USD",
+        "incremental_cost_cents": 60000,
+        "status": "approved",
+        "effective_from": "2026-11-01T00:00:00Z",
+        "effective_to": "2026-12-01T00:00:00Z",
+        "owning_system": "erp",
+        "service_name": "Alternate lab reservation",
+        "service_description": "Setup and test execution in the alternate lab. Rate approval does not establish configuration or procedure qualification."
+      }
+    ]
+  },
+  "planner": {
+    "programs": [
+      {
+        "id": "PRG-A17",
+        "content_version": 1,
+        "updated_at": "2026-11-16T08:30:00Z",
+        "synthetic": true,
+        "customer_id": "CUST-FML01",
+        "supplier_id": "SUP-001",
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "owner": "Mara Chen",
+        "configuration_id": "CFG-B-01",
+        "milestone_ids": [
+          "MS-ACCEPT-01"
+        ],
+        "order_id": "ORD-1204",
+        "owning_system": "planner",
+        "name": "Helios Atlas Inference",
+        "business_unit": "Advanced Compute Programs",
+        "lifecycle": "pilot_validation",
+        "health": "validation_risk",
+        "next_action": "Assess the new customer evidence request"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "MS-ACCEPT-01",
+        "content_version": 1,
+        "updated_at": "2026-11-16T09:00:00Z",
+        "synthetic": true,
+        "program_id": "PRG-A17",
+        "order_id": "ORD-1204",
+        "name": "Initial acceptance evidence and engineering review",
+        "baseline_at": "2026-11-19T18:00:00Z",
+        "current_forecast_at": "2026-11-19T18:00:00Z",
+        "forecast_status": "not_reassessed_for_new_request",
+        "record_version": 1,
+        "dependencies": [
+          {
+            "kind": "requirement_evidence",
+            "requirement_revision_id": "REQ-042-V2",
+            "state": "pending_assessment"
+          }
+        ],
+        "owning_system": "planner",
+        "owner": "Ilan Reyes",
+        "health": "validation_risk",
+        "next_action": "Review the supplemental evidence plan"
+      }
+    ],
+    "implementation_links": [],
+    "tasks": []
+  },
+  "audit_events": []
+}

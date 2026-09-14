@@ -1,0 +1,15 @@
+DR-009 · Source records
+Refresh source records
+
+PRG-A17 · ORD-HEL-800 / LINE-HEL-800-1
+
+Shared material & disposition
+MATERIAL / LOT	PHYSICAL	DISPOSITION	RELEASED	HELD	ALLOCATED	ELIGIBLE
+MAT-B-203 · LOT-B-203	600	released	600	0	0	600
+MAT-B-204 · LOT-B-204	250	hold	0	250	0	0
+MAT-B-202 · LOT-B-202	150	released	150	0	150	0
+Future expected supply
+
+No future receipt modeled.
+
+Open connected delivery workbench

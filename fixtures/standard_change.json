@@ -1,0 +1,204 @@
+{
+  "engineering.standard_request": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "engineering",
+      "customer_id": "CUST-FML01",
+      "request_source": "customer_intake",
+      "requested_by": "Helios AI / acceptance package coordination",
+      "id": "STD-REQUEST-019",
+      "change_id": "CR-019",
+      "request_document_id": "DOC-STD-REQUEST-019",
+      "request_reference": "HELIOS-PACKAGE-2026-11-019",
+      "request_type": "add_approved_profile",
+      "baseline_requirement_revision_id": "REQ-042-V1",
+      "baseline_content_version": 1,
+      "procedure_id": "PROC-STD-01",
+      "procedure_content_version": 1,
+      "routing_rule_id": "STD-HANDOFF-V1",
+      "configuration": {
+        "configuration_id": "CFG-B-01",
+        "content_version": 1,
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "model_bundle_id": "MODEL-LAB-07",
+        "device_count": 1,
+        "firmware": "FW-2.3",
+        "runtime": "RT-4.1",
+        "quantization": "QFMT-1",
+        "memory_configuration": "MEM-1"
+      },
+      "workload_profile_id": "WF-LC-V1",
+      "workload_content_version": 1,
+      "conditions": {
+        "context_bins": [
+          8192,
+          32768
+        ],
+        "concurrency": 4,
+        "output_tokens": 1024,
+        "total_suite_minutes": 120
+      },
+      "sample_ids": [
+        "SAMPLE-B-017"
+      ],
+      "requested_at": "2026-11-18T18:00:00Z",
+      "requested_action": "create_standard_validation_intake",
+      "changes_acceptance_criteria": false,
+      "requests_waiver": false,
+      "changes_customer_commitment": false,
+      "quality_disposition_requested": false,
+      "material_exception_ids": [],
+      "summary": "Add the already-approved WF-LC-V1 profile to the next Helios acceptance validation package on CFG-B-01 / FW-2.3 / RT-4.1. Reuse applicable historical profile evidence and route the required standard confirmation work on SAMPLE-B-017 to Atlas Validation Operations."
+    }
+  ],
+  "engineering.standard_rule": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "engineering",
+      "customer_id": "CUST-FML01",
+      "id": "STD-HANDOFF-V1",
+      "status": "approved",
+      "document_id": "DOC-STD-POLICY-01",
+      "policy_version": 1,
+      "recognized_change_type": "add_approved_profile",
+      "permitted_action": "create_standard_validation_intake",
+      "procedure_id": "PROC-STD-01",
+      "procedure_content_version": 1,
+      "configuration": {
+        "configuration_id": "CFG-B-01",
+        "content_version": 1,
+        "product_id": "ACCELERATOR-X",
+        "product_revision": "REV-B",
+        "model_bundle_id": "MODEL-LAB-07",
+        "device_count": 1,
+        "firmware": "FW-2.3",
+        "runtime": "RT-4.1",
+        "quantization": "QFMT-1",
+        "memory_configuration": "MEM-1"
+      },
+      "workload_profile_id": "WF-LC-V1",
+      "workload_content_version": 1,
+      "criteria_id": "CRIT-BASE-V1",
+      "criteria_content_version": 1,
+      "conditions": {
+        "context_bins": [
+          8192,
+          32768
+        ],
+        "concurrency": 4,
+        "output_tokens": 1024,
+        "total_suite_minutes": 120
+      },
+      "downstream_queue_id": "VALOPS-A17",
+      "downstream_owner": "Atlas Validation Operations",
+      "sample_count": 1,
+      "reusable_evidence_required": true,
+      "remaining_work": [
+        {
+          "work_id": "STD-CONFIRM-01",
+          "description": "Confirm the nominated sample/input manifests and perform the approved WF-LC-V1 confirmation suite after separate lab authorization.",
+          "procedure_step": "PROC-STD-01 sections 2\u20133",
+          "required_inputs": [
+            "SAMPLE-B-017 sample identity",
+            "FW-2.3 and RT-4.1 manifests",
+            "WF-LC-V1 version 1 manifest",
+            "CRIT-BASE-V1 version 1"
+          ],
+          "completion_criteria": "Source-owned result records the complete 120-minute suite, 60 minutes per approved bin; engineering/customer review remain separate.",
+          "requires_lab_authorization": true
+        }
+      ],
+      "completion_criteria": [
+        "Complete standard package received in VALOPS-A17",
+        "Exact approved procedure, configuration and reusable evidence references verified",
+        "Remaining lab work and authorization responsibility explicitly recorded"
+      ]
+    }
+  ],
+  "validation.intake_queue": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "validation",
+      "customer_id": "CUST-FML01",
+      "id": "VALOPS-A17",
+      "name": "Atlas standard validation intake",
+      "owner": "Atlas Validation Operations",
+      "status": "open"
+    }
+  ],
+  "engineering.procedure": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "engineering",
+      "id": "PROC-STD-01",
+      "status": "approved",
+      "document_id": "DOC-STD-PROC-01",
+      "supported_configuration_ids": [
+        "CFG-B-01"
+      ],
+      "workload_profile_id": "WF-LC-V1",
+      "setup_minutes": 120,
+      "suite_minutes": 120,
+      "per_bin_minutes": 60,
+      "review_minutes": 240,
+      "acceptance_limits_ref": "CRIT-BASE-V1"
+    }
+  ],
+  "engineering.policy": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "engineering",
+      "id": "POLICY-STD-NO-SCHEDULE",
+      "status": "approved",
+      "permitted_procedure_ids": [
+        "PROC-STD-01"
+      ],
+      "approver_role": "engineer",
+      "max_incremental_cost_cents": 0,
+      "currency": "USD",
+      "permitted_actions": [],
+      "document_id": "DOC-STD-POLICY-01"
+    }
+  ],
+  "engineering.change": [
+    {
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "owning_system": "engineering",
+      "customer_id": "CUST-FML01",
+      "id": "CR-019",
+      "record_version": 1,
+      "baseline_requirement_revision_id": "REQ-042-V1",
+      "proposed_requirement_revision_id": "REQ-042-V1",
+      "configuration_id": "CFG-B-01",
+      "milestone_id": "MS-ACCEPT-01",
+      "order_id": "ORD-1204",
+      "request_document_id": "DOC-STD-REQUEST-019",
+      "workflow_state": "new",
+      "request_received_at": "2026-11-16T09:00:00Z",
+      "title": "Standard validation package / approved baseline profile",
+      "category": "Standard validation package",
+      "priority": "low",
+      "owner": "Atlas Program Operations",
+      "next_action": "Assess exact procedure applicability and route the standard package"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-CHANGE-017",
+  "change_id": "CR-017",
+  "customer_id": "CUST-FML01",
+  "program_id": "PRG-A17",
+  "source_system": "engineering",
+  "change_type_hint": null,
+  "priority": "high",
+  "requested_by": "Synthetic program operations intake",
+  "received_at": "2026-11-16T09:00:00Z",
+  "request_summary": "Assess the customer long-context workload requirement change, existing evidence, approved response options, and program/customer schedule implications. Return a decision package for the appropriate next policy step.",
+  "linked_record_ids": [],
+  "correlation_id": "corr-phase05-change-017"
+}

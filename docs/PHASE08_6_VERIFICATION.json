@@ -1,0 +1,422 @@
+{
+  "phase": "08.6",
+  "status": "Implemented and verified offline; Phase 08 complete; stopped before Phase 09",
+  "request": "prompts/08_6_OPERATIONS.md",
+  "handoff": "docs/PHASE08_6_HANDOFF.md",
+  "command_note": "Commands are shown without log-redirection wrappers. Paths are repository-relative unless cwd is specified.",
+  "checks": [
+    {
+      "name": "Full source/backend",
+      "command": ".venv/bin/python -m pytest tests -q --basetemp=.cache/phase08-6/source",
+      "cwd": ".",
+      "passed": 483,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/source.log"
+    },
+    {
+      "name": "Full coordinator",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase08-6/coordinator",
+      "cwd": ".",
+      "passed": 692,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/coordinator.log",
+      "note": "Preceded two added Operations tests; final focused checks below cover both additions."
+    },
+    {
+      "name": "Full MCP",
+      "command": "PYTHONPATH=src:. mcp_server/.venv/bin/python -m pytest mcp_server/tests -q --basetemp=.cache/phase08-6/mcp",
+      "cwd": ".",
+      "passed": 56,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/mcp.log"
+    },
+    {
+      "name": "Final Operations and Concierge",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_6_operations.py coordinator/tests/test_phase08_5_concierge.py -q --basetemp=.cache/phase08-6/final-focused-v2",
+      "cwd": ".",
+      "passed": 24,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/final-focused-v2.log"
+    },
+    {
+      "name": "Final Operations after evidence link mapping",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_6_operations.py -q --basetemp=.cache/phase08-6/operations-final",
+      "cwd": ".",
+      "passed": 11,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/operations-final.log"
+    },
+    {
+      "name": "Integrated offline evaluation",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase08-6-full",
+      "cwd": ".",
+      "passed": 112,
+      "total": 112,
+      "critical_failures": 0,
+      "hard_gate": "PASS",
+      "semantic_score": null,
+      "exit_code": 0,
+      "log": ".cache/phase08-6/offline.log",
+      "result": ".cache/phase07/phase08-6-full/results.json"
+    },
+    {
+      "name": "TypeScript",
+      "command": "npm run typecheck",
+      "cwd": "mock_apps_ui",
+      "exit_code": 0,
+      "log": ".cache/phase08-6/typecheck-final2.log"
+    },
+    {
+      "name": "Production build",
+      "command": "npm run build",
+      "cwd": "mock_apps_ui",
+      "exit_code": 0,
+      "log": ".cache/phase08-6/build-final2.log",
+      "warning": "Existing main chunk 511.91 kB exceeds the 500 kB advisory."
+    }
+  ],
+  "browser": {
+    "classification": "Scripted integration testing with deterministic model doubles and local HTTP/MCP; not an AI run or actual human approval",
+    "common_environment": {
+      "PLAYWRIGHT_CHROMIUM_EXECUTABLE": "/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+    },
+    "unique_passed": 79,
+    "intentional_variant_skips": 3,
+    "checks": [
+      {
+        "name": "Existing frontend/component and source-app/browser checks",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.config.ts",
+        "env": {},
+        "passed": 56,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-legacy.log"
+      },
+      {
+        "name": "CR-017",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.phase08.config.ts",
+        "env": {},
+        "passed": 8,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-cr017.log"
+      },
+      {
+        "name": "CR-019 corrected rerun",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.standard.config.ts",
+        "env": {},
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-cr019-final.log"
+      },
+      {
+        "name": "Concierge",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.concierge.config.ts",
+        "env": {},
+        "passed": 2,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-concierge.log"
+      },
+      {
+        "name": "QE-004 comparable",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.quality.config.ts",
+        "env": {
+          "QUALITY_VARIANT": "comparable"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-quality-comparable-final.log"
+      },
+      {
+        "name": "QE-004 incomparable",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.quality.config.ts",
+        "env": {
+          "QUALITY_VARIANT": "incomparable"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-quality-incomparable-final.log"
+      },
+      {
+        "name": "QE-004 no_alternative_supply",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.quality.config.ts",
+        "env": {
+          "QUALITY_VARIANT": "no_alternative_supply"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-quality-no_alternative_supply.log"
+      },
+      {
+        "name": "DR-009 base",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "base"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-base.log"
+      },
+      {
+        "name": "DR-009 technical_blocked",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "technical_blocked"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-technical_blocked.log"
+      },
+      {
+        "name": "DR-009 future_conditional",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "future_conditional"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-future_conditional.log"
+      },
+      {
+        "name": "DR-009 wrong_configuration",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "wrong_configuration"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-wrong_configuration.log"
+      },
+      {
+        "name": "DR-009 partial_failure",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "partial_failure"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-partial_failure.log"
+      },
+      {
+        "name": "DR-009 stale_proposal",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.delivery.config.ts",
+        "env": {
+          "DELIVERY_VARIANT": "stale_proposal"
+        },
+        "passed": 1,
+        "intentionally_skipped": 0,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-delivery-stale_proposal.log"
+      },
+      {
+        "name": "Operations base",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.operations.config.ts",
+        "env": {
+          "OPERATIONS_VARIANT": "base"
+        },
+        "passed": 1,
+        "intentionally_skipped": 1,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-operations-final2.log"
+      },
+      {
+        "name": "Operations partial",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.operations.config.ts",
+        "env": {
+          "OPERATIONS_VARIANT": "partial"
+        },
+        "passed": 1,
+        "intentionally_skipped": 1,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-operations-partial.log"
+      },
+      {
+        "name": "Operations mismatch",
+        "cwd": "mock_apps_ui",
+        "command": "./node_modules/.bin/playwright test --config playwright.operations.config.ts",
+        "env": {
+          "OPERATIONS_VARIANT": "mismatch"
+        },
+        "passed": 1,
+        "intentionally_skipped": 1,
+        "exit_code": 0,
+        "log": ".cache/phase08-6/browser-operations-mismatch.log"
+      }
+    ]
+  },
+  "initial_failures_and_corrections": [
+    {
+      "issue": "CR-019 legacy run detail lost the handoff section",
+      "correction": "Restored the existing HandoffDetails component in OperationsRun; corrected browser rerun passed",
+      "original_log": ".cache/phase08-6/browser-cr019.log",
+      "final_log": ".cache/phase08-6/browser-cr019-final.log"
+    },
+    {
+      "issue": "Two quality variants retained technical-ID-first search label assertions",
+      "correction": "Updated assertions for business-case-first search labels; both variants passed on rerun",
+      "original_logs": [
+        ".cache/phase08-6/browser-quality-comparable.log",
+        ".cache/phase08-6/browser-quality-incomparable.log"
+      ],
+      "final_logs": [
+        ".cache/phase08-6/browser-quality-comparable-final.log",
+        ".cache/phase08-6/browser-quality-incomparable-final.log"
+      ]
+    },
+    {
+      "issue": "Operations browser attempted the next workflow during CR-017 proposal preparation and used a case-sensitive action label",
+      "correction": "Wait for the actual proposal-ready boundary and match the displayed action label; final integrated test passed",
+      "original_logs": [
+        ".cache/phase08-6/browser-operations.log",
+        ".cache/phase08-6/browser-operations-v2.log"
+      ],
+      "final_log": ".cache/phase08-6/browser-operations-final2.log"
+    }
+  ],
+  "historical_eval_integrity": {
+    "original_full_live": {
+      "passed": 4,
+      "total": 6,
+      "hard_gate": "FAIL"
+    },
+    "historical_full_followup": {
+      "passed": 4,
+      "total": 6,
+      "hard_gate": "FAIL"
+    },
+    "later_targeted": [
+      {
+        "case": "cr017_covered",
+        "passed": 1,
+        "total": 1
+      },
+      {
+        "case": "cr017_scheduled",
+        "passed": 1,
+        "total": 1
+      }
+    ],
+    "fresh_full_live_smoke_run": false,
+    "new_offline": {
+      "passed": 112,
+      "total": 112,
+      "hard_gate": "PASS",
+      "critical_failures": 0
+    }
+  },
+  "preservation": {
+    "prior_screenshots": 655,
+    "restored_after_browser_verification": 141,
+    "all_prior_screenshots_match": true,
+    "protected_source_files": 71,
+    "changed_protected_source_files": []
+  },
+  "changed_files": {
+    "modified": [
+      "AGENTS.md",
+      "README.md",
+      "coordinator/evals/phase08_2/doubles.py",
+      "coordinator/evals/phase08_4a/doubles.py",
+      "coordinator/evals/phase08_4b/doubles.py",
+      "coordinator/evals/phase08_4c/doubles.py",
+      "docs/ACCEPTANCE_TESTS.md",
+      "docs/API_CONTRACT.md",
+      "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+      "docs/phase08-3-host-openapi.json",
+      "mock_apps_ui/e2e-connected/workflows.spec.ts",
+      "mock_apps_ui/e2e-quality/quality.spec.ts",
+      "mock_apps_ui/src/control/app.tsx",
+      "mock_apps_ui/src/control/case.tsx",
+      "mock_apps_ui/src/control/host-schema.d.ts",
+      "mock_apps_ui/src/control/masthead.tsx",
+      "mock_apps_ui/src/control/style.css",
+      "mock_apps_ui/src/control/workflows.tsx",
+      "src/program_coordinator/application/store.py",
+      "src/program_coordinator/control_host/__main__.py",
+      "src/program_coordinator/control_host/concierge.py",
+      "src/program_coordinator/control_host/server.py",
+      "src/program_investigator/telemetry.py"
+    ],
+    "added": [
+      "coordinator/evals/phase08_6/__init__.py",
+      "coordinator/evals/phase08_6/serve.py",
+      "coordinator/tests/test_phase08_6_operations.py",
+      "docs/PHASE08_6_HANDOFF.md",
+      "docs/PHASE08_6_VERIFICATION.json",
+      "docs/screenshots/phase08-6/cr017-run.png",
+      "docs/screenshots/phase08-6/delivery-run.png",
+      "docs/screenshots/phase08-6/mismatch.png",
+      "docs/screenshots/phase08-6/mobile.png",
+      "docs/screenshots/phase08-6/operations.png",
+      "docs/screenshots/phase08-6/partial.png",
+      "docs/screenshots/phase08-6/reliability.png",
+      "mock_apps_ui/e2e-operations/operations.spec.ts",
+      "mock_apps_ui/playwright.operations.config.ts",
+      "mock_apps_ui/src/control/operations.tsx",
+      "prompts/08_6_OPERATIONS.md",
+      "src/program_coordinator/application/observability.py",
+      "src/program_coordinator/control_host/operations.py",
+      "src/program_coordinator/control_host/operations_artifacts.py",
+      "src/program_coordinator/control_host/operations_models.py"
+    ],
+    "removed": []
+  },
+  "changed_file_count": 43,
+  "screenshots": [
+    "docs/screenshots/phase08-6/cr017-run.png",
+    "docs/screenshots/phase08-6/delivery-run.png",
+    "docs/screenshots/phase08-6/mismatch.png",
+    "docs/screenshots/phase08-6/mobile.png",
+    "docs/screenshots/phase08-6/operations.png",
+    "docs/screenshots/phase08-6/partial.png",
+    "docs/screenshots/phase08-6/reliability.png"
+  ],
+  "local_url": "http://127.0.0.1:5188/control/operations",
+  "local_url_note": "Existing app URL; working host was not restarted. Temporary isolated test servers stop after verification.",
+  "not_run": [
+    "Paid model invocations",
+    "Full live smoke",
+    "Optional paid semantic grader",
+    "Browser-provider speech service",
+    "Remote SDK trace export verification"
+  ],
+  "limits": [
+    "Older absent telemetry remains unavailable.",
+    "Concierge history is bounded and uses existing local demo-reader scope; this is not production authentication.",
+    "Source health is an explicit timestamped read observation, not continuous monitoring.",
+    "Eval history uses six reviewed server-side index entries.",
+    "Business reads remain independent source observations, not an atomic distributed snapshot.",
+    "Existing production bundle-size advisory remains."
+  ],
+  "next_phase_start": "Phase 09 visual/demo polish only after a new explicit request; begin from the verified integrated journey and captures without changing business state or authority.",
+  "final_integrity_checks": {
+    "generated_host_openapi_matches_application": true,
+    "exact_changed_file_manifest_verified": true,
+    "deleted_files": 0
+  }
+}

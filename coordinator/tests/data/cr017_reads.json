@@ -1,0 +1,2986 @@
+[
+  {
+    "tool": "get_change_request",
+    "arguments": {
+      "change_id": "CR-017"
+    },
+    "data": {
+      "id": "CR-017",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "category": "Long-context workload validation",
+      "owner": "Mara Chen",
+      "priority": "high",
+      "next_action": "Assess the requested evidence gap before engineering review",
+      "customer_id": "CUST-FML01",
+      "baseline_requirement_revision_id": "REQ-042-V1",
+      "proposed_requirement_revision_id": "REQ-042-V2",
+      "configuration_id": "CFG-B-01",
+      "milestone_id": "MS-ACCEPT-01",
+      "order_id": "ORD-1204",
+      "request_document_id": "DOC-REQUEST-01",
+      "workflow_state": "pending_impact_assessment",
+      "record_version": 1,
+      "request_received_at": "2026-11-16T09:00:00Z",
+      "title": "Long-context workload acceptance evidence",
+      "current_plan_id": null,
+      "plans": [],
+      "execution_state": "not_scheduled"
+    }
+  },
+  {
+    "tool": "get_requirement_revision",
+    "arguments": {
+      "requirement_revision_id": "REQ-042-V1"
+    },
+    "data": {
+      "id": "REQ-042-V1",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "summary": null,
+      "requirement_id": "REQ-042",
+      "revision": 1,
+      "customer_id": "CUST-FML01",
+      "status": "approved",
+      "configuration_id": "CFG-B-01",
+      "workload_profile_id": "WF-LC-V1",
+      "acceptance_limits_ref": "CRIT-BASE-V1"
+    }
+  },
+  {
+    "tool": "get_requirement_revision",
+    "arguments": {
+      "requirement_revision_id": "REQ-042-V2"
+    },
+    "data": {
+      "id": "REQ-042-V2",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "summary": null,
+      "requirement_id": "REQ-042",
+      "revision": 2,
+      "customer_id": "CUST-FML01",
+      "status": "requested",
+      "configuration_id": "CFG-B-01",
+      "workload_profile_id": "WF-LC-V2",
+      "acceptance_limits_ref": "CRIT-BASE-V1"
+    }
+  },
+  {
+    "tool": "get_validation_coverage",
+    "arguments": {
+      "change_id": "CR-017"
+    },
+    "data": {
+      "synthetic": true,
+      "change_id": "CR-017",
+      "coverage_satisfied": false,
+      "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468",
+      "items": [
+        {
+          "result": {
+            "id": "RES-BASELINE-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-B-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V1",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-B",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-B-017",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              8192,
+              32768
+            ],
+            "actual_suite_minutes": 120,
+            "observed_minutes_by_context_bin": {
+              "32768": 60,
+              "8192": 60
+            },
+            "completed_at": "2026-11-12T16:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-B-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-B",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": "not_yet_demonstrated_for_WF-LC-V2"
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                8192,
+                32768
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 120
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": false,
+          "mismatch_reasons": [
+            "INSUFFICIENT_DURATION",
+            "MISSING_CONTEXT_BINS",
+            "WRONG_PROFILE"
+          ]
+        },
+        {
+          "result": {
+            "id": "RES-LONG-A",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-A-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V2",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-A",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-A-010",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              32768,
+              65536,
+              131072
+            ],
+            "actual_suite_minutes": 480,
+            "observed_minutes_by_context_bin": {
+              "131072": 160,
+              "32768": 160,
+              "65536": 160
+            },
+            "completed_at": "2026-11-13T16:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-A-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-A",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": null
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V2",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                32768,
+                65536,
+                131072
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 480
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": false,
+          "mismatch_reasons": [
+            "WRONG_CONFIGURATION",
+            "WRONG_PRODUCT_REVISION"
+          ]
+        },
+        {
+          "result": {
+            "id": "RES-SHORT-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "customer_id": "CUST-FML01",
+            "configuration_id": "CFG-B-01",
+            "configuration_content_version": 1,
+            "workload_profile_id": "WF-LC-V2",
+            "workload_profile_content_version": 1,
+            "acceptance_limits_ref": "CRIT-BASE-V1",
+            "acceptance_criteria_content_version": 1,
+            "product_revision": "REV-B",
+            "model_bundle_id": "MODEL-LAB-07",
+            "sample_id": "SAMPLE-B-017",
+            "status": "completed",
+            "criteria_passed": true,
+            "covered_context_bins": [
+              32768,
+              65536,
+              131072
+            ],
+            "actual_suite_minutes": 60,
+            "observed_minutes_by_context_bin": {
+              "131072": 20,
+              "32768": 20,
+              "65536": 20
+            },
+            "completed_at": "2026-11-15T12:00:00Z",
+            "configuration_snapshot": {
+              "id": "CFG-B-01",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "product_id": "ACCELERATOR-X",
+              "product_revision": "REV-B",
+              "model_bundle_id": "MODEL-LAB-07",
+              "device_count": 1,
+              "firmware": "FW-2.3",
+              "runtime": "RT-4.1",
+              "quantization": "QFMT-1",
+              "memory_configuration": "MEM-1",
+              "validation_support": "not_yet_demonstrated_for_WF-LC-V2"
+            },
+            "workload_snapshot": {
+              "id": "WF-LC-V2",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "model_bundle_id": "MODEL-LAB-07",
+              "context_bins": [
+                32768,
+                65536,
+                131072
+              ],
+              "concurrency": 4,
+              "output_tokens": 1024,
+              "total_suite_minutes": 480
+            },
+            "criteria_snapshot": {
+              "id": "CRIT-BASE-V1",
+              "content_version": 1,
+              "updated_at": "2026-11-16T08:30:00Z",
+              "synthetic": true,
+              "owning_system": "engineering",
+              "program_id": "PRG-A17",
+              "status": "approved",
+              "scope": "Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.",
+              "writable": false
+            }
+          },
+          "satisfies": false,
+          "mismatch_reasons": [
+            "INSUFFICIENT_DURATION"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_validation_options",
+    "arguments": {
+      "change_id": "CR-017"
+    },
+    "data": {
+      "synthetic": true,
+      "change_id": "CR-017",
+      "items": [
+        {
+          "slot": {
+            "id": "SLOT-PRIORITY",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-B",
+            "starts_at": "2026-11-18T06:00:00Z",
+            "ends_at": "2026-11-18T16:00:00Z",
+            "rate_id": "RATE-PRIORITY"
+          },
+          "lab": {
+            "id": "LAB-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-A-010",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-A-010",
+            "configuration_id": "CFG-A-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-A-010",
+          "lot_id": "LOT-4480",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-PRIORITY",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Priority internal lab reservation",
+            "service_description": "Earlier reservation in the qualified internal lab, including setup and test execution. The incremental charge applies to the complete reservation.",
+            "currency": "USD",
+            "incremental_cost_cents": 180000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 180000,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "SAMPLE_CONFIGURATION_MISMATCH"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-PRIORITY",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4480",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-A-010",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-A-010",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-PRIORITY",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-PRIORITY",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-B",
+            "starts_at": "2026-11-18T06:00:00Z",
+            "ends_at": "2026-11-18T16:00:00Z",
+            "rate_id": "RATE-PRIORITY"
+          },
+          "lab": {
+            "id": "LAB-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-017",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-017",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-017",
+          "lot_id": "LOT-4491",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-PRIORITY",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Priority internal lab reservation",
+            "service_description": "Earlier reservation in the qualified internal lab, including setup and test execution. The incremental charge applies to the complete reservation.",
+            "currency": "USD",
+            "incremental_cost_cents": 180000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 180000,
+          "currency": "USD",
+          "resource_eligible": true,
+          "approval_eligible": true,
+          "eligibility_reasons": [],
+          "approval_reasons": [],
+          "meets_deadline": true,
+          "timing": {
+            "lab_start_at": "2026-11-18T06:00:00Z",
+            "execution_start_at": "2026-11-18T08:00:00Z",
+            "lab_end_at": "2026-11-18T16:00:00Z",
+            "review_ready_at": "2026-11-18T20:00:00Z",
+            "deadline_slack_minutes": 1320
+          },
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-PRIORITY",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4491",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-017",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-PRIORITY",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-PRIORITY",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-B",
+            "starts_at": "2026-11-18T06:00:00Z",
+            "ends_at": "2026-11-18T16:00:00Z",
+            "rate_id": "RATE-PRIORITY"
+          },
+          "lab": {
+            "id": "LAB-B",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-018",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-018",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-018",
+          "lot_id": "LOT-4492",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-PRIORITY",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Priority internal lab reservation",
+            "service_description": "Earlier reservation in the qualified internal lab, including setup and test execution. The incremental charge applies to the complete reservation.",
+            "currency": "USD",
+            "incremental_cost_cents": 180000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 180000,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "MANUFACTURING_RESTRICTION"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-PRIORITY",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4492",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-018",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-PRIORITY",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-STANDARD",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-A",
+            "starts_at": "2026-11-20T08:00:00Z",
+            "ends_at": "2026-11-20T18:00:00Z",
+            "rate_id": "RATE-STANDARD"
+          },
+          "lab": {
+            "id": "LAB-A",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-A-010",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-A-010",
+            "configuration_id": "CFG-A-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-A-010",
+          "lot_id": "LOT-4480",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-STANDARD",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Standard internal lab reservation",
+            "service_description": "Scheduled use of the qualified internal lab at no incremental program charge; setup and test execution are included.",
+            "currency": "USD",
+            "incremental_cost_cents": 0,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 0,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "SAMPLE_CONFIGURATION_MISMATCH"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-STANDARD",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4480",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-A-010",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-A-010",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-STANDARD",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-STANDARD",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-A",
+            "starts_at": "2026-11-20T08:00:00Z",
+            "ends_at": "2026-11-20T18:00:00Z",
+            "rate_id": "RATE-STANDARD"
+          },
+          "lab": {
+            "id": "LAB-A",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-017",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-017",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-017",
+          "lot_id": "LOT-4491",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-STANDARD",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Standard internal lab reservation",
+            "service_description": "Scheduled use of the qualified internal lab at no incremental program charge; setup and test execution are included.",
+            "currency": "USD",
+            "incremental_cost_cents": 0,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 0,
+          "currency": "USD",
+          "resource_eligible": true,
+          "approval_eligible": true,
+          "eligibility_reasons": [],
+          "approval_reasons": [],
+          "meets_deadline": false,
+          "timing": {
+            "lab_start_at": "2026-11-20T08:00:00Z",
+            "execution_start_at": "2026-11-20T10:00:00Z",
+            "lab_end_at": "2026-11-20T18:00:00Z",
+            "review_ready_at": "2026-11-20T22:00:00Z",
+            "deadline_slack_minutes": -1680
+          },
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-STANDARD",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4491",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-017",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-STANDARD",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-STANDARD",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-A",
+            "starts_at": "2026-11-20T08:00:00Z",
+            "ends_at": "2026-11-20T18:00:00Z",
+            "rate_id": "RATE-STANDARD"
+          },
+          "lab": {
+            "id": "LAB-A",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-B-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-018",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-018",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-018",
+          "lot_id": "LOT-4492",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-STANDARD",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Standard internal lab reservation",
+            "service_description": "Scheduled use of the qualified internal lab at no incremental program charge; setup and test execution are included.",
+            "currency": "USD",
+            "incremental_cost_cents": 0,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 0,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "MANUFACTURING_RESTRICTION"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-STANDARD",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4492",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-018",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-STANDARD",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-UNQUALIFIED",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-C",
+            "starts_at": "2026-11-17T06:00:00Z",
+            "ends_at": "2026-11-17T16:00:00Z",
+            "rate_id": "RATE-OTHER"
+          },
+          "lab": {
+            "id": "LAB-C",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-A-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-A-010",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-A-010",
+            "configuration_id": "CFG-A-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-A-010",
+          "lot_id": "LOT-4480",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-OTHER",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Alternate lab reservation",
+            "service_description": "Setup and test execution in the alternate lab. Rate approval does not establish configuration or procedure qualification.",
+            "currency": "USD",
+            "incremental_cost_cents": 60000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 60000,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "LAB_CONFIGURATION_UNSUPPORTED",
+            "SAMPLE_CONFIGURATION_MISMATCH"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-OTHER",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4480",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-A-010",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-C",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-A-010",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-UNQUALIFIED",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-UNQUALIFIED",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-C",
+            "starts_at": "2026-11-17T06:00:00Z",
+            "ends_at": "2026-11-17T16:00:00Z",
+            "rate_id": "RATE-OTHER"
+          },
+          "lab": {
+            "id": "LAB-C",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-A-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-017",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-017",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-017",
+          "lot_id": "LOT-4491",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-OTHER",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Alternate lab reservation",
+            "service_description": "Setup and test execution in the alternate lab. Rate approval does not establish configuration or procedure qualification.",
+            "currency": "USD",
+            "incremental_cost_cents": 60000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 60000,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "LAB_CONFIGURATION_UNSUPPORTED"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-OTHER",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4491",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-C",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-017",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-UNQUALIFIED",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        },
+        {
+          "slot": {
+            "id": "SLOT-UNQUALIFIED",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "lab_id": "LAB-C",
+            "starts_at": "2026-11-17T06:00:00Z",
+            "ends_at": "2026-11-17T16:00:00Z",
+            "rate_id": "RATE-OTHER"
+          },
+          "lab": {
+            "id": "LAB-C",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "campus": "CAMPUS-1",
+            "supported_configuration_ids": [
+              "CFG-A-01"
+            ],
+            "supported_procedure_ids": [
+              "PROC-LC-02"
+            ]
+          },
+          "sample": {
+            "id": "SAMPLE-B-018",
+            "content_version": 1,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "validation",
+            "program_id": "PRG-A17",
+            "availability": "available",
+            "availability_version": 1,
+            "reserved_by_job_id": null,
+            "unit_id": "UNIT-B-018",
+            "configuration_id": "CFG-B-01",
+            "campus": "CAMPUS-1"
+          },
+          "unit_id": "UNIT-B-018",
+          "lot_id": "LOT-4492",
+          "configuration_id": "CFG-B-01",
+          "procedure_id": "PROC-LC-02",
+          "policy_id": "POLICY-APP-01",
+          "milestone_id": "MS-ACCEPT-01",
+          "rate": {
+            "id": "RATE-OTHER",
+            "content_version": 2,
+            "updated_at": "2026-11-16T08:30:00Z",
+            "synthetic": true,
+            "owning_system": "erp",
+            "program_id": "PRG-A17",
+            "service_name": "Alternate lab reservation",
+            "service_description": "Setup and test execution in the alternate lab. Rate approval does not establish configuration or procedure qualification.",
+            "currency": "USD",
+            "incremental_cost_cents": 60000,
+            "status": "approved",
+            "effective_from": "2026-11-01T00:00:00Z",
+            "effective_to": "2026-12-01T00:00:00Z"
+          },
+          "cost_cents": 60000,
+          "currency": "USD",
+          "resource_eligible": false,
+          "approval_eligible": false,
+          "eligibility_reasons": [
+            "LAB_CONFIGURATION_UNSUPPORTED",
+            "MANUFACTURING_RESTRICTION"
+          ],
+          "approval_reasons": [],
+          "meets_deadline": null,
+          "timing": null,
+          "expected_source_versions": {
+            "records": [
+              {
+                "resource_type": "engineering.change",
+                "resource_id": "CR-017",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-A-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.configuration",
+                "resource_id": "CFG-B-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.criteria",
+                "resource_id": "CRIT-BASE-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.customer",
+                "resource_id": "CUST-FML01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASE-PROC-05",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-BASELINE-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-CONFIG-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-COORD-REQUEST-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PLAYBOOK-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-POLICY-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-PROC-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.document",
+                "resource_id": "DOC-REQUEST-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.policy",
+                "resource_id": "POLICY-APP-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.procedure",
+                "resource_id": "PROC-LC-02",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.requirement",
+                "resource_id": "REQ-042-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.supplier",
+                "resource_id": "SUP-001",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V1",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "engineering.workload",
+                "resource_id": "WF-LC-V2",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.order",
+                "resource_id": "ORD-1204",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "erp.rate",
+                "resource_id": "RATE-OTHER",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.lot",
+                "resource_id": "LOT-4492",
+                "content_version": 2,
+                "availability_version": null
+              },
+              {
+                "resource_type": "manufacturing.unit",
+                "resource_id": "UNIT-B-018",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.milestone",
+                "resource_id": "MS-ACCEPT-01",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "planner.program",
+                "resource_id": "PRG-A17",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.lab",
+                "resource_id": "LAB-C",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-BASELINE-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-LONG-A",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.result",
+                "resource_id": "RES-SHORT-B",
+                "content_version": 1,
+                "availability_version": null
+              },
+              {
+                "resource_type": "validation.sample",
+                "resource_id": "SAMPLE-B-018",
+                "content_version": 1,
+                "availability_version": 1
+              },
+              {
+                "resource_type": "validation.slot",
+                "resource_id": "SLOT-UNQUALIFIED",
+                "content_version": 1,
+                "availability_version": 1
+              }
+            ],
+            "evidence_set_digest": "32e6674b42e0ead8bda32ce124d412ece0c4b7e62e5343dc67dda097ed622468"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_manufacturing_unit",
+    "arguments": {
+      "unit_id": "UNIT-B-018"
+    },
+    "data": {
+      "id": "UNIT-B-018",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "inventory_state": null,
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [],
+      "hold_details": [],
+      "source_lot_id": "LOT-4492"
+    }
+  },
+  {
+    "tool": "get_manufacturing_lot",
+    "arguments": {
+      "lot_id": "LOT-4492"
+    },
+    "data": {
+      "id": "LOT-4492",
+      "content_version": 2,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "inventory_state": null,
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [
+        "engineering_hold"
+      ],
+      "hold_details": [
+        {
+          "restriction": "engineering_hold",
+          "rationale": "Pilot-lot traceability documentation is awaiting engineering disposition. This administrative restriction is not a recorded hardware failure.",
+          "responsible_team": "Pilot Manufacturing Engineering",
+          "release_conditions": "Complete the traceability review and record an authorized disposition in the manufacturing source system before releasing the lot. No release action is available in this demo."
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_program_milestone",
+    "arguments": {
+      "program_id": "PRG-A17",
+      "milestone_id": "MS-ACCEPT-01"
+    },
+    "data": {
+      "id": "MS-ACCEPT-01",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "owning_system": "planner",
+      "program_id": "PRG-A17",
+      "owner": "Ilan Reyes",
+      "health": "validation_risk",
+      "next_action": "Review the supplemental evidence plan",
+      "order_id": "ORD-1204",
+      "name": "Initial acceptance evidence and engineering review",
+      "baseline_at": "2026-11-19T18:00:00Z",
+      "current_forecast_at": "2026-11-19T18:00:00Z",
+      "forecast_status": "not_reassessed_for_new_request",
+      "record_version": 1,
+      "dependencies": [
+        {
+          "kind": "requirement_evidence",
+          "requirement_revision_id": "REQ-042-V2",
+          "job_id": null,
+          "state": "pending_assessment",
+          "owner": null,
+          "note": null
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_customer_order",
+    "arguments": {
+      "order_id": "ORD-1204"
+    },
+    "data": {
+      "id": "ORD-1204",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "owning_system": "erp",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "quantity": 100,
+      "quantity_unit": "accelerator_units",
+      "committed_delivery_at": "2026-11-23T18:00:00Z",
+      "status": "open"
+    }
+  }
+]

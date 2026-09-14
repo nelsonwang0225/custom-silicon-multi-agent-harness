@@ -1,0 +1,1058 @@
+{
+  "phase": "09.3",
+  "completed": true,
+  "method": "Offline and scripted HTTP integration testing; deterministic model doubles, simulated demo approvals and mocked speech. No paid models or actual human approval.",
+  "browser_environment": {
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE": "/Users/nelsonwang/Library/Caches/ms-playwright/chromium-1223/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+  },
+  "commands": [
+    {
+      "name": "full foundation final run before evidence expectation correction",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-foundation-final.log",
+      "result": [
+        "1 failed",
+        "55 passed (4.9m)"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "entire affected voice and native dialog file",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts e2e/concierge-voice.spec.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-voice-verified.log",
+      "result": [
+        "15 passed (29.6s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "initial full foundation run",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-foundation.log",
+      "result": [
+        "4 failed",
+        "52 passed (4.8m)"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "intermediate shell and overview run",
+      "command": "./node_modules/.bin/playwright test --config playwright.config.ts e2e/concierge-voice.spec.ts e2e/overview.spec.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-shell-verified.log",
+      "result": [
+        "1 failed",
+        "22 passed (1.9m)"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "final workflow configuration file",
+      "command": "./node_modules/.bin/playwright test --config playwright.phase08.config.ts e2e-connected/workflows.spec.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-workflows-verified.log",
+      "result": [
+        "3 passed (50.9s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "cr017",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.phase08.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-cr017.log",
+      "result": [
+        "2 failed",
+        "6 passed (3.7m)"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "cr019",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.standard.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-cr019.log",
+      "result": [
+        "1 passed (17.7s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "concierge",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.concierge.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-concierge.log",
+      "result": [
+        "2 passed (37.3s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "quality-comparable",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "comparable"
+      },
+      "log": ".cache/phase09-3/browser-quality-comparable.log",
+      "result": [
+        "1 passed (23.4s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "quality-incomparable",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "incomparable"
+      },
+      "log": ".cache/phase09-3/browser-quality-incomparable.log",
+      "result": [
+        "1 passed (22.5s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "quality-no_alternative_supply",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.quality.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "QUALITY_VARIANT": "no_alternative_supply"
+      },
+      "log": ".cache/phase09-3/browser-quality-no_alternative_supply.log",
+      "result": [
+        "1 passed (28.3s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-base",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "base"
+      },
+      "log": ".cache/phase09-3/browser-delivery-base.log",
+      "result": [
+        "1 passed (27.5s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-technical_blocked",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "technical_blocked"
+      },
+      "log": ".cache/phase09-3/browser-delivery-technical_blocked.log",
+      "result": [
+        "1 passed (12.4s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-future_conditional",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "future_conditional"
+      },
+      "log": ".cache/phase09-3/browser-delivery-future_conditional.log",
+      "result": [
+        "1 failed"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "delivery-wrong_configuration",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "wrong_configuration"
+      },
+      "log": ".cache/phase09-3/browser-delivery-wrong_configuration.log",
+      "result": [
+        "1 passed (11.0s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-partial_failure",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "partial_failure"
+      },
+      "log": ".cache/phase09-3/browser-delivery-partial_failure.log",
+      "result": [
+        "1 passed (17.2s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-stale_proposal",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "stale_proposal"
+      },
+      "log": ".cache/phase09-3/browser-delivery-stale_proposal.log",
+      "result": [
+        "1 passed (13.6s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "operations-base",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "base"
+      },
+      "log": ".cache/phase09-3/browser-operations-base.log",
+      "result": [
+        "1 failed",
+        "1 skipped"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "operations-partial",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "partial"
+      },
+      "log": ".cache/phase09-3/browser-operations-partial.log",
+      "result": [
+        "1 skipped",
+        "1 passed (9.2s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "operations-mismatch",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "mismatch"
+      },
+      "log": ".cache/phase09-3/browser-operations-mismatch.log",
+      "result": [
+        "1 skipped",
+        "1 passed (9.2s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "cr017-final",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.phase08.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-cr017-final.log",
+      "result": [
+        "1 failed",
+        "7 passed (2.7m)"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "concierge-final",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.concierge.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-concierge-final.log",
+      "result": [
+        "2 passed (37.5s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "delivery-future-final",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.delivery.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "DELIVERY_VARIANT": "future_conditional"
+      },
+      "log": ".cache/phase09-3/browser-delivery-future-final.log",
+      "result": [
+        "1 passed (15.4s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "operations-base-final",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.operations.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {
+        "OPERATIONS_VARIANT": "base"
+      },
+      "log": ".cache/phase09-3/browser-operations-base-final.log",
+      "result": [
+        "1 skipped",
+        "1 passed (27.5s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "reset-final",
+      "command": [
+        "./node_modules/.bin/playwright",
+        "test",
+        "--config",
+        "playwright.reset.config.ts"
+      ],
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-reset-final.log",
+      "result": [
+        "1 passed (49.3s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "initial reset journey before compact-launcher expectation",
+      "command": "./node_modules/.bin/playwright test --config playwright.reset.config.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-reset.log",
+      "result": [
+        "1 failed"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "integrated product journey",
+      "command": "./node_modules/.bin/playwright test --config playwright.product.config.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-product.log",
+      "result": [
+        "1 passed (40.9s)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "final UX and pure presentation regressions",
+      "command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "cwd": "mock_apps_ui",
+      "env": {},
+      "log": ".cache/phase09-3/browser-polish-final.log",
+      "result": [
+        "5 passed (1.3m)"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "targeted backend Operations and product projections",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_6_operations.py coordinator/tests/test_phase09_product_integration.py -q --basetemp=.cache/phase09-3/backend",
+      "cwd": ".",
+      "env": {},
+      "log": ".cache/phase09-3/backend.log",
+      "result": "19 passed",
+      "exit_code": 0
+    },
+    {
+      "name": "typecheck",
+      "command": "npm --prefix mock_apps_ui run typecheck",
+      "cwd": ".",
+      "env": {},
+      "log": ".cache/phase09-3/typecheck-9.log",
+      "result": "tsc --noEmit",
+      "exit_code": 0
+    },
+    {
+      "name": "production build including final copy and typecheck",
+      "command": "npm --prefix mock_apps_ui run build",
+      "cwd": ".",
+      "env": {},
+      "log": ".cache/phase09-3/build-copy-final.log",
+      "result": "built in",
+      "exit_code": 0
+    },
+    {
+      "name": "final read-only detail and copy captures",
+      "command": "node .cache/phase09-3/capture-details.cjs",
+      "cwd": ".",
+      "env": {},
+      "log": ".cache/phase09-3/capture-details-final.log",
+      "result": "10 additional read-only UI captures",
+      "exit_code": 0
+    },
+    {
+      "name": "all offline eval families",
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --include-standard --include-quality --include-delivery --include-concierge --output .cache/phase07/phase09-3-full",
+      "cwd": ".",
+      "log": ".cache/phase09-3/offline.log",
+      "result": {
+        "hard_gate_status": "PASS",
+        "passed": 112,
+        "failed": 0,
+        "total": 112,
+        "critical_failures": [],
+        "semantic_score_average": null,
+        "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase07/phase09-3-full",
+        "skipped_checks": [
+          "Paid live agents not run. No live-model reasoning baseline measured.",
+          "Optional model-based semantic grader not run; semantic score is null."
+        ]
+      },
+      "exit_code": 0
+    }
+  ],
+  "final_results": {
+    "unique_frontend_browser_passed": 86,
+    "foundation": 56,
+    "connected_variant_matrix": 23,
+    "integrated_product": 1,
+    "reset_restart": 1,
+    "new_polish": 5,
+    "intentional_operations_variant_skips": 3,
+    "backend_projection_passed": 19,
+    "offline_eval_passed": 112,
+    "offline_critical_failures": 0,
+    "typecheck": "PASS",
+    "production_build": "PASS",
+    "semantic_score": null,
+    "counting_note": "Successful affected-file reruns close earlier UI expectation failures. Overlapping reruns are not added: foundation 55/56 followed by all 15 voice tests passing; CR-017 7/8 followed by all three workflow configuration tests passing."
+  },
+  "corrections_and_initial_results": [
+    {
+      "logs": [
+        ".cache/phase09-3/typecheck-initial.log",
+        ".cache/phase09-3/typecheck-2.log",
+        ".cache/phase09-3/typecheck-3.log",
+        ".cache/phase09-3/typecheck-4.log",
+        ".cache/phase09-3/typecheck-5.log",
+        ".cache/phase09-3/typecheck-6.log",
+        ".cache/phase09-3/typecheck-7.log",
+        ".cache/phase09-3/typecheck-8.log"
+      ],
+      "correction": "Type checking found optional source/run guards, type narrowing and an invalid standard-summary verified field during editing. Corrected before final typecheck/build."
+    },
+    {
+      "logs": [
+        ".cache/phase09-3/browser-foundation.log",
+        ".cache/phase09-3/browser-foundation-final.log",
+        ".cache/phase09-3/browser-shell-verified.log"
+      ],
+      "correction": "Updated intentional identity/disclosure/evidence-link expectations; retained 40px heading size and microphone access in compact launcher. The latest matching-profile result is RES-SHORT-B, 60 observed minutes against 480 requested. The entire final voice/dialog file passed."
+    },
+    {
+      "log": ".cache/phase09-3/browser-shell-final.log",
+      "result": "Accidental root-cwd invocation interrupted after four passes; one interrupted and 18 not run. It made no captures and is excluded from final counts. Correct-cwd suites subsequently completed."
+    },
+    {
+      "logs": [
+        ".cache/phase09-3/browser-cr017.log",
+        ".cache/phase09-3/browser-cr017-final.log"
+      ],
+      "correction": "The CR-017-only fixture lacks other canonical sources, so aggregate unknown remains an em dash, not a fabricated zero. Updated that expectation, the compact launcher and configuration-dialog copy selector. All five CR-017 workbench/downstream tests and final three configuration tests passed."
+    },
+    {
+      "logs": [
+        ".cache/phase09-3/browser-delivery-future_conditional.log",
+        ".cache/phase09-3/browser-operations-base.log",
+        ".cache/phase09-3/browser-reset.log"
+      ],
+      "correction": "Updated tests to open intentional Timing and Tools disclosures and expect compact Concierge. Existing future-condition, authority, exact execution, readback and reset assertions are retained. Reruns passed."
+    },
+    {
+      "result": "Final visual inspection found a singular evidence-label typo and scrolled search/alert captures. Corrected to 1 reusable record, recaptured the three CR-019 sizes and both popovers, inspected the resulting screenshots, and rebuilt."
+    }
+  ],
+  "preservation": {
+    "baseline_files": 1106,
+    "protected_files_unchanged": 207,
+    "protected_prefixes": [
+      "src/",
+      "fixtures/",
+      "tests/",
+      "mcp_server/",
+      "coordinator/tests/",
+      "coordinator/evals/phase07/"
+    ],
+    "source_app_ui_files_unchanged": 21,
+    "historical_docs_and_prompts_unchanged": 775,
+    "prior_png_files_restored_byte_for_byte": 670,
+    "regenerated_historical_captures_saved": 160,
+    "regenerated_directory": ".cache/phase09-3/regenerated-captures/",
+    "historical_eval_truth": "Original artifacts retained; failed live runs are not relabeled",
+    "working_demo": "Not reset or migrated; all owned verification storage isolated"
+  },
+  "skipped": [
+    "Paid live model smoke",
+    "Paid semantic grader",
+    "Real microphone and external speech",
+    "Full unchanged source, coordinator and MCP suites (targeted 19 backend tests and 112 offline cases run)",
+    "Human-operated complete demo",
+    "Git operations",
+    "Later Phase 09 work"
+  ],
+  "limitations": [
+    "Source and host reads are independent observations, not a distributed snapshot.",
+    "Dense option/evidence content uses disclosure and local scrolling; desktop is the primary demo target.",
+    "Representative long live findings, slow real investigations and browser-provider speech remain for later manual validation.",
+    "The existing 513.48 kB shared entry chunk advisory remains; no dependency added.",
+    "Demo identities are synthetic; saved triggers remain configuration-only; Operations historical visibility limits remain."
+  ],
+  "screenshots": {
+    "count": 41,
+    "required_1440_surfaces_captured_and_inspected": 12,
+    "desktop_viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "gallery": "docs/screenshots/phase09-3/README.md",
+    "index": "docs/screenshots/phase09-3/capture-index.json"
+  },
+  "changed_files": [
+    {
+      "path": "AGENTS.md",
+      "status": "modified",
+      "sha256": "805f220c4ade84edf786fbff7241184a74ed89e2d6048552bcff66dddd69200d"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "sha256": "7f5a78311f5cf05cbb12f2205944b16bb3ab579ea26c037a3c01bd763a6da097"
+    },
+    {
+      "path": "coordinator/evals/phase09_1/serve.py",
+      "status": "modified",
+      "sha256": "b18990a71292a884666b9800dfa221f793f95d8fc97028ff3ac091403a87b55e"
+    },
+    {
+      "path": "docs/PHASE09_3_HANDOFF.md",
+      "status": "added",
+      "sha256": "21fbaaf7081a7f0da9093bc556d553b00150f5489802d9f46ffef9af69231087"
+    },
+    {
+      "path": "docs/PHASE09_3_UX_REVIEW.md",
+      "status": "added",
+      "sha256": "38f1544bbb5f173f6cd5b3a8adf7a6a99e354c18d199985196918a630b576c58"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/README.md",
+      "status": "added",
+      "sha256": "45bd3ceb4716289c5232a09379b072d24e40276201a436e28a8e0ae5180beffb"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/agent-work-1440.png",
+      "status": "added",
+      "sha256": "fa590170253e4d4ce52307b3007466ac23587d3c1a5b5d30978344bbf55514be"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/alerts-1440.png",
+      "status": "added",
+      "sha256": "2c6406d9427893d050c2b34a808b4f3a35f650d854c46facc69b8e0761ed8868"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/capture-index.json",
+      "status": "added",
+      "sha256": "cdc9843d07cfb6a4b1537c8dc588a6ec6e377a412df932fa9425b98913e05842"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/concierge-1280.png",
+      "status": "added",
+      "sha256": "8a6e35bbb0f6f19fc49da24950b1096da924c33088ebd163d36cb3032fa1620e"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/concierge-1440.png",
+      "status": "added",
+      "sha256": "b658bf132207cb2c8944073ce76f2aa19b836fd06f8bd916fee04daa2da12f63"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/concierge-1920.png",
+      "status": "added",
+      "sha256": "ddc20d8cca26d38906a79a8f91878f095fd33d09aaa073d3240ab4a21c8691ca"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/concierge-200-percent-zoom.png",
+      "status": "added",
+      "sha256": "0ed7506bdbe6cc0d9a04a51dde154a258d4fdc6a9290bee938483218ca3f2d57"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-017-1280.png",
+      "status": "added",
+      "sha256": "6f3671010483095569a4a3e9459c5268de1ae3d66297b1a03c6273a96a270a51"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-017-1440.png",
+      "status": "added",
+      "sha256": "ccfc23d58eaf860d144609b8b8b2b3d1ca9db23385de4af7e1ecbb63603829f3"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-017-1920.png",
+      "status": "added",
+      "sha256": "54db77234a94d9ea74589d50a98ea22d687c3199d6a99481a93cec2d7e2f7a50"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-019-1280.png",
+      "status": "added",
+      "sha256": "bdc391eb24aed5f566db8f53ee3755c7c1bc5f8921643a68c76e976ecbfe55cc"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-019-1440.png",
+      "status": "added",
+      "sha256": "ef665d17537b497ca032bff56d588d343abe5ba37ceaaa549dd20b88c642d360"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/cr-019-1920.png",
+      "status": "added",
+      "sha256": "927b586ed216687fa5634283a0a5fd773eab6807f73e2da99b9514ed9df3cf77"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/decisions-1280.png",
+      "status": "added",
+      "sha256": "8b09ae1e1abce3cb71cfbf19fc56d45b509efa3f97662db6d93efe4dcbd271eb"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/decisions-1440.png",
+      "status": "added",
+      "sha256": "bce71e773f5bf2b7c95599a884f71893fcad70a51f276082865f53ba47ab0110"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/decisions-1920.png",
+      "status": "added",
+      "sha256": "8c23ca2251dd52b99882d68bc2475940594415f52009e9a19580e98bc6625b52"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/dr-009-1280.png",
+      "status": "added",
+      "sha256": "3e0615273305372824678ff84ab09d79393d823cef42b39758abd018b0f3ce57"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/dr-009-1440.png",
+      "status": "added",
+      "sha256": "4f62f5f2c405c3cf3fb4378d1437cbbc613a6c60a250dbd797baed29d54bca68"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/dr-009-1920.png",
+      "status": "added",
+      "sha256": "1a0dbdb768cb74510bed7aef7312968ec2616a535c1fa056d4efbabde67461cb"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/engineering-source-1440.png",
+      "status": "added",
+      "sha256": "bf1716e61944268bff9e4885d66cb62ca79e9ea7307e033923fca6fa9e89c476"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/evidence-1440.png",
+      "status": "added",
+      "sha256": "5601a0625cc94255eb0389affbe66971f72559e455593a6ca11ab6ed4f6ed6c7"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/manufacturing-source-1440.png",
+      "status": "added",
+      "sha256": "dc5c68c78092143f67d5ff6843e066c4ca71295c98449671d19d1625e03d258c"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/operations-1280.png",
+      "status": "added",
+      "sha256": "cab37d43029dea109d0f1eddef812f2ebd11e0345dc993030e78dea1e6fb6865"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/operations-1440.png",
+      "status": "added",
+      "sha256": "8d8b10f937835fd72a6a092a8ab7c8c1f0ef0a3c92ea6ecadc386a86aeb1d13b"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/operations-1920.png",
+      "status": "added",
+      "sha256": "78773aa14228cdb22ccfbb7c4f4e7ae9ce07f2f53e9d3b514bda11ded0461b66"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/overview-1280.png",
+      "status": "added",
+      "sha256": "fefbd3593c9a29a53490d18d87130d5ed95df806306884adf769fcc1e52fdefe"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/overview-1440.png",
+      "status": "added",
+      "sha256": "badb34894e629197bd1fb5ae96fc835e727af098b190cd799857bf80032c72e4"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/overview-1920.png",
+      "status": "added",
+      "sha256": "d0dc1f05b84b5a4a28b7c57b4d2632d6a63ec7d583c1d92a9162a92bafd5a3b1"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/persona-selector-1440.png",
+      "status": "added",
+      "sha256": "c4ee34c23e7c2aa42a7c373a8848c3e324961a67e8ddbdd63d4dd892fdce36e4"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/program-1280.png",
+      "status": "added",
+      "sha256": "841ee1d4092f9201fc4375f8f214d85ddbe8fefe940f383a7245f17a657636ae"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/program-1440.png",
+      "status": "added",
+      "sha256": "50b2d211e7b882cd8eeae44047068d1d5b7106d7c5d86e1e18f3dcd7bf046a70"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/program-1920.png",
+      "status": "added",
+      "sha256": "adf00c3961eb28f837f09ed8ce52801264b7220ddad291f3c9752ff524affd03"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/qe-004-1280.png",
+      "status": "added",
+      "sha256": "095b62ef5c12d1fbfed51d280fc724b25b78337b84321da37b343b1c3052f8fc"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/qe-004-1440.png",
+      "status": "added",
+      "sha256": "5f95e28083b1194943b276893e74ce7d47faf59fe2bf1bb2420ff4427bb41b56"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/qe-004-1920.png",
+      "status": "added",
+      "sha256": "18b12d0a806aa791e296364e83f08a77ca6d7289f1cde3b859b8e81680301442"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/run-detail-1440.png",
+      "status": "added",
+      "sha256": "f9268d6f896bcf80e68ca8147c3766f46ea5e9fc829064c21925d3957d98039b"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/search-1440.png",
+      "status": "added",
+      "sha256": "7936340f81b1c70a0d2a552eddcbecdf39b5bf4d37f745d4804c43defdf15535"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/source-unavailable-1440.png",
+      "status": "added",
+      "sha256": "587fe6a4902883798061d71fdadd3473e270a22fa31c6b86f2a36fa7d6eadf5f"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/validation-decision-1440.png",
+      "status": "added",
+      "sha256": "ed3e522cca6786e952823ffcb0f672ae6771e7605c98dce563a236c527d80b10"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/workflows-1280.png",
+      "status": "added",
+      "sha256": "97547b430f51c5e0c647ad2b63862d711e0dd8794eeb1f887af3971c893ec64f"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/workflows-1440.png",
+      "status": "added",
+      "sha256": "e6d44e2a123f043169341c5e34832bc368d54224cc0950854f0573492a031577"
+    },
+    {
+      "path": "docs/screenshots/phase09-3/workflows-1920.png",
+      "status": "added",
+      "sha256": "ad04cd27a687725b712a45ef39beff0fdd472eb29bc5b1a06a6f5c816d265b50"
+    },
+    {
+      "path": "mock_apps_ui/e2e-connected/downstream.spec.ts",
+      "status": "modified",
+      "sha256": "984ee0b37052199893d4585f0e14e10b63779c2fc467184bb031127a047ec343"
+    },
+    {
+      "path": "mock_apps_ui/e2e-connected/workbench.spec.ts",
+      "status": "modified",
+      "sha256": "026b55028ec37845fb775852f5a1f0c2fb09b69fdc47cff4b176dece7745e212"
+    },
+    {
+      "path": "mock_apps_ui/e2e-connected/workflows.spec.ts",
+      "status": "modified",
+      "sha256": "5b037171e0a87299c0f18fcc9e4a115c8426e503d82c217081dc4ff54b8e6bf2"
+    },
+    {
+      "path": "mock_apps_ui/e2e-delivery/delivery.spec.ts",
+      "status": "modified",
+      "sha256": "2422b16259e73c0757d78f6f0edda9e8bfc528a80e3c428ffdafede87b57f18f"
+    },
+    {
+      "path": "mock_apps_ui/e2e-operations/operations.spec.ts",
+      "status": "modified",
+      "sha256": "b3e5a19f8dfedc286f139650067c1d30f7e2834cf802a08496b73b4d9c8dd981"
+    },
+    {
+      "path": "mock_apps_ui/e2e-polish/experience.spec.ts",
+      "status": "added",
+      "sha256": "0e1b416f40343d3daff3d89d1844910ca9c5be5ff6fa22eaf9c694b52a7b209c"
+    },
+    {
+      "path": "mock_apps_ui/e2e-reset/reset.spec.ts",
+      "status": "modified",
+      "sha256": "a57908bd6a0b7dcb1b691923abc89e6fe0f0590a856f3c345dc8d224fc13d277"
+    },
+    {
+      "path": "mock_apps_ui/e2e/concierge-voice.spec.ts",
+      "status": "modified",
+      "sha256": "fd06410f3d9621cac696ba1dccb13a8cc629249b287c7db7bbd0e5f00b61e172"
+    },
+    {
+      "path": "mock_apps_ui/e2e/overview.spec.ts",
+      "status": "modified",
+      "sha256": "0243b2aa70ff45d3677bfa693adfac5f421237a03ce7df788345ad1ca7a2310c"
+    },
+    {
+      "path": "mock_apps_ui/playwright.polish.config.ts",
+      "status": "added",
+      "sha256": "4a14d0c5d655e0d24aaa1eaeb9c7a161c4aedcec22636fe0ddbb15084d5b3b66"
+    },
+    {
+      "path": "mock_apps_ui/src/control/agent-activity.tsx",
+      "status": "modified",
+      "sha256": "d8d76e7def5b38cc7e2f0baf65feb295fcead120475cb7f6d846325556eb481d"
+    },
+    {
+      "path": "mock_apps_ui/src/control/app.tsx",
+      "status": "modified",
+      "sha256": "874b96e66917b05543a8421a06d6df84aedc56601a09cb88cbde74ffb728e3cb"
+    },
+    {
+      "path": "mock_apps_ui/src/control/assistant.tsx",
+      "status": "modified",
+      "sha256": "227a56a820b73332c7914c29d538050fba1ccd9f6cf64eac5c919caec3424191"
+    },
+    {
+      "path": "mock_apps_ui/src/control/automation-editor.tsx",
+      "status": "modified",
+      "sha256": "7fcfcc4b7252c70eae682315de6394e0afff1530b47e221cd6a98ef600d27a39"
+    },
+    {
+      "path": "mock_apps_ui/src/control/case-experience.tsx",
+      "status": "added",
+      "sha256": "4fd108e80358990eed8a8ac9cb68bc6c193d71c1fb0036d4626c954a890409bf"
+    },
+    {
+      "path": "mock_apps_ui/src/control/case.tsx",
+      "status": "modified",
+      "sha256": "15f12ebf62b1d48cda1faa913012983a1e415c3589c33e41af5c9b939043f47f"
+    },
+    {
+      "path": "mock_apps_ui/src/control/concierge-chat.tsx",
+      "status": "modified",
+      "sha256": "07197ba86042749013d2bfa9a8c2d434fe34910ec1047d5e0b2120c472e4b8ca"
+    },
+    {
+      "path": "mock_apps_ui/src/control/connected-case.tsx",
+      "status": "modified",
+      "sha256": "9eb6deddeacf936c184795b5112ae20a891ba33eeea4cefce4b59dd65b5db89b"
+    },
+    {
+      "path": "mock_apps_ui/src/control/decisions.tsx",
+      "status": "modified",
+      "sha256": "d50f705191989d4598db7a7c44617dfd8983122ccf3422c777396edb161dfc4b"
+    },
+    {
+      "path": "mock_apps_ui/src/control/delivery-case.tsx",
+      "status": "modified",
+      "sha256": "a4281b8b7b676da994ba6a5fae71402c58522e5d8a7bde75d4304802dc207a0a"
+    },
+    {
+      "path": "mock_apps_ui/src/control/experience-model.ts",
+      "status": "added",
+      "sha256": "062b85a3fa12a5779c29594e0ca13ee81ea4da84cb30aa4006261ebf56dfaddf"
+    },
+    {
+      "path": "mock_apps_ui/src/control/host-presentation.ts",
+      "status": "modified",
+      "sha256": "69901ca3ba2deb6345827c632ee52fbe5bd8ce6b01ad88ba39449ad26878d186"
+    },
+    {
+      "path": "mock_apps_ui/src/control/integration.tsx",
+      "status": "modified",
+      "sha256": "67a5a9f57bdde96644011e278a287f5689d5738ada410b35152cf4a05adf9e4a"
+    },
+    {
+      "path": "mock_apps_ui/src/control/masthead.tsx",
+      "status": "modified",
+      "sha256": "ad94d30a228f4e32e64b15784dcc177cd99da01c3ad3cd434c74b909f00b1e44"
+    },
+    {
+      "path": "mock_apps_ui/src/control/operations.tsx",
+      "status": "modified",
+      "sha256": "889cb43511053532046d785e823804ba2e45ee9d43b7aa838575ff2b4d89568d"
+    },
+    {
+      "path": "mock_apps_ui/src/control/persona.tsx",
+      "status": "added",
+      "sha256": "fc1024c412570e24e0a9806d293ed0f0b848878ddb567a9ad9898e53b10f1003"
+    },
+    {
+      "path": "mock_apps_ui/src/control/physical-validation.tsx",
+      "status": "modified",
+      "sha256": "3965f1be9db5f1eb4583efada2d66da53d29cb7c001d2d60d3263da806ba896a"
+    },
+    {
+      "path": "mock_apps_ui/src/control/polish.css",
+      "status": "added",
+      "sha256": "8db40ff11d4f1fe3c14ec017724746dec66adddb71b1e7a415ce617d7153e56d"
+    },
+    {
+      "path": "mock_apps_ui/src/control/portfolio.tsx",
+      "status": "modified",
+      "sha256": "d1da9496327f6de9badc3f4c8c6006fabc94c62309cc45fbbb794f3d1bd87dd5"
+    },
+    {
+      "path": "mock_apps_ui/src/control/program.tsx",
+      "status": "modified",
+      "sha256": "ae3e3295dd0e35c3e9d237de590fb7a1c73ef0461f01511c744df9b3ad07b069"
+    },
+    {
+      "path": "mock_apps_ui/src/control/quality-case.tsx",
+      "status": "modified",
+      "sha256": "d4012c077f48989ca153c7093c0672e59aab8dfd005e9d58181bcf4a429d4074"
+    },
+    {
+      "path": "mock_apps_ui/src/control/standard-case.tsx",
+      "status": "modified",
+      "sha256": "82060dbb5b14d19631dc947d1e2810742d4b29d20189da51f5f8b6a177a695d3"
+    },
+    {
+      "path": "mock_apps_ui/src/control/ui.tsx",
+      "status": "modified",
+      "sha256": "193f2fc66420bee38763e22a0d9c2fa331d76ec44ec0c9f53e36a22d1f64a9d9"
+    },
+    {
+      "path": "mock_apps_ui/src/control/workflows.tsx",
+      "status": "modified",
+      "sha256": "6f9a2e7f70b0ce2ed2cda3ef41459707277423492617ce62012b07ae6aff4941"
+    },
+    {
+      "path": "prompts/09_3_UX_POLISH.md",
+      "status": "added",
+      "sha256": "78cf291dc793b52bf059d770efff94b59a106e7df0ae0e8fd35f6346c95e6182"
+    },
+    {
+      "path": "docs/PHASE09_3_VERIFICATION.json",
+      "status": "added",
+      "note": "This report; no recursive self-hash."
+    }
+  ],
+  "handoff": "docs/PHASE09_3_HANDOFF.md",
+  "stopped_after": "09.3",
+  "final_artifact_checks": {
+    "reported_sha256_values": "All verified",
+    "handoff_and_gallery_links": "All resolve locally",
+    "isolated_preview_ui": "HTTP 200",
+    "isolated_preview_case_source": "HTTP 200; source_available=true",
+    "probe_note": "A preliminary /health probe on the host returned 404 because that path is not exposed; the documented case projection through the UI proxy succeeded."
+  }
+}

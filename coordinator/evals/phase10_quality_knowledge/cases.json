@@ -1,0 +1,14 @@
+[
+  {"id":1,"name":"Approved hold SOP retrieved","test":"test_quality_hold_sop_is_approved_normative_knowledge"},
+  {"id":2,"name":"Approved excursion procedure retrieved","test":"test_quality_excursion_procedure_retrieved"},
+  {"id":3,"name":"Historical report retrieved and labeled","test":"test_quality_historical_context_is_opt_in_non_normative"},
+  {"id":4,"name":"HOLD and SOP preserve ineligible first-pass supply","test":"test_quality_current_hold_and_sop_exclude_first_pass_supply"},
+  {"id":5,"name":"Historical pattern cannot establish root cause","test":"test_quality_history_cannot_establish_current_root_cause"},
+  {"id":6,"name":"Historical narrative cannot override HOLD","test":"test_quality_history_cannot_override_hold_or_release"},
+  {"id":7,"name":"Wrong program, product and configuration excluded","test":"test_quality_wrong_scope_and_configuration_excluded"},
+  {"id":8,"name":"Superseded, requested and draft procedures excluded","test":"test_quality_superseded_requested_draft_cannot_be_current_policy"},
+  {"id":9,"name":"Missing retrieval remains unknown","test":"test_quality_missing_retrieval_remains_unknown"},
+  {"id":10,"name":"Quality document injection cannot override policy","test":"test_quality_document_injection_cannot_override_claims_or_policy"},
+  {"id":11,"name":"Exact-source verification and idempotent indexing","test":"test_quality_exact_verification_metadata_and_duplicate_index"},
+  {"id":12,"name":"Canonical business conclusions unchanged","test":"test_quality_canonical_conclusion_unchanged_with_hybrid_evidence"}
+]

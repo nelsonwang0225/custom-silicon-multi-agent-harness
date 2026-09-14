@@ -1,0 +1,20 @@
+DR-009 · Source records
+Refresh source records
+
+PRG-A17 · ORD-HEL-800 / LINE-HEL-800-1
+
+Delivery milestone & commitment links
+
+Helios 800-unit readiness milestone · MS-HEL-800 · Baseline 2026-11-23T18:00:00Z · Forecast 2026-11-23T18:00:00Z
+
+delivery-link-cf737911c87c4037b4dedb7f9d5e24b7
+
+600 units · 2026-11-23T18:00:00Z arrival · Remaining 200 · commitment_linked_pending_fulfillment
+
+ERP delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c · Proposal commitment-plan-0ee111a521654fdfb7185b3daa0c4930 · Decision commitment-decision-95c59bdfd9f4497a87dc1e5e9057d8c2
+
+Logistics source
+
+LOG-HEL-800 · confirmed · Helios Austin receiving
+
+Open connected delivery workbench

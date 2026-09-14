@@ -1,0 +1,150 @@
+{
+  "provenance": {
+    "eval_id": "eval_1dac4b6dd4dc468e949b5fdde8a32d1e",
+    "label": "Saved public typed outputs; deterministic regression input, not a model run",
+    "files": {
+      ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/case-state.json": "e5b3dd8e53b27b8cad1efbb3cd5f8af0b21f05774b1d54bf4d695bd54bb9e5fb",
+      ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/rejected-specialists.json": "481de23e89d81fb773ff825dfb257962d93af61dac79aaffbac1dab04eab1e4d",
+      ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/case-state.json": "2666f62e615e5d63884f7dd880910dc09a22b5af5fb131fcdf130b10e9851159"
+    }
+  },
+  "covered": {
+    "question": "Report the exact operating and acceptance limits and any per-bin duration requirements in CRIT-BASE-V1 from the acceptance-criteria record already retrieved as src_0012. Provide exact SourceFacts, or explicitly identify fields not supplied by that record. Reconcile Change Impact's source-access limitation without repeating the coverage investigation.",
+    "rationale": "Validation retrieved the criteria record but reported only its approved status. Its exact contents remain a concrete cross-domain dependency. This clarification is nonblocking for a conditional existing-evidence review package.",
+    "rejected_output": {
+      "case_id": "case_c027ad684fbe4b53845467ffe09521f2",
+      "summary": "CRIT-BASE-V1 is approved but does not supply numerical operating or acceptance limits, or per-bin duration requirements. Direct retrieval resolves the source-access limitation, not the missing detail. This clarification does not repeat or revise the earlier coverage investigation.",
+      "confidence": 1.0,
+      "unresolved_questions": [],
+      "source_references": [
+        {
+          "source_id": "src_0022",
+          "tool_name": "get_acceptance_criteria",
+          "record_id": "CRIT-BASE-V1",
+          "content_version": 1,
+          "record_version": null
+        }
+      ],
+      "coverage_status": "unknown",
+      "coverage_source_id": "unused",
+      "evidence_gaps": [
+        {
+          "statement": "The retrieved record supplies no numerical operating or acceptance thresholds, units, comparison operators, or per-bin duration requirements. Their absence does not establish that no such requirements exist. Coverage was not reassessed in this clarification.",
+          "basis": "missing_information",
+          "source_refs": [
+            "src_0022"
+          ],
+          "facts": []
+        }
+      ],
+      "applicable_evidence": [],
+      "inapplicable_evidence": [],
+      "eligible_options": [],
+      "ineligible_options": [],
+      "technical_constraints": [
+        {
+          "statement": "The exact recorded scope is: \"Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.\"",
+          "basis": "fact",
+          "source_refs": [
+            "src_0022"
+          ],
+          "facts": [
+            {
+              "source_id": "src_0022",
+              "pointer": "/scope",
+              "value_json": "\"Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.\""
+            }
+          ]
+        },
+        {
+          "statement": "CRIT-BASE-V1 has approved status and is not writable.",
+          "basis": "fact",
+          "source_refs": [
+            "src_0022"
+          ],
+          "facts": [
+            {
+              "source_id": "src_0022",
+              "pointer": "/id",
+              "value_json": "\"CRIT-BASE-V1\""
+            },
+            {
+              "source_id": "src_0022",
+              "pointer": "/status",
+              "value_json": "\"approved\""
+            },
+            {
+              "source_id": "src_0022",
+              "pointer": "/writable",
+              "value_json": "false"
+            }
+          ]
+        },
+        {
+          "statement": "Retain the conditional review package without inventing thresholds or allocating total suite duration across bins. During engineering review, confirm the authoritative numerical limits and whether any per-bin minimum duration applies. This record alone cannot support those details.",
+          "basis": "recommendation",
+          "source_refs": [
+            "src_0022"
+          ],
+          "facts": []
+        }
+      ]
+    }
+  },
+  "scheduled": {
+    "event": {
+      "event_id": "EVT-CHANGE-017",
+      "change_id": "CR-017",
+      "customer_id": "CUST-FML01",
+      "program_id": "PRG-A17",
+      "source_system": "engineering",
+      "change_type_hint": null,
+      "priority": "high",
+      "requested_by": "Synthetic program operations intake",
+      "received_at": "2026-11-16T09:00:00Z",
+      "request_summary": "Inspect the existing CR-017 validation job and linked program plan. Report what is complete and what remains pending.",
+      "linked_record_ids": [],
+      "correlation_id": "corr-phase05-change-017"
+    },
+    "triage": {
+      "classified_change_type": "other_or_unknown",
+      "confidence": 0.94,
+      "rationale": "The incoming request is a read-only execution-status inspection of an existing validation job and linked program plan, not a new workload or requirement change. Intake records scheduling and linkage identifiers, but the change's workflow_state says approved_awaiting_scheduling while its execution_state says scheduled_awaiting_execution. Direct status reads are needed to distinguish completed coordination steps from pending testing, review and acceptance.",
+      "specialists_required": [
+        {
+          "specialist": "validation_evidence",
+          "question": "Inspect the existing job and associated results. What scheduling and execution steps are confirmed complete, and what testing or evidence remains pending? Reconcile the change's conflicting workflow and execution states without treating scheduled work as tested or missing coverage as failure.",
+          "rationale": "Job and result status require authoritative validation reads; the intake contains a scheduled state but no completed result for the planned supplemental run.",
+          "focus_record_ids": [
+            "CR-017",
+            "job-bc2158580c4744d5ac86bbb594dec130",
+            "plan-a54aa43ae60b436ba2a7a7d4240eacfb",
+            "CFG-B-01",
+            "REQ-042-V2",
+            "PROC-LC-02"
+          ],
+          "depends_on": []
+        },
+        {
+          "specialist": "program_commercial",
+          "question": "Verify the existing implementation link and current program milestone status. Which linkage steps are complete, which review or disposition steps remain pending, and what dates are baseline commitments versus forecasts?",
+          "rationale": "The linked program plan needs independent verification; embedded source snapshots do not establish current planner status or completed engineering review.",
+          "focus_record_ids": [
+            "CR-017",
+            "PRG-A17",
+            "plan-a54aa43ae60b436ba2a7a7d4240eacfb",
+            "link-f341a3fa11684f9393b85e820fa3b2bc",
+            "job-bc2158580c4744d5ac86bbb594dec130",
+            "MS-ACCEPT-01",
+            "ORD-1204"
+          ],
+          "depends_on": []
+        }
+      ],
+      "missing_information": [],
+      "risk_level": "medium",
+      "proposed_workflow": "Read validation and planner status concurrently, then have the Coordinator reconcile the inconsistent state labels and report confirmed complete, pending and unverified steps separately. Do not reschedule, relink, approve or alter commitments. Preserve the unresolved statement: Future test outcome and customer acceptance remain unknown. Engineering review remains a next step, not missing intake information.",
+      "likely_policy_path": "human_review_required"
+    }
+  }
+}

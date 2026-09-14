@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "authored_files": [
+    {
+      "path": "AGENTS.md",
+      "purpose": "Append the explicit Phase 07 authorization; retain earlier boundaries.",
+      "sha256": "05ade8f917c31d29456d5942229d6ba7814e7b0b7a438b3ad925a2880e730981"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Add offline eval entry point and handoff link.",
+      "sha256": "ce2b802d25cc3ef22c73fe982832bd704c21fc57bff2f086e87d8c11198a1231"
+    },
+    {
+      "path": "coordinator/README.md",
+      "purpose": "Document offline, live smoke/full and semantic commands.",
+      "sha256": "11be36983d595f7222954d310795df18248833763c49fee56810ae25dbb1ce2f"
+    },
+    {
+      "path": "coordinator/evals/phase07/__init__.py",
+      "purpose": "Developer-only package marker.",
+      "sha256": "baa26563e88905e8c698b9c440fcbed24fc0831dcefe52a9177efe516906831e"
+    },
+    {
+      "path": "coordinator/evals/phase07/__main__.py",
+      "purpose": "Module CLI entry point.",
+      "sha256": "74fff10eb2bd330c92909b27a5a9ae84f41b3f268a5c04f51f849276919f19c6"
+    },
+    {
+      "path": "coordinator/evals/phase07/calculators.py",
+      "purpose": "Exact code-based inventory/yield/cost/UTC reconciliation.",
+      "sha256": "40e15d59f595c94a12ba74ea900e130494fb3a76f505ec0ad4d0e8303909f01e"
+    },
+    {
+      "path": "coordinator/evals/phase07/data/cases.json",
+      "purpose": "40 structured expected-behavior definitions.",
+      "sha256": "9eb133cfffec9b5113093c832360efd3f48fcff75dfef4112b3ae6108b91fee3"
+    },
+    {
+      "path": "coordinator/evals/phase07/data/eval-case.schema.json",
+      "purpose": "Exported reusable eval-case JSON schema.",
+      "sha256": "dc11dd1e7bc9efd3a293228bc96712a435813273ead969d93d8e09b951b85e20"
+    },
+    {
+      "path": "coordinator/evals/phase07/data/observations.json",
+      "purpose": "Independently authored synthetic structured outputs/tool observations.",
+      "sha256": "13569af120a4157cd79a776a366e9fe0d8d5471e0583e69aa6ffb2f430667457"
+    },
+    {
+      "path": "coordinator/evals/phase07/data/sources.json",
+      "purpose": "Golden projections and explicit offline synthetic source variants.",
+      "sha256": "610bb6e42df729c779828c64342f2d07e64cae6d57f4dbcb15e7a9f6c40c02d2"
+    },
+    {
+      "path": "coordinator/evals/phase07/dataset.py",
+      "purpose": "Dataset validation and source/engine/instruction/runtime fingerprints.",
+      "sha256": "8710e08c0f67585efe2b37628dd703f96264e5f61e7d627bab4f6f30f0b67d85"
+    },
+    {
+      "path": "coordinator/evals/phase07/execution_probe.py",
+      "purpose": "Existing Phase 06 services with isolated source HTTP handlers and simulated reviewer.",
+      "sha256": "802161aae14deb0d925a6b0d2acf52e0d87229050665253b44d8424033fcac8c"
+    },
+    {
+      "path": "coordinator/evals/phase07/graders.py",
+      "purpose": "Reusable deterministic evidence, numeric, authority, tool and claim graders.",
+      "sha256": "850cca16039190dd6f45186ae4243212d363ae28e0772a809208356c7a598c82"
+    },
+    {
+      "path": "coordinator/evals/phase07/live.py",
+      "purpose": "Existing multi-agent CLI delegation, process cleanup and raw trace/output adaptation.",
+      "sha256": "84fc73cec37c8e6cd6fa3fed8fff08f5197aad8ce1ed303c2b553938cff52ba1"
+    },
+    {
+      "path": "coordinator/evals/phase07/live_source.py",
+      "purpose": "Developer-only isolated live source variants; no answers enter retrieval.",
+      "sha256": "cfc2c6ff3494cafe774b765cde8f890078cab6cec46a71b182cff91003935fdf"
+    },
+    {
+      "path": "coordinator/evals/phase07/models.py",
+      "purpose": "Strict reusable case/observation/check/semantic-result contracts.",
+      "sha256": "dcb1fd306d1811f01bef2ffbdd3206df8a21cbb4d63426ca2616e81385944310"
+    },
+    {
+      "path": "coordinator/evals/phase07/reporting.py",
+      "purpose": "Scorecard denominators, non-averageable hard gates and Markdown report.",
+      "sha256": "f158df8cb062d0108cdf0e3398be0ccb92bd7a5dae0b4bfe95ab7933a6bb12fb"
+    },
+    {
+      "path": "coordinator/evals/phase07/runner.py",
+      "purpose": "Offline default, opt-in paid modes, failure preservation and per-case artifacts.",
+      "sha256": "9cac796c15ea0e0966030ef26afd9437fad1d45f89c243e68cfaffe963fb37c1"
+    },
+    {
+      "path": "coordinator/evals/phase07/semantic.py",
+      "purpose": "Optional bounded structured semantic rubric through existing SDK.",
+      "sha256": "822321eaf1fbecd697aef81d42b516564b6da3aa5479fe9ca31843d0cdaac0bb"
+    },
+    {
+      "path": "coordinator/evals/phase07/service_probe.py",
+      "purpose": "Existing WorkflowService/ScopedMCP duplicate and source-error probes.",
+      "sha256": "6a8fd78c13624d4be8b47851a508f66a35a119fcf448acccf9b4e142f4c4abf5"
+    },
+    {
+      "path": "coordinator/tests/test_phase07_evals.py",
+      "purpose": "Schema, all-case positive/negative behavior, graders, numeric/critical gates and semantic wiring tests.",
+      "sha256": "2521880085a4076d3217a54ebff9ad7e2f414eed695663ea578bd533a1a348b4"
+    },
+    {
+      "path": "coordinator/tests/test_phase07_runtime.py",
+      "purpose": "Actual service/MCP probes, all live source connections and existing harness artifact adaptation tests.",
+      "sha256": "513e2e0c7ebf346bbd02caeaebd9eb71791e93e1140aa560964ddfbcb2f4a2a9"
+    },
+    {
+      "path": "docs/EVALS_RELIABILITY_HANDOFF.md",
+      "purpose": "Architecture, coverage, thresholds, actual results, limitations and next-phase handoff.",
+      "sha256": "93946736a2c995d59ada12c7310cad3ef273877a3f4147673daa19896453361b"
+    },
+    {
+      "path": "docs/phase07/offline-report.md",
+      "purpose": "Preserved human-readable final eval report.",
+      "sha256": "e909cf627387b6cd1431e8ebe5dfff8d54657f4997814ad2542618ef8825cf41"
+    },
+    {
+      "path": "docs/phase07/offline-results.json",
+      "purpose": "Preserved machine-readable final eval scorecard.",
+      "sha256": "b76c55fd536f60e026be4cb661f304d6e2fda6be8d6fe2faacdb19a854a74c7a"
+    },
+    {
+      "path": "docs/phase07/verification.json",
+      "purpose": "Actual commands, final counts, skips, initial environment issue and baseline preservation evidence.",
+      "sha256": "cc809395a34e490557dfca849b5b0047f690e2056ecc497fd1483e7cd9c92acc"
+    },
+    {
+      "path": "prompts/07_EVALS_RELIABILITY.md",
+      "purpose": "Preserve exact user request for future repository work.",
+      "sha256": "64ceaf921b3e72f3fdc4d271bed8594d9f6d90a7935ed8c86a74f10eccf82ab1"
+    },
+    {
+      "path": "tests/test_phase07_sources.py",
+      "purpose": "Source fixture graph, policy and original cost/schedule calculator checks.",
+      "sha256": "19a26070fb1280c6ae1c48afea1fb860e2176c6cee62eacbdd8e4d503b877c8c"
+    }
+  ],
+  "generated_ui_regression_screenshots": [
+    {
+      "path": "docs/ui_screenshots/draft-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "673dbd5b4bc5bd4d6750fa29f62f093aa84f5efc7745cb04081841d72ac57277"
+    },
+    {
+      "path": "docs/ui_screenshots/draft-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "98b5aab2808da8eca17aedc518995c6a0835a82ccc66bd54a80a85894de04e64"
+    },
+    {
+      "path": "docs/ui_screenshots/engineering-1280-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "0095b183e0e4a1388c12af2c2706374e9be74758b73143edd3c4b73061b9ce28"
+    },
+    {
+      "path": "docs/ui_screenshots/engineering-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "85cac8107378f504e5b40062aa67029e651c4ddd6132406a25b363f311d91f85"
+    },
+    {
+      "path": "docs/ui_screenshots/engineering-1440-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "bf1716e61944268bff9e4885d66cb62ca79e9ea7307e033923fca6fa9e89c476"
+    },
+    {
+      "path": "docs/ui_screenshots/engineering-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "df8445179f41d36c8bdb832bdbf16950ad6e43a1b06365dcbca15b28b8b099b3"
+    },
+    {
+      "path": "docs/ui_screenshots/engineering-approved.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "3c5b1413cbd66a2d16563563011ba6f0fe4a582e847e6ea1b39619ee6a8211b7"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-engineering-queue-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "9cce14ce964cb7892664f592f97559348addd83358f719b4fa2682b6f4017075"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-engineering-queue-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "d85ea1c7366891cce1fc2db384d79c37e2f37c526ca065a12580316f1b9c8451"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-erp-orders-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "6f380fd8dd44de6ee982794bd27ea50e8e67cf2a01fce236faf363591d732437"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-erp-orders-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "c97c15f29800d71e3f549d8770e6fcaae4647374078910682710f1f1a048c39e"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-launcher-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "8098c6d9887f37705aec54c2f0a83154d6287047d4b8b5c04c6450b9469a882d"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-launcher-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "45d094dec013a9a4cf229f94997f781115c793ffaa2b33d20980796f719dafbe"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-manufacturing-register-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "e0833b505410a4653ce2a6ec40362cbacb55678c64540892ccb985545bef255d"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-manufacturing-register-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "7e0c38662e36ac5a13e98354dde0dd58c9b693b2de9923d251e97d164767fc01"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-program-portfolio-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "1f2956610c5a3977725f0917e6b400d19101b0d3d182b7943078bdee1e6cb256"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-program-portfolio-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "b98f66ea002362dea6ffb4a0f205cc68eb88bba07e924c28a961f6560e55a35b"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-validation-history-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "aa4292f2b7a3dcf37501f3ff739bbd1fdfde163b4bcac012488d09b068763546"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-validation-history-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "e8173574830054f9072113f21ab1deacac4dcf97b05a9408d2db9eb36faee157"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-validation-jobs-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "3f0c5f188abbc51f519c44b2d543c1d2fb46412e27522c65f6f15450732aeb9e"
+    },
+    {
+      "path": "docs/ui_screenshots/enrichment-validation-jobs-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "7e9df586ac8c700f90b3aea81bc866afa64409ffe88b436cdddd1b3d6845f4d8"
+    },
+    {
+      "path": "docs/ui_screenshots/erp-1280-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "bd1c064826f08584d7cd2010adbd3834713c69bf0f43478fcf356f7ff5d9b3d5"
+    },
+    {
+      "path": "docs/ui_screenshots/erp-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "3c73bed43cb12184744a4d778485dd470ec43277605f906f3e67d535c26ffc51"
+    },
+    {
+      "path": "docs/ui_screenshots/erp-1440-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "221fe8879bab2d561e5dfc1cbd124ae6edd30c39a6fd72d2453a6431696a698b"
+    },
+    {
+      "path": "docs/ui_screenshots/erp-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "2074c8a599a221790f4df49ce7956509da72e4d97ab2ec9d17ef5430d2e866ca"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-activity-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "addb2e2c090cde42de1ff05dcb38c0a2ba56851e8d64773f6bbb29b64651a830"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-activity-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "6d2e442f7a8f039367002d89ff780632b7390b552ec42945817005e7abfdce0d"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-assessment-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "f67373437dfdfc4ac87cfdb60be9e769b763e2c175e61bd830a12e8313459c5e"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-assessment-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "32d3f5884b90c40169971a16ee4329a3a9838ce164e43ccb15462b799b0492d4"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-change-scheduled-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "25ba6b99b9392619e19c0761e8de6c9a69ddb6d58f633e07d5a648e6865a4ca3"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-change-scheduled-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "393ae83c8cfcff6f3b950693ed122e2de3fde7ab8f79faadcb330ed1fc839d52"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-hold-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "c6ac949042ad004a68d3fb93f6574d298074263b3a90422e3aaa9abf3c695ba5"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-hold-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "e275dc8ccd97f1f14ceaefc32ee5d4da6c04cedc4d9c14d673e172cab56c2277"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-launcher-clean-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "5dc31d30422b4787b107905859ccc0d5779bff74c30521cbcafb245b265d3dcd"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-launcher-clean-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "d0196244f4ae1ec79ea580561552f8b25b9ffe44c321ad3dce05fb90fc9e8b2c"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-launcher-scheduled-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "d03ec27b35d956d0cc766f4449a520b75d024efab2510d9c074ddf460f046bc9"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-launcher-scheduled-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "1cf64b9537c0d9d6f6766bd7e41c56f0e5d34f78fce927d0baae80e538591970"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-options-scheduled-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "630f9a76932405a81d5471d53e46fa9410c6dd81b7f13e8749e62996bd020828"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-options-scheduled-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "50892cd530c8958b633e5c8aa2a7c90e5ecfd3499ec89274744a39258515099b"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-rates-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "0efb4ff49d2b91407b29732628f22f20bed7b38ffc6f23dbdf6bb9e5091390b9"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-rates-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "ae2a719280a49f6ff632f53c76c896c392c11698991e4be2f8b68f41a4810116"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-revision-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "020e67eb180a3474e7072cbb5aa1d26bf703e7b6f032425b4758c2c728adca1e"
+    },
+    {
+      "path": "docs/ui_screenshots/followup-revision-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "1c0de24741e986a92333c8b2795af20e7348f6c3b1b7906fc3128e22f89bb418"
+    },
+    {
+      "path": "docs/ui_screenshots/manufacturing-1280-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "248c8434ac5c1c5b1898cfcbb787dd954050bb91d1a36ab6086da360b86ed67f"
+    },
+    {
+      "path": "docs/ui_screenshots/manufacturing-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "b4b80d3547984e59dc660bd1e87a92a9df820cc72ca3be14ebe86698731040f7"
+    },
+    {
+      "path": "docs/ui_screenshots/manufacturing-1440-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "7e0c38662e36ac5a13e98354dde0dd58c9b693b2de9923d251e97d164767fc01"
+    },
+    {
+      "path": "docs/ui_screenshots/manufacturing-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "c3231ccb72ff4b88ac889a8bfa492900d6ffc3519efb50483d931d086b10f5ea"
+    },
+    {
+      "path": "docs/ui_screenshots/options-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "a7248673089777d372dcdad3c8a8982d873211bd607fef41e3d88c635572b246"
+    },
+    {
+      "path": "docs/ui_screenshots/options-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "d0202964f7223ecd9230b8484124ba403efabadd1ca816916e6d2d156e08b0c5"
+    },
+    {
+      "path": "docs/ui_screenshots/programs-1280-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "add7d6ed6bde0275319721f640237fc08b1ac2c211d571d64bf050e4813f1c54"
+    },
+    {
+      "path": "docs/ui_screenshots/programs-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "935378e26946f13132abdf08a2fe35e4bf821bdb83a6a7d5b66900266f8969c5"
+    },
+    {
+      "path": "docs/ui_screenshots/programs-1440-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "e674d7f53586904662dfa11733b05bd068acdebe3b0dec975b78c5975597209d"
+    },
+    {
+      "path": "docs/ui_screenshots/programs-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "19c09a36e2ca0d6e2b01e45dca0efad9d48562732e2f4fefcc89d68887356905"
+    },
+    {
+      "path": "docs/ui_screenshots/programs-linked.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "b451ba550eb8d9b8104c56406d2075f93f396348f6f9a43f3f328ab55a10e2bd"
+    },
+    {
+      "path": "docs/ui_screenshots/validation-1280-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "0686fe758f70df4270d429b32e8536ddbe5448808745b951f83b30c7d0de6e62"
+    },
+    {
+      "path": "docs/ui_screenshots/validation-1280.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "859e7972bc19819352ab252fae4cb097b996f9e4d68aa832700c7680a202fc9b"
+    },
+    {
+      "path": "docs/ui_screenshots/validation-1440-viewport.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "88d564e767eb5f4f862c2cbc5aedc27e200c97f68443cc6900129d5baafbcafa"
+    },
+    {
+      "path": "docs/ui_screenshots/validation-1440.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "18496d05fd32dbbfce5b414454e1289b4f3903705502e1d8cff24fd027efe7aa"
+    },
+    {
+      "path": "docs/ui_screenshots/validation-reservation.png",
+      "purpose": "Existing UI regression screenshot regenerated by full browser suite; no UI source edit.",
+      "sha256": "80eb668ef67c5bac026dda3cdeafa5a1daf43ac5243946564b39b1fde9fbf05a"
+    }
+  ],
+  "other_generated_artifacts": [
+    ".cache/phase07/ (logs, isolated source/metadata and reports)",
+    ".cache/phase06/http-da4a8f2cf1474ca3bc560a2b798556b9/ (standalone Phase 06 HTTP smoke)",
+    "mock_apps_ui/dist/ (production build)",
+    "mock_apps_ui/playwright-report/ and mock_apps_ui/test-results/ (browser reports)"
+  ],
+  "manifest_path": "docs/phase07/changed-files.json",
+  "note": "This manifest excludes its own SHA256 to avoid self-reference."
+}

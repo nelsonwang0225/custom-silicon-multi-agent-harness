@@ -1,0 +1,2930 @@
+{
+  "phase": "09.5",
+  "method": "Agent-operated manual browser validation with real paid model analyses; simulated demo identities, not actual human approvals. Separate scripted offline integration tests use deterministic doubles.",
+  "urls": {
+    "ui": "http://127.0.0.1:5197",
+    "host": "http://127.0.0.1:18250",
+    "source": "http://127.0.0.1:18251",
+    "mcp": "http://127.0.0.1:19251/mcp"
+  },
+  "baseline_initial": {
+    "result": "Demo ready",
+    "checks": {
+      "services_available": true,
+      "source_apps_reachable": true,
+      "baseline_valid": true,
+      "canonical_cases_present": true,
+      "no_stale_executable_proposal": true,
+      "no_running_work": true,
+      "reset_consistent": true,
+      "concierge_available": true,
+      "model_configured": true,
+      "background_inactive": true,
+      "owned_services": true
+    },
+    "services": {
+      "source": true,
+      "mcp": true,
+      "control_host": true,
+      "frontend": true
+    },
+    "source_apps": {
+      "Engineering Hub": true,
+      "Validation Lab": true,
+      "Manufacturing Portal": true,
+      "Commercial ERP": true,
+      "Program Planner": true
+    },
+    "baseline_state": "valid",
+    "baseline": {
+      "scope": "full",
+      "demo_baseline_version": "phase09-v1",
+      "baseline_valid": true,
+      "checked_at": "2026-09-12T19:21:48.463838Z",
+      "discrepancies": [],
+      "quantities": {
+        "physical_quantity": 1000,
+        "held_quantity": 250,
+        "allocated_quantity": 150,
+        "eligible_unallocated_quantity": 600,
+        "requested_quantity": 800,
+        "gap_quantity": 200
+      },
+      "source_digest": "5ff45501536e505e62709da628d9f27244f010d107670db2a0760add19fedaa4",
+      "control_digest": "f75718307bffbb869adacbbb2faba1bbc9407e32de8bf27b82204590dbded64d",
+      "source_readback": {
+        "engineering": "read_succeeded",
+        "validation": "read_succeeded",
+        "manufacturing": "read_succeeded",
+        "erp": "read_succeeded",
+        "planner": "read_succeeded"
+      },
+      "scenario_checks": {
+        "CR-017": true,
+        "CR-019": true,
+        "DR-009": true,
+        "QE-004": true
+      }
+    },
+    "demo_controls": {
+      "enabled": true,
+      "demo_baseline_version": "phase09-v1",
+      "epoch": "reset_628e7e14dae940a082794056be1b0ed2",
+      "recovery_required": false,
+      "pending_scope": null,
+      "scopes": [
+        "full",
+        "CR-017",
+        "CR-019",
+        "QE-004",
+        "DR-009"
+      ],
+      "latest": {
+        "reset_id": "reset_628e7e14dae940a082794056be1b0ed2",
+        "scope": "full",
+        "timestamp": "2026-09-12T19:21:37.333909Z",
+        "actor": "demo-maintainer",
+        "result": "restored",
+        "stage": "complete",
+        "affected_systems": [
+          "engineering",
+          "erp",
+          "manufacturing",
+          "planner",
+          "validation"
+        ],
+        "baseline_valid": true,
+        "error_code": null
+      },
+      "archived_reset_count": 1
+    },
+    "cases": {
+      "CR-017": {
+        "state": "New",
+        "source_available": true
+      },
+      "CR-019": {
+        "state": "New",
+        "source_available": true
+      },
+      "QE-004": {
+        "state": "New",
+        "source_available": true
+      },
+      "DR-009": {
+        "state": "New",
+        "source_available": true
+      }
+    },
+    "model_configuration": {
+      "model": "gpt-6-astra",
+      "credential_present": true,
+      "status": "configured",
+      "connectivity": "not_checked",
+      "paid_call_made": false
+    },
+    "background_execution": {
+      "schedulers": "not_installed",
+      "event_listeners": "not_installed",
+      "condition_evaluators": "not_installed"
+    },
+    "running_workflows": [],
+    "stale_or_unverified_decisions": [],
+    "urls": {
+      "source": "http://127.0.0.1:18251",
+      "mcp": "http://127.0.0.1:19251",
+      "host": "http://127.0.0.1:18250",
+      "ui": "http://127.0.0.1:5197"
+    },
+    "supervisor_status": "running",
+    "model_connectivity_note": "Credential format/presence only; provider access, quota and live behavior are not verified."
+  },
+  "manual": {
+    "CR-019": {
+      "result": "PASS",
+      "state": "Handed to Validation Operations",
+      "intake_id": "intake-bbaf29ff8f8141e9b4922a8d1e9e9d9e",
+      "checks_matched": 18,
+      "physical_lab_authorization": "pending",
+      "customer_acceptance": "pending"
+    },
+    "CR-017": {
+      "result": "PASS",
+      "scheduling_execution": "completed_execution",
+      "job": "job-058aa493005a41eaab874ac274cc7c8d",
+      "result_id": "result-215d984f326c4c148d845a49f3e8b02e",
+      "evidence_digest": "1d1e8a4b7dd0a8a00de9ae1205bc1524d8e939000d01eafbcf0589639180bdb5",
+      "job_status": "completed",
+      "applicability": "confirmed",
+      "engineering_status": "approved",
+      "technical_state": "validation_complete",
+      "customer_acceptance": "pending"
+    },
+    "QE-004": {
+      "result": "PASS",
+      "state": "verified",
+      "steps": {
+        "investigate": {
+          "operation": "investigate",
+          "key": "qe_41d147040c5602cfb0314801ec96b14096ebe9cb",
+          "request_digest": "594610ddd6e25978e27613d9f9ac2404545d43d968b048027d2e682673861581",
+          "status": "verified",
+          "source_id": "investigation-f5bb5e16fc1646c79f2cf9d90e704117",
+          "request_id": "request-6cd0356da31f46f98536ca683208c062",
+          "error_code": null
+        },
+        "prepare": {
+          "operation": "prepare",
+          "key": "qe_edbd3072d7be720b01fd43c46aa34128a8b8fb6c",
+          "request_digest": "594610ddd6e25978e27613d9f9ac2404545d43d968b048027d2e682673861581",
+          "status": "verified",
+          "source_id": "recovery-570c00f9b4e94612ad9b00a0fee44d98",
+          "request_id": "request-ca442867e98549fe9b187d57d216de06",
+          "error_code": null
+        },
+        "review": {
+          "operation": "review",
+          "key": "qe_b6e916be40bc781e208940e2803a9b9a99948b42",
+          "request_digest": "15b0116008939117ef4d89c150f801eda2f60a00b677d509faca128c8c40945e",
+          "status": "verified",
+          "source_id": "recovery-decision-72f750a7c2db4650b189ee87f83f31ed",
+          "request_id": "request-cd36bb8fbf1c41238941be0fc384c74e",
+          "error_code": null
+        },
+        "execute": {
+          "operation": "execute",
+          "key": "qe_2e12d473d01a2f7072ce646590f04751939bd622",
+          "request_digest": "a92bde71fbaf7ad822982c0afa7d65cbbc602f1710ac5988c86a4d1925bc0161",
+          "status": "verified",
+          "source_id": "recovery-task-e5ee30954cb046fe87467c73f083b8a7",
+          "request_id": "request-527b0af73a664f44af8544dbe965739c",
+          "error_code": null
+        }
+      },
+      "held": 250,
+      "passing_held_units": 200,
+      "eligible": 600,
+      "requested": 800,
+      "gap": 200,
+      "root_cause": "unknown"
+    },
+    "DR-009": {
+      "result": "PASS",
+      "state": "verified",
+      "steps": {
+        "prepare": {
+          "operation": "prepare",
+          "key": "dr_c28720b47d903ca58b74a526145b4402c38956b4",
+          "request_digest": "3fc9c556b3762a7a987461d9f9d0af90a34d63c4a7f60e1a0a6cdd7fe26ee2d3",
+          "status": "verified",
+          "source_id": "commitment-plan-0ee111a521654fdfb7185b3daa0c4930",
+          "request_id": "request-3c767b5df253403badfb8ef69ad8b934",
+          "error_code": null
+        },
+        "review": {
+          "operation": "review",
+          "key": "dr_ee7c945aa03438cab94b4216367a433777e4a950",
+          "request_digest": "42382b485a44c68382653074d741110a4297bd2272cf3c6d7ea036a63513a911",
+          "status": "verified",
+          "source_id": "commitment-decision-95c59bdfd9f4497a87dc1e5e9057d8c2",
+          "request_id": "request-ff9ee1b526a24d6395617dc646d12ff4",
+          "error_code": null
+        },
+        "erp": {
+          "operation": "erp",
+          "key": "dr_708354ad1a0653de43f666c676ce3aa5563c68c2",
+          "request_digest": "0c882fe6aaaa5bfc4ccc2f96ca1633e319147f7e5ed30428c766ef01220f1109",
+          "status": "verified",
+          "source_id": "delivery-commitment-fd19b5b431b649dcb7f6f983c72bcf2c",
+          "request_id": "request-c4e4e2abd3bf4d068ec431f0872bb21c",
+          "error_code": null
+        },
+        "planner": {
+          "operation": "planner",
+          "key": "dr_0263e621e7d1b8b8ef05a0a07c471ba9e621a0b2",
+          "request_digest": "0c882fe6aaaa5bfc4ccc2f96ca1633e319147f7e5ed30428c766ef01220f1109",
+          "status": "verified",
+          "source_id": "delivery-link-cf737911c87c4037b4dedb7f9d5e24b7",
+          "request_id": "request-228e3909702246eeafb78ad5f1651e35",
+          "error_code": null
+        }
+      },
+      "committed_quantity": 600,
+      "committed_at": "2026-11-23T18:00:00Z",
+      "destination": "Helios Austin receiving",
+      "remaining": 200,
+      "customer_agreement": "pending",
+      "technical_acceptance": "pending",
+      "delivered": 0
+    }
+  },
+  "live_runs": [
+    {
+      "run_id": "run_e943bba160ce446791e83b5f354af453",
+      "case": "CR-019",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_87456f4e86c34a7c9012c55f91f692c2",
+      "latency_ms": 154785.83,
+      "usage": {
+        "input_tokens": 109720,
+        "output_tokens": 15531,
+        "total_tokens": 125251
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": false,
+        "human_review_boundary": false
+      },
+      "errors": [],
+      "policy_path": "escalation_required",
+      "conclusion": "The Program Coordinator retains ownership and should obtain authoritative clarification from milestone owner Ilan Reyes or the routing-policy owner on whether the V2 dependency gates V1 intake. Keep routing stopped and the V2 dependency pending. After clarification, reconcile the package and request a fresh host policy check. Only if subsequently eligible may the trusted host create the bounded VALOPS-A17 intake carrying RES-BASELINE-B and STD-CONFIRM-01 references; no such write has occurred in this analysis.",
+      "artifact_directory": ".cache/phase09-5/live/run_e943bba160ce446791e83b5f354af453",
+      "started_at": "2026-09-12T19:22:14.564057Z",
+      "termination_reason": null,
+      "trigger": "customer_intake",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_c95b6b19609e4b37b1f0d974604fcd9b",
+      "case": "CR-019",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_0e877c5e5d2e4cd9b9beb5fafdfbe338",
+      "latency_ms": 55004.72,
+      "usage": {
+        "input_tokens": 8142,
+        "output_tokens": 3225,
+        "total_tokens": 11367
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": false,
+        "human_review_boundary": false
+      },
+      "errors": [],
+      "policy_path": "escalation_required",
+      "conclusion": "The Program Coordinator should retain ownership and obtain the outstanding Change Impact, Validation & Evidence, and Program/Commercial assessments when those capabilities are available. Verify procedure coverage, reusable evidence, sample eligibility, remaining work and owner, requested timing, and policy-supported milestone prerequisites. Reconcile exact source facts and obtain a current host policy recheck before any bounded intake handoff. No Manufacturing or ERP work is indicated, and no write has occurred.",
+      "artifact_directory": ".cache/phase09-5/live/run_c95b6b19609e4b37b1f0d974604fcd9b",
+      "started_at": "2026-09-12T19:27:14.409917Z",
+      "termination_reason": null,
+      "trigger": "customer_intake",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_af5b8128c96e4c719b1ebf545bbed528",
+      "case": "CR-019",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_fdde2e2099554d37929c870d19949a14",
+      "latency_ms": 118798.15,
+      "usage": {
+        "input_tokens": 84889,
+        "output_tokens": 12872,
+        "total_tokens": 97761
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "touchless_eligible",
+      "conclusion": "The Program Coordinator should retain ownership and provide the validated package for the trusted host's independent current-policy recheck. If still eligible, the host may create only the bounded VALOPS-A17 intake with exact procedure/configuration references, RES-BASELINE-B, SAMPLE-B-017, STD-CONFIRM-01, downstream authorization responsibility and requested timing. No new Engineering approval is required for this handoff. Separately resolve ownership of the pending REQ-042-V2 milestone obligation; do not represent intake as authorization, scheduling, testing or acceptance.",
+      "artifact_directory": ".cache/phase09-5/live/run_af5b8128c96e4c719b1ebf545bbed528",
+      "started_at": "2026-09-12T19:29:32.315443Z",
+      "termination_reason": null,
+      "trigger": "customer_intake",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_0ecc7ac71618473784782608a98aabc6",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_6d937746caca4a3999344ec6aea59c5a",
+      "latency_ms": 187186.63,
+      "usage": {
+        "input_tokens": 162357,
+        "output_tokens": 19403,
+        "total_tokens": 181760
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "The Program Coordinator should present this conditional package and an immutable, versioned plan proposal to designated engineering and program reviewers, without selecting or reserving an option here. Resolve evidence-dependency ownership, confirm unchanged criteria and source freshness, and reassess milestone feasibility using the reported option timing. Any later scheduling requires separate authorized approval; preserve holds and delivery commitments.",
+      "artifact_directory": ".cache/phase09-5/live/run_0ecc7ac71618473784782608a98aabc6",
+      "started_at": "2026-09-12T19:36:13.409854Z",
+      "termination_reason": null,
+      "trigger": "engineering",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_0518d601c8144d8cafec99c2671f1a48",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_9bf4e45f51104506a4d69648aa6d3c9b",
+      "latency_ms": 38071.96,
+      "usage": {
+        "input_tokens": 27710,
+        "output_tokens": 2218,
+        "total_tokens": 29928
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": false,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "escalation_required",
+      "conclusion": "Have the Program Coordinator resolve the linked-record scope blocker. Then obtain Validation's read-only verification of the existing job, authoritative linked result and current exact coverage, alongside Program/Commercial's inspection of the implementation link and milestone. Present verified coverage separately from engineering review and customer acceptance; do not declare the gap closed before those evidence reads.",
+      "artifact_directory": ".cache/phase09-5/live/run_0518d601c8144d8cafec99c2671f1a48",
+      "started_at": "2026-09-12T19:43:10.629269Z",
+      "termination_reason": null,
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_2c2199f90a1e4b209cbb591d8bd0ac1c",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_02ddd1268a794f29a8836f599d53b4aa",
+      "latency_ms": 76780.48,
+      "usage": {
+        "input_tokens": 107640,
+        "output_tokens": 4788,
+        "total_tokens": 112428
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": false,
+        "final_package_present": false,
+        "all_requested_assessments_completed": false,
+        "source_bound_assessments": true,
+        "source_bound_final": false,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": false,
+        "no_false_test_or_customer_acceptance": false,
+        "expected_policy_path": false,
+        "human_review_boundary": false
+      },
+      "errors": [
+        {
+          "check": "source_bound_final",
+          "error": "'NoneType' object has no attribute 'case_id'"
+        }
+      ],
+      "policy_path": null,
+      "conclusion": null,
+      "artifact_directory": ".cache/phase09-5/live/run_2c2199f90a1e4b209cbb591d8bd0ac1c",
+      "started_at": "2026-09-12T19:47:37.400187Z",
+      "termination_reason": "identical_delegation_denied",
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_822288479f0e4398a42bfe6c1c4fabd2",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_6dfa52c0efb64a36a11a549657a25664",
+      "latency_ms": 123180.07,
+      "usage": {
+        "input_tokens": 173746,
+        "output_tokens": 11826,
+        "total_tokens": 185572
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "The Program Coordinator should retain ownership and route the existing applicable evidence to human engineering review/disposition, seek explicit evidence-dependency ownership, and have the responsible owners reconcile the lagging tracking states. Track customer acceptance separately through its authoritative record. Do not duplicate scheduling, change commitments or treat this assessment as approval.",
+      "artifact_directory": ".cache/phase09-5/live/run_822288479f0e4398a42bfe6c1c4fabd2",
+      "started_at": "2026-09-12T19:52:48.289348Z",
+      "termination_reason": null,
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Analysis contracts passed, but exact host evidence review was not ready; failed manual path."
+    },
+    {
+      "run_id": "run_9a4687a7194d48f28cebc69f637b042a",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_bff3a60b787c44c79b5d32c6c0d5db3f",
+      "latency_ms": 106462.96,
+      "usage": {
+        "input_tokens": 104236,
+        "output_tokens": 7397,
+        "total_tokens": 111633
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": false,
+        "final_package_present": false,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": false,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": false,
+        "no_false_test_or_customer_acceptance": false,
+        "expected_policy_path": false,
+        "human_review_boundary": false
+      },
+      "errors": [
+        {
+          "check": "source_bound_final",
+          "error": "'NoneType' object has no attribute 'case_id'"
+        }
+      ],
+      "policy_path": null,
+      "conclusion": null,
+      "artifact_directory": ".cache/phase09-5/live/run_9a4687a7194d48f28cebc69f637b042a",
+      "started_at": "2026-09-12T19:56:51.841498Z",
+      "termination_reason": "case_failed",
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_0dec193a8f8f46848d8a7d2e9a15325e",
+      "case": "QE-004",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_21200cfccfe94688a6aa8bd12b5cc2d9",
+      "latency_ms": 109443.5,
+      "usage": {
+        "input_tokens": 62216,
+        "output_tokens": 12121,
+        "total_tokens": 74337
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "The Program Coordinator should retain ownership and submit the standard investigation package and exact recovery task plan for Program Owner human review. Product / Test Engineering should collect the prescribed evidence for separate Quality disposition; Ilan Reyes should develop source-backed gap-closure timing and costs. This assessment executes nothing. Keep held material, allocation and customer commitments unchanged.",
+      "artifact_directory": ".cache/phase09-5/live/run_0dec193a8f8f46848d8a7d2e9a15325e",
+      "started_at": "2026-09-12T19:59:36.791570Z",
+      "termination_reason": null,
+      "trigger": "manufacturing",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_2355558e0cc64e4fbd843e908b85b441",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_94a0c0c18c014711881c0e20106be4a2",
+      "latency_ms": 115860.64,
+      "usage": {
+        "input_tokens": 103320,
+        "output_tokens": 8050,
+        "total_tokens": 111370
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": false,
+        "final_package_present": false,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": false,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": false,
+        "no_false_test_or_customer_acceptance": false,
+        "expected_policy_path": false,
+        "human_review_boundary": false
+      },
+      "errors": [
+        {
+          "check": "source_bound_final",
+          "error": "'NoneType' object has no attribute 'case_id'"
+        }
+      ],
+      "policy_path": null,
+      "conclusion": null,
+      "artifact_directory": ".cache/phase09-5/live/run_2355558e0cc64e4fbd843e908b85b441",
+      "started_at": "2026-09-12T20:03:57.746055Z",
+      "termination_reason": "malformed_agent_output",
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_b07c6186065247db864b338d5bcef97d",
+      "case": "CR-017",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_a4d6d8ed8ed44d55810654a93470d369",
+      "latency_ms": 115866.57,
+      "usage": {
+        "input_tokens": 103708,
+        "output_tokens": 8227,
+        "total_tokens": 111935
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "The Program Coordinator retains ownership and should present the existing matching result and Validation assessment for authorized human engineering review and disposition. Preserve historical mismatches and separate downstream acceptance, Planner tracking and follow-up ownership. Do not create duplicate scheduling, assign ownership or modify records.",
+      "artifact_directory": ".cache/phase09-5/live/run_b07c6186065247db864b338d5bcef97d",
+      "started_at": "2026-09-12T20:07:54.988251Z",
+      "termination_reason": null,
+      "trigger": "validation",
+      "reassessment": true,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_6906c22233e24d01b7d45a50f8c89ee2",
+      "case": "DR-009",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_f1079521e8b64f3ab1e5ad1941887540",
+      "latency_ms": 59251.3,
+      "usage": {
+        "input_tokens": 12701,
+        "output_tokens": 3879,
+        "total_tokens": 16580
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": false,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": false,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "escalation_required",
+      "conclusion": "Program Coordinator retains ownership: obtain the three required scoped specialist assessments, then escalate the unsupported remainder to Program Owner Ilan Reyes for a source-backed recovery plan. The separate host may draft only the supported partial_commitment option for exact approval; retain the original order date and obtain customer agreement separately. Do not execute, release held material, reallocate stock, or change commitments.",
+      "artifact_directory": ".cache/phase09-5/live/run_6906c22233e24d01b7d45a50f8c89ee2",
+      "started_at": "2026-09-12T20:10:39.568301Z",
+      "termination_reason": null,
+      "trigger": "erp",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": false,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_39bb048d7dd94ba5b2d86f5da7301082",
+      "case": "DR-009",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_ecb23d2420de475589168c84d10b2196",
+      "latency_ms": 111413.3,
+      "usage": {
+        "input_tokens": 83397,
+        "output_tokens": 14138,
+        "total_tokens": 97535
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "Program Coordinator retains ownership. Present the exact 600-unit arrival proposal to Program Owner Ilan Reyes for review and obtain separate customer agreement. The host may draft the partial_commitment option but must not execute before exact Program Owner approval. Preserve the original order obligation, protect existing allocations, route QE-004 disposition to Product Quality, and obtain a source-backed supply/date plan for the remaining 200 units.",
+      "artifact_directory": ".cache/phase09-5/live/run_39bb048d7dd94ba5b2d86f5da7301082",
+      "started_at": "2026-09-12T20:15:57.508523Z",
+      "termination_reason": null,
+      "trigger": "erp",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_a4e8c5c8b6e14ae997f7195365b076da",
+      "case": "CR-019",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_96a894275249493480dc90e1fd883634",
+      "latency_ms": 119559.73,
+      "usage": {
+        "input_tokens": 85135,
+        "output_tokens": 12487,
+        "total_tokens": 97622
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "touchless_eligible",
+      "conclusion": "The Program Coordinator should hand the complete analysis package to the trusted host for an independent current-policy recheck and, only if it passes, bounded intake creation in VALOPS-A17. Include the exact approved references, RES-BASELINE-B, SAMPLE-B-017 and STD-CONFIRM-01 with separate authorization responsibility. Preserve the pending V2 milestone obligation for independent follow-up. No intake has been created by this analysis; lab authorization, scheduling, testing, engineering evidence review and customer acceptance remain downstream.",
+      "artifact_directory": ".cache/phase09-5/live/run_a4e8c5c8b6e14ae997f7195365b076da",
+      "started_at": "2026-09-12T20:26:04.161390Z",
+      "termination_reason": null,
+      "trigger": "customer_intake",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    },
+    {
+      "run_id": "run_e527a8283cca4f918b6ed99c6da472bf",
+      "case": "QE-004",
+      "model": "gpt-6-astra",
+      "trace_id": "trace_7222948757aa42249a9fe290747215de",
+      "latency_ms": 113189.44,
+      "usage": {
+        "input_tokens": 63840,
+        "output_tokens": 13175,
+        "total_tokens": 77015
+      },
+      "usage_scope": "completed_generations_only",
+      "passed": true,
+      "checks": {
+        "runtime_completed": true,
+        "final_package_present": true,
+        "all_requested_assessments_completed": true,
+        "source_bound_assessments": true,
+        "source_bound_final": true,
+        "scoped_read_tools": true,
+        "http_reads_only": true,
+        "no_agent_execution_or_approval": true,
+        "no_false_test_or_customer_acceptance": true,
+        "expected_policy_path": true,
+        "human_review_boundary": true
+      },
+      "errors": [],
+      "policy_path": "human_review_required",
+      "conclusion": "The Program Coordinator retains ownership. Prepare the exact recovery task plan for Program Owner Ilan Reyes's human review. Product / Test Engineering should collect final-test logs by site/equipment, check test-program and baseline comparability, review concentration with Quality without inferring cause, and prepare evidence for separate Quality disposition. Include released-supply planning, gap-closing timing and costs. Only standard investigation routing is pre-authorized; execute nothing in this assessment. Keep held material, allocation and customer commitments unchanged.",
+      "artifact_directory": ".cache/phase09-5/live/run_e527a8283cca4f918b6ed99c6da472bf",
+      "started_at": "2026-09-12T20:29:29.457292Z",
+      "termination_reason": null,
+      "trigger": "manufacturing",
+      "reassessment": false,
+      "evaluation_scope": "Read-only analysis contracts and source facts; business action/readback validation is reported separately.",
+      "business_path_passed": true,
+      "business_path_note": "Business readbacks and role decisions are independently recorded in the Phase 09.5 handoff."
+    }
+  ],
+  "concierge_turns": [
+    {
+      "message_id": "msg_d15724cdc904443cbf20858db840c9a1",
+      "timestamp": "2026-09-12T19:24:19.706836Z",
+      "context": "/control/overview",
+      "user_text": "What needs my attention?",
+      "text": "Current Helios cases, shown separately. Shared material MAT-B-203, MAT-B-204 is counted once per case calculation; do not add the case gaps together.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-017 \u00b7 New",
+          "facts": [
+            [
+              "Current case state",
+              "new"
+            ],
+            [
+              "Current source",
+              "Requested workload evidence gap; customer acceptance pending."
+            ],
+            [
+              "Next step",
+              "Investigate the current source request."
+            ],
+            [
+              "Coverage satisfied",
+              "No"
+            ],
+            [
+              "Engineering review",
+              "not ready"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-017"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "CR-019 \u00b7 Investigating",
+          "facts": [
+            [
+              "Current case state",
+              "investigating"
+            ],
+            [
+              "Current source",
+              "Agent investigation is running; no new business outcome is implied."
+            ],
+            [
+              "Next step",
+              "Read progress; polling never starts a model call."
+            ],
+            [
+              "Touchless eligibility",
+              "Yes"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "QE-004 \u00b7 New",
+          "facts": [
+            [
+              "Current case state",
+              "new"
+            ],
+            [
+              "Current source",
+              "Quality exception open; 250 held and ineligible; 600/800 eligible supply."
+            ],
+            [
+              "Next step",
+              "Inspect comparison, material scope and recovery options."
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "DR-009 \u00b7 New",
+          "facts": [
+            [
+              "Current case state",
+              "new"
+            ],
+            [
+              "Current source",
+              "600/800 eligible; 200 gap. Technical readiness: READY."
+            ],
+            [
+              "Next step",
+              "Inspect technical scope, reconciled inventory and commitment options."
+            ],
+            [
+              "Technical readiness",
+              "READY"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2823,
+      "input_tokens": 840,
+      "output_tokens": 49,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_ad79cbfb1f93483f82506d1b0b77669d",
+      "timestamp": "2026-09-12T19:31:25.603928Z",
+      "context": "/control/workflows",
+      "user_text": "Check delivery readiness every weekday morning.",
+      "text": "Please specify a supported case and whether you want its current status, an investigation, comparison, or governed decision. Concierge cannot change permissions or perform unsupported business actions.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [],
+      "model": "gpt-6-astra",
+      "latency_ms": 4232,
+      "input_tokens": 842,
+      "output_tokens": 133,
+      "model_calls": 1,
+      "service_calls": []
+    },
+    {
+      "message_id": "msg_2429b45fa4db4839845dc72930d43879",
+      "timestamp": "2026-09-12T19:32:29.400798Z",
+      "context": "/control/programs/PRG-A17/cases/CR-019",
+      "user_text": "Why was this handled touchlessly?",
+      "text": "Current source-backed state for CR-019.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-019 \u00b7 Waiting for external source",
+          "facts": [
+            [
+              "Current case state",
+              "waiting_external"
+            ],
+            [
+              "Current source",
+              "Handed to Validation Operations"
+            ],
+            [
+              "Next step",
+              "Lab authorization and physical work remain downstream."
+            ],
+            [
+              "Request source",
+              "customer intake"
+            ],
+            [
+              "Requested by",
+              "Helios AI / acceptance package coordination"
+            ],
+            [
+              "Procedure id",
+              "PROC-STD-01"
+            ],
+            [
+              "Procedure content version",
+              "1"
+            ],
+            [
+              "Workload profile id",
+              "WF-LC-V1"
+            ],
+            [
+              "Routing rule id",
+              "STD-HANDOFF-V1"
+            ],
+            [
+              "Configuration",
+              "CFG-B-01"
+            ],
+            [
+              "Touchless eligibility",
+              "Yes"
+            ],
+            [
+              "Policy checks",
+              "The source request, change and customer/program must agree.; Only addition of an approved profile is standard.; An approved, scoped routing policy and its approved business document are required.; The exact approved requirement remains unchanged; this is a package update.; The exact approved procedure/version and its approved method document must exist.; The requested and approved current hardware, model, memory and quantization configuration must match exactly.; Firmware and runtime must match the explicitly approved versions.; The named profile, every operating parameter and method duration must be explicitly approved; no size-based inference.; Acceptance criteria stay at their exact approved version; no waiver or threshold change.; No unresolved contradictory observation may invalidate exact applicability.; The approved route requires actual applicable historical evidence; unknown evidence cannot establish eligibility.; Open material exceptions and waiver requests require engineering review.; Validation Operations ownership and a named intake queue must be established.; Only standard intake creation is pre-authorized, never scheduling or approval.; No acceptance, customer commitment, engineering waiver or quality disposition can be requested.; The approved number of named samples must match the configuration; intake does not reserve or authorize them.; Requested package timing must fit the recorded milestone; no forecast or commitment is changed.; Approved remaining work, inputs and completion criteria must be specified; historical evidence does not complete that work."
+            ],
+            [
+              "Downstream",
+              "Intake is separate from lab authorization, scheduling, physical testing, Engineering review and customer acceptance."
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "STD-HANDOFF-V1",
+          "facts": [
+            [
+              "Status",
+              "approved"
+            ],
+            [
+              "Policy version",
+              "1"
+            ],
+            [
+              "Permitted action",
+              "create standard validation intake"
+            ],
+            [
+              "Downstream owner",
+              "Atlas Validation Operations"
+            ],
+            [
+              "Completion criteria",
+              "Complete standard package received in VALOPS-A17; Exact approved procedure, configuration and reusable evidence references verified; Remaining lab work and authorization responsibility explicitly recorded"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "Validation Operations handoff",
+          "facts": [
+            [
+              "Status",
+              "handoff verified"
+            ],
+            [
+              "Intake id",
+              "Unknown / not recorded"
+            ],
+            [
+              "Error code",
+              "Unknown / not recorded"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "run",
+          "title": "CR-019 \u00b7 Handed to Validation Operations",
+          "facts": [
+            [
+              "Runtime",
+              "completed"
+            ],
+            [
+              "Business outcome",
+              "Handed to Validation Operations"
+            ],
+            [
+              "Run",
+              "run_af5b8128c96e4c719b1ebf545bbed528"
+            ],
+            [
+              "Invocation",
+              "ui_aa641b3ebc794325a6fd6236109ca25e"
+            ],
+            [
+              "Basis",
+              "Persisted run; completion alone is not business success"
+            ]
+          ],
+          "links": [
+            [
+              "Open run",
+              "/control/runs/run_af5b8128c96e4c719b1ebf545bbed528"
+            ],
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ]
+          ],
+          "run_id": "run_af5b8128c96e4c719b1ebf545bbed528"
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 3436,
+      "input_tokens": 845,
+      "output_tokens": 83,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_2bb6964272bc44da839b2d64d1043402",
+      "timestamp": "2026-09-12T19:36:24.083234Z",
+      "context": "/control/workflows",
+      "user_text": "Check delivery readiness every weekday morning.",
+      "text": "What time should the weekdays check use (for example 7 AM CT)? This will be a saved configuration only; background execution stays disabled.",
+      "status": "completed",
+      "classification": "AUTOMATION_SAVE",
+      "error_code": null,
+      "cards": [],
+      "model": "gpt-6-astra",
+      "latency_ms": 2599,
+      "input_tokens": 911,
+      "output_tokens": 55,
+      "model_calls": 1,
+      "service_calls": []
+    },
+    {
+      "message_id": "msg_b4490d58a03c41889823546644d93673",
+      "timestamp": "2026-09-12T19:36:41.314353Z",
+      "context": "/control/workflows",
+      "user_text": "Every weekday at 7 AM CT for DR-009.",
+      "text": "Review the configuration before saving. This does not activate a scheduler.",
+      "status": "completed",
+      "classification": "AUTOMATION_SAVE",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "automation",
+          "title": "Save automation configuration",
+          "facts": [
+            [
+              "Workflow",
+              "delivery readiness"
+            ],
+            [
+              "Scope",
+              "Helios \u00b7 DR-009"
+            ],
+            [
+              "Trigger",
+              "Weekdays at 7:00 AM \u00b7 America/Chicago"
+            ],
+            [
+              "Authority",
+              "Read only"
+            ],
+            [
+              "Background scheduler",
+              "Not enabled"
+            ],
+            [
+              "Execution",
+              "Connected workflow \u00b7 Saved configuration only"
+            ]
+          ],
+          "links": [
+            [
+              "Open configurations",
+              "/control/workflows"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2907,
+      "input_tokens": 964,
+      "output_tokens": 57,
+      "model_calls": 1,
+      "service_calls": []
+    },
+    {
+      "message_id": "msg_b4345e82925d4fedb7522085402197bb",
+      "timestamp": "2026-09-12T19:37:24.614156Z",
+      "context": "/control/programs/PRG-A17/cases/CR-019",
+      "user_text": "Why was this handled touchlessly?",
+      "text": "Current source-backed state for CR-019.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-019 \u00b7 Waiting for external source",
+          "facts": [
+            [
+              "Current case state",
+              "waiting_external"
+            ],
+            [
+              "Current source",
+              "Handed to Validation Operations"
+            ],
+            [
+              "Next step",
+              "Lab authorization and physical work remain downstream."
+            ],
+            [
+              "Request source",
+              "customer intake"
+            ],
+            [
+              "Requested by",
+              "Helios AI / acceptance package coordination"
+            ],
+            [
+              "Procedure id",
+              "PROC-STD-01"
+            ],
+            [
+              "Procedure content version",
+              "1"
+            ],
+            [
+              "Workload profile id",
+              "WF-LC-V1"
+            ],
+            [
+              "Routing rule id",
+              "STD-HANDOFF-V1"
+            ],
+            [
+              "Configuration",
+              "CFG-B-01"
+            ],
+            [
+              "Touchless eligibility",
+              "Yes"
+            ],
+            [
+              "Policy checks",
+              "The source request, change and customer/program must agree.; Only addition of an approved profile is standard.; An approved, scoped routing policy and its approved business document are required.; The exact approved requirement remains unchanged; this is a package update.; The exact approved procedure/version and its approved method document must exist.; The requested and approved current hardware, model, memory and quantization configuration must match exactly.; Firmware and runtime must match the explicitly approved versions.; The named profile, every operating parameter and method duration must be explicitly approved; no size-based inference.; Acceptance criteria stay at their exact approved version; no waiver or threshold change.; No unresolved contradictory observation may invalidate exact applicability.; The approved route requires actual applicable historical evidence; unknown evidence cannot establish eligibility.; Open material exceptions and waiver requests require engineering review.; Validation Operations ownership and a named intake queue must be established.; Only standard intake creation is pre-authorized, never scheduling or approval.; No acceptance, customer commitment, engineering waiver or quality disposition can be requested.; The approved number of named samples must match the configuration; intake does not reserve or authorize them.; Requested package timing must fit the recorded milestone; no forecast or commitment is changed.; Approved remaining work, inputs and completion criteria must be specified; historical evidence does not complete that work."
+            ],
+            [
+              "Downstream",
+              "Intake is separate from lab authorization, scheduling, physical testing, Engineering review and customer acceptance."
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "STD-HANDOFF-V1",
+          "facts": [
+            [
+              "Status",
+              "approved"
+            ],
+            [
+              "Policy version",
+              "1"
+            ],
+            [
+              "Permitted action",
+              "create standard validation intake"
+            ],
+            [
+              "Downstream owner",
+              "Atlas Validation Operations"
+            ],
+            [
+              "Completion criteria",
+              "Complete standard package received in VALOPS-A17; Exact approved procedure, configuration and reusable evidence references verified; Remaining lab work and authorization responsibility explicitly recorded"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "Validation Operations handoff",
+          "facts": [
+            [
+              "Status",
+              "handoff verified"
+            ],
+            [
+              "Intake ID",
+              "intake-bbaf29ff8f8141e9b4922a8d1e9e9d9e"
+            ],
+            [
+              "Lab authorization",
+              "pending"
+            ],
+            [
+              "Physical testing",
+              "not started"
+            ],
+            [
+              "Customer acceptance",
+              "pending"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ],
+            [
+              "Open Validation intake",
+              "/validation/intakes/intake-bbaf29ff8f8141e9b4922a8d1e9e9d9e"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "run",
+          "title": "CR-019 \u00b7 Handed to Validation Operations",
+          "facts": [
+            [
+              "Runtime",
+              "completed"
+            ],
+            [
+              "Business outcome",
+              "Handed to Validation Operations"
+            ],
+            [
+              "Run",
+              "run_af5b8128c96e4c719b1ebf545bbed528"
+            ],
+            [
+              "Invocation",
+              "ui_aa641b3ebc794325a6fd6236109ca25e"
+            ],
+            [
+              "Basis",
+              "Persisted run; completion alone is not business success"
+            ]
+          ],
+          "links": [
+            [
+              "Open run",
+              "/control/runs/run_af5b8128c96e4c719b1ebf545bbed528"
+            ],
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ]
+          ],
+          "run_id": "run_af5b8128c96e4c719b1ebf545bbed528"
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2643,
+      "input_tokens": 914,
+      "output_tokens": 51,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_4a85742fe34d481baef808425a339e1b",
+      "timestamp": "2026-09-12T19:39:40.369318Z",
+      "context": "/control/programs/PRG-A17/cases/CR-017?tab=summary",
+      "user_text": "Why was human approval required?",
+      "text": "Current source-backed state for CR-017.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-017 \u00b7 Needs review",
+          "facts": [
+            [
+              "Current case state",
+              "needs_review"
+            ],
+            [
+              "Current source",
+              "Exact supplemental validation plan awaits Engineering approval."
+            ],
+            [
+              "Next step",
+              "Review the exact proposal."
+            ],
+            [
+              "Coverage satisfied",
+              "No"
+            ],
+            [
+              "Engineering review",
+              "not ready"
+            ],
+            [
+              "Boundary",
+              "Scheduling, completed testing, Engineering review and customer acceptance are separate."
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-017"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-BASELINE-B",
+          "facts": [
+            [
+              "Applicability",
+              "INSUFFICIENT DURATION; MISSING CONTEXT BINS; WRONG PROFILE"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-BASELINE-B"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-LONG-A",
+          "facts": [
+            [
+              "Applicability",
+              "WRONG CONFIGURATION; WRONG PRODUCT REVISION"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-LONG-A"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-SHORT-B",
+          "facts": [
+            [
+              "Applicability",
+              "INSUFFICIENT DURATION"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-SHORT-B"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "run",
+          "title": "CR-017 \u00b7 Waiting for review",
+          "facts": [
+            [
+              "Runtime",
+              "completed"
+            ],
+            [
+              "Business outcome",
+              "Waiting for review"
+            ],
+            [
+              "Run",
+              "run_0ecc7ac71618473784782608a98aabc6"
+            ],
+            [
+              "Invocation",
+              "ui_47b76a725d3a4094ace6b5a36a4cd23b"
+            ],
+            [
+              "Basis",
+              "Persisted run; completion alone is not business success"
+            ]
+          ],
+          "links": [
+            [
+              "Open run",
+              "/control/runs/run_0ecc7ac71618473784782608a98aabc6"
+            ],
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ]
+          ],
+          "run_id": "run_0ecc7ac71618473784782608a98aabc6"
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 3281,
+      "input_tokens": 913,
+      "output_tokens": 89,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_df45151de35140e9b0f0f620af7e02fc",
+      "timestamp": "2026-09-12T19:40:13.748942Z",
+      "context": "/control/programs/PRG-A17/cases/CR-017?tab=summary",
+      "user_text": "Approve this.",
+      "text": "Concierge can prepare this request. Human approval and host-controlled execution require separate explicit confirmations.",
+      "status": "completed",
+      "classification": "DECISION",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "decision",
+          "title": "CR-017 \u00b7 Exact validation proposal",
+          "facts": [
+            [
+              "Proposal",
+              "plan-056a1d23057e414c847c823c74defd9d \u00b7 v1"
+            ],
+            [
+              "Digest",
+              "874ae929f42b8667f1e03d85d09d0c5111675591126d59beaa9ca667eb887e71"
+            ],
+            [
+              "State",
+              "waiting_for_approval"
+            ],
+            [
+              "Configuration id",
+              "CFG-B-01"
+            ],
+            [
+              "Procedure id",
+              "PROC-LC-02"
+            ],
+            [
+              "Sample id",
+              "SAMPLE-B-017"
+            ],
+            [
+              "Slot id",
+              "SLOT-PRIORITY"
+            ],
+            [
+              "Cost cents",
+              "180000"
+            ],
+            [
+              "Currency",
+              "USD"
+            ],
+            [
+              "Timing",
+              "lab start at: 2026-11-18T06:00:00Z; execution start at: 2026-11-18T08:00:00Z; lab end at: 2026-11-18T16:00:00Z; review ready at: 2026-11-18T20:00:00Z; deadline slack minutes: 1320"
+            ],
+            [
+              "Exact actions",
+              "action: schedule validation; arguments: program id: PRG-A17; customer id: CUST-FML01; change id: CR-017; plan id: plan-056a1d23057e414c847c823c74defd9d; plan version: 1; plan digest: 4ff7a0eb5e211ceff07a02fe09a635a02bd7286ffb60b12f9f802c0411b738f7; configuration id: CFG-B-01; procedure id: PROC-LC-02; sample id: SAMPLE-B-017; slot id: SLOT-PRIORITY; cost cents: 180000; currency: USD; timing: lab start at: 2026-11-18T06:00:00Z; execution start at: 2026-11-18T08:00:00Z; lab end at: 2026-11-18T16:00:00Z; review ready at: 2026-11-18T20:00:00Z; deadline slack minutes: 1320; review minutes: 240; action: link program plan; arguments: program id: PRG-A17; customer id: CUST-FML01; change id: CR-017; plan id: plan-056a1d23057e414c847c823c74defd9d; plan version: 1; plan digest: 4ff7a0eb5e211ceff07a02fe09a635a02bd7286ffb60b12f9f802c0411b738f7; milestone id: MS-ACCEPT-01; forecast at: 2026-11-18T20:00:00Z; forecast status: conditional on test and review"
+            ]
+          ],
+          "links": [
+            [
+              "Open decision",
+              "/control/decisions/plan-056a1d23057e414c847c823c74defd9d/1?digest=874ae929f42b8667f1e03d85d09d0c5111675591126d59beaa9ca667eb887e71"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2502,
+      "input_tokens": 942,
+      "output_tokens": 49,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_de428437adde40b78818fba38a53f851",
+      "timestamp": "2026-09-12T19:43:26.546718Z",
+      "context": "/control/programs/PRG-A17/cases/CR-017",
+      "user_text": "Why was human approval required?",
+      "text": "The exact plan schedules supplemental lab work and links it to the program. Its recorded policy requires an authorized reviewer; investigation does not grant approval.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-017 \u00b7 Investigating",
+          "facts": [
+            [
+              "Current case state",
+              "investigating"
+            ],
+            [
+              "Current source",
+              "Agent investigation is running; no new business outcome is implied."
+            ],
+            [
+              "Next step",
+              "Read progress; polling never starts a model call."
+            ],
+            [
+              "Coverage satisfied",
+              "Yes"
+            ],
+            [
+              "Engineering review",
+              "ready"
+            ],
+            [
+              "Boundary",
+              "Scheduling, completed testing, Engineering review and customer acceptance are separate."
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-017"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "Recorded approval policy \u00b7 POLICY-APP-01",
+          "facts": [
+            [
+              "Why approval is required",
+              "The exact plan schedules supplemental lab work and links it to the program. Its recorded policy requires an authorized reviewer; investigation does not grant approval."
+            ],
+            [
+              "Required reviewer",
+              "Engineering approver"
+            ],
+            [
+              "Exact plan",
+              "plan-056a1d23057e414c847c823c74defd9d \u00b7 v1"
+            ],
+            [
+              "Cost",
+              "$1,800.00 USD"
+            ],
+            [
+              "Permitted actions",
+              "schedule validation; link program plan"
+            ],
+            [
+              "Boundary",
+              "Plan approval does not approve test evidence or customer acceptance."
+            ]
+          ],
+          "links": [
+            [
+              "Review exact decision",
+              "/control/decisions/plan-056a1d23057e414c847c823c74defd9d/1?digest=874ae929f42b8667f1e03d85d09d0c5111675591126d59beaa9ca667eb887e71"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-BASELINE-B",
+          "facts": [
+            [
+              "Applicability",
+              "INSUFFICIENT DURATION; MISSING CONTEXT BINS; WRONG PROFILE"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-BASELINE-B"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-LONG-A",
+          "facts": [
+            [
+              "Applicability",
+              "WRONG CONFIGURATION; WRONG PRODUCT REVISION"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-LONG-A"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "RES-SHORT-B",
+          "facts": [
+            [
+              "Applicability",
+              "INSUFFICIENT DURATION"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=RES-SHORT-B"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "result-215d984f326c4c148d845a49f3e8b02e",
+          "facts": [
+            [
+              "Applicability",
+              "Satisfies exact scope"
+            ]
+          ],
+          "links": [
+            [
+              "Inspect evidence",
+              "/control/programs/PRG-A17/cases/CR-017?tab=evidence&evidence=result-215d984f326c4c148d845a49f3e8b02e"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "run",
+          "title": "CR-017 \u00b7 Investigation in progress",
+          "facts": [
+            [
+              "Runtime",
+              "running"
+            ],
+            [
+              "Business outcome",
+              "Investigation in progress"
+            ],
+            [
+              "Run",
+              "run_0518d601c8144d8cafec99c2671f1a48"
+            ],
+            [
+              "Invocation",
+              "ui_evidence_1d1e8a4b7dd0a8a00de9ae1205bc1524d8e939000d01eafbcf0589639180bdb5"
+            ],
+            [
+              "Basis",
+              "Persisted run; completion alone is not business success"
+            ]
+          ],
+          "links": [
+            [
+              "Open run",
+              "/control/runs/run_0518d601c8144d8cafec99c2671f1a48"
+            ],
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ]
+          ],
+          "run_id": "run_0518d601c8144d8cafec99c2671f1a48"
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 3096,
+      "input_tokens": 913,
+      "output_tokens": 85,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_7d28bae4e14c426f86ad54fe29b00c17",
+      "timestamp": "2026-09-12T19:49:10.479055Z",
+      "context": "/control/programs/PRG-A17/cases/QE-004",
+      "user_text": "What caused QE-004?",
+      "text": "Current source-backed state for QE-004.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "QE-004 \u00b7 New",
+          "facts": [
+            [
+              "Current case state",
+              "new"
+            ],
+            [
+              "Current source",
+              "Quality exception open; 250 held and ineligible; 600/800 eligible supply."
+            ],
+            [
+              "Next step",
+              "Inspect comparison, material scope and recovery options."
+            ],
+            [
+              "Comparable",
+              "true"
+            ],
+            [
+              "Comparison reasons",
+              "Exact approved baseline conditions match"
+            ],
+            [
+              "Observed rate bps",
+              "8000"
+            ],
+            [
+              "Baseline rate bps",
+              "9600"
+            ],
+            [
+              "Confirmed degradation",
+              "Yes"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ],
+            [
+              "Root cause",
+              "Unknown / not recorded"
+            ],
+            [
+              "Evidence status",
+              "available"
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "OBS-QE-004",
+          "facts": [
+            [
+              "Lot",
+              "LOT-B-204"
+            ],
+            [
+              "Root cause",
+              "Unresolved. A yield signal or site correlation does not establish causality."
+            ],
+            [
+              "Authority",
+              "Held material stays excluded. Recovery planning does not release or reallocate supply."
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "MAT-B-204 \u00b7 LOT-B-204",
+          "facts": [
+            [
+              "Disposition",
+              "hold"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Allocated quantity",
+              "0"
+            ],
+            [
+              "Eligible unallocated quantity",
+              "0"
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "MAT-B-203 \u00b7 LOT-B-203",
+          "facts": [
+            [
+              "Disposition",
+              "released"
+            ],
+            [
+              "Held quantity",
+              "0"
+            ],
+            [
+              "Allocated quantity",
+              "0"
+            ],
+            [
+              "Eligible unallocated quantity",
+              "600"
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2591,
+      "input_tokens": 913,
+      "output_tokens": 51,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_cff13e32795943fd93946795e06836fc",
+      "timestamp": "2026-09-12T19:57:10.227659Z",
+      "context": "/control/programs/PRG-A17/cases/DR-009",
+      "user_text": "Can we commit 800 units?",
+      "text": "Current source-backed state for DR-009.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "DR-009 \u00b7 New",
+          "facts": [
+            [
+              "Current case state",
+              "new"
+            ],
+            [
+              "Current source",
+              "600/800 eligible; 200 gap. Technical readiness: READY."
+            ],
+            [
+              "Next step",
+              "Inspect technical scope, reconciled inventory and commitment options."
+            ],
+            [
+              "Technical readiness",
+              "READY"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ],
+            [
+              "Customer ready quantity",
+              "600"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Allocated quantity",
+              "150"
+            ],
+            [
+              "Timing status",
+              "supported"
+            ],
+            [
+              "Proposed at",
+              "2026-11-23T18:00:00Z"
+            ],
+            [
+              "Blockers",
+              "None recorded"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "ORD-HEL-800",
+          "facts": [
+            [
+              "Customer agreement",
+              "pending"
+            ],
+            [
+              "Commercial commitment",
+              "Not recorded for this request"
+            ],
+            [
+              "Boundary",
+              "Technical acceptance, commercial commitment and physical delivery are separate."
+            ],
+            [
+              "Full quantity/date",
+              "Full request is not supported; no full-delivery date promised."
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "MAT-B-203 \u00b7 LOT-B-203",
+          "facts": [
+            [
+              "Disposition",
+              "released"
+            ],
+            [
+              "Held quantity",
+              "0"
+            ],
+            [
+              "Allocated quantity",
+              "0"
+            ],
+            [
+              "Eligible unallocated quantity",
+              "600"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "MAT-B-204 \u00b7 LOT-B-204",
+          "facts": [
+            [
+              "Disposition",
+              "hold"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Allocated quantity",
+              "0"
+            ],
+            [
+              "Eligible unallocated quantity",
+              "0"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "evidence",
+          "title": "MAT-B-202 \u00b7 LOT-B-202",
+          "facts": [
+            [
+              "Disposition",
+              "released"
+            ],
+            [
+              "Held quantity",
+              "0"
+            ],
+            [
+              "Allocated quantity",
+              "150"
+            ],
+            [
+              "Eligible unallocated quantity",
+              "0"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 2805,
+      "input_tokens": 914,
+      "output_tokens": 51,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    },
+    {
+      "message_id": "msg_99d67e3626e540af8a82f2475f746e61",
+      "timestamp": "2026-09-12T20:24:15.301751Z",
+      "context": "/control/overview",
+      "user_text": "What needs my attention? Use current source and execution state after the latest CR-017, CR-019, QE-004 and DR-009 actions.",
+      "text": "Current Helios cases, shown separately. Shared material MAT-B-203, MAT-B-204 is counted once per case calculation; do not add the case gaps together.",
+      "status": "completed",
+      "classification": "READ",
+      "error_code": null,
+      "cards": [
+        {
+          "kind": "status",
+          "title": "CR-017 \u00b7 Technical validation complete",
+          "facts": [
+            [
+              "Current case state",
+              "completed_technical"
+            ],
+            [
+              "Current source",
+              "Technical validation complete \u00b7 Customer acceptance pending."
+            ],
+            [
+              "Next step",
+              "Customer acceptance remains a separate external decision."
+            ],
+            [
+              "Coverage satisfied",
+              "Yes"
+            ],
+            [
+              "Engineering review",
+              "approved"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-017",
+              "/control/programs/PRG-A17/cases/CR-017"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-017"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "CR-019 \u00b7 Waiting for external source",
+          "facts": [
+            [
+              "Current case state",
+              "waiting_external"
+            ],
+            [
+              "Current source",
+              "Handed to Validation Operations"
+            ],
+            [
+              "Next step",
+              "Lab authorization and physical work remain downstream."
+            ],
+            [
+              "Touchless eligibility",
+              "Yes"
+            ]
+          ],
+          "links": [
+            [
+              "Open CR-019",
+              "/control/programs/PRG-A17/cases/CR-019"
+            ],
+            [
+              "Open source app",
+              "/engineering/changes/CR-019"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "QE-004 \u00b7 Waiting for external source",
+          "facts": [
+            [
+              "Current case state",
+              "waiting_external"
+            ],
+            [
+              "Current source",
+              "Recovery task verified; held material remains governed."
+            ],
+            [
+              "Next step",
+              "Continue the approved investigation; disposition remains separate."
+            ],
+            [
+              "Held quantity",
+              "250"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ]
+          ],
+          "links": [
+            [
+              "Open QE-004",
+              "/control/programs/PRG-A17/cases/QE-004"
+            ],
+            [
+              "Open source app",
+              "/manufacturing/quality/QE-004"
+            ]
+          ],
+          "run_id": null
+        },
+        {
+          "kind": "status",
+          "title": "DR-009 \u00b7 Waiting for external source",
+          "facts": [
+            [
+              "Current case state",
+              "waiting_external"
+            ],
+            [
+              "Current source",
+              "Commitment and Planner link verified; 200 gap remains."
+            ],
+            [
+              "Next step",
+              "Resolve the remaining supply gap; customer agreement stays separate."
+            ],
+            [
+              "Technical readiness",
+              "READY"
+            ],
+            [
+              "Eligible quantity",
+              "600"
+            ],
+            [
+              "Requested quantity",
+              "800"
+            ],
+            [
+              "Gap quantity",
+              "200"
+            ],
+            [
+              "Held quantity",
+              "250"
+            ]
+          ],
+          "links": [
+            [
+              "Open DR-009",
+              "/control/programs/PRG-A17/cases/DR-009"
+            ],
+            [
+              "Open source app",
+              "/erp/delivery/DR-009"
+            ]
+          ],
+          "run_id": null
+        }
+      ],
+      "model": "gpt-6-astra",
+      "latency_ms": 3273,
+      "input_tokens": 935,
+      "output_tokens": 49,
+      "model_calls": 1,
+      "service_calls": [
+        "ControlHost.snapshot (current source APIs)"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "UX-01",
+      "observation": "Live CR-019 launch button says Run investigation again while the current run is active; agent progress note describes polling implementation.",
+      "fix": "Active launch buttons name the current activity; specialist completion counts derive from recorded invocations.",
+      "validation": "Typecheck PASS; five polish browser tests PASS"
+    },
+    {
+      "id": "ENV-01",
+      "observation": "First polish run could not launch missing default Chromium headless-shell-1243; all five tests failed before UI assertions.",
+      "fix": "Reuse Phase09.4 installed Chromium via PLAYWRIGHT_CHROMIUM_EXECUTABLE; no application defect claimed.",
+      "validation": "Corrected run: five passed in 1.1 minutes"
+    },
+    {
+      "id": "LIVE-01",
+      "classification": "prompt/model scope interpretation",
+      "observation": "CR019 invented a gating relationship between separate milestone V2 evidence and exact V1 intake, returning an unresolved blocker despite 18/18 source checks.",
+      "fix": "Standard Coordinator/Change Impact/Program prompts require checking exact source-policy conditions and preserving unrelated milestone obligations as separate; no fixture, permission or policy-code change.",
+      "validation": "24 targeted standard regressions passed; third live CR019 analysis and verified intake passed; two failed runs preserved."
+    },
+    {
+      "id": "LIVE-02",
+      "classification": "prompt/model triage semantics",
+      "observation": "Triage requested specialists but also labeled their not-yet-fetched evidence and future binding policy as missing intake. Host correctly suppressed delegation.",
+      "fix": "Standard triage instructions distinguish missing request scope from known source work assigned to specialists. Host guard remains unchanged.",
+      "validation": "24 targeted standard regressions passed; third live CR019 analysis and verified intake passed; two failed runs preserved."
+    },
+    {
+      "id": "UX-02",
+      "classification": "cross-run view model",
+      "observation": "New CR019 investigation displayed previous failed handoff as if it belonged to current run.",
+      "fix": "Resolve handoff by current run across case, lifecycle, visual and summary; retain explicit previous-result link.",
+      "validation": "New browser regression passed; typecheck passed"
+    },
+    {
+      "id": "CHAT-01",
+      "observation": "Recurring weekday-morning request returned generic clarification.",
+      "fix": "Explicit automation routing for missing exact time; host asks for time and retains inert configuration preview.",
+      "validation": "Live repeat asked for time, previewed and saved weekdays 7 AM CT; scheduler not enabled. 16 offline tests passed."
+    },
+    {
+      "id": "CHAT-02",
+      "observation": "Concierge reported missing intake ID despite verified CR019 handoff.",
+      "fix": "Read nested typed intake; bind displayed handoff to current run; show source link and separate pending lab state.",
+      "validation": "Live retest shows actual intake ID and pending lab states. Offline source/current-run checks passed."
+    },
+    {
+      "id": "UX-03",
+      "observation": "CR019 button labeled Investigating while CR017 was running.",
+      "fix": "Distinguish current-case run from another case running while preserving admission guard.",
+      "validation": "Three targeted browser regressions passed."
+    },
+    {
+      "id": "CHAT-03",
+      "observation": "Why-human-approval response showed evidence gaps but omitted the recorded approval-policy explanation.",
+      "fix": "Show immutable source-plan policy and authorized reviewer for policy/decision explanation.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "UX-04",
+      "observation": "Live verbose rationale dominated the exact decision header.",
+      "fix": "Lead with source slot/sample and approval scope; retain full recorded rationale in expandable supporting evidence.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "LIVE-03",
+      "classification": "host-to-harness scope boundary",
+      "observation": "CR017 downstream event linked the new result ID before scoped Coordinator intake could discover it. Guard correctly suppressed specialists; UI offered no retry for completed-but-unconfirmed reassessment.",
+      "fix": "Event links only established job and plan; specialist discovers result via existing read tools, host still checks exact evidence digest. Add explicit source-bound retry of a completed unconfirmed/failed evidence run; stable retry key preserves idempotency; UI offers retry without granting review authority.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "LIVE-04",
+      "classification": "historical provenance and SDK error wrapping",
+      "observation": "Validation job read rejected the lab completion snapshot of CR017 content v1 as a current record conflicting with CR017 record v3. SDK wrapper reduced this to specialist_failed; coordinator duplicate retry was denied.",
+      "fix": "Recognize only typed lab-completion source_snapshot as historical, keeping scope/current-version validation. Unwrap SDK exception causes only to recover fixed safe guard codes.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "LIVE-05",
+      "classification": "reassessment scope interpretation",
+      "observation": "Third downstream run correctly found exact sufficient evidence but incorrectly treated customer acceptance as validation evidence gap and requested Planner ownership outside the narrow adequacy question. Runtime/source validators passed; business review remained blocked.",
+      "fix": "Clarify the host-authored reassessment request: exact evidence adequacy blockers versus known pending engineering/customer/Planner stages. No host approval conditions or final validators relaxed.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "LIVE-06",
+      "observation": "Fourth CR017 evidence reassessment completed its specialist but failed during SDK synthesis output handling with generic case_failed. API retrieval of the unstored response returned 404; exact malformed field unavailable in the historical artifact.",
+      "fix": "Capture only the typed assistant final object or bounded schema error types/known field paths in the existing private run directory; never invalid values, full SDK responses or hidden reasoning. Preserve malformed outputs as failures and expose fixed malformed_agent_output code.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "OPS-01",
+      "observation": "Operations relabeled manually launched runs as Concierge merely because a later chat referenced them; decision column claimed execution pending after verified readback.",
+      "fix": "Origin uses invocation provenance; related sessions remain links. Decision label reports decision only; separate verification reports actual execution.",
+      "validation": "12 Operations tests including new real HTTP manual->chat->review->execution regression passed; browser Operations passed."
+    },
+    {
+      "id": "ENV-02",
+      "observation": "Concurrent pytest commands reused repository default .cache/coordinator-pytest. One subset cleanup error and one full-suite fixture error resulted.",
+      "fix": "Use unique explicit --basetemp paths for each run.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "UX-05",
+      "observation": "CR017 showed before-scheduling instructions after verified execution; two separate investigation sections each said Last run.",
+      "fix": "Use current physical-validation stage after a job exists; label each recorded investigation with its actual timestamp and source-read context.",
+      "validation": "Typecheck/build and eight connected browser tests passed."
+    },
+    {
+      "id": "LIVE-07",
+      "observation": "Fifth evidence reassessment retained a root-level final-package consistency rejection; source adequacy and specialist completion were valid.",
+      "fix": "Explicit Coordinator instructions for existing final consistency rules: factual-only confirmed_facts, policy/review flag agreement, escalation reason, and read-only false action/acceptance/pass flags. Retain fixed schema-rule labels in private diagnostics. No validator relaxed.",
+      "validation": "164 isolated regressions passed. Sixth live evidence reassessment passed all read-only validators and the exact host review gate. Separate Engineering approval then completed technical validation."
+    },
+    {
+      "id": "SOURCE-01",
+      "observation": "After exact Engineering evidence approval, Engineering Hub and source overview still described only scheduled_awaiting_execution as current execution.",
+      "fix": "Read the existing scoped physical-validation HTTP projection into source UI case data. Show current result/applicability/Engineering decision/customer acceptance separately; label retained scheduling records explicitly; route next steps from current evidence. No source API, fixture or business-state mutation.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "LIVE-08",
+      "observation": "First DR009 live analysis calculated 600/800/200 but put the unfilled remainder in missing_information at triage. The host suppressed specialists; final escalated and no proposal was created.",
+      "fix": "Clarify delivery triage: known unfilled remainder is an analysis risk, not missing request scope. Preserve missing destination/quantity/date inputs and source technical/timing gates. Independent domain reads may run concurrently.",
+      "validation": "PASS after targeted correction; see complete regression and live-run evidence below. Earlier failed artifacts remain preserved."
+    },
+    {
+      "id": "UX-06",
+      "observation": "Delivery visual still said a Program Owner decision was needed after approval; lifecycle exposed raw approve/reject labels.",
+      "fix": "Use approved/rejected decision wording and a universally valid separation of commercial commitment and customer agreement.",
+      "validation": "Latest delivery browser passed; final 1440\u00d7900 screenshot inspected."
+    },
+    {
+      "id": "UX-07",
+      "observation": "Five historical failed outcomes pushed Operations run history below the first viewport.",
+      "fix": "Keep the count visible and make the recorded outcomes expandable; retain all failed runs and current-case status.",
+      "validation": "All three Operations browser variants passed; screenshot inspected."
+    }
+  ],
+  "tests": {
+    "source": 483,
+    "coordinator": 748,
+    "mcp": 56,
+    "offline_evaluation_cases": 112,
+    "browser": 89,
+    "intentional_browser_variant_skips": 3,
+    "typecheck": "PASS",
+    "build": "PASS"
+  },
+  "screenshots": [
+    {
+      "path": "docs/screenshots/phase09-5/overview-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/helios-program-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/cr017-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/cr019-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/qe004-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/dr009-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/decision-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/workflows-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/concierge-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/operations-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    },
+    {
+      "path": "docs/screenshots/phase09-5/source-evidence-final-1440.jpg",
+      "width": 1440,
+      "height": 900,
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Real microphone not exercised: no coordinated live speaker was available. Automated speech uses mocks.",
+    "Model output remains nondeterministic; successful retries do not establish a statistical success rate.",
+    "Tokens cover completed recorded generations, not a billing ledger; no dollar cost inferred.",
+    "Provider trace IDs captured; platform trace availability not verified.",
+    "Synthetic laboratory result and simulated role decisions do not establish real physical testing or human approval."
+  ],
+  "historical_preservation": "Original failed live runs retained without rewriting their result. Pre-existing screenshots restored byte-for-byte. Existing cold-start test regenerates its offline report; latest output also copied to this phase.",
+  "reset_replay": {
+    "status": "PASS",
+    "summary": "PASS. Full reset restored the original source/control digests and all 11 readiness checks. Real paid CR-019 replay passed as run_a4e8c5c8b6e14ae997f7195365b076da with one new intake; QE-004 replay passed as run_e527a8283cca4f918b6ed99c6da472bf, required a fresh simulated Program Owner decision, and created one new verified recovery task. Repeating the exact recovery execution twice retained one task. A second full reset removed those records; replaying its stale reset epoch returned 409 DEMO_STATE_CHANGED. A further explicit full reset produced identical business baseline digests with a new audit epoch. Current runs and Concierge sessions are empty. The app is left running on the clean baseline.",
+    "replay_runs": [
+      "run_a4e8c5c8b6e14ae997f7195365b076da",
+      "run_e527a8283cca4f918b6ed99c6da472bf"
+    ],
+    "new_intake": "intake-549774cc3f23448bbb6c216162888b89",
+    "new_recovery_task": "recovery-task-81914d55e6bb44f7904857b0eb006b45",
+    "old_intake": "intake-bbaf29ff8f8141e9b4922a8d1e9e9d9e",
+    "old_recovery_task": "recovery-task-e5ee30954cb046fe87467c73f083b8a7",
+    "duplicate_execution_statuses": [
+      200,
+      200
+    ],
+    "intake_count_after_replay": 1,
+    "task_count_after_replay": 1,
+    "reset_epochs": [
+      "reset_066d311388244db5af63b441afd37cc3",
+      "reset_b76d3877a864498b944f14a1d794fd64",
+      "reset_a6263e8488054bb997b5f88ee9c22c1a"
+    ],
+    "source_digest": "5ff45501536e505e62709da628d9f27244f010d107670db2a0760add19fedaa4",
+    "control_digest": "f75718307bffbb869adacbbb2faba1bbc9407e32de8bf27b82204590dbded64d",
+    "duplicate_epoch_status": 409,
+    "old_source_records_after_reset": {
+      "/api/v1/validation/intakes/intake-549774cc3f23448bbb6c216162888b89": 404,
+      "/api/v1/validation/jobs/job-058aa493005a41eaab874ac274cc7c8d": 404
+    },
+    "final_case_states": {
+      "CR-017": "new",
+      "CR-019": "new",
+      "QE-004": "new",
+      "DR-009": "new"
+    },
+    "current_runs": 0,
+    "current_concierge_sessions": 0
+  },
+  "baseline_final": {
+    "result": "Demo ready",
+    "checks": {
+      "services_available": true,
+      "source_apps_reachable": true,
+      "baseline_valid": true,
+      "canonical_cases_present": true,
+      "no_stale_executable_proposal": true,
+      "no_running_work": true,
+      "reset_consistent": true,
+      "concierge_available": true,
+      "model_configured": true,
+      "background_inactive": true,
+      "owned_services": true
+    },
+    "services": {
+      "source": true,
+      "mcp": true,
+      "control_host": true,
+      "frontend": true
+    },
+    "source_apps": {
+      "Engineering Hub": true,
+      "Validation Lab": true,
+      "Manufacturing Portal": true,
+      "Commercial ERP": true,
+      "Program Planner": true
+    },
+    "baseline_state": "valid",
+    "baseline": {
+      "scope": "full",
+      "demo_baseline_version": "phase09-v1",
+      "baseline_valid": true,
+      "checked_at": "2026-09-12T20:33:18.741439Z",
+      "discrepancies": [],
+      "quantities": {
+        "physical_quantity": 1000,
+        "held_quantity": 250,
+        "allocated_quantity": 150,
+        "eligible_unallocated_quantity": 600,
+        "requested_quantity": 800,
+        "gap_quantity": 200
+      },
+      "source_digest": "5ff45501536e505e62709da628d9f27244f010d107670db2a0760add19fedaa4",
+      "control_digest": "f75718307bffbb869adacbbb2faba1bbc9407e32de8bf27b82204590dbded64d",
+      "source_readback": {
+        "engineering": "read_succeeded",
+        "validation": "read_succeeded",
+        "manufacturing": "read_succeeded",
+        "erp": "read_succeeded",
+        "planner": "read_succeeded"
+      },
+      "scenario_checks": {
+        "CR-017": true,
+        "CR-019": true,
+        "DR-009": true,
+        "QE-004": true
+      }
+    },
+    "demo_controls": {
+      "enabled": true,
+      "demo_baseline_version": "phase09-v1",
+      "epoch": "reset_a6263e8488054bb997b5f88ee9c22c1a",
+      "recovery_required": false,
+      "pending_scope": null,
+      "scopes": [
+        "full",
+        "CR-017",
+        "CR-019",
+        "QE-004",
+        "DR-009"
+      ],
+      "latest": {
+        "reset_id": "reset_a6263e8488054bb997b5f88ee9c22c1a",
+        "scope": "full",
+        "timestamp": "2026-09-12T20:33:00.032391Z",
+        "actor": "demo-maintainer",
+        "result": "restored",
+        "stage": "complete",
+        "affected_systems": [
+          "engineering",
+          "erp",
+          "manufacturing",
+          "planner",
+          "validation"
+        ],
+        "baseline_valid": true,
+        "error_code": null
+      },
+      "archived_reset_count": 4
+    },
+    "cases": {
+      "CR-017": {
+        "state": "New",
+        "source_available": true
+      },
+      "CR-019": {
+        "state": "New",
+        "source_available": true
+      },
+      "QE-004": {
+        "state": "New",
+        "source_available": true
+      },
+      "DR-009": {
+        "state": "New",
+        "source_available": true
+      }
+    },
+    "model_configuration": {
+      "model": "gpt-6-astra",
+      "credential_present": true,
+      "status": "configured",
+      "connectivity": "not_checked",
+      "paid_call_made": false
+    },
+    "background_execution": {
+      "schedulers": "not_installed",
+      "event_listeners": "not_installed",
+      "condition_evaluators": "not_installed"
+    },
+    "running_workflows": [],
+    "stale_or_unverified_decisions": [],
+    "urls": {
+      "source": "http://127.0.0.1:18251",
+      "mcp": "http://127.0.0.1:19251",
+      "host": "http://127.0.0.1:18250",
+      "ui": "http://127.0.0.1:5197"
+    },
+    "supervisor_status": "running",
+    "model_connectivity_note": "Credential format/presence only; provider access, quota and live behavior are not verified."
+  },
+  "live_totals": {
+    "workflow_attempts": 15,
+    "recorded_workflow_tokens": 1442094,
+    "concierge_turns": 12,
+    "concierge_input_tokens": 10846,
+    "concierge_output_tokens": 802
+  },
+  "complete": true,
+  "final_state": "Clean canonical baseline, four owned services running, no active workflows or triggers"
+}

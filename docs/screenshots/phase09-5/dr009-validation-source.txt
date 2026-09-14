@@ -1,0 +1,14 @@
+DR-009 · Source records
+Refresh source records
+
+PRG-A17 · ORD-HEL-800 / LINE-HEL-800-1
+
+Applicable evidence & technical dependency
+
+RES-BASELINE-B · CFG-B-01 · WF-LC-V1 · completed
+
+READY · Approved baseline scope, applicable evidence and exact Engineering clearance
+
+Technical acceptance is separate from commercial commitment.
+
+Open connected delivery workbench

@@ -1,0 +1,4843 @@
+{
+  "components": {
+    "schemas": {
+      "ActivityRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Action Id"
+          },
+          "actor_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "actor_source": {
+            "title": "Actor Source",
+            "type": "string"
+          },
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "customer_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "details": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Details",
+            "type": "object"
+          },
+          "event_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "event_type": {
+            "enum": [
+              "case_created",
+              "analysis_started",
+              "analysis_completed",
+              "analysis_failed",
+              "analysis_cancelled",
+              "recommendation_recorded",
+              "proposal_retained",
+              "source_decision_retained",
+              "action_record_retained",
+              "verification_record_retained",
+              "proposal_created",
+              "proposal_superseded",
+              "approval_requested",
+              "proposal_approved",
+              "proposal_rejected",
+              "proposal_stale",
+              "workflow_resumed",
+              "action_started",
+              "validation_job_created",
+              "program_plan_updated",
+              "action_failed",
+              "action_outcome_unknown",
+              "action_reconciled",
+              "verification_started",
+              "source_state_verified",
+              "verification_failed",
+              "execution_partially_completed",
+              "execution_completed",
+              "execution_denied"
+            ],
+            "title": "Event Type",
+            "type": "string"
+          },
+          "program_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "proposal_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proposal Id"
+          },
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "source_references": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "title": "Source References",
+            "type": "array"
+          },
+          "timestamp": {
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "trace_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Trace Id"
+          }
+        },
+        "required": [
+          "event_id",
+          "timestamp",
+          "customer_id",
+          "program_id",
+          "case_id",
+          "run_id",
+          "event_type",
+          "actor_id",
+          "actor_source",
+          "trace_id"
+        ],
+        "title": "ActivityRecord",
+        "type": "object"
+      },
+      "AssessRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_evidence_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Evidence Digest",
+            "type": "string"
+          }
+        },
+        "required": [
+          "expected_evidence_digest"
+        ],
+        "title": "AssessRequest",
+        "type": "object"
+      },
+      "Assessment": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_gaps": {
+            "items": {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Evidence Gaps",
+            "type": "array"
+          },
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/Fact"
+            },
+            "maxItems": 30,
+            "minItems": 1,
+            "title": "Facts",
+            "type": "array"
+          },
+          "unresolved_questions": {
+            "items": {
+              "maxLength": 2000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Unresolved Questions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "facts",
+          "evidence_gaps",
+          "unresolved_questions"
+        ],
+        "title": "Assessment",
+        "type": "object"
+      },
+      "AssessmentView": {
+        "additionalProperties": false,
+        "properties": {
+          "confirmed": {
+            "title": "Confirmed",
+            "type": "boolean"
+          },
+          "evidence_digest": {
+            "title": "Evidence Digest",
+            "type": "string"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "evidence_digest",
+          "confirmed",
+          "summary"
+        ],
+        "title": "AssessmentView",
+        "type": "object"
+      },
+      "CaseRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "change_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change Id"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "customer_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "intake_key": {
+            "title": "Intake Key",
+            "type": "string"
+          },
+          "program_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "scope_verified": {
+            "default": false,
+            "title": "Scope Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "case_id",
+          "customer_id",
+          "program_id",
+          "change_id",
+          "intake_key",
+          "created_at"
+        ],
+        "title": "CaseRecord",
+        "type": "object"
+      },
+      "CaseView": {
+        "additionalProperties": false,
+        "properties": {
+          "activity": {
+            "items": {
+              "$ref": "#/components/schemas/ActivityRecord"
+            },
+            "title": "Activity",
+            "type": "array"
+          },
+          "cases": {
+            "items": {
+              "$ref": "#/components/schemas/CaseRecord"
+            },
+            "title": "Cases",
+            "type": "array"
+          },
+          "change_id": {
+            "const": "CR-017",
+            "default": "CR-017",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "customer_id": {
+            "const": "CUST-FML01",
+            "default": "CUST-FML01",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "downstream": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DownstreamView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fetched_at": {
+            "title": "Fetched At",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "live_model",
+              "deterministic_test"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "program_id": {
+            "const": "PRG-A17",
+            "default": "PRG-A17",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "proposals": {
+            "items": {
+              "$ref": "#/components/schemas/ProposalView"
+            },
+            "title": "Proposals",
+            "type": "array"
+          },
+          "runs": {
+            "items": {
+              "$ref": "#/components/schemas/RunView"
+            },
+            "title": "Runs",
+            "type": "array"
+          },
+          "source_available": {
+            "title": "Source Available",
+            "type": "boolean"
+          },
+          "source_url": {
+            "title": "Source Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode",
+          "source_url",
+          "fetched_at",
+          "source_available",
+          "cases",
+          "runs",
+          "proposals",
+          "activity"
+        ],
+        "title": "CaseView",
+        "type": "object"
+      },
+      "Configuration": {
+        "additionalProperties": false,
+        "properties": {
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "device_count": {
+            "exclusiveMinimum": 0.0,
+            "title": "Device Count",
+            "type": "integer"
+          },
+          "firmware": {
+            "title": "Firmware",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "memory_configuration": {
+            "title": "Memory Configuration",
+            "type": "string"
+          },
+          "model_bundle_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Model Bundle Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "product_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Product Id",
+            "type": "string"
+          },
+          "product_revision": {
+            "title": "Product Revision",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "quantization": {
+            "title": "Quantization",
+            "type": "string"
+          },
+          "runtime": {
+            "title": "Runtime",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "validation_support": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Validation Support"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "product_id",
+          "product_revision",
+          "model_bundle_id",
+          "device_count",
+          "firmware",
+          "runtime",
+          "quantization",
+          "memory_configuration"
+        ],
+        "title": "Configuration",
+        "type": "object"
+      },
+      "Coverage": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "coverage_satisfied": {
+            "title": "Coverage Satisfied",
+            "type": "boolean"
+          },
+          "evidence_set_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Set Digest",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CoverageItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "change_id",
+          "coverage_satisfied",
+          "evidence_set_digest",
+          "items"
+        ],
+        "title": "Coverage",
+        "type": "object"
+      },
+      "CoverageItem": {
+        "additionalProperties": false,
+        "properties": {
+          "mismatch_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Mismatch Reasons",
+            "type": "array"
+          },
+          "result": {
+            "$ref": "#/components/schemas/Result"
+          },
+          "satisfies": {
+            "title": "Satisfies",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "satisfies",
+          "mismatch_reasons"
+        ],
+        "title": "CoverageItem",
+        "type": "object"
+      },
+      "Criteria": {
+        "additionalProperties": false,
+        "properties": {
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "scope": {
+            "title": "Scope",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "approved",
+              "retired"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "writable": {
+            "const": false,
+            "title": "Writable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "status",
+          "scope",
+          "writable"
+        ],
+        "title": "Criteria",
+        "type": "object"
+      },
+      "Dependency": {
+        "additionalProperties": false,
+        "properties": {
+          "job_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Job Id"
+          },
+          "kind": {
+            "enum": [
+              "requirement_evidence",
+              "validation_job"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          },
+          "owner": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Owner"
+          },
+          "requirement_revision_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requirement Revision Id"
+          },
+          "state": {
+            "enum": [
+              "pending_assessment",
+              "validation_scheduled",
+              "scheduled",
+              "evidence_available",
+              "review_required",
+              "blocked",
+              "completed"
+            ],
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "state"
+        ],
+        "title": "Dependency",
+        "type": "object"
+      },
+      "DownstreamView": {
+        "additionalProperties": false,
+        "properties": {
+          "assessment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssessmentView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "physical": {
+            "$ref": "#/components/schemas/PhysicalValidation"
+          },
+          "review_ready": {
+            "default": false,
+            "title": "Review Ready",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "physical"
+        ],
+        "title": "DownstreamView",
+        "type": "object"
+      },
+      "EvidenceBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "approval_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Approval Id",
+            "type": "string"
+          },
+          "change_id": {
+            "const": "CR-017",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "completion": {
+            "$ref": "#/components/schemas/LabCompletion"
+          },
+          "current_sources": {
+            "items": {
+              "$ref": "#/components/schemas/Snapshot"
+            },
+            "title": "Current Sources",
+            "type": "array"
+          },
+          "evidence_set_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Set Digest",
+            "type": "string"
+          },
+          "job": {
+            "$ref": "#/components/schemas/Job"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Plan Digest",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "plan_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Plan Version",
+            "type": "integer"
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/Requirement"
+          },
+          "result": {
+            "$ref": "#/components/schemas/Result"
+          },
+          "review_policy": {
+            "const": "CR017-ENGINEERING-EVIDENCE-V1",
+            "title": "Review Policy",
+            "type": "string"
+          }
+        },
+        "required": [
+          "review_policy",
+          "change_id",
+          "requirement",
+          "job",
+          "plan_id",
+          "plan_version",
+          "plan_digest",
+          "approval_id",
+          "completion",
+          "result",
+          "current_sources",
+          "evidence_set_digest"
+        ],
+        "title": "EvidenceBinding",
+        "type": "object"
+      },
+      "EvidenceReview": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "customer_acceptance": {
+            "const": "pending",
+            "default": "pending",
+            "title": "Customer Acceptance",
+            "type": "string"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "decision_type": {
+            "const": "engineering_evidence",
+            "default": "engineering_evidence",
+            "title": "Decision Type",
+            "type": "string"
+          },
+          "evidence_binding": {
+            "$ref": "#/components/schemas/EvidenceBinding"
+          },
+          "evidence_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Digest",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "job_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 1500,
+            "title": "Reason",
+            "type": "string"
+          },
+          "recorded_at": {
+            "title": "Recorded At",
+            "type": "string"
+          },
+          "result_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Result Content Version",
+            "type": "integer"
+          },
+          "result_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Result Id",
+            "type": "string"
+          },
+          "review_version": {
+            "const": 1,
+            "default": 1,
+            "title": "Review Version",
+            "type": "integer"
+          },
+          "signer_identity": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Signer Identity",
+            "type": "string"
+          },
+          "signer_role": {
+            "const": "engineer",
+            "default": "engineer",
+            "title": "Signer Role",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "change_id",
+          "job_id",
+          "plan_id",
+          "result_id",
+          "result_content_version",
+          "evidence_digest",
+          "decision",
+          "signer_identity",
+          "reason",
+          "recorded_at",
+          "evidence_binding"
+        ],
+        "title": "EvidenceReview",
+        "type": "object"
+      },
+      "ExactRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "reference": {
+            "$ref": "#/components/schemas/ProposalRef"
+          }
+        },
+        "required": [
+          "reference"
+        ],
+        "title": "ExactRequest",
+        "type": "object"
+      },
+      "ExecutionAttempt": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Action Id",
+            "type": "string"
+          },
+          "attempt_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "decision_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "outcome": {
+            "default": "started",
+            "enum": [
+              "started",
+              "succeeded",
+              "failed",
+              "unknown",
+              "already_completed"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ProposalRef"
+          },
+          "request": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/JobInput"
+              },
+              {
+                "$ref": "#/components/schemas/LinkInput"
+              }
+            ],
+            "title": "Request"
+          },
+          "resource_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resource Id"
+          },
+          "source_request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Request Id"
+          },
+          "started_at": {
+            "title": "Started At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "action_id",
+          "reference",
+          "decision_id",
+          "idempotency_key",
+          "request",
+          "started_at"
+        ],
+        "title": "ExecutionAttempt",
+        "type": "object"
+      },
+      "ExecutionRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "case_status": {
+            "default": "open",
+            "enum": [
+              "open",
+              "in_validation"
+            ],
+            "title": "Case Status",
+            "type": "string"
+          },
+          "customer_acceptance": {
+            "const": "pending",
+            "default": "pending",
+            "title": "Customer Acceptance",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "hardware_adequacy": {
+            "const": "unvalidated",
+            "default": "unvalidated",
+            "title": "Hardware Adequacy",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ProposalRef"
+          },
+          "review_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Review Id"
+          },
+          "status": {
+            "default": "proposal_ready",
+            "enum": [
+              "proposal_ready",
+              "waiting_for_approval",
+              "approved",
+              "rejected",
+              "stale",
+              "superseded",
+              "resuming",
+              "executing",
+              "verifying",
+              "completed_execution",
+              "execution_failed",
+              "partially_executed",
+              "attention_required"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/ExecutionStep"
+            },
+            "title": "Steps",
+            "type": "array"
+          },
+          "validation_coverage": {
+            "const": "pending_test_results",
+            "default": "pending_test_results",
+            "title": "Validation Coverage",
+            "type": "string"
+          },
+          "validation_plan": {
+            "default": "proposed",
+            "enum": [
+              "proposed",
+              "approved",
+              "approved_and_scheduled"
+            ],
+            "title": "Validation Plan",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reference",
+          "steps"
+        ],
+        "title": "ExecutionRecord",
+        "type": "object"
+      },
+      "ExecutionStep": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Action Id",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "request": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/JobInput"
+              },
+              {
+                "$ref": "#/components/schemas/LinkInput"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request"
+          },
+          "resource_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resource Id"
+          },
+          "status": {
+            "default": "not_attempted",
+            "enum": [
+              "not_attempted",
+              "started",
+              "succeeded",
+              "failed",
+              "unknown",
+              "already_completed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "verification": {
+            "anyOf": [
+              {
+                "enum": [
+                  "matched",
+                  "mismatch",
+                  "inconclusive"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verification"
+          }
+        },
+        "required": [
+          "action_id"
+        ],
+        "title": "ExecutionStep",
+        "type": "object"
+      },
+      "Fact": {
+        "additionalProperties": false,
+        "properties": {
+          "source_refs": {
+            "items": {
+              "$ref": "#/components/schemas/SourceRef"
+            },
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "text": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "source_refs"
+        ],
+        "title": "Fact",
+        "type": "object"
+      },
+      "FinalDecisionPackage": {
+        "additionalProperties": false,
+        "properties": {
+          "affected_scope": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Affected Scope",
+            "type": "array"
+          },
+          "approval_granted": {
+            "const": false,
+            "title": "Approval Granted",
+            "type": "boolean"
+          },
+          "available_options": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationOption"
+            },
+            "title": "Available Options",
+            "type": "array"
+          },
+          "business_actions_executed": {
+            "const": false,
+            "title": "Business Actions Executed",
+            "type": "boolean"
+          },
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "change_summary": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Change Summary",
+            "type": "string"
+          },
+          "classified_change_type": {
+            "enum": [
+              "validation_requirement_change",
+              "workload_profile_change",
+              "runtime_firmware_change",
+              "power_thermal_requirement",
+              "performance_acceptance_change",
+              "manufacturing_constraint",
+              "program_schedule_change",
+              "customer_acceptance_change",
+              "administrative_evidence_reference",
+              "existing_case_status",
+              "other_or_unknown"
+            ],
+            "title": "Classified Change Type",
+            "type": "string"
+          },
+          "confirmed_facts": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Confirmed Facts",
+            "type": "array"
+          },
+          "customer_accepted": {
+            "const": false,
+            "title": "Customer Accepted",
+            "type": "boolean"
+          },
+          "customer_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Id"
+          },
+          "escalation_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Escalation Reason"
+          },
+          "evidence_gaps": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Evidence Gaps",
+            "type": "array"
+          },
+          "new_validation_pass_claimed": {
+            "const": false,
+            "title": "New Validation Pass Claimed",
+            "type": "boolean"
+          },
+          "policy_path": {
+            "enum": [
+              "touchless_eligible",
+              "human_review_required",
+              "escalation_required"
+            ],
+            "title": "Policy Path",
+            "type": "string"
+          },
+          "program_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Program Id"
+          },
+          "program_impact": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Program Impact",
+            "type": "array"
+          },
+          "recommended_next_step": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Recommended Next Step",
+            "type": "string"
+          },
+          "relevant_constraints": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Relevant Constraints",
+            "type": "array"
+          },
+          "requires_human_review": {
+            "title": "Requires Human Review",
+            "type": "boolean"
+          },
+          "risks": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "title": "Risks",
+            "type": "array"
+          },
+          "source_references": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "title": "Source References",
+            "type": "array"
+          },
+          "specialist_findings": {
+            "items": {
+              "$ref": "#/components/schemas/SpecialistSynopsis"
+            },
+            "title": "Specialist Findings",
+            "type": "array"
+          },
+          "unresolved_questions": {
+            "items": {
+              "maxLength": 3000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Unresolved Questions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "case_id",
+          "customer_id",
+          "program_id",
+          "classified_change_type",
+          "change_summary",
+          "affected_scope",
+          "specialist_findings",
+          "confirmed_facts",
+          "evidence_gaps",
+          "available_options",
+          "relevant_constraints",
+          "program_impact",
+          "risks",
+          "unresolved_questions",
+          "recommended_next_step",
+          "policy_path",
+          "requires_human_review",
+          "escalation_reason",
+          "source_references",
+          "business_actions_executed",
+          "approval_granted",
+          "customer_accepted",
+          "new_validation_pass_claimed"
+        ],
+        "title": "FinalDecisionPackage",
+        "type": "object"
+      },
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "basis": {
+            "enum": [
+              "fact",
+              "inference",
+              "question",
+              "recommendation",
+              "missing_information"
+            ],
+            "title": "Basis",
+            "type": "string"
+          },
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/SourceFact"
+            },
+            "title": "Facts",
+            "type": "array"
+          },
+          "source_refs": {
+            "items": {
+              "pattern": "^[A-Za-z0-9_-]{1,100}$",
+              "type": "string"
+            },
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "statement": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Statement",
+            "type": "string"
+          }
+        },
+        "required": [
+          "statement",
+          "basis",
+          "source_refs",
+          "facts"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HumanReview": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "actor_role": {
+            "const": "engineer",
+            "default": "engineer",
+            "title": "Actor Role",
+            "type": "string"
+          },
+          "authority_source": {
+            "title": "Authority Source",
+            "type": "string"
+          },
+          "comment": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Comment",
+            "type": "string"
+          },
+          "decided_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided At"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "policy_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Policy Id",
+            "type": "string"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "integer"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ProposalRef"
+          },
+          "requested_at": {
+            "title": "Requested At",
+            "type": "string"
+          },
+          "review_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Review Id",
+            "type": "string"
+          },
+          "source_decision_id": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Decision Id"
+          },
+          "source_reason": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Source Reason",
+            "type": "string"
+          },
+          "status": {
+            "default": "recording",
+            "enum": [
+              "recording",
+              "approved",
+              "rejected"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "review_id",
+          "reference",
+          "actor_id",
+          "authority_source",
+          "decision",
+          "comment",
+          "requested_at",
+          "policy_id",
+          "policy_version",
+          "source_reason"
+        ],
+        "title": "HumanReview",
+        "type": "object"
+      },
+      "Job": {
+        "additionalProperties": false,
+        "properties": {
+          "approval_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Approval Id",
+            "type": "string"
+          },
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "configuration_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "cost_cents": {
+            "minimum": 0.0,
+            "title": "Cost Cents",
+            "type": "integer"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "lab_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Lab Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Plan Digest",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "procedure_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Procedure Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "reservation_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Reservation Id",
+            "type": "string"
+          },
+          "review_minutes": {
+            "exclusiveMinimum": 0.0,
+            "title": "Review Minutes",
+            "type": "integer"
+          },
+          "sample_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "slot_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Slot Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "scheduled",
+            "default": "scheduled",
+            "title": "Status",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "timing": {
+            "$ref": "#/components/schemas/Timing"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "workload_profile_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Workload Profile Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "change_id",
+          "plan_id",
+          "approval_id",
+          "plan_digest",
+          "configuration_id",
+          "procedure_id",
+          "workload_profile_id",
+          "sample_id",
+          "slot_id",
+          "lab_id",
+          "cost_cents",
+          "timing",
+          "review_minutes",
+          "reservation_id"
+        ],
+        "title": "Job",
+        "type": "object"
+      },
+      "JobInput": {
+        "additionalProperties": false,
+        "examples": [
+          {
+            "approval_id": "decision-example",
+            "plan_id": "plan-example"
+          }
+        ],
+        "properties": {
+          "approval_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Approval Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_id",
+          "approval_id"
+        ],
+        "title": "JobInput",
+        "type": "object"
+      },
+      "JobView": {
+        "additionalProperties": false,
+        "properties": {
+          "approval_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Approval Id",
+            "type": "string"
+          },
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "completion": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LabCompletion"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "configuration_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "cost_cents": {
+            "minimum": 0.0,
+            "title": "Cost Cents",
+            "type": "integer"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "lab_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Lab Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Plan Digest",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "procedure_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Procedure Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "reservation": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "reservation_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Reservation Id",
+            "type": "string"
+          },
+          "review_minutes": {
+            "exclusiveMinimum": 0.0,
+            "title": "Review Minutes",
+            "type": "integer"
+          },
+          "sample_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "slot_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Slot Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "scheduled",
+            "default": "scheduled",
+            "title": "Status",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "timing": {
+            "$ref": "#/components/schemas/Timing"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "workload_profile_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Workload Profile Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "change_id",
+          "plan_id",
+          "approval_id",
+          "plan_digest",
+          "configuration_id",
+          "procedure_id",
+          "workload_profile_id",
+          "sample_id",
+          "slot_id",
+          "lab_id",
+          "cost_cents",
+          "timing",
+          "review_minutes",
+          "reservation_id",
+          "reservation"
+        ],
+        "title": "JobView",
+        "type": "object"
+      },
+      "JsonValue": {},
+      "LabCompletion": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "completed_at": {
+            "title": "Completed At",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "generated_by": {
+            "const": "demo_lab_action",
+            "default": "demo_lab_action",
+            "title": "Generated By",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "job_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "note": {
+            "title": "Note",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Plan Digest",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "plan_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Plan Version",
+            "type": "integer"
+          },
+          "procedure_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Procedure Content Version",
+            "type": "integer"
+          },
+          "procedure_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Procedure Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "recorded_at": {
+            "title": "Recorded At",
+            "type": "string"
+          },
+          "recorded_by": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Recorded By",
+            "type": "string"
+          },
+          "requirement_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Requirement Content Version",
+            "type": "integer"
+          },
+          "requirement_revision_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Requirement Revision Id",
+            "type": "string"
+          },
+          "result_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Result Digest",
+            "type": "string"
+          },
+          "result_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Result Id",
+            "type": "string"
+          },
+          "source_reference": {
+            "title": "Source Reference",
+            "type": "string"
+          },
+          "source_snapshot": {
+            "items": {
+              "$ref": "#/components/schemas/Snapshot"
+            },
+            "title": "Source Snapshot",
+            "type": "array"
+          },
+          "started_at": {
+            "title": "Started At",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "change_id",
+          "job_id",
+          "plan_id",
+          "plan_version",
+          "plan_digest",
+          "result_id",
+          "result_digest",
+          "requirement_revision_id",
+          "requirement_content_version",
+          "procedure_id",
+          "procedure_content_version",
+          "source_snapshot",
+          "started_at",
+          "completed_at",
+          "recorded_at",
+          "recorded_by",
+          "source_reference",
+          "note"
+        ],
+        "title": "LabCompletion",
+        "type": "object"
+      },
+      "LinkInput": {
+        "additionalProperties": false,
+        "examples": [
+          {
+            "approval_id": "decision-example",
+            "expected_milestone_record_version": 1,
+            "job_id": "job-example",
+            "plan_id": "plan-example"
+          }
+        ],
+        "properties": {
+          "approval_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Approval Id",
+            "type": "string"
+          },
+          "expected_milestone_record_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Expected Milestone Record Version",
+            "type": "integer"
+          },
+          "job_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_id",
+          "approval_id",
+          "job_id",
+          "expected_milestone_record_version"
+        ],
+        "title": "LinkInput",
+        "type": "object"
+      },
+      "ManifestAction": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Action Id",
+            "type": "string"
+          },
+          "approval_reference": {
+            "const": "exact_proposal_decision",
+            "default": "exact_proposal_decision",
+            "title": "Approval Reference",
+            "type": "string"
+          },
+          "arguments": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Arguments",
+            "type": "object"
+          },
+          "depends_on": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9_-]{1,100}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Depends On"
+          },
+          "expected": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Expected",
+            "type": "object"
+          },
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "operation": {
+            "enum": [
+              "schedule_validation_job",
+              "link_approved_validation_plan"
+            ],
+            "title": "Operation",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "target": {
+            "title": "Target",
+            "type": "string"
+          },
+          "target_system": {
+            "enum": [
+              "validation",
+              "planner"
+            ],
+            "title": "Target System",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "sequence",
+          "operation",
+          "target_system",
+          "target",
+          "arguments",
+          "depends_on",
+          "idempotency_key",
+          "expected"
+        ],
+        "title": "ManifestAction",
+        "type": "object"
+      },
+      "Milestone": {
+        "additionalProperties": false,
+        "properties": {
+          "baseline_at": {
+            "title": "Baseline At",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "current_forecast_at": {
+            "title": "Current Forecast At",
+            "type": "string"
+          },
+          "dependencies": {
+            "items": {
+              "$ref": "#/components/schemas/Dependency"
+            },
+            "title": "Dependencies",
+            "type": "array"
+          },
+          "forecast_status": {
+            "enum": [
+              "not_reassessed_for_new_request",
+              "conditional_on_test_and_review"
+            ],
+            "title": "Forecast Status",
+            "type": "string"
+          },
+          "health": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Health"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "next_action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Action"
+          },
+          "order_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Order Id",
+            "type": "string"
+          },
+          "owner": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Owner"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "record_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Record Version",
+            "type": "integer"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "order_id",
+          "name",
+          "baseline_at",
+          "current_forecast_at",
+          "forecast_status",
+          "record_version",
+          "dependencies"
+        ],
+        "title": "Milestone",
+        "type": "object"
+      },
+      "Origin": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "customer_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "definition_version": {
+            "minimum": 1.0,
+            "title": "Definition Version",
+            "type": "integer"
+          },
+          "program_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workflow_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Workflow Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id",
+          "program_id",
+          "case_id",
+          "run_id",
+          "workflow_id",
+          "definition_version"
+        ],
+        "title": "Origin",
+        "type": "object"
+      },
+      "PhysicalValidation": {
+        "additionalProperties": false,
+        "properties": {
+          "applicability": {
+            "default": "pending",
+            "enum": [
+              "pending",
+              "confirmed",
+              "gap_remains"
+            ],
+            "title": "Applicability",
+            "type": "string"
+          },
+          "available": {
+            "default": true,
+            "title": "Available",
+            "type": "boolean"
+          },
+          "change_id": {
+            "const": "CR-017",
+            "default": "CR-017",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "completion": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LabCompletion"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "current_review": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EvidenceReview"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "customer_acceptance": {
+            "const": "pending",
+            "default": "pending",
+            "title": "Customer Acceptance",
+            "type": "string"
+          },
+          "customer_commitment": {
+            "const": "unchanged",
+            "default": "unchanged",
+            "title": "Customer Commitment",
+            "type": "string"
+          },
+          "engineering_status": {
+            "default": "not_ready",
+            "enum": [
+              "not_ready",
+              "ready",
+              "approved",
+              "rejected",
+              "stale"
+            ],
+            "title": "Engineering Status",
+            "type": "string"
+          },
+          "evidence_binding": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EvidenceBinding"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence_digest": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Digest"
+          },
+          "job": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/JobView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "job_status": {
+            "default": "not_scheduled",
+            "enum": [
+              "not_scheduled",
+              "scheduled",
+              "completed",
+              "failed",
+              "running"
+            ],
+            "title": "Job Status",
+            "type": "string"
+          },
+          "mismatch_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Mismatch Reasons",
+            "type": "array"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Result"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceReview"
+            },
+            "title": "Reviews",
+            "type": "array"
+          },
+          "technical_state": {
+            "default": "validation_pending",
+            "enum": [
+              "validation_pending",
+              "engineering_review_ready",
+              "validation_complete",
+              "validation_gap",
+              "engineering_rejected"
+            ],
+            "title": "Technical State",
+            "type": "string"
+          }
+        },
+        "title": "PhysicalValidation",
+        "type": "object"
+      },
+      "Plan": {
+        "additionalProperties": false,
+        "properties": {
+          "assessment": {
+            "$ref": "#/components/schemas/Assessment"
+          },
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "configuration_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "cost_cents": {
+            "minimum": 0.0,
+            "title": "Cost Cents",
+            "type": "integer"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "created_by": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Created By",
+            "type": "string"
+          },
+          "currency": {
+            "const": "USD",
+            "title": "Currency",
+            "type": "string"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "evidence_set_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Evidence Set Digest",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "milestone_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Milestone Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "permitted_actions": {
+            "items": {
+              "enum": [
+                "schedule_validation",
+                "link_program_plan"
+              ],
+              "type": "string"
+            },
+            "title": "Permitted Actions",
+            "type": "array"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Plan Digest",
+            "type": "string"
+          },
+          "plan_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Plan Version",
+            "type": "integer"
+          },
+          "policy_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Policy Id",
+            "type": "string"
+          },
+          "procedure_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Procedure Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "review_minutes": {
+            "exclusiveMinimum": 0.0,
+            "title": "Review Minutes",
+            "type": "integer"
+          },
+          "sample_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "slot_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Slot Id",
+            "type": "string"
+          },
+          "source_snapshot": {
+            "items": {
+              "$ref": "#/components/schemas/Snapshot"
+            },
+            "title": "Source Snapshot",
+            "type": "array"
+          },
+          "supersedes_plan_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Supersedes Plan Id"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "target_requirement_revision_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Target Requirement Revision Id",
+            "type": "string"
+          },
+          "timing": {
+            "$ref": "#/components/schemas/Timing"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "change_id",
+          "plan_digest",
+          "target_requirement_revision_id",
+          "configuration_id",
+          "procedure_id",
+          "sample_id",
+          "slot_id",
+          "milestone_id",
+          "policy_id",
+          "assessment",
+          "source_snapshot",
+          "evidence_set_digest",
+          "cost_cents",
+          "currency",
+          "timing",
+          "review_minutes",
+          "permitted_actions",
+          "coverage",
+          "created_by"
+        ],
+        "title": "Plan",
+        "type": "object"
+      },
+      "PrepareRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "supersedes": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProposalRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "run_id"
+        ],
+        "title": "PrepareRequest",
+        "type": "object"
+      },
+      "Proposal": {
+        "additionalProperties": false,
+        "properties": {
+          "actions": {
+            "items": {
+              "$ref": "#/components/schemas/ProposedAction"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
+          "assumptions": {
+            "items": {
+              "maxLength": 3000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Assumptions",
+            "type": "array"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          },
+          "evidence_references": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "title": "Evidence References",
+            "type": "array"
+          },
+          "manifest": {
+            "items": {
+              "$ref": "#/components/schemas/ManifestAction"
+            },
+            "title": "Manifest",
+            "type": "array"
+          },
+          "milestone_before": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Milestone"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "origin": {
+            "$ref": "#/components/schemas/Origin"
+          },
+          "preconditions": {
+            "items": {
+              "maxLength": 3000,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Preconditions",
+            "type": "array"
+          },
+          "proposal_digest": {
+            "title": "Proposal Digest",
+            "type": "string"
+          },
+          "proposal_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Proposal Id",
+            "type": "string"
+          },
+          "proposal_version": {
+            "minimum": 1.0,
+            "title": "Proposal Version",
+            "type": "integer"
+          },
+          "rationale": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "required_policy_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Required Policy Id",
+            "type": "string"
+          },
+          "required_policy_version": {
+            "minimum": 1.0,
+            "title": "Required Policy Version",
+            "type": "integer"
+          },
+          "required_role": {
+            "const": "engineer",
+            "default": "engineer",
+            "title": "Required Role",
+            "type": "string"
+          },
+          "source_plan": {
+            "$ref": "#/components/schemas/Plan"
+          }
+        },
+        "required": [
+          "origin",
+          "proposal_id",
+          "proposal_version",
+          "proposal_digest",
+          "source_plan",
+          "actions",
+          "evidence_references",
+          "rationale",
+          "assumptions",
+          "preconditions",
+          "required_policy_id",
+          "required_policy_version"
+        ],
+        "title": "Proposal",
+        "type": "object"
+      },
+      "ProposalRef": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "customer_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "definition_version": {
+            "minimum": 1.0,
+            "title": "Definition Version",
+            "type": "integer"
+          },
+          "program_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "proposal_digest": {
+            "title": "Proposal Digest",
+            "type": "string"
+          },
+          "proposal_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Proposal Id",
+            "type": "string"
+          },
+          "proposal_version": {
+            "title": "Proposal Version",
+            "type": "integer"
+          },
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "workflow_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Workflow Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id",
+          "program_id",
+          "case_id",
+          "run_id",
+          "workflow_id",
+          "definition_version",
+          "proposal_id",
+          "proposal_version",
+          "proposal_digest"
+        ],
+        "title": "ProposalRef",
+        "type": "object"
+      },
+      "ProposalView": {
+        "additionalProperties": false,
+        "properties": {
+          "attempts": {
+            "items": {
+              "$ref": "#/components/schemas/ExecutionAttempt"
+            },
+            "title": "Attempts",
+            "type": "array"
+          },
+          "current_check": {
+            "title": "Current Check",
+            "type": "string"
+          },
+          "effective_status": {
+            "title": "Effective Status",
+            "type": "string"
+          },
+          "execution": {
+            "$ref": "#/components/schemas/ExecutionRecord"
+          },
+          "proposal": {
+            "$ref": "#/components/schemas/Proposal"
+          },
+          "replacement": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProposalRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "review": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/HumanReview"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "verification": {
+            "items": {
+              "$ref": "#/components/schemas/VerificationRecord"
+            },
+            "title": "Verification",
+            "type": "array"
+          }
+        },
+        "required": [
+          "proposal",
+          "execution",
+          "review",
+          "attempts",
+          "verification",
+          "current_check",
+          "effective_status"
+        ],
+        "title": "ProposalView",
+        "type": "object"
+      },
+      "ProposedAction": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "schedule_validation",
+              "link_program_plan"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "arguments": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Arguments",
+            "type": "object"
+          }
+        },
+        "required": [
+          "action",
+          "arguments"
+        ],
+        "title": "ProposedAction",
+        "type": "object"
+      },
+      "Requirement": {
+        "additionalProperties": false,
+        "properties": {
+          "acceptance_limits_ref": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Acceptance Limits Ref",
+            "type": "string"
+          },
+          "configuration_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "requirement_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Requirement Id",
+            "type": "string"
+          },
+          "revision": {
+            "exclusiveMinimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "approved",
+              "requested"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "workload_profile_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Workload Profile Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "requirement_id",
+          "revision",
+          "customer_id",
+          "status",
+          "configuration_id",
+          "workload_profile_id",
+          "acceptance_limits_ref"
+        ],
+        "title": "Requirement",
+        "type": "object"
+      },
+      "Reservation": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "ends_at": {
+            "title": "Ends At",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "job_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "lab_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Lab Id",
+            "type": "string"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "plan_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Plan Id",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "sample_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "sample_version_after": {
+            "exclusiveMinimum": 0.0,
+            "title": "Sample Version After",
+            "type": "integer"
+          },
+          "sample_version_before": {
+            "exclusiveMinimum": 0.0,
+            "title": "Sample Version Before",
+            "type": "integer"
+          },
+          "slot_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Slot Id",
+            "type": "string"
+          },
+          "slot_version_after": {
+            "exclusiveMinimum": 0.0,
+            "title": "Slot Version After",
+            "type": "integer"
+          },
+          "slot_version_before": {
+            "exclusiveMinimum": 0.0,
+            "title": "Slot Version Before",
+            "type": "integer"
+          },
+          "starts_at": {
+            "title": "Starts At",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "change_id",
+          "plan_id",
+          "job_id",
+          "slot_id",
+          "sample_id",
+          "lab_id",
+          "starts_at",
+          "ends_at",
+          "slot_version_before",
+          "slot_version_after",
+          "sample_version_before",
+          "sample_version_after"
+        ],
+        "title": "Reservation",
+        "type": "object"
+      },
+      "Result": {
+        "additionalProperties": false,
+        "properties": {
+          "acceptance_criteria_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Acceptance Criteria Content Version",
+            "type": "integer"
+          },
+          "acceptance_limits_ref": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Acceptance Limits Ref",
+            "type": "string"
+          },
+          "actual_suite_minutes": {
+            "minimum": 0.0,
+            "title": "Actual Suite Minutes",
+            "type": "integer"
+          },
+          "completed_at": {
+            "title": "Completed At",
+            "type": "string"
+          },
+          "configuration_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Configuration Content Version",
+            "type": "integer"
+          },
+          "configuration_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "configuration_snapshot": {
+            "$ref": "#/components/schemas/Configuration"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "covered_context_bins": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "type": "integer"
+            },
+            "title": "Covered Context Bins",
+            "type": "array"
+          },
+          "criteria_passed": {
+            "title": "Criteria Passed",
+            "type": "boolean"
+          },
+          "criteria_snapshot": {
+            "$ref": "#/components/schemas/Criteria"
+          },
+          "customer_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "model_bundle_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Model Bundle Id",
+            "type": "string"
+          },
+          "observed_minutes_by_context_bin": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "integer"
+            },
+            "title": "Observed Minutes By Context Bin",
+            "type": "object"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "product_revision": {
+            "title": "Product Revision",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "sample_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "completed",
+              "running",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "workload_profile_content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Workload Profile Content Version",
+            "type": "integer"
+          },
+          "workload_profile_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Workload Profile Id",
+            "type": "string"
+          },
+          "workload_snapshot": {
+            "$ref": "#/components/schemas/Workload"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "customer_id",
+          "configuration_id",
+          "configuration_content_version",
+          "workload_profile_id",
+          "workload_profile_content_version",
+          "acceptance_limits_ref",
+          "acceptance_criteria_content_version",
+          "product_revision",
+          "model_bundle_id",
+          "sample_id",
+          "status",
+          "criteria_passed",
+          "covered_context_bins",
+          "actual_suite_minutes",
+          "observed_minutes_by_context_bin",
+          "completed_at",
+          "configuration_snapshot",
+          "workload_snapshot",
+          "criteria_snapshot"
+        ],
+        "title": "Result",
+        "type": "object"
+      },
+      "ReviewEvidenceRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "comment": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "title": "Comment",
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "expected_evidence_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Evidence Digest",
+            "type": "string"
+          }
+        },
+        "required": [
+          "expected_evidence_digest",
+          "decision",
+          "comment"
+        ],
+        "title": "ReviewEvidenceRequest",
+        "type": "object"
+      },
+      "ReviewRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "comment": {
+            "default": "",
+            "maxLength": 1500,
+            "title": "Comment",
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "reject"
+            ],
+            "title": "Decision",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/components/schemas/ProposalRef"
+          }
+        },
+        "required": [
+          "reference",
+          "decision"
+        ],
+        "title": "ReviewRequest",
+        "type": "object"
+      },
+      "RunView": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          },
+          "definition_version": {
+            "title": "Definition Version",
+            "type": "integer"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "execution_mode": {
+            "title": "Execution Mode",
+            "type": "string"
+          },
+          "findings_state": {
+            "enum": [
+              "recorded",
+              "not_recorded",
+              "unavailable"
+            ],
+            "title": "Findings State",
+            "type": "string"
+          },
+          "invocation_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "recommendation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FinalDecisionPackage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "specialists": {
+            "items": {
+              "$ref": "#/components/schemas/SpecialistView"
+            },
+            "title": "Specialists",
+            "type": "array"
+          },
+          "started_at": {
+            "title": "Started At",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "workflow_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Workflow Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "case_id",
+          "workflow_id",
+          "definition_version",
+          "invocation_id",
+          "status",
+          "execution_mode",
+          "started_at",
+          "completed_at",
+          "error_code",
+          "recommendation",
+          "findings_state"
+        ],
+        "title": "RunView",
+        "type": "object"
+      },
+      "Snapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "availability_version": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Availability Version"
+          },
+          "content": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Content",
+            "type": "object"
+          },
+          "content_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Content Digest",
+            "type": "string"
+          },
+          "content_version": {
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "resource_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "resource_type": {
+            "enum": [
+              "engineering.supplier",
+              "engineering.customer",
+              "engineering.configuration",
+              "engineering.workload",
+              "engineering.requirement",
+              "engineering.change",
+              "engineering.procedure",
+              "engineering.criteria",
+              "engineering.policy",
+              "engineering.document",
+              "validation.result",
+              "validation.lab",
+              "validation.slot",
+              "validation.sample",
+              "manufacturing.unit",
+              "manufacturing.lot",
+              "erp.order",
+              "erp.rate",
+              "planner.program",
+              "planner.milestone"
+            ],
+            "title": "Resource Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_type",
+          "resource_id",
+          "content_version",
+          "content",
+          "content_digest"
+        ],
+        "title": "Snapshot",
+        "type": "object"
+      },
+      "SourceFact": {
+        "additionalProperties": false,
+        "description": "A checkable assertion about an exact JSON pointer within one MCP receipt.",
+        "properties": {
+          "pointer": {
+            "title": "Pointer",
+            "type": "string"
+          },
+          "source_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "value_json": {
+            "title": "Value Json",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "pointer",
+          "value_json"
+        ],
+        "title": "SourceFact",
+        "type": "object"
+      },
+      "SourceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "resource_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "resource_type": {
+            "enum": [
+              "engineering.supplier",
+              "engineering.customer",
+              "engineering.configuration",
+              "engineering.workload",
+              "engineering.requirement",
+              "engineering.change",
+              "engineering.procedure",
+              "engineering.criteria",
+              "engineering.policy",
+              "engineering.document",
+              "validation.result",
+              "validation.lab",
+              "validation.slot",
+              "validation.sample",
+              "manufacturing.unit",
+              "manufacturing.lot",
+              "erp.order",
+              "erp.rate",
+              "planner.program",
+              "planner.milestone"
+            ],
+            "title": "Resource Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_type",
+          "resource_id"
+        ],
+        "title": "SourceRef",
+        "type": "object"
+      },
+      "SourceReference": {
+        "additionalProperties": false,
+        "properties": {
+          "content_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Content Version"
+          },
+          "record_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Record Id"
+          },
+          "record_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Record Version"
+          },
+          "source_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "tool_name",
+          "record_id",
+          "content_version",
+          "record_version"
+        ],
+        "title": "SourceReference",
+        "type": "object"
+      },
+      "SpecialistSynopsis": {
+        "additionalProperties": false,
+        "properties": {
+          "invocation_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "specialist": {
+            "enum": [
+              "change_impact",
+              "validation_evidence",
+              "program_commercial",
+              "manufacturing"
+            ],
+            "title": "Specialist",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "invocation_id",
+          "specialist",
+          "summary"
+        ],
+        "title": "SpecialistSynopsis",
+        "type": "object"
+      },
+      "SpecialistView": {
+        "additionalProperties": false,
+        "properties": {
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "invocation_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "source_references": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "title": "Source References",
+            "type": "array"
+          },
+          "specialist": {
+            "title": "Specialist",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "task": {
+            "title": "Task",
+            "type": "string"
+          },
+          "unresolved_questions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Unresolved Questions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "invocation_id",
+          "specialist",
+          "status",
+          "task"
+        ],
+        "title": "SpecialistView",
+        "type": "object"
+      },
+      "StartRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "const": "CR-017",
+            "default": "CR-017",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "customer_id": {
+            "const": "CUST-FML01",
+            "default": "CUST-FML01",
+            "title": "Customer Id",
+            "type": "string"
+          },
+          "definition_version": {
+            "const": 1,
+            "default": 1,
+            "title": "Definition Version",
+            "type": "integer"
+          },
+          "invocation_id": {
+            "pattern": "^ui_[A-Za-z0-9_-]{1,90}$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "operation": {
+            "const": "analyze",
+            "default": "analyze",
+            "title": "Operation",
+            "type": "string"
+          },
+          "program_id": {
+            "const": "PRG-A17",
+            "default": "PRG-A17",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "workflow_id": {
+            "const": "requirement_change_analysis",
+            "default": "requirement_change_analysis",
+            "title": "Workflow Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "invocation_id"
+        ],
+        "title": "StartRequest",
+        "type": "object"
+      },
+      "StartResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "replayed": {
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "run_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "status",
+          "replayed"
+        ],
+        "title": "StartResponse",
+        "type": "object"
+      },
+      "Timing": {
+        "additionalProperties": false,
+        "properties": {
+          "deadline_slack_minutes": {
+            "title": "Deadline Slack Minutes",
+            "type": "integer"
+          },
+          "execution_start_at": {
+            "title": "Execution Start At",
+            "type": "string"
+          },
+          "lab_end_at": {
+            "title": "Lab End At",
+            "type": "string"
+          },
+          "lab_start_at": {
+            "title": "Lab Start At",
+            "type": "string"
+          },
+          "review_ready_at": {
+            "title": "Review Ready At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "lab_start_at",
+          "execution_start_at",
+          "lab_end_at",
+          "review_ready_at",
+          "deadline_slack_minutes"
+        ],
+        "title": "Timing",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "ValidationOption": {
+        "additionalProperties": false,
+        "description": "Exact API fields, identified by the slot/sample pair; no ranking or selection.",
+        "properties": {
+          "approval_eligible": {
+            "title": "Approval Eligible",
+            "type": "boolean"
+          },
+          "approval_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Approval Reasons",
+            "type": "array"
+          },
+          "configuration_id": {
+            "title": "Configuration Id",
+            "type": "string"
+          },
+          "cost_cents": {
+            "minimum": 0.0,
+            "title": "Cost Cents",
+            "type": "integer"
+          },
+          "currency": {
+            "title": "Currency",
+            "type": "string"
+          },
+          "eligibility_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Eligibility Reasons",
+            "type": "array"
+          },
+          "lot_id": {
+            "title": "Lot Id",
+            "type": "string"
+          },
+          "meets_deadline": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meets Deadline"
+          },
+          "milestone_id": {
+            "title": "Milestone Id",
+            "type": "string"
+          },
+          "policy_id": {
+            "title": "Policy Id",
+            "type": "string"
+          },
+          "procedure_id": {
+            "title": "Procedure Id",
+            "type": "string"
+          },
+          "rate_id": {
+            "title": "Rate Id",
+            "type": "string"
+          },
+          "resource_eligible": {
+            "title": "Resource Eligible",
+            "type": "boolean"
+          },
+          "sample_id": {
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "slot_id": {
+            "title": "Slot Id",
+            "type": "string"
+          },
+          "source_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Source Refs",
+            "type": "array"
+          },
+          "timing": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Timing"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "unit_id": {
+            "title": "Unit Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "slot_id",
+          "sample_id",
+          "unit_id",
+          "lot_id",
+          "configuration_id",
+          "procedure_id",
+          "policy_id",
+          "milestone_id",
+          "rate_id",
+          "cost_cents",
+          "currency",
+          "resource_eligible",
+          "approval_eligible",
+          "meets_deadline",
+          "eligibility_reasons",
+          "approval_reasons",
+          "timing",
+          "source_refs"
+        ],
+        "title": "ValidationOption",
+        "type": "object"
+      },
+      "VerificationRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Action Id",
+            "type": "string"
+          },
+          "claim": {
+            "enum": [
+              "job_scheduled",
+              "planner_link_recorded"
+            ],
+            "title": "Claim",
+            "type": "string"
+          },
+          "customer_accepted": {
+            "const": false,
+            "default": false,
+            "title": "Customer Accepted",
+            "type": "boolean"
+          },
+          "explanation": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Explanation",
+            "type": "string"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/Origin"
+          },
+          "outcome": {
+            "enum": [
+              "matched",
+              "mismatch",
+              "inconclusive"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "source_references": {
+            "items": {
+              "$ref": "#/components/schemas/SourceReference"
+            },
+            "minItems": 1,
+            "title": "Source References",
+            "type": "array"
+          },
+          "test_passed": {
+            "const": false,
+            "default": false,
+            "title": "Test Passed",
+            "type": "boolean"
+          },
+          "verification_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Verification Id",
+            "type": "string"
+          },
+          "verified_at": {
+            "title": "Verified At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "verification_id",
+          "action_id",
+          "origin",
+          "verified_at",
+          "claim",
+          "outcome",
+          "source_references",
+          "explanation"
+        ],
+        "title": "VerificationRecord",
+        "type": "object"
+      },
+      "Workload": {
+        "additionalProperties": false,
+        "properties": {
+          "concurrency": {
+            "exclusiveMinimum": 0.0,
+            "title": "Concurrency",
+            "type": "integer"
+          },
+          "content_version": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Content Version",
+            "type": "integer"
+          },
+          "context_bins": {
+            "items": {
+              "exclusiveMinimum": 0.0,
+              "type": "integer"
+            },
+            "title": "Context Bins",
+            "type": "array"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "model_bundle_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Model Bundle Id",
+            "type": "string"
+          },
+          "output_tokens": {
+            "exclusiveMinimum": 0.0,
+            "title": "Output Tokens",
+            "type": "integer"
+          },
+          "owning_system": {
+            "enum": [
+              "engineering",
+              "validation",
+              "manufacturing",
+              "erp",
+              "planner"
+            ],
+            "title": "Owning System",
+            "type": "string"
+          },
+          "program_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "total_suite_minutes": {
+            "exclusiveMinimum": 0.0,
+            "title": "Total Suite Minutes",
+            "type": "integer"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "updated_at",
+          "owning_system",
+          "program_id",
+          "model_bundle_id",
+          "context_bins",
+          "concurrency",
+          "output_tokens",
+          "total_suite_minutes"
+        ],
+        "title": "Workload",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Stratos CR-017 control host",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/control-api/cases/CR-017": {
+      "get": {
+        "operationId": "case_control_api_cases_CR_017_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CaseView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Case"
+      }
+    },
+    "/control-api/cases/CR-017/assess-validation-result": {
+      "post": {
+        "operationId": "assess_control_api_cases_CR_017_assess_validation_result_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssessRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Assess"
+      }
+    },
+    "/control-api/cases/CR-017/evidence-review": {
+      "post": {
+        "operationId": "evidence_review_control_api_cases_CR_017_evidence_review_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewEvidenceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceReview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Evidence Review"
+      }
+    },
+    "/control-api/cases/CR-017/investigations": {
+      "post": {
+        "operationId": "start_control_api_cases_CR_017_investigations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Start"
+      }
+    },
+    "/control-api/health": {
+      "get": {
+        "operationId": "health_control_api_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/control-api/proposals/execute": {
+      "post": {
+        "operationId": "execute_control_api_proposals_execute_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExactRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecutionRecord"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Execute"
+      }
+    },
+    "/control-api/proposals/prepare": {
+      "post": {
+        "operationId": "prepare_control_api_proposals_prepare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrepareRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProposalRef"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Prepare"
+      }
+    },
+    "/control-api/proposals/review": {
+      "post": {
+        "operationId": "review_control_api_proposals_review_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HumanReview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Review"
+      }
+    }
+  }
+}

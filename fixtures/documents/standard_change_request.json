@@ -1,0 +1,54 @@
+{
+  "content_version": 1,
+  "updated_at": "2026-11-16T09:00:00Z",
+  "synthetic": true,
+  "program_id": "PRG-A17",
+  "owning_system": "engineering",
+  "customer_id": "CUST-FML01",
+  "request_source": "customer_intake",
+  "requested_by": "Helios AI / acceptance package coordination",
+  "id": "STD-REQUEST-019",
+  "change_id": "CR-019",
+  "request_document_id": "DOC-STD-REQUEST-019",
+  "request_reference": "HELIOS-PACKAGE-2026-11-019",
+  "request_type": "add_approved_profile",
+  "baseline_requirement_revision_id": "REQ-042-V1",
+  "baseline_content_version": 1,
+  "procedure_id": "PROC-STD-01",
+  "procedure_content_version": 1,
+  "routing_rule_id": "STD-HANDOFF-V1",
+  "configuration": {
+    "configuration_id": "CFG-B-01",
+    "content_version": 1,
+    "product_id": "ACCELERATOR-X",
+    "product_revision": "REV-B",
+    "model_bundle_id": "MODEL-LAB-07",
+    "device_count": 1,
+    "firmware": "FW-2.3",
+    "runtime": "RT-4.1",
+    "quantization": "QFMT-1",
+    "memory_configuration": "MEM-1"
+  },
+  "workload_profile_id": "WF-LC-V1",
+  "workload_content_version": 1,
+  "conditions": {
+    "context_bins": [
+      8192,
+      32768
+    ],
+    "concurrency": 4,
+    "output_tokens": 1024,
+    "total_suite_minutes": 120
+  },
+  "sample_ids": [
+    "SAMPLE-B-017"
+  ],
+  "requested_at": "2026-11-18T18:00:00Z",
+  "requested_action": "create_standard_validation_intake",
+  "changes_acceptance_criteria": false,
+  "requests_waiver": false,
+  "changes_customer_commitment": false,
+  "quality_disposition_requested": false,
+  "material_exception_ids": [],
+  "summary": "Add the already-approved WF-LC-V1 profile to the next Helios acceptance validation package on CFG-B-01 / FW-2.3 / RT-4.1. Reuse applicable historical profile evidence and route the required standard confirmation work on SAMPLE-B-017 to Atlas Validation Operations."
+}

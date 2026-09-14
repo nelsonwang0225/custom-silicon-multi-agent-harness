@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-09-11T21:36:57.221118+00:00",
+  "purpose": "Approved Phase 07 reliability correction; offline verification only",
+  "original_live_run": "eval_6740fdbd4c984ca9a64740d4d17fdde0",
+  "new_test_instances": 92,
+  "unique_required_pytest_count": 506,
+  "commands": [
+    {
+      "command": "coordinator/.venv/bin/python -m pytest -c coordinator/pyproject.toml coordinator/tests -q --junitxml=.cache/phase07/reliability-fix-20260911/coordinator-verified.xml",
+      "log": ".cache/phase07/reliability-fix-20260911/coordinator-verified.log",
+      "result": {
+        "tests": 429,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/test_phase07_sources.py tests/test_phase06_execution.py -q --junitxml=.cache/phase07/reliability-fix-20260911/source-phase06.xml",
+      "log": ".cache/phase07/reliability-fix-20260911/source-phase06.log",
+      "result": {
+        "tests": 77,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "command": "TMPDIR=\"$PWD/.cache/tmp\" .venv/bin/python coordinator/evals/verify_phase06.py",
+      "log": ".cache/phase07/reliability-fix-20260911/phase06-smoke.log",
+      "result": {
+        "status": "PASS",
+        "notice": "SCRIPTED MOCK-SYSTEM INTEGRATION TEST \u2014 NO AI INFERENCE; ENGINEER IDENTITY IS SIMULATED.",
+        "analysis": "deterministic_existing_harness_model_double",
+        "paid_model_calls": 0,
+        "proposal_id": "plan-1bb162c03a754424af8bff6830bf2ca9",
+        "job_id": "job-16cbc0d44fa84ac1a442aa09f3935232",
+        "link_id": "link-70db3266fcc64ce7a3056086fca829f3",
+        "source_restart": true,
+        "cli_process_resume": true,
+        "attempts": 2,
+        "verification_records": 4,
+        "case_closed": false,
+        "artifacts": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase06/http-5e82f8f30f5e4d218e28b717a8cb2c76"
+      }
+    },
+    {
+      "command": "PYTHONPATH=src coordinator/.venv/bin/python -m coordinator.evals.phase07",
+      "log": ".cache/phase07/reliability-fix-20260911/offline-evals-verified.log",
+      "result": {
+        "hard_gate_status": "PASS",
+        "passed": 40,
+        "failed": 0,
+        "total": 40,
+        "critical_failures": [],
+        "semantic_score_average": null,
+        "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase07/eval_bef20f02eae5421092fe20b343a94fe0",
+        "skipped_checks": [
+          "Paid live agents not run. No live-model reasoning baseline measured.",
+          "Optional model-based semantic grader not run; semantic score is null."
+        ]
+      }
+    },
+    {
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python .cache/phase07/reliability-fix-20260911/regrade_live.py",
+      "log": ".cache/phase07/reliability-fix-20260911/regrade.log",
+      "result": {
+        "passed": 4,
+        "failed": 2,
+        "hard_gate_status": "FAIL",
+        "critical_failures": []
+      }
+    }
+  ],
+  "changed_existing_files": [
+    "src/program_coordinator/harness.py",
+    "src/program_coordinator/models.py",
+    "src/program_coordinator/sources.py",
+    "src/program_coordinator/__main__.py",
+    "coordinator/evals/phase07/graders.py",
+    "coordinator/evals/phase07/live.py",
+    "coordinator/evals/phase07/reporting.py",
+    "AGENTS.md"
+  ],
+  "added_files": [
+    "coordinator/tests/test_phase07_reliability.py",
+    "prompts/07_RELIABILITY_FIXES.md",
+    "docs/PHASE07_RELIABILITY_FIX_HANDOFF.md",
+    "docs/phase07/reliability-fix-verification.json"
+  ],
+  "file_sha256": {
+    "src/program_coordinator/harness.py": "a3d819a51e8f91e02029c377cc0198799371abae24cff32672eb9734993cc00a",
+    "src/program_coordinator/models.py": "b8f8c6f839e1f849679a0c640fef002641c7e7d84b9e74ccfad6d634883db458",
+    "src/program_coordinator/sources.py": "ffc69bbda7c7701c9a7b9ce86956dadb91b620e6a2faad4ede598632628ab015",
+    "src/program_coordinator/__main__.py": "dc8fad0a7ce4bb17e9bcf93002b2c803262b48aac961c08453f9a3a9aba082a7",
+    "coordinator/evals/phase07/graders.py": "eedc008a3eba344065e4bf01e174a9338ecf6a28b9fc2dbda616e0c9159e94c8",
+    "coordinator/evals/phase07/live.py": "7f319d8b76bbfca437e19070effd4fb1a89ad3cc4cede06253d8abf03a32dfc5",
+    "coordinator/evals/phase07/reporting.py": "5e2bbb698ec047036c060c25bd4e0572d6f7a2ef9c992e5f384f24383a30e1cc",
+    "AGENTS.md": "8022c7047f282501b55cfe76c6ea545ac19b971b492f2ef8aca6facfe39f9648",
+    "coordinator/tests/test_phase07_reliability.py": "a1619d1b95368d81417a4b0d5cb64a42bbe51c8905727a37f802e24da77e1f19",
+    "prompts/07_RELIABILITY_FIXES.md": "e3a889b74be1c68872db2cd805bf22727ee6f809fabd08b51f42a1e7a2b5a15c",
+    "docs/PHASE07_RELIABILITY_FIX_HANDOFF.md": "0bb51ddec46e4574c8078b56e7b77f771743c0f1d440084193e201471fc0a592"
+  },
+  "protected_files_unchanged": true,
+  "protected_file_count": 64,
+  "protected_sha256": {
+    "src/program_investigator/revalidate.py": "ed4be3d394c7da2ea1d6baf35643a19b0d6fa6abfe342811295a7262846b982d",
+    "src/program_investigator/config.py": "2444e4c31ead6c8acc2a699d4dc28c14eca1f98307ec55b5ed5b36fadae1a2d5",
+    "src/program_investigator/models.py": "06480259416d13317ba090f4c38887f200d097c75c6f5a597d7c9e8c023f8c5c",
+    "src/program_investigator/instructions.py": "a491c93a4c40dc7ec527f653eb4b828267cf150783589cd4b7b5013b2df2a59a",
+    "src/program_investigator/__init__.py": "bbf905bb7fb2ee00df0f8d41cc30baaebefa9ae4d37842e74f752ad5f5034f7a",
+    "src/program_investigator/telemetry.py": "74ae608fca140c075097a397a373f22119f7d523bc0d0f0e1114e8ff5383dca0",
+    "src/program_investigator/mcp.py": "327758fd33f83bc4eff104cccf3cd82f93c0a79a6a04cf072aaac2499fd8e710",
+    "src/program_investigator/agent.py": "b800a7bd1ff35379f4d0d2ac2f7c689a527828ff055601bc9096684ddbdb1ed3",
+    "src/program_investigator/__main__.py": "377658dc35c9556a27669daba52d5c4dfe1412a82ed7c1eee65c876636689224",
+    "src/program_investigator/validation.py": "43e0386e0ce22a211f77afc26c5872a6608c39be6d1d5e7dd1dcfd9b664e091a",
+    "src/mock_enterprise/db.py": "76843623c9523685dfc4c55ba9f581ec885a6f5514c2cdc28bd094585ed3096a",
+    "src/mock_enterprise/snapshots.py": "113f1384908a647533b2b96d2d718d1eb5346e462af8d0926edcd93f374e9e0d",
+    "src/mock_enterprise/config.py": "2b82ab857dcd52206ce702cb5a3b53fe148f1cc8749d23b9e50bf56af9bb1008",
+    "src/mock_enterprise/approvals.py": "ed45e153aabfca0c2cef8b414c18e75853543fa28049d0f2a2a0d1d1432e0640",
+    "src/mock_enterprise/__init__.py": "0675d55f12d8117fcbd80bedad81d011d8869bec45e8b04834b1dc9a92e1ab34",
+    "src/mock_enterprise/core.py": "33345742f74cc9b87754f60d537d880df1b0b6a948cd3ef7139251fcd0e09435",
+    "src/mock_enterprise/seed.py": "02cad9a6fbe0f01be7e0e3b34821fd6029387affa056a458efd51c0b40db243c",
+    "src/mock_enterprise/schemas.py": "b7dd31d70a1f99144a74f8e900e33d6f1a8b0cba6dfe74d88f405235330acb78",
+    "src/mock_enterprise/cli.py": "6cec086d3592c4f6a4e2c646ec25e33a611313881074033a9f02c320ed9dd854",
+    "src/mock_enterprise/http.py": "98bbd96857a761c9a622f393336be58062f919479f204047db760342c5fd207a",
+    "src/mock_enterprise/portfolio_views.py": "7a131230c156a91112a7ec73292a6d3451f535b33eac63c40ba8dbf6bf82c767",
+    "src/mock_enterprise/app.py": "fb724dea9237ae1f2066bb65bf5aac6427ceb98dc278f6984a67b755eb60a9f5",
+    "src/mock_enterprise/portfolio.py": "90197b14f0d5fc2b2279f2e278e6dd277ff449cd485532958c50232e3d5e0332",
+    "src/mock_enterprise/views.py": "d0b20dffc669008f8380378ebf4f49e7100f6b3d9443e63101767a7931cf229e",
+    "src/mock_enterprise/domains/planner.py": "b30e49a3fb73126055f8d35131a3b4d639d3a73b944b3ddd1c8f526767b58381",
+    "src/mock_enterprise/domains/erp.py": "1a6582f70af13cbde01ea7ceec32bd8a4efd72ce48a660293d8db0dbafdc6b71",
+    "src/mock_enterprise/domains/__init__.py": "0acc528733fbb1abdc5066e4ffd6a455777d6e81a2613ed7b9528791e4e98629",
+    "src/mock_enterprise/domains/validation_rules.py": "0272e447b4534540981a4162966d25c3fa82c2fdb11da57ddddc5a2269825943",
+    "src/mock_enterprise/domains/manufacturing.py": "dd7adb1ec7d7b300996a50cd16140ca33aa44f4694fef53c0c2c752a486f5fea",
+    "src/mock_enterprise/domains/engineering.py": "4faa3ba9d53bd0387d8175dddc44661fa231c19a21b6d7dca5baf268aa34f8ff",
+    "src/mock_enterprise/domains/validation.py": "6c59fc0924ff467270f4fff1cf06f8eabd1552865d25cd3c4db50c0002a078c4",
+    "src/program_coordinator/controls.py": "d4724a43dcd5cf274760eced69dc1267cc187af56b811972818eefc6d3c47832",
+    "src/program_coordinator/policy.py": "811de4ed05fdb2113b578bbd7738fff857182a5a3f333c61912584a8c6f6fbdd",
+    "src/program_coordinator/agents.py": "542996e03e1491666bc0df8fe5d5a0afb3872712687a40637961a636368602cc",
+    "src/program_coordinator/application/store.py": "c690a86b06967e35fd500da11ff6005648a226ea191376535dfeb8479d985cda",
+    "src/program_coordinator/application/service.py": "f9b36a04e938cf224a69652d5ce578a08bd505d6e34a187510e3ebad55fa8155",
+    "src/program_coordinator/application/execution.py": "f87d2a13342942a416b39715e4d764530a36ca1ba1d64983f5390494193bc8c6",
+    "src/program_coordinator/application/models.py": "ff7576a3487b13585ede730fef649132b46106db88993a5761127ff008490e0f",
+    "src/program_coordinator/application/registry.py": "31b3ea57a93a957b58a334a4f5477cc51d0a27d890de395797d7a921b62b209a",
+    "src/program_coordinator/application/__init__.py": "b7807e90097cdb4dc4608b3eaa07119f1a86c22b2a7d37d932baa920a1e3d669",
+    "src/program_coordinator/application/execution_models.py": "7c5b000c6ede3ab67ea2f32dcdae62650e046042d5db20d984d5eb1a7041ce14",
+    "src/program_coordinator/application/contracts.py": "c33c395be09348bd7a52e86f7a528e4bfdaf51b79a4e07152ca03ab83a53ef71",
+    "src/program_coordinator/application/demo_identity.py": "b86e0036f78357d6fe1308360fe27156665d9b32e7ec0c373082261c8c5b91e4",
+    "src/program_coordinator/application/execution_policy.py": "522a06888733b8b3cf039b9e505fda8c18ab5b8aeb85c74ab62b6a448b0c58ef",
+    "src/program_coordinator/application/execution_cli.py": "f9f56b637b79827c41159ce9dd19cd8c9306b6e6a10de16b3f3a2a66a8dd680e",
+    "src/program_coordinator/infrastructure/source_gateway.py": "ebe2defe45139cee57ac198ef027645c34adac16da65fff0d591bc13a2b02714",
+    "src/program_coordinator/infrastructure/__init__.py": "ab2c8a038c93a5811b8acd2460c8d99fd1ef3b9047b4ca51a225e7f0ba5f93a0",
+    "src/stratos_mcp/catalog.py": "68f423c78c1862948525cdbfddefef79463248b3964ef35e334c15e30fc61aec",
+    "src/stratos_mcp/service.py": "c2b9278755358934bd4f9650de21d10382fa52fe8715f64df57c4363ba1363d6",
+    "src/stratos_mcp/server.py": "d5f0012123d5debaa28fcace3f9477e82a1c9649a8d768dd8879aed8ba098e0e",
+    "src/stratos_mcp/config.py": "2827f33a3cc7ee8f2f66a01d9c52bb022a24d44738d31139be56c6bbd938f43f",
+    "src/stratos_mcp/__init__.py": "d0063dbe1286b0d73e94046b81ec726d975cd99d1b6ae85f0185196de1b0f72d",
+    "src/stratos_mcp/__main__.py": "cb2080eac20c3758b73a57af5b6a578cc9ff4f8228f65399eacdb15f93dd19ce",
+    "coordinator/evals/phase07/live_source.py": "cfc2c6ff3494cafe774b765cde8f890078cab6cec46a71b182cff91003935fdf",
+    "fixtures/seed.json": "1cebe1edd25addf2c11e930b81916bdff17e44cad589197366d1910130fba466",
+    "fixtures/documents/change_control_playbook.md": "4f5ea7635293d0634d7f845a6782e758cdfa86ce907397295f65ac454ea972f5",
+    "fixtures/documents/phase05_evidence_request.json": "e19f907c57a1fdb81483d7e6a394c56e0fcf65b31830c4c5dff3e95b911897c6",
+    "fixtures/documents/approval_policy.md": "9b6bf71cf68fba80ea42b3fee20eeaf188e281748e182bd456da03f1eea49e04",
+    "fixtures/documents/approved_baseline.md": "24819144b8fe1f55ebc55696ed7fc042d7834df31927086d6d9a73a0eacc55d2",
+    "fixtures/documents/supplemental_validation_procedure.md": "6efded26362f98c54249202cc0fa04163f8b711a3f1f92e11d31e9d9247afd2b",
+    "fixtures/documents/customer_change_request.md": "20b20f48305d3a314a5e204a7c17892bac422a5cf88e47eceb81fe4251221428",
+    "fixtures/documents/phase05_coordination_policy.json": "c09c1be3c4cbde5f1662ca0f1bdbd27df86edb3105934b18c045628d02953f86",
+    "fixtures/documents/configuration_scope.md": "674825d4b3e94f37026527335a23f979672bc906dcac1d929656e3591857c1a1",
+    "fixtures/documents/phase05_baseline_procedure.md": "2f037db1b0e8c7a5b48b1e269dc0b45841bd68a2f29802fb78c90aa313ef1178"
+  },
+  "fixture_changed": false,
+  "permissions_changed": false,
+  "phase06_authority_changed": false,
+  "paid_models_run": false,
+  "remaining_uncertainty": [
+    "Covered fixture descriptive support field remains unchanged; live reasoning not reverified.",
+    "Scheduled deterministic intake is verified; subsequent live reasoning not reverified."
+  ],
+  "skipped": [
+    "Paid live reruns",
+    "Optional paid semantic grader",
+    "Unrelated full backend, MCP, investigator, runtime connection and UI suites"
+  ],
+  "notes": [
+    "Required Phase 06 integration uses a simulated engineer and real local HTTP; no AI.",
+    "Earlier overlapping development runs are preserved in the log directory and are not added to unique counts."
+  ]
+}

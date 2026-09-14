@@ -1,0 +1,17 @@
+.venv/
+.cache/
+.tools/
+.demo/
+.pytest_cache/
+__pycache__/
+*.pyc
+.DS_Store
+.env.local
+node_modules/
+dist/
+test-results*/
+playwright-report*/
+*.tsbuildinfo
+.coverage
+htmlcov/
+*.log

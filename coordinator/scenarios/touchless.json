@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-EVIDENCE-018",
+  "change_id": "CR-018",
+  "customer_id": "CUST-FML01",
+  "program_id": "PRG-A17",
+  "source_system": "engineering",
+  "change_type_hint": null,
+  "priority": "low",
+  "requested_by": "Synthetic program operations intake",
+  "received_at": "2026-11-16T09:00:00Z",
+  "request_summary": "Prepare an internal reference packet for existing FW-2.3 / RT-4.1 baseline compatibility evidence. The approved requirement, workload and configuration remain identical. No new validation, requirement promotion, customer delivery, spend or scheduling is requested. Consult the registered request and administrative policy.",
+  "linked_record_ids": [],
+  "correlation_id": "corr-phase05-evidence-018"
+}

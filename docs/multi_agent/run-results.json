@@ -1,0 +1,1515 @@
+{
+  "status": "PASS",
+  "accepted_scenarios": {
+    "escalation": {
+      "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+      "started_at": "2026-09-11T04:29:00.101479+00:00",
+      "status": "completed",
+      "policy_path": "escalation_required",
+      "model_calls": 2,
+      "api_request_count": 2,
+      "coordinator_turns": 2,
+      "specialist_invocations": 0,
+      "mcp_calls": 0,
+      "http_gets": 0,
+      "latency_ms": 27443.2,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 4074,
+        "output_tokens": 1313,
+        "total_tokens": 5387,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 243
+      },
+      "termination_reason": null,
+      "guardrail_events": [
+        "incomplete_intake"
+      ],
+      "parallel_branches": [],
+      "delegations": [],
+      "event_id": "EVT-INCOMPLETE-019",
+      "classified_change_type": "other_or_unknown",
+      "verified": true,
+      "scenario": "escalation",
+      "estimated_token_cost_usd": 0.10639,
+      "source_systems": [],
+      "unique_source_records": 0,
+      "unique_tools": [],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+      "specialists": [],
+      "policy_decision": {
+        "policy_path": "escalation_required",
+        "rule": "incomplete_or_uncertain",
+        "reasons": [
+          "Missing intake fields: change_id, customer_id, program_id",
+          "Customer ID and program ID, with verified request scope and requester authority.",
+          "Change ID and authoritative linked records.",
+          "New firmware revision and applicable baseline revision.",
+          "Target hardware/software configuration and the intended compatibility criteria.",
+          "Requested acceptance date, current acceptance milestone, and whether the request changes only timing or also acceptance requirements."
+        ],
+        "source_ids": [],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "zero_specialists": true,
+          "zero_source_reads_for_unscoped_event": true,
+          "explicit_missing_information": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "escalation",
+        "source_sha256_before": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "source_sha256_after": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "zero_specialists": true,
+          "zero_source_reads_for_unscoped_event": true,
+          "explicit_missing_information": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "escalation",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/escalation-decision.json"
+    },
+    "human_review": {
+      "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+      "started_at": "2026-09-11T04:52:39.283574+00:00",
+      "status": "completed",
+      "policy_path": "human_review_required",
+      "model_calls": 19,
+      "api_request_count": 19,
+      "coordinator_turns": 3,
+      "specialist_invocations": 4,
+      "mcp_calls": 28,
+      "http_gets": 57,
+      "latency_ms": 175545.96,
+      "usage": {
+        "requests": 19,
+        "input_tokens": 153428,
+        "output_tokens": 18153,
+        "total_tokens": 171581,
+        "cached_input_tokens": 93807,
+        "reasoning_tokens": 843
+      },
+      "termination_reason": null,
+      "guardrail_events": [],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_ebd1d3c8e5b44581b64b270ac86ecab0",
+            "work_d8a117aaeb864552859ec51fe51e959e",
+            "work_b74324e7929c4761989973e418d8a08c"
+          ],
+          "specialists": [
+            "change_impact",
+            "validation_evidence",
+            "program_commercial"
+          ],
+          "parallel": true
+        }
+      ],
+      "delegations": [
+        {
+          "caller": "validation_evidence",
+          "parent_invocation_id": "work_d8a117aaeb864552859ec51fe51e959e",
+          "target": "manufacturing",
+          "rationale": "Authoritative validation options exclude SAMPLE-B-018 across all slots because of a concrete manufacturing restriction. Manufacturing provenance and conditions require domain expertise; no release or write is requested.",
+          "status": "completed",
+          "invocation_id": "work_38821fa3ca4e4e6895619d8c466da9b3"
+        }
+      ],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": true,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 1.597667,
+      "source_systems": [
+        "engineering",
+        "erp",
+        "manufacturing",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 33,
+      "unique_tools": [
+        "get_acceptance_criteria",
+        "get_change_request",
+        "get_configuration",
+        "get_cost_rates",
+        "get_customer_order",
+        "get_dependencies",
+        "get_document",
+        "get_implementation_links",
+        "get_manufacturing_lot",
+        "get_manufacturing_unit",
+        "get_policy",
+        "get_procedure",
+        "get_program",
+        "get_program_milestone",
+        "get_requirement_revision",
+        "get_validation_coverage",
+        "get_validation_options",
+        "get_validation_samples",
+        "get_workload_profile"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 49798.78
+        },
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 89080.1
+        },
+        {
+          "role": "program_commercial",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 45620.0
+        },
+        {
+          "role": "manufacturing",
+          "caller": "validation_evidence",
+          "depth": 2,
+          "status": "completed",
+          "latency_ms": 27169.38
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "human_review_required",
+        "rule": "consequential_change_review",
+        "reasons": [
+          "Engineering or program change requires authorized human review. Eligibility and classification are not approval."
+        ],
+        "source_ids": [
+          "src_0008"
+        ],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "core_specialists": true,
+          "parallel_work": true,
+          "dynamic_manufacturing": true,
+          "evidence_gap": true,
+          "golden_cost_and_schedule": true,
+          "golden_requirement_delta": true,
+          "configuration_scope_established": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "core_specialists": true,
+          "parallel_work": true,
+          "dynamic_manufacturing": true,
+          "evidence_gap": true,
+          "golden_cost_and_schedule": true,
+          "golden_requirement_delta": true,
+          "configuration_scope_established": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/human_review-decision.json"
+    },
+    "touchless": {
+      "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+      "started_at": "2026-09-11T04:34:48.726659+00:00",
+      "status": "completed",
+      "policy_path": "touchless_eligible",
+      "model_calls": 5,
+      "api_request_count": 5,
+      "coordinator_turns": 3,
+      "specialist_invocations": 1,
+      "mcp_calls": 9,
+      "http_gets": 18,
+      "latency_ms": 73564.3,
+      "usage": {
+        "requests": 5,
+        "input_tokens": 24282,
+        "output_tokens": 4339,
+        "total_tokens": 28621,
+        "cached_input_tokens": 4493,
+        "reasoning_tokens": 410
+      },
+      "termination_reason": null,
+      "guardrail_events": [],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_df58ca4f384949c38c422af4d1a23aea"
+          ],
+          "specialists": [
+            "validation_evidence"
+          ],
+          "parallel": false
+        }
+      ],
+      "delegations": [],
+      "event_id": "EVT-EVIDENCE-018",
+      "classified_change_type": "administrative_evidence_reference",
+      "verified": true,
+      "scenario": "touchless",
+      "estimated_token_cost_usd": 0.419333,
+      "source_systems": [
+        "engineering",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 13,
+      "unique_tools": [
+        "get_change_request",
+        "get_configuration",
+        "get_document",
+        "get_program",
+        "get_requirement_revision",
+        "get_validation_coverage"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+      "specialists": [
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 25874.53
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "touchless_eligible",
+        "rule": "existing_evidence_packet_only",
+        "reasons": [
+          "Approved source policy permits preparation of existing evidence only; no engineering change, spend, approval, or business mutation is authorized."
+        ],
+        "source_ids": [
+          "src_0002",
+          "src_0008",
+          "src_0009",
+          "src_0006",
+          "src_0005"
+        ],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "only_needed_specialist": true,
+          "sufficient_existing_coverage": true,
+          "no_unnecessary_scheduling_options": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "touchless",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "only_needed_specialist": true,
+          "sufficient_existing_coverage": true,
+          "no_unnecessary_scheduling_options": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "touchless",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/touchless-decision.json"
+    }
+  },
+  "attempts": [
+    {
+      "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+      "started_at": "2026-09-11T04:29:00.101479+00:00",
+      "status": "completed",
+      "policy_path": "escalation_required",
+      "model_calls": 2,
+      "api_request_count": 2,
+      "coordinator_turns": 2,
+      "specialist_invocations": 0,
+      "mcp_calls": 0,
+      "http_gets": 0,
+      "latency_ms": 27443.2,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 4074,
+        "output_tokens": 1313,
+        "total_tokens": 5387,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 243
+      },
+      "termination_reason": null,
+      "guardrail_events": [
+        "incomplete_intake"
+      ],
+      "parallel_branches": [],
+      "delegations": [],
+      "event_id": "EVT-INCOMPLETE-019",
+      "classified_change_type": "other_or_unknown",
+      "verified": true,
+      "scenario": "escalation",
+      "estimated_token_cost_usd": 0.10639,
+      "source_systems": [],
+      "unique_source_records": 0,
+      "unique_tools": [],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+      "specialists": [],
+      "policy_decision": {
+        "policy_path": "escalation_required",
+        "rule": "incomplete_or_uncertain",
+        "reasons": [
+          "Missing intake fields: change_id, customer_id, program_id",
+          "Customer ID and program ID, with verified request scope and requester authority.",
+          "Change ID and authoritative linked records.",
+          "New firmware revision and applicable baseline revision.",
+          "Target hardware/software configuration and the intended compatibility criteria.",
+          "Requested acceptance date, current acceptance milestone, and whether the request changes only timing or also acceptance requirements."
+        ],
+        "source_ids": [],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "zero_specialists": true,
+          "zero_source_reads_for_unscoped_event": true,
+          "explicit_missing_information": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "escalation",
+        "source_sha256_before": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "source_sha256_after": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "zero_specialists": true,
+          "zero_source_reads_for_unscoped_event": true,
+          "explicit_missing_information": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "escalation",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_35bc365281be45d384e24e8a211aa345",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_35bc365281be45d384e24e8a211aa345",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/escalation-decision.json"
+    },
+    {
+      "trace_id": "trace_3cdc16a569b848d894955da8a0001fa5",
+      "started_at": "2026-09-11T04:30:39.234669+00:00",
+      "status": "completed",
+      "policy_path": "escalation_required",
+      "model_calls": 2,
+      "api_request_count": 2,
+      "coordinator_turns": 2,
+      "specialist_invocations": 0,
+      "mcp_calls": 4,
+      "http_gets": 7,
+      "latency_ms": 39676.61,
+      "usage": {
+        "requests": 2,
+        "input_tokens": 6343,
+        "output_tokens": 2144,
+        "total_tokens": 8487,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 366
+      },
+      "termination_reason": null,
+      "guardrail_events": [
+        "triage_specialists_suppressed"
+      ],
+      "parallel_branches": [],
+      "delegations": [],
+      "event_id": "EVT-EVIDENCE-018",
+      "classified_change_type": "other_or_unknown",
+      "verified": false,
+      "scenario": "touchless",
+      "estimated_token_cost_usd": 0.17063,
+      "source_systems": [
+        "engineering",
+        "planner"
+      ],
+      "unique_source_records": 4,
+      "unique_tools": [
+        "get_change_request",
+        "get_document",
+        "get_program"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_3cdc16a569b848d894955da8a0001fa5",
+      "specialists": [],
+      "policy_decision": {
+        "policy_path": "escalation_required",
+        "rule": "incomplete_or_uncertain",
+        "reasons": [
+          "Required scope, evidence, confidence, or specialist work is incomplete."
+        ],
+        "source_ids": [],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": false,
+        "checks": {
+          "persisted_state_unchanged": false,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": false,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "only_needed_specialist": false,
+          "sufficient_existing_coverage": false,
+          "no_unnecessary_scheduling_options": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "touchless",
+        "source_sha256_before": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_3cdc16a569b848d894955da8a0001fa5",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_3cdc16a569b848d894955da8a0001fa5",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      }
+    },
+    {
+      "trace_id": "trace_c0d07a64c8df42d3a045ff0290f62a55",
+      "started_at": "2026-09-11T04:30:40.312190+00:00",
+      "status": "failed",
+      "policy_path": null,
+      "model_calls": 4,
+      "api_request_count": 4,
+      "coordinator_turns": 1,
+      "specialist_invocations": 1,
+      "mcp_calls": 11,
+      "http_gets": 20,
+      "latency_ms": 28522.41,
+      "usage": {
+        "requests": 4,
+        "input_tokens": 13465,
+        "output_tokens": 1191,
+        "total_tokens": 14656,
+        "cached_input_tokens": 6442,
+        "reasoning_tokens": 259
+      },
+      "termination_reason": "missing_specialist_dependency",
+      "guardrail_events": [
+        "specialist_failed",
+        "missing_specialist_dependency"
+      ],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_76611067c85c4880bf5f57a6b54d7a31"
+          ],
+          "specialists": [
+            "change_impact"
+          ],
+          "parallel": false
+        }
+      ],
+      "delegations": [],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": false,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 0.136222,
+      "source_systems": [
+        "engineering",
+        "planner"
+      ],
+      "unique_source_records": 8,
+      "unique_tools": [
+        "get_change_request",
+        "get_configuration",
+        "get_document",
+        "get_program",
+        "get_requirement_revision",
+        "get_workload_profile"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_c0d07a64c8df42d3a045ff0290f62a55",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "failed",
+          "latency_ms": 7447.28
+        }
+      ],
+      "policy_decision": null,
+      "verification": {
+        "passed": false,
+        "checks": {
+          "persisted_state_unchanged": false,
+          "completed": false,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": false
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_c0d07a64c8df42d3a045ff0290f62a55",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_c0d07a64c8df42d3a045ff0290f62a55",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      }
+    },
+    {
+      "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+      "started_at": "2026-09-11T04:34:48.726659+00:00",
+      "status": "completed",
+      "policy_path": "touchless_eligible",
+      "model_calls": 5,
+      "api_request_count": 5,
+      "coordinator_turns": 3,
+      "specialist_invocations": 1,
+      "mcp_calls": 9,
+      "http_gets": 18,
+      "latency_ms": 73564.3,
+      "usage": {
+        "requests": 5,
+        "input_tokens": 24282,
+        "output_tokens": 4339,
+        "total_tokens": 28621,
+        "cached_input_tokens": 4493,
+        "reasoning_tokens": 410
+      },
+      "termination_reason": null,
+      "guardrail_events": [],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_df58ca4f384949c38c422af4d1a23aea"
+          ],
+          "specialists": [
+            "validation_evidence"
+          ],
+          "parallel": false
+        }
+      ],
+      "delegations": [],
+      "event_id": "EVT-EVIDENCE-018",
+      "classified_change_type": "administrative_evidence_reference",
+      "verified": true,
+      "scenario": "touchless",
+      "estimated_token_cost_usd": 0.419333,
+      "source_systems": [
+        "engineering",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 13,
+      "unique_tools": [
+        "get_change_request",
+        "get_configuration",
+        "get_document",
+        "get_program",
+        "get_requirement_revision",
+        "get_validation_coverage"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+      "specialists": [
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 25874.53
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "touchless_eligible",
+        "rule": "existing_evidence_packet_only",
+        "reasons": [
+          "Approved source policy permits preparation of existing evidence only; no engineering change, spend, approval, or business mutation is authorized."
+        ],
+        "source_ids": [
+          "src_0002",
+          "src_0008",
+          "src_0009",
+          "src_0006",
+          "src_0005"
+        ],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "only_needed_specialist": true,
+          "sufficient_existing_coverage": true,
+          "no_unnecessary_scheduling_options": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "touchless",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "only_needed_specialist": true,
+          "sufficient_existing_coverage": true,
+          "no_unnecessary_scheduling_options": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "touchless",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_fc9e4c28b9a748208a4bd5473a081fc0",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/touchless-decision.json"
+    },
+    {
+      "trace_id": "trace_3556a4c9a06d45868ea66986443babfc",
+      "started_at": "2026-09-11T04:36:26.583019+00:00",
+      "status": "failed",
+      "policy_path": null,
+      "model_calls": 21,
+      "api_request_count": 21,
+      "coordinator_turns": 3,
+      "specialist_invocations": 5,
+      "mcp_calls": 36,
+      "http_gets": 73,
+      "latency_ms": 219451.6,
+      "usage": {
+        "requests": 21,
+        "input_tokens": 160207,
+        "output_tokens": 21558,
+        "total_tokens": 181765,
+        "cached_input_tokens": 92081,
+        "reasoning_tokens": 669
+      },
+      "termination_reason": "final_scope_mismatch",
+      "guardrail_events": [
+        "typed_record_reference_denied",
+        "source_version_mismatch",
+        "source_version_mismatch",
+        "final_scope_mismatch"
+      ],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_5a0ffe85d95b42e692d6e9fc7b586491",
+            "work_be94703e2eb242028ecb5c94a54d7e01",
+            "work_214a0409a93048528fe11cd0fcbe570d"
+          ],
+          "specialists": [
+            "change_impact",
+            "validation_evidence",
+            "program_commercial"
+          ],
+          "parallel": true
+        },
+        {
+          "invocations": [
+            "work_5b1df3b7c60840238c2ef595423dbf71"
+          ],
+          "specialists": [
+            "program_commercial"
+          ],
+          "parallel": false
+        }
+      ],
+      "delegations": [
+        {
+          "caller": "validation_evidence",
+          "parent_invocation_id": "work_be94703e2eb242028ecb5c94a54d7e01",
+          "target": "manufacturing",
+          "rationale": "Authoritative validation options exclude this unit in every slot due to manufacturing restriction; its scope and conditions require Manufacturing expertise.",
+          "status": "completed",
+          "invocation_id": "work_1f21530364994726b459a0ab158bfcd8"
+        }
+      ],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": false,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 1.851241,
+      "source_systems": [
+        "engineering",
+        "erp",
+        "manufacturing",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 33,
+      "unique_tools": [
+        "get_acceptance_criteria",
+        "get_change_request",
+        "get_configuration",
+        "get_cost_rates",
+        "get_customer_order",
+        "get_dependencies",
+        "get_document",
+        "get_implementation_links",
+        "get_manufacturing_lot",
+        "get_manufacturing_unit",
+        "get_policy",
+        "get_procedure",
+        "get_program",
+        "get_program_milestone",
+        "get_requirement_revision",
+        "get_validation_coverage",
+        "get_validation_options",
+        "get_validation_samples",
+        "get_workload_profile"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_3556a4c9a06d45868ea66986443babfc",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 48608.67
+        },
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 90634.05
+        },
+        {
+          "role": "program_commercial",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "failed",
+          "latency_ms": 43266.07
+        },
+        {
+          "role": "manufacturing",
+          "caller": "validation_evidence",
+          "depth": 2,
+          "status": "completed",
+          "latency_ms": 26092.46
+        },
+        {
+          "role": "program_commercial",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "failed",
+          "latency_ms": 45544.2
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "escalation_required",
+        "rule": "incomplete_or_uncertain",
+        "reasons": [
+          "Required program_commercial work failed: source_version_mismatch.",
+          "Required program_commercial work failed: source_version_mismatch."
+        ],
+        "source_ids": [],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": false,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": false,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": false
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_3556a4c9a06d45868ea66986443babfc",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_3556a4c9a06d45868ea66986443babfc",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      }
+    },
+    {
+      "trace_id": "trace_611e1d34c37b488fb64da80089bad4cc",
+      "started_at": "2026-09-11T04:40:08.426878+00:00",
+      "status": "failed",
+      "policy_path": null,
+      "model_calls": 1,
+      "api_request_count": 1,
+      "coordinator_turns": 1,
+      "specialist_invocations": 1,
+      "mcp_calls": 3,
+      "http_gets": 5,
+      "latency_ms": 18918.27,
+      "usage": {
+        "requests": 1,
+        "input_tokens": 2313,
+        "output_tokens": 875,
+        "total_tokens": 3188,
+        "cached_input_tokens": 1310,
+        "reasoning_tokens": 194
+      },
+      "termination_reason": "delegation_scope_mismatch",
+      "guardrail_events": [
+        "delegation_scope_mismatch"
+      ],
+      "parallel_branches": [],
+      "delegations": [],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": false,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 0.05509,
+      "source_systems": [
+        "engineering",
+        "planner"
+      ],
+      "unique_source_records": 3,
+      "unique_tools": [
+        "get_change_request",
+        "get_document",
+        "get_program"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_611e1d34c37b488fb64da80089bad4cc",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "pending",
+          "latency_ms": null
+        }
+      ],
+      "policy_decision": null,
+      "verification": {
+        "passed": false,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": false,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": false
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_611e1d34c37b488fb64da80089bad4cc",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_611e1d34c37b488fb64da80089bad4cc",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      }
+    },
+    {
+      "trace_id": "trace_184be935750e4e3fba56566cf05f451e",
+      "started_at": "2026-09-11T04:46:24.977981+00:00",
+      "status": "completed",
+      "policy_path": "escalation_required",
+      "model_calls": 20,
+      "api_request_count": 20,
+      "coordinator_turns": 3,
+      "specialist_invocations": 4,
+      "mcp_calls": 30,
+      "http_gets": 61,
+      "latency_ms": 199940.1,
+      "usage": {
+        "requests": 20,
+        "input_tokens": 164666,
+        "output_tokens": 20054,
+        "total_tokens": 184720,
+        "cached_input_tokens": 102502,
+        "reasoning_tokens": 815
+      },
+      "termination_reason": null,
+      "guardrail_events": [
+        "typed_record_reference_denied"
+      ],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_12e47fd5776247e0a0adaabde24af041",
+            "work_72e2c775e3be485da58dcff782df4e2e",
+            "work_26bb97c7ba6f4a95825ef9e686aafa71"
+          ],
+          "specialists": [
+            "change_impact",
+            "validation_evidence",
+            "program_commercial"
+          ],
+          "parallel": true
+        }
+      ],
+      "delegations": [
+        {
+          "caller": "validation_evidence",
+          "parent_invocation_id": "work_72e2c775e3be485da58dcff782df4e2e",
+          "target": "manufacturing",
+          "rationale": "Authoritative validation options exclude this unit due to a material restriction; manufacturing expertise is needed to interpret current restriction and conditions without overriding eligibility.",
+          "status": "completed",
+          "invocation_id": "work_95403bf97ec04f1b8290b9c5fde17b73"
+        },
+        {
+          "caller": "change_impact",
+          "parent_invocation_id": "work_12e47fd5776247e0a0adaabde24af041",
+          "target": "validation_evidence",
+          "rationale": "Concrete unresolved scope details: shared criteria reference is confirmed but numeric limits and per-bin allocation are not exposed in the requirement/workload records. Your existing evidence/procedure work can resolve these without duplicating coverage assessment.",
+          "status": "already_running",
+          "invocation_id": "work_72e2c775e3be485da58dcff782df4e2e"
+        }
+      ],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": false,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 1.726842,
+      "source_systems": [
+        "engineering",
+        "erp",
+        "manufacturing",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 35,
+      "unique_tools": [
+        "get_acceptance_criteria",
+        "get_change_request",
+        "get_configuration",
+        "get_cost_rates",
+        "get_customer_order",
+        "get_dependencies",
+        "get_document",
+        "get_implementation_links",
+        "get_manufacturing_lot",
+        "get_manufacturing_unit",
+        "get_policy",
+        "get_procedure",
+        "get_program",
+        "get_program_milestone",
+        "get_requirement_revision",
+        "get_validation_coverage",
+        "get_validation_options",
+        "get_validation_samples",
+        "get_workload_profile"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_184be935750e4e3fba56566cf05f451e",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 54887.42
+        },
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 101610.45
+        },
+        {
+          "role": "program_commercial",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 49714.08
+        },
+        {
+          "role": "manufacturing",
+          "caller": "validation_evidence",
+          "depth": 2,
+          "status": "completed",
+          "latency_ms": 25108.51
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "escalation_required",
+        "rule": "incomplete_or_uncertain",
+        "reasons": [
+          "Change Impact\u2019s per-bin allocation question is resolved by Validation: PROC-LC-02 specifies 160 minutes per bin within the 480-minute suite.",
+          "Program/Commercial\u2019s spending-policy question is resolved for the assessed option by Validation: POLICY-APP-01 specifies an engineer approver and a 200000 USD-cent ceiling. The priority option\u2019s 180000 USD-cent cost is eligible, not authorized.",
+          "What exact operating and acceptance limits are defined by CRIT-BASE-V1?",
+          "Validation confirms that numerical thresholds are not modeled in this scheduling phase. This limitation does not prevent a conditional scheduling decision package; the unchanged limits must be verified before execution."
+        ],
+        "source_ids": [],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": false,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": false,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "core_specialists": true,
+          "parallel_work": true,
+          "dynamic_manufacturing": true,
+          "evidence_gap": true,
+          "golden_cost_and_schedule": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_184be935750e4e3fba56566cf05f451e",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_184be935750e4e3fba56566cf05f451e",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      }
+    },
+    {
+      "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+      "started_at": "2026-09-11T04:52:39.283574+00:00",
+      "status": "completed",
+      "policy_path": "human_review_required",
+      "model_calls": 19,
+      "api_request_count": 19,
+      "coordinator_turns": 3,
+      "specialist_invocations": 4,
+      "mcp_calls": 28,
+      "http_gets": 57,
+      "latency_ms": 175545.96,
+      "usage": {
+        "requests": 19,
+        "input_tokens": 153428,
+        "output_tokens": 18153,
+        "total_tokens": 171581,
+        "cached_input_tokens": 93807,
+        "reasoning_tokens": 843
+      },
+      "termination_reason": null,
+      "guardrail_events": [],
+      "parallel_branches": [
+        {
+          "invocations": [
+            "work_ebd1d3c8e5b44581b64b270ac86ecab0",
+            "work_d8a117aaeb864552859ec51fe51e959e",
+            "work_b74324e7929c4761989973e418d8a08c"
+          ],
+          "specialists": [
+            "change_impact",
+            "validation_evidence",
+            "program_commercial"
+          ],
+          "parallel": true
+        }
+      ],
+      "delegations": [
+        {
+          "caller": "validation_evidence",
+          "parent_invocation_id": "work_d8a117aaeb864552859ec51fe51e959e",
+          "target": "manufacturing",
+          "rationale": "Authoritative validation options exclude SAMPLE-B-018 across all slots because of a concrete manufacturing restriction. Manufacturing provenance and conditions require domain expertise; no release or write is requested.",
+          "status": "completed",
+          "invocation_id": "work_38821fa3ca4e4e6895619d8c466da9b3"
+        }
+      ],
+      "event_id": "EVT-CHANGE-017",
+      "classified_change_type": "workload_profile_change",
+      "verified": true,
+      "scenario": "human_review",
+      "estimated_token_cost_usd": 1.597667,
+      "source_systems": [
+        "engineering",
+        "erp",
+        "manufacturing",
+        "planner",
+        "validation"
+      ],
+      "unique_source_records": 33,
+      "unique_tools": [
+        "get_acceptance_criteria",
+        "get_change_request",
+        "get_configuration",
+        "get_cost_rates",
+        "get_customer_order",
+        "get_dependencies",
+        "get_document",
+        "get_implementation_links",
+        "get_manufacturing_lot",
+        "get_manufacturing_unit",
+        "get_policy",
+        "get_procedure",
+        "get_program",
+        "get_program_milestone",
+        "get_requirement_revision",
+        "get_validation_coverage",
+        "get_validation_options",
+        "get_validation_samples",
+        "get_workload_profile"
+      ],
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+      "specialists": [
+        {
+          "role": "change_impact",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 49798.78
+        },
+        {
+          "role": "validation_evidence",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 89080.1
+        },
+        {
+          "role": "program_commercial",
+          "caller": "coordinator",
+          "depth": 1,
+          "status": "completed",
+          "latency_ms": 45620.0
+        },
+        {
+          "role": "manufacturing",
+          "caller": "validation_evidence",
+          "depth": 2,
+          "status": "completed",
+          "latency_ms": 27169.38
+        }
+      ],
+      "policy_decision": {
+        "policy_path": "human_review_required",
+        "rule": "consequential_change_review",
+        "reasons": [
+          "Engineering or program change requires authorized human review. Eligibility and classification are not approval."
+        ],
+        "source_ids": [
+          "src_0008"
+        ],
+        "execution_allowed": false
+      },
+      "verification": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "source_and_domain_checks": true,
+          "core_specialists": true,
+          "parallel_work": true,
+          "dynamic_manufacturing": true,
+          "evidence_gap": true,
+          "golden_cost_and_schedule": true,
+          "golden_requirement_delta": true,
+          "configuration_scope_established": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "current_code_recheck": {
+        "passed": true,
+        "checks": {
+          "persisted_state_unchanged": true,
+          "completed": true,
+          "only_allowed_read_tools": true,
+          "only_http_gets": true,
+          "correlation_chain": true,
+          "tracing_enabled_and_flushed": true,
+          "live_astra": true,
+          "structured_output_valid": true,
+          "expected_policy_path": true,
+          "no_claimed_actions": true,
+          "case_completed_and_no_pending_work": true,
+          "bounded_allowed_graph": true,
+          "current_policy_revalidation": true,
+          "source_and_domain_checks": true,
+          "core_specialists": true,
+          "parallel_work": true,
+          "dynamic_manufacturing": true,
+          "evidence_gap": true,
+          "golden_cost_and_schedule": true,
+          "golden_requirement_delta": true,
+          "configuration_scope_established": true,
+          "all_mcp_results_match_fresh_http": true
+        },
+        "scenario": "human_review",
+        "source_sha256_before": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "source_sha256_after": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+        "trace_id": "trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "run_dir": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/multi-agent/trace_b10820d32c3544e9b2e11b4f567a4ed2",
+        "note": "Actual live model execution plus independent scripted checks; no human approval or business write."
+      },
+      "decision_artifact": "docs/multi_agent/human_review-decision.json"
+    }
+  ],
+  "baseline": {
+    "trace_id": "trace_ef4ecc86847c44bb9db87174587f28a7",
+    "status": "validated_after_offline_revalidation",
+    "model_calls": 5,
+    "mcp_calls": 25,
+    "http_gets": 53,
+    "latency_ms": 106613.51,
+    "usage": {
+      "requests": 5,
+      "input_tokens": 84348,
+      "output_tokens": 7378,
+      "total_tokens": 91726,
+      "cached_input_tokens": 62768,
+      "reasoning_tokens": 45
+    },
+    "estimated_token_cost_usd": 0.647468,
+    "unique_tools": [
+      "get_change_request",
+      "get_configuration",
+      "get_customer_order",
+      "get_dependencies",
+      "get_document",
+      "get_implementation_links",
+      "get_manufacturing_lot",
+      "get_manufacturing_unit",
+      "get_policy",
+      "get_procedure",
+      "get_program",
+      "get_program_milestone",
+      "get_requirement_revision",
+      "get_validation_coverage",
+      "get_validation_jobs",
+      "get_validation_options",
+      "get_workload_profile"
+    ],
+    "source_systems": [
+      "engineering",
+      "erp",
+      "manufacturing",
+      "planner",
+      "validation"
+    ],
+    "unique_source_records": 37,
+    "verified": true,
+    "comparison_note": "Preserved historical baseline; no new paid baseline run."
+  },
+  "all_phase05_attempt_usage": {
+    "requests": 74,
+    "input_tokens": 528778,
+    "output_tokens": 69627,
+    "total_tokens": 598405,
+    "cached_input_tokens": 300635,
+    "reasoning_tokens": 3799
+  },
+  "all_phase05_estimated_token_cost_usd": 6.063415,
+  "model": "gpt-6-astra",
+  "model_routing": false,
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+  "cost_limitations": "Token estimate at published $10/M uncached input, $1/M cached input, $50/M output; completed generations only, not an invoice. Per-request input did not exceed 272K tokens.",
+  "source_denial_audit_proof": {
+    "current_sha256": "fa6c26f5ac0dd7027953b4b0a2dda3c311188b0b7ea27ae6283e2b92a0fc0d7a",
+    "sha256_without_single_denial_audit": "d33cef6b59d83c7716e2641f670891c100dfd3ea82f01656d3b063d80ec0b105",
+    "pre_run_sha256": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+    "only_added_row_id": "evt-18e30893f63f499083d66a49c26139fc",
+    "rows_virtually_excluded": 1,
+    "database_modified_by_verifier": false,
+    "sha256_without_denial_and_its_sequence_increment": "c45c011ac8f0b65faa8d33922f8eabcc366e6775fb6a4fae420ec1338ab84d27",
+    "business_rows_unchanged": true
+  }
+}

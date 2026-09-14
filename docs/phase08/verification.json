@@ -1,0 +1,207 @@
+{
+  "slice": "08.1",
+  "status": "implemented; stopped for visual review before 08.2",
+  "preview": {
+    "url": "http://127.0.0.1:5188/control",
+    "source_url": "http://127.0.0.1:18008",
+    "database": ".demo/ui-e2e-07805828281946a69df329beaa1226e1.sqlite3",
+    "mode": "isolated synthetic source HTTP; no AI"
+  },
+  "checks": {
+    "typecheck_and_build": "PASS",
+    "source_phase06_phase07_pytest": {
+      "passed": 84,
+      "failed": 0
+    },
+    "full_browser_run": {
+      "passed": 25,
+      "failed": 0,
+      "elapsed": "2.8m"
+    },
+    "final_control_browser_run": {
+      "passed": 6,
+      "failed": 0,
+      "elapsed": "48.1s"
+    },
+    "distinct_browser_tests": 26,
+    "offline_eval": {
+      "passed": 40,
+      "failed": 0,
+      "critical_failures": 0,
+      "hard_gate": "PASS",
+      "artifact_directory": ".cache/phase07/phase08-1-offline"
+    },
+    "contrast": [
+      {
+        "foreground": "#171717",
+        "background": "#FFFFFF",
+        "contrast": 17.93
+      },
+      {
+        "foreground": "#52525B",
+        "background": "#FFFFFF",
+        "contrast": 7.73
+      },
+      {
+        "foreground": "#52525B",
+        "background": "#F7F7F8",
+        "contrast": 7.22
+      },
+      {
+        "foreground": "#795623",
+        "background": "#FAF5EC",
+        "contrast": 6.1
+      },
+      {
+        "foreground": "#426048",
+        "background": "#F1F5F1",
+        "contrast": 6.36
+      },
+      {
+        "foreground": "#FFFFFF",
+        "background": "#171717",
+        "contrast": 17.93
+      }
+    ],
+    "browser_get_only_receipt": ".cache/phase08-1/browser-read-receipt.json"
+  },
+  "preservation": {
+    "baseline_inventory_count": 2580,
+    "unchanged_count": 2578,
+    "missing": [],
+    "changed_existing_in_inventory": [
+      {
+        "path": "mock_apps_ui/src/main.tsx",
+        "before_sha256": "93f7414d602d1c878b40eea3c9bcd123a0bb207cb7544b1132006b84be2a3ab1",
+        "after_sha256": "82497b3ef0afb4b2c8fd0254fa2d89655a1571859e6d1e83d9497f3bf219732d"
+      },
+      {
+        "path": ".demo/enterprise.sqlite3",
+        "before_sha256": "1f23569412ac1693959ccc73af01b84a1b49d9a0ca451a43840627b8240ec75b",
+        "after_sha256": "e382d56fba6c47e06a018dbf2b449fda61197fd6c2dabf5eadca248280e1468c"
+      }
+    ],
+    "protected_groups": {
+      "source_apis": {
+        "count": 21,
+        "unchanged": true
+      },
+      "source_clients": {
+        "count": 7,
+        "unchanged": true
+      },
+      "mcp": {
+        "count": 6,
+        "unchanged": true
+      },
+      "coordinator": {
+        "count": 23,
+        "unchanged": true
+      },
+      "investigator": {
+        "count": 10,
+        "unchanged": true
+      },
+      "fixtures": {
+        "count": 11,
+        "unchanged": true
+      },
+      "eval_implementations": {
+        "count": 22,
+        "unchanged": true
+      },
+      "prior_phase07_artifacts": {
+        "count": 2277,
+        "unchanged": true
+      },
+      "prior_screenshots": {
+        "count": 59,
+        "unchanged": true
+      }
+    },
+    "allowed_code_change": "mock_apps_ui/src/main.tsx routing only",
+    "working_db_exception": "One automatic GET denial audit at 2026-09-12T00:36:02.554975Z after the pre-existing port 8000 service rejected the portfolio reader (401). Retained, not erased. No business mutation request sent to that service. All later tests/preview isolated.",
+    "other_existing_edits": "AGENTS.md additive authorization and README.md additive handoff section"
+  },
+  "files": [
+    "AGENTS.md",
+    "README.md",
+    "prompts/08_1_CONTROL_PLANE_SHELL.md",
+    "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+    "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+    "docs/PHASE08_1_HANDOFF.md",
+    "mock_apps_ui/src/main.tsx",
+    "mock_apps_ui/e2e/control-plane.spec.ts",
+    "mock_apps_ui/src/control/app.tsx",
+    "mock_apps_ui/src/control/case.tsx",
+    "mock_apps_ui/src/control/data.tsx",
+    "mock_apps_ui/src/control/style.css",
+    "mock_apps_ui/src/control/portfolio.tsx",
+    "mock_apps_ui/src/control/previews.tsx",
+    "mock_apps_ui/src/control/program.tsx",
+    "mock_apps_ui/src/control/ui.tsx"
+  ],
+  "file_sha256": {
+    "AGENTS.md": "a0904781fd4224cc0296475e519d2d0dd30ee673ddfaef5832ac88b300e341ed",
+    "README.md": "9f365c8873dfef0664a152aed4b56c09dfe5d6491914641591f16ad7511bc39e",
+    "prompts/08_1_CONTROL_PLANE_SHELL.md": "fb5231c679999a937a2c39630c9b62fd3de7e39b84b933ecc5f537e189b9bf7d",
+    "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md": "61bbacfd79e1da17bff41bda73effc33b1f13867a9732fbc27637abcde2e772d",
+    "docs/PHASE08_IMPLEMENTATION_PLAN.md": "4fd47f6bafde087357f4244f3049d7f95750193e0f8281ece7165f6b797f58d3",
+    "docs/PHASE08_1_HANDOFF.md": "6e51fe19748641cbe6f3541b52ead266cb87ec3591fbbda3a8769ac8dc12c2fe",
+    "mock_apps_ui/src/main.tsx": "82497b3ef0afb4b2c8fd0254fa2d89655a1571859e6d1e83d9497f3bf219732d",
+    "mock_apps_ui/e2e/control-plane.spec.ts": "395520b5865220e89939450d7d3e453fc3721613b7e96533ff64a292080b8126",
+    "mock_apps_ui/src/control/app.tsx": "f97a29265a6176d016c8568cb1ea7f886944e9dabcee586ff32b4f68bfd448f8",
+    "mock_apps_ui/src/control/case.tsx": "f89dbb5640bdc9cfacac6346f602cbee11c5b296c993da73383cf9155d943450",
+    "mock_apps_ui/src/control/data.tsx": "2f3bee0ac1f64d3ab3736d3066cfd0a58c8425ffa8319df3d6414160cea47c25",
+    "mock_apps_ui/src/control/style.css": "5b4d8f6cdc533858191b9d88001e78fc2bb08db26a39e8f9ffafe9851e67f621",
+    "mock_apps_ui/src/control/portfolio.tsx": "ff367987e06a311c50a6bffa8631536fc846a6eea2ecaa8da3f2d3e49211200c",
+    "mock_apps_ui/src/control/previews.tsx": "cbc2116b8b8243d0c6e7f3679df1b1f9269e3adb1302edf5e335d7d23814d2a8",
+    "mock_apps_ui/src/control/program.tsx": "7f72c936ebd678254ce2826758185e9b96884e61a04b0537da6d2a9ec00ead3c",
+    "mock_apps_ui/src/control/ui.tsx": "da5b1eb80757203630ead8b965390d373258c14ffc621336e8c4dafe0922c28c"
+  },
+  "screenshots": [
+    "docs/phase08/screenshots/assistant-1024.png",
+    "docs/phase08/screenshots/assistant-1280.png",
+    "docs/phase08/screenshots/assistant-1440.png",
+    "docs/phase08/screenshots/assistant-1920.png",
+    "docs/phase08/screenshots/assistant-375.png",
+    "docs/phase08/screenshots/assistant-640.png",
+    "docs/phase08/screenshots/case-1280.png",
+    "docs/phase08/screenshots/case-1440.png",
+    "docs/phase08/screenshots/case-200-percent-zoom.png",
+    "docs/phase08/screenshots/delivery-1280.png",
+    "docs/phase08/screenshots/delivery-1440.png",
+    "docs/phase08/screenshots/evidence-1280.png",
+    "docs/phase08/screenshots/evidence-1440.png",
+    "docs/phase08/screenshots/portfolio-1024.png",
+    "docs/phase08/screenshots/portfolio-1280.png",
+    "docs/phase08/screenshots/portfolio-1440.png",
+    "docs/phase08/screenshots/portfolio-1920.png",
+    "docs/phase08/screenshots/portfolio-375.png",
+    "docs/phase08/screenshots/portfolio-640.png",
+    "docs/phase08/screenshots/program-1280.png",
+    "docs/phase08/screenshots/program-1440.png"
+  ],
+  "visual_review": {
+    "required_viewports": [
+      "1440x900",
+      "1280x800"
+    ],
+    "additional": [
+      "1920x1080",
+      "1024x900",
+      "640x900",
+      "375x812",
+      "1280x800 with CSS zoom 2"
+    ],
+    "overflow_checks": "PASS; wide tables have their own scroll container",
+    "inspection": "Portfolio, Program, Case, evidence, assistant, delivery and additional responsive screenshots inspected visually; no clipping/overlap observed in inspected controls"
+  },
+  "not_run": [
+    "Paid agents",
+    "Paid semantic grading",
+    "Fresh six-case live smoke",
+    "Full unchanged Coordinator, MCP, ProgramInvestigator and unrelated backend pytest suites"
+  ],
+  "remaining": "08.2 through 08.6; all host invocation/approval/execution, active simulation, configuration persistence and chat are outside this slice."
+}

@@ -1,0 +1,87 @@
+{
+  "label": "SCRIPTED OFFLINE/HTTP/BROWSER VERIFICATION; NO PAID MODELS; SIMULATED ENGINEER",
+  "source_backend": {
+    "passed": 392,
+    "phase06_included": 69
+  },
+  "coordinator_full": {
+    "passed": 556
+  },
+  "final_host_guards": {
+    "passed": 15,
+    "overlap_with_full": 14
+  },
+  "phase07_offline": {
+    "passed": 40,
+    "total": 40,
+    "hard_gate": "PASS",
+    "artifact_directory": ".cache/phase07/phase08-2-offline-20260912"
+  },
+  "legacy_browser": {
+    "initial_passed": 53,
+    "corrected_regressions_passed": 3,
+    "covered_total": 56
+  },
+  "connected_browser": {
+    "passed": 3,
+    "scenarios": [
+      "exact_success",
+      "planner_partial_failure",
+      "readback_mismatch"
+    ]
+  },
+  "typecheck": "passed",
+  "production_build": "passed",
+  "paid_models": false,
+  "semantic_grader": "not run",
+  "live_six_case_smoke": "not run",
+  "protected_source_runtime_fixture_changes": [],
+  "modified_files": [
+    "coordinator/uv.lock",
+    "coordinator/pyproject.toml",
+    "mock_apps_ui/src/control/app.tsx",
+    "mock_apps_ui/src/control/case.tsx",
+    "mock_apps_ui/src/control/assistant.tsx",
+    "mock_apps_ui/src/control/masthead.tsx",
+    "mock_apps_ui/src/control/style.css",
+    "mock_apps_ui/src/control/portfolio.tsx",
+    "mock_apps_ui/src/control/agent-activity.tsx",
+    "mock_apps_ui/src/control/previews.tsx",
+    "mock_apps_ui/src/control/catalog.ts",
+    "mock_apps_ui/src/control/ui.tsx",
+    "mock_apps_ui/e2e/overview.spec.ts",
+    "mock_apps_ui/e2e/control-plane.spec.ts",
+    "mock_apps_ui/e2e/review.spec.ts",
+    "mock_apps_ui/e2e/portfolio.spec.ts",
+    "mock_apps_ui/e2e/workflow.spec.ts",
+    "mock_apps_ui/e2e/concierge-voice.spec.ts",
+    "mock_apps_ui/e2e/enhancements.spec.ts",
+    "AGENTS.md",
+    "README.md",
+    "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+    "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+    "mock_apps_ui/vite.config.ts"
+  ],
+  "new_files": [
+    "src/program_coordinator/control_host/server.py",
+    "src/program_coordinator/control_host/models.py",
+    "src/program_coordinator/control_host/__init__.py",
+    "src/program_coordinator/control_host/__main__.py",
+    "coordinator/evals/phase08_2/doubles.py",
+    "coordinator/evals/phase08_2/__init__.py",
+    "coordinator/evals/phase08_2/serve.py",
+    "mock_apps_ui/e2e-connected/workbench.spec.ts",
+    "coordinator/tests/test_phase08_control_host.py",
+    "mock_apps_ui/src/control/host.tsx",
+    "mock_apps_ui/src/control/host-presentation.ts",
+    "mock_apps_ui/src/control/host-schema.d.ts",
+    "mock_apps_ui/src/control/decisions.tsx",
+    "mock_apps_ui/src/control/connected-case.tsx",
+    "mock_apps_ui/playwright.phase08.config.ts",
+    "docs/phase08-2-openapi.json",
+    "docs/PHASE08_2_CONNECTED_HANDOFF.md",
+    "prompts/08_2_CONNECTED_WORKBENCH.md"
+  ],
+  "manual_url": "http://127.0.0.1:5189/control/overview",
+  "manual_runtime_state": "idle; zero runs, zero proposals; only read checks performed"
+}

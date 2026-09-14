@@ -1,0 +1,239 @@
+{
+  "manufacturing.lot": [
+    {
+      "id": "LOT-B-204",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [
+        "quality_hold"
+      ],
+      "owning_system": "manufacturing",
+      "hold_details": [
+        {
+          "restriction": "quality_hold",
+          "rationale": "Final-test exception QE-004; entire 250-device lot held pending Quality disposition.",
+          "responsible_team": "Product Quality",
+          "release_conditions": "Separate Quality lead disposition and release; no release action is exposed by the recovery workflow."
+        }
+      ]
+    },
+    {
+      "id": "LOT-B-203",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "restrictions": [],
+      "owning_system": "manufacturing"
+    }
+  ],
+  "erp.order": [
+    {
+      "id": "ORD-HEL-800",
+      "content_version": 1,
+      "updated_at": "2026-11-16T08:30:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "product_id": "ACCELERATOR-X",
+      "product_revision": "REV-B",
+      "quantity": 800,
+      "quantity_unit": "accelerator_units",
+      "planning_unit_value_cents": 3500000,
+      "planning_value_basis": "Synthetic demo planning assumption: $35,000 potential shipment value per customized accelerator; not realized revenue or margin.",
+      "committed_delivery_at": "2026-11-23T18:00:00Z",
+      "status": "open",
+      "owning_system": "erp"
+    }
+  ],
+  "planner.milestone": [
+    {
+      "id": "MS-HEL-800",
+      "content_version": 1,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "synthetic": true,
+      "program_id": "PRG-A17",
+      "order_id": "ORD-HEL-800",
+      "name": "Helios 800-unit readiness milestone",
+      "baseline_at": "2026-11-23T18:00:00Z",
+      "current_forecast_at": "2026-11-23T18:00:00Z",
+      "forecast_status": "not_reassessed_for_new_request",
+      "record_version": 1,
+      "dependencies": [],
+      "owning_system": "planner",
+      "owner": "Ilan Reyes",
+      "health": "at_risk",
+      "next_action": "Assess QE-004 held-lot exposure"
+    }
+  ],
+  "manufacturing.quality_exception": [
+    {
+      "id": "QE-004",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-204",
+      "configuration_id": "CFG-B-01",
+      "milestone_id": "MS-HEL-800",
+      "order_id": "ORD-HEL-800",
+      "observation_id": "OBS-QE-004",
+      "baseline_id": "BASE-FT-B-72",
+      "investigation_procedure_id": "PROC-QE-B-01",
+      "evidence_ids": [
+        "RES-BASELINE-B"
+      ],
+      "material_ids": [
+        "MAT-B-204",
+        "MAT-B-203"
+      ],
+      "request_source": "manufacturing",
+      "requested_by": "Product Quality / final-test monitoring",
+      "received_at": "2026-11-16T09:00:00Z",
+      "summary": "Final-test pass rate fell 16 percentage points, from a 96% baseline to 80%. The 40-unit first-pass shortfall puts $1.4M of potential shipment value at risk under the disclosed synthetic $35,000-per-unit planning assumption. LOT-B-204 remains held and the order has a 200-unit supply gap.",
+      "status": "open"
+    }
+  ],
+  "manufacturing.quality_observation": [
+    {
+      "id": "OBS-QE-004",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-204",
+      "configuration_id": "CFG-B-01",
+      "test_stage": "packaged_final_test",
+      "test_program_version": "FT-B-7.2",
+      "conditions_id": "COND-FT-B-NOMINAL",
+      "population": "packaged REV-B production devices",
+      "equipment_family": "ATE-FAMILY-B",
+      "sites": [
+        "SITE-1",
+        "SITE-2"
+      ],
+      "tested_quantity": 250,
+      "passed_quantity": 200,
+      "failed_quantity": 50,
+      "site_counts": {
+        "SITE-1": [
+          125,
+          120
+        ],
+        "SITE-2": [
+          125,
+          80
+        ]
+      },
+      "root_cause": null,
+      "configuration_content_version": 1,
+      "product_revision": "REV-B"
+    }
+  ],
+  "manufacturing.quality_baseline": [
+    {
+      "id": "BASE-FT-B-72",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "configuration_id": "CFG-B-01",
+      "test_stage": "packaged_final_test",
+      "test_program_version": "FT-B-7.2",
+      "conditions_id": "COND-FT-B-NOMINAL",
+      "population": "packaged REV-B production devices",
+      "equipment_family": "ATE-FAMILY-B",
+      "sites": [
+        "SITE-1",
+        "SITE-2"
+      ],
+      "tested_quantity": 1000,
+      "passed_quantity": 960,
+      "status": "approved",
+      "configuration_content_version": 1,
+      "product_revision": "REV-B"
+    }
+  ],
+  "manufacturing.quality_material": [
+    {
+      "id": "MAT-B-204",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-204",
+      "configuration_id": "CFG-B-01",
+      "disposition": "hold",
+      "physical_quantity": 250,
+      "first_pass_pass_quantity": 200,
+      "released_quantity": 0,
+      "held_quantity": 250,
+      "allocated_quantity": 0,
+      "eligible_unallocated_quantity": 0,
+      "expected_milestone_id": "MS-HEL-800",
+      "allocation_order_id": null
+    },
+    {
+      "id": "MAT-B-203",
+      "owning_system": "manufacturing",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "lot_id": "LOT-B-203",
+      "configuration_id": "CFG-B-01",
+      "disposition": "released",
+      "physical_quantity": 600,
+      "first_pass_pass_quantity": 600,
+      "released_quantity": 600,
+      "held_quantity": 0,
+      "allocated_quantity": 0,
+      "eligible_unallocated_quantity": 600,
+      "expected_milestone_id": null,
+      "allocation_order_id": null
+    }
+  ],
+  "engineering.quality_procedure": [
+    {
+      "id": "PROC-QE-B-01",
+      "owning_system": "engineering",
+      "program_id": "PRG-A17",
+      "customer_id": "CUST-FML01",
+      "content_version": 1,
+      "synthetic": true,
+      "updated_at": "2026-11-16T09:00:00Z",
+      "configuration_id": "CFG-B-01",
+      "status": "approved",
+      "queue_id": "QUEUE-PRODUCT-QUALITY",
+      "owner": "Product / Test Engineering",
+      "tasks": [
+        "Collect final-test logs by site and equipment",
+        "Check test-program and baseline comparability",
+        "Review failure concentration with Quality; do not infer root cause",
+        "Prepare evidence for separate Quality disposition"
+      ],
+      "evidence_ids": [
+        "RES-BASELINE-B"
+      ],
+      "recovery_owner": "Ilan Reyes",
+      "recovery_role": "program_owner",
+      "permitted_action": "record_recovery_task",
+      "investigation_hours": 8
+    }
+  ]
+}

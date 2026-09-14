@@ -1,0 +1,163 @@
+{
+  "url": "http://127.0.0.1:5188/control",
+  "tokens": {
+    "canvas": "#edf4fb",
+    "surface": "#ffffff",
+    "brand-deep": "#133a63",
+    "ink": "#172b43",
+    "secondary": "#526477",
+    "border": "#d9e3ee",
+    "control-border": "#526477",
+    "action": "#1463c6",
+    "action-tint": "#e5effb",
+    "agent": "#133a63",
+    "agent-tint": "#eef0fa",
+    "success": "#176b45",
+    "warning": "#8a5200",
+    "danger": "#b42318"
+  },
+  "pairs": [
+    {
+      "fg": "ink",
+      "bg": "surface",
+      "foreground": "#172b43",
+      "background": "#ffffff",
+      "ratio": 14.35
+    },
+    {
+      "fg": "secondary",
+      "bg": "surface",
+      "foreground": "#526477",
+      "background": "#ffffff",
+      "ratio": 6.09
+    },
+    {
+      "fg": "secondary",
+      "bg": "canvas",
+      "foreground": "#526477",
+      "background": "#edf4fb",
+      "ratio": 5.49
+    },
+    {
+      "fg": "secondary",
+      "bg": "action-tint",
+      "foreground": "#526477",
+      "background": "#e5effb",
+      "ratio": 5.24
+    },
+    {
+      "fg": "secondary",
+      "bg": "agent-tint",
+      "foreground": "#526477",
+      "background": "#eef0fa",
+      "ratio": 5.36
+    },
+    {
+      "fg": "surface",
+      "bg": "brand-deep",
+      "foreground": "#ffffff",
+      "background": "#133a63",
+      "ratio": 11.58
+    },
+    {
+      "fg": "surface",
+      "bg": "action",
+      "foreground": "#ffffff",
+      "background": "#1463c6",
+      "ratio": 5.79
+    },
+    {
+      "fg": "action",
+      "bg": "surface",
+      "foreground": "#1463c6",
+      "background": "#ffffff",
+      "ratio": 5.79
+    },
+    {
+      "fg": "action",
+      "bg": "action-tint",
+      "foreground": "#1463c6",
+      "background": "#e5effb",
+      "ratio": 4.98
+    },
+    {
+      "fg": "agent",
+      "bg": "agent-tint",
+      "foreground": "#133a63",
+      "background": "#eef0fa",
+      "ratio": 10.19
+    },
+    {
+      "fg": "success",
+      "bg": "surface",
+      "foreground": "#176b45",
+      "background": "#ffffff",
+      "ratio": 6.51
+    },
+    {
+      "fg": "warning",
+      "bg": "canvas",
+      "foreground": "#8a5200",
+      "background": "#edf4fb",
+      "ratio": 5.76
+    },
+    {
+      "fg": "danger",
+      "bg": "surface",
+      "foreground": "#b42318",
+      "background": "#ffffff",
+      "ratio": 6.57
+    },
+    {
+      "fg": "control-border",
+      "bg": "surface",
+      "foreground": "#526477",
+      "background": "#ffffff",
+      "ratio": 6.09
+    }
+  ],
+  "hierarchy": {
+    ".cp-header": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "height": 80,
+      "width": 1440
+    },
+    "h1": {
+      "fontSize": "40px",
+      "fontWeight": "700",
+      "lineHeight": "46px",
+      "height": 46,
+      "width": 146.9375
+    },
+    ".cp-section-heading h2": {
+      "fontSize": "26px",
+      "fontWeight": "650",
+      "lineHeight": "32.5px",
+      "height": 32.5,
+      "width": 206.03125
+    },
+    ".cp-card-title strong": {
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "lineHeight": "30px",
+      "height": 30,
+      "width": 199.5625
+    },
+    ".cp-program-row p": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "height": 24,
+      "width": 388.65625
+    },
+    ".cp-concierge-dock": {
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "height": 153,
+      "width": 384
+    }
+  }
+}

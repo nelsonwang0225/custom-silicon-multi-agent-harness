@@ -1,0 +1,137 @@
+{
+  "phase": "08.2.1",
+  "verification_kind": "Offline deterministic tests and scripted integration testing; no paid model or actual human approval",
+  "commands": [
+    {
+      "command": ".venv/bin/python -m pytest -q --basetemp=.cache/phase08-2-1/source-final",
+      "result": "403 passed",
+      "includes": "69 unchanged Phase 06 execution tests; 11 downstream source tests"
+    },
+    {
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests -q --basetemp=.cache/phase08-2-1/coordinator-final",
+      "result": "561 passed",
+      "includes": "15 existing control-host tests and 4 downstream-host tests"
+    },
+    {
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase07 --mode offline --output .cache/phase07/phase08-2-1-final-20260912",
+      "result": "40/40 PASS; zero critical failures"
+    },
+    {
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npm run test:e2e",
+      "result": "56 passed"
+    },
+    {
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npx playwright test -c playwright.phase08.config.ts",
+      "result": "5 passed"
+    },
+    {
+      "command": "npm --prefix mock_apps_ui run build",
+      "result": "TypeScript and production build passed"
+    },
+    {
+      "command": "node .cache/phase08-2-1/capture-manual.mjs",
+      "result": "Existing configured demo: no POSTs, no overflow at 200%, preserved job, result/review pending"
+    },
+    {
+      "command": "PYTHONPATH=src:. coordinator/.venv/bin/python -m pytest coordinator/tests/test_phase08_downstream.py -q --basetemp=.cache/phase08-2-1/downstream-last",
+      "result": "4 passed after final bounded read-only event wording correction; overlap with full suite"
+    },
+    {
+      "command": "cd mock_apps_ui && PLAYWRIGHT_CHROMIUM_EXECUTABLE='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' npx playwright test -c playwright.phase08.config.ts e2e-connected/downstream.spec.ts -g 'downstream lab event'",
+      "result": "1 passed after screenshot/profile check refinement; overlap with connected suite"
+    }
+  ],
+  "preservation": {
+    "checked_files": 71,
+    "allowed_changes": [
+      "src/program_coordinator/control_host/server.py",
+      "src/program_coordinator/control_host/models.py"
+    ],
+    "protected_changes": []
+  },
+  "existing_demo_upgrade": {
+    "existing_tables_checked": 31,
+    "changed": [],
+    "new_tables": [
+      "validation_completion",
+      "engineering_evidence_review"
+    ]
+  },
+  "current_url": "http://127.0.0.1:5189/control/programs/PRG-A17/cases/CR-017",
+  "manual_state": {
+    "posts": [],
+    "overflow": false,
+    "runs": 1,
+    "source_available": true,
+    "job_id": "job-37315f32ad1e4ebc989a183274017f62",
+    "result": null,
+    "reviews": []
+  },
+  "skipped": [
+    "Paid downstream reassessment",
+    "Paid semantic grader",
+    "Real microphone/physical lab execution",
+    "Other workflows/schedulers",
+    "Git commit/push"
+  ],
+  "files_changed": [
+    "AGENTS.md",
+    "README.md",
+    "coordinator/evals/phase08_2/serve.py",
+    "coordinator/evals/phase08_2_1/lab_source.py",
+    "coordinator/tests/test_phase08_downstream.py",
+    "docs/API_CONTRACT.md",
+    "docs/PHASE08_2_1_DOWNSTREAM_HANDOFF.md",
+    "docs/PHASE08_2_1_VERIFICATION.json",
+    "docs/PHASE08_CONTROL_PLANE_REQUIREMENTS.md",
+    "docs/PHASE08_IMPLEMENTATION_PLAN.md",
+    "docs/openapi.json",
+    "docs/phase08-2-1-host-openapi.json",
+    "docs/phase08/downstream/screenshots/README.md",
+    "mock_apps_ui/e2e-connected/downstream.spec.ts",
+    "mock_apps_ui/e2e-connected/workbench.spec.ts",
+    "mock_apps_ui/e2e/concierge-voice.spec.ts",
+    "mock_apps_ui/e2e/control-plane.spec.ts",
+    "mock_apps_ui/e2e/enhancements.spec.ts",
+    "mock_apps_ui/e2e/overview.spec.ts",
+    "mock_apps_ui/e2e/portfolio.spec.ts",
+    "mock_apps_ui/e2e/review.spec.ts",
+    "mock_apps_ui/e2e/workflow.spec.ts",
+    "mock_apps_ui/src/control/app.tsx",
+    "mock_apps_ui/src/control/assistant.tsx",
+    "mock_apps_ui/src/control/case.tsx",
+    "mock_apps_ui/src/control/connected-case.tsx",
+    "mock_apps_ui/src/control/decisions.tsx",
+    "mock_apps_ui/src/control/host-presentation.ts",
+    "mock_apps_ui/src/control/host-schema.d.ts",
+    "mock_apps_ui/src/control/host.tsx",
+    "mock_apps_ui/src/control/physical-validation.tsx",
+    "mock_apps_ui/src/control/portfolio.tsx",
+    "mock_apps_ui/src/lab-completion.tsx",
+    "mock_apps_ui/src/schema.d.ts",
+    "mock_apps_ui/src/validation.tsx",
+    "prompts/08_2_1_DOWNSTREAM_VALIDATION.md",
+    "src/mock_enterprise/app.py",
+    "src/mock_enterprise/cli.py",
+    "src/mock_enterprise/core.py",
+    "src/mock_enterprise/db.py",
+    "src/mock_enterprise/domains/downstream.py",
+    "src/mock_enterprise/domains/validation_rules.py",
+    "src/mock_enterprise/downstream_models.py",
+    "src/mock_enterprise/downstream_upgrade.py",
+    "src/mock_enterprise/schemas.py",
+    "src/mock_enterprise/views.py",
+    "src/program_coordinator/control_host/downstream.py",
+    "src/program_coordinator/control_host/models.py",
+    "src/program_coordinator/control_host/server.py",
+    "tests/test_downstream_validation.py",
+    "tests/test_interface_edges.py"
+  ],
+  "screenshots": "docs/phase08/downstream/screenshots/README.md",
+  "initial_failures_resolved": [
+    "Obsolete source API operation count",
+    "Unavailable bundled Playwright Chromium; used existing Chrome",
+    "Browser test incorrectly expected popup for existing same-tab source link"
+  ],
+  "next_step": "08.3 Workflows & Automations catalog, manual invocation forms and saved schedule/event/condition previews; no active scheduler"
+}

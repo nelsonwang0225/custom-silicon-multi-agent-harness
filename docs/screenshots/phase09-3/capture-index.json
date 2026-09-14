@@ -1,0 +1,416 @@
+{
+  "method": "Scripted integration testing, not a live AI run or actual human approval",
+  "inspected_required_1440_surfaces": 12,
+  "captures": [
+    {
+      "file": "agent-work-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "fa590170253e4d4ce52307b3007466ac23587d3c1a5b5d30978344bbf55514be",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:35.986874+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "alerts-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "2c6406d9427893d050c2b34a808b4f3a35f650d854c46facc69b8e0761ed8868",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:38.314030+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "concierge-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "8a6e35bbb0f6f19fc49da24950b1096da924c33088ebd163d36cb3032fa1620e",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:29.527992+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "concierge-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "b658bf132207cb2c8944073ce76f2aa19b836fd06f8bd916fee04daa2da12f63",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:29.254649+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "concierge-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "ddc20d8cca26d38906a79a8f91878f095fd33d09aaa073d3240ab4a21c8691ca",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:29.410505+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "concierge-200-percent-zoom.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0ed7506bdbe6cc0d9a04a51dde154a258d4fdc6a9290bee938483218ca3f2d57",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:29.672902+00:00",
+      "note": "200% CSS zoom; reduced-motion emulation"
+    },
+    {
+      "file": "cr-017-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "6f3671010483095569a4a3e9459c5268de1ae3d66297b1a03c6273a96a270a51",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:04.812358+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "cr-017-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "ccfc23d58eaf860d144609b8b8b2b3d1ca9db23385de4af7e1ecbb63603829f3",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:29.780236+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "cr-017-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "54db77234a94d9ea74589d50a98ea22d687c3199d6a99481a93cec2d7e2f7a50",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:46.841264+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "cr-019-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "bdc391eb24aed5f566db8f53ee3755c7c1bc5f8921643a68c76e976ecbfe55cc",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:53.316931+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "cr-019-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "ef665d17537b497ca032bff56d588d343abe5ba37ceaaa549dd20b88c642d360",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:48.903606+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "cr-019-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "927b586ed216687fa5634283a0a5fd773eab6807f73e2da99b9514ed9df3cf77",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:50.834274+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "decisions-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "8b09ae1e1abce3cb71cfbf19fc56d45b509efa3f97662db6d93efe4dcbd271eb",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:12.060286+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "decisions-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "bce71e773f5bf2b7c95599a884f71893fcad70a51f276082865f53ba47ab0110",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:37.130668+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "decisions-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "8c23ca2251dd52b99882d68bc2475940594415f52009e9a19580e98bc6625b52",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:54.455006+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "dr-009-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "3e0615273305372824678ff84ab09d79393d823cef42b39758abd018b0f3ce57",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:10.139718+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "dr-009-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "4f62f5f2c405c3cf3fb4378d1437cbbc613a6c60a250dbd797baed29d54bca68",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:35.186703+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "dr-009-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1a0dbdb768cb74510bed7aef7312968ec2616a535c1fa056d4efbabde67461cb",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:52.395310+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "engineering-source-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "bf1716e61944268bff9e4885d66cb62ca79e9ea7307e033923fca6fa9e89c476",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:45.339882+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "evidence-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "5601a0625cc94255eb0389affbe66971f72559e455593a6ca11ab6ed4f6ed6c7",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:25.739930+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "manufacturing-source-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "dc5c68c78092143f67d5ff6843e066c4ca71295c98449671d19d1625e03d258c",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:47.136094+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "operations-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "cab37d43029dea109d0f1eddef812f2ebd11e0345dc993030e78dea1e6fb6865",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:19.250460+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "operations-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "8d8b10f937835fd72a6a092a8ab7c8c1f0ef0a3c92ea6ecadc386a86aeb1d13b",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:41.450875+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "operations-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "78773aa14228cdb22ccfbb7c4f4e7ae9ce07f2f53e9d3b514bda11ded0461b66",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:59.121897+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "overview-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "fefbd3593c9a29a53490d18d87130d5ed95df806306884adf769fcc1e52fdefe",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:01.054601+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "overview-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "badb34894e629197bd1fb5ae96fc835e727af098b190cd799857bf80032c72e4",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:25.940229+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "overview-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "d0dc1f05b84b5a4a28b7c57b4d2632d6a63ec7d583c1d92a9162a92bafd5a3b1",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:43.299978+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "persona-selector-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "c4ee34c23e7c2aa42a7c373a8848c3e324961a67e8ddbdd63d4dd892fdce36e4",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:22.212929+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "program-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "841ee1d4092f9201fc4375f8f214d85ddbe8fefe940f383a7245f17a657636ae",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:02.922880+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "program-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "50b2d211e7b882cd8eeae44047068d1d5b7106d7c5d86e1e18f3dcd7bf046a70",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:27.797427+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "program-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "adf00c3961eb28f837f09ed8ce52801264b7220ddad291f3c9752ff524affd03",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:45.151188+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "qe-004-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "095b62ef5c12d1fbfed51d280fc724b25b78337b84321da37b343b1c3052f8fc",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:08.438257+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "qe-004-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "5f95e28083b1194943b276893e74ce7d47faf59fe2bf1bb2420ff4427bb41b56",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:33.422060+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "qe-004-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "18b12d0a806aa791e296364e83f08a77ca6d7289f1cde3b859b8e81680301442",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:50.243437+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "run-detail-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "f9268d6f896bcf80e68ca8147c3766f46ea5e9fc829064c21925d3957d98039b",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:43.548018+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "search-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "7936340f81b1c70a0d2a552eddcbecdf39b5bf4d37f745d4804c43defdf15535",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:38.159383+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "source-unavailable-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "587fe6a4902883798061d71fdadd3473e270a22fa31c6b86f2a36fa7d6eadf5f",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:31.866425+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "validation-decision-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "ed3e522cca6786e952823ffcb0f672ae6771e7605c98dce563a236c527d80b10",
+      "fixture_origin": "http://127.0.0.1:5193",
+      "capture_command": "node .cache/phase09-3/capture-details.cjs",
+      "modified_utc": "2026-09-12T18:37:40.592661+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "workflows-1280.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "97547b430f51c5e0c647ad2b63862d711e0dd8794eeb1f887af3971c893ec64f",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:34:16.057318+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "workflows-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "e6d44e2a123f043169341c5e34832bc368d54224cc0950854f0573492a031577",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:39.044885+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    },
+    {
+      "file": "workflows-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "ad04cd27a687725b712a45ef39beff0fdd472eb29bc5b1a06a6f5c816d265b50",
+      "fixture_origin": "http://127.0.0.1:5194",
+      "capture_command": "./node_modules/.bin/playwright test --config playwright.polish.config.ts",
+      "modified_utc": "2026-09-12T18:33:56.497336+00:00",
+      "note": "Isolated scripted fixture; mocked speech; deterministic model doubles"
+    }
+  ]
+}

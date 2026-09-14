@@ -1,0 +1,176 @@
+{
+  "label": "Scripted source publication; not a successful autonomous-dispatch test",
+  "mode": "deterministic fixture using an already-published source database copy",
+  "source_copy": ".cache/phase09-3/source-redesign-qe011/source.sqlite3",
+  "source_origin": "http://127.0.0.1:18662",
+  "ui_origin": "http://127.0.0.1:5252",
+  "event": {
+    "event_id": "diagnostic-source-redesign",
+    "event_version": 1,
+    "event_name": "quality_exception_created",
+    "exception_id": "QE-011",
+    "program_id": "PRG-A17",
+    "customer_id": "CUST-FML01",
+    "lot_id": "LOT-B-219",
+    "source_system": "manufacturing",
+    "source_record_version": 1,
+    "source_record_updated_at": "2026-11-16T09:00:00Z",
+    "context_digest": "088db13573340057c103873305fc47483872a23616ae914408411a8286596b77",
+    "event_timestamp": "2026-09-13T19:20:00Z",
+    "synthetic": true
+  },
+  "source_facts": {
+    "exception_id": "QE-011",
+    "lot_id": "LOT-B-219",
+    "observation_id": "OBS-QE-011",
+    "configuration_id": "CFG-B-01",
+    "material": [
+      {
+        "id": "MAT-B-219",
+        "lot_id": "LOT-B-219",
+        "physical_quantity": 100,
+        "held_quantity": 100,
+        "eligible_unallocated_quantity": 0,
+        "disposition": "hold"
+      }
+    ],
+    "context_digest": "088db13573340057c103873305fc47483872a23616ae914408411a8286596b77"
+  },
+  "verification": {
+    "exact_http_event_read": true,
+    "event_context_digest_match": true,
+    "unchanged_source_readbacks": true,
+    "source_snapshot_sha256": "addcd5c03af43e6faddeecd2a4918af7048545508595a2b5abb13d6a69b5da14",
+    "page_errors": [],
+    "console_errors": [],
+    "business_or_host_writes": [],
+    "model_calls": 0
+  },
+  "http_reads": [
+    {
+      "path": "/manufacturing/quality-events/diagnostic-source-redesign",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/quality-exceptions/QE-011/context",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/quality-exceptions/QE-011/records",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/lots/LOT-B-219",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/quality-events/diagnostic-source-redesign",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/quality-exceptions/QE-011/context",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/quality-exceptions/QE-011/records",
+      "status": 200
+    },
+    {
+      "path": "/manufacturing/lots/LOT-B-219",
+      "status": 200
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/manufacturing/quality/QE-011",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "title": "QE-011 \u00b7 Source records",
+      "image": "docs/screenshots/source-redesign/qe011/mes-qe011-1440.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    },
+    {
+      "path": "/manufacturing/lots/LOT-B-219",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "title": "LOT-B-219",
+      "image": "docs/screenshots/source-redesign/qe011/mes-lot-b219-1440.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    },
+    {
+      "path": "/manufacturing/quality/QE-011",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "title": "QE-011 \u00b7 Source records",
+      "image": "docs/screenshots/source-redesign/qe011/mes-qe011-1920.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    },
+    {
+      "path": "/manufacturing/lots/LOT-B-219",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "title": "LOT-B-219",
+      "image": "docs/screenshots/source-redesign/qe011/mes-lot-b219-1920.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    },
+    {
+      "path": "/manufacturing/quality/QE-011",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "title": "QE-011 \u00b7 Source records",
+      "image": "docs/screenshots/source-redesign/qe011/mes-qe011-1280.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    },
+    {
+      "path": "/manufacturing/lots/LOT-B-219",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "title": "LOT-B-219",
+      "image": "docs/screenshots/source-redesign/qe011/mes-lot-b219-1280.png",
+      "no_body_overflow": true,
+      "no_qe004_leak": true
+    }
+  ],
+  "limits": [
+    "The prior automatic-entry AUTONOMOUS_EVENT_FAILED and prepare DEMO_BASELINE_INVALID are preserved and reported separately.",
+    "This run verifies published source pages only; it does not retest autonomous event dispatch or run agents."
+  ],
+  "owned_servers_stopped": true,
+  "stopped_ports": {
+    "5252": true,
+    "18661": true,
+    "18662": true,
+    "19662": true
+  },
+  "visual_inspection": {
+    "inspected_viewport_images": 6,
+    "viewports": [
+      "1440x900",
+      "1920x1080",
+      "1280x800"
+    ],
+    "findings": [
+      "QE-011 shows LOT-B-219, 100 units held, zero eligible, 88% observed yield, 96% comparable baseline and -8-point difference.",
+      "The quality page separates observed facts, site signals and unestablished root cause.",
+      "The lot page shows the same quality hold and explicitly reports no published individual unit records.",
+      "No text clipping or horizontal page overflow observed at the three desktop sizes."
+    ]
+  }
+}

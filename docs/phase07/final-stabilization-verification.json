@@ -1,0 +1,354 @@
+{
+  "scope": "Final targeted Phase 07 stabilization; offline verification only",
+  "baseline_live_eval": "eval_1dac4b6dd4dc468e949b5fdde8a32d1e",
+  "baseline_live_result": {
+    "passed": 4,
+    "failed": 2,
+    "hard_gate": "FAIL",
+    "critical_failures": 0
+  },
+  "baseline_manifest": ".cache/phase07/final-stabilization-20260911/baseline.json",
+  "baseline_files": 266,
+  "unchanged_baseline_files": 259,
+  "changed_existing_files": {
+    "src/program_coordinator/harness.py": {
+      "before": "a3d819a51e8f91e02029c377cc0198799371abae24cff32672eb9734993cc00a",
+      "after": "44eb6245c2638f285f020e32a5dde39fd86027b3b286f81e7ad041daf78fb762"
+    },
+    "src/program_coordinator/models.py": {
+      "before": "b8f8c6f839e1f849679a0c640fef002641c7e7d84b9e74ccfad6d634883db458",
+      "after": "89a46e57501dec6e7eea6384db0dfbdc9318029c8fa2a77dc21c132c8bb8ba77"
+    },
+    "src/program_coordinator/policy.py": {
+      "before": "811de4ed05fdb2113b578bbd7738fff857182a5a3f333c61912584a8c6f6fbdd",
+      "after": "53590ffe2f52909d4c555db324663a6aff19f7057445ee1c4b786e9117eb1b08"
+    },
+    "src/program_coordinator/agents.py": {
+      "before": "542996e03e1491666bc0df8fe5d5a0afb3872712687a40637961a636368602cc",
+      "after": "f4d04dce3354d0573a5a01ca0693e6521a7badfaa54edc1011867841f6d83c07"
+    },
+    "src/program_coordinator/sources.py": {
+      "before": "ffc69bbda7c7701c9a7b9ce86956dadb91b620e6a2faad4ede598632628ab015",
+      "after": "fc54ba2136452b65dcbb692e5e58b5d04f3e5d04fcf36f3c58f72c6869655653"
+    },
+    "docs/PHASE07_RELIABILITY_FIX_HANDOFF.md": {
+      "before": "0bb51ddec46e4574c8078b56e7b77f771743c0f1d440084193e201471fc0a592",
+      "after": "bc1d350a866f4e5f5fb4dc7488ca30d65e3560161dd68500327252aa01320eda"
+    },
+    "AGENTS.md": {
+      "before": "8022c7047f282501b55cfe76c6ea545ac19b971b492f2ef8aca6facfe39f9648",
+      "after": "b3c81eac6a04823e9b095999fffbc58237d803e159ae016a9892b087e359bf47"
+    }
+  },
+  "changed_and_new_file_hashes": {
+    "AGENTS.md": "b3c81eac6a04823e9b095999fffbc58237d803e159ae016a9892b087e359bf47",
+    "coordinator/tests/data/phase07_final_failures.json": "50303e220883783b8027514bea628d7d89363f909282942871977114c19ae81b",
+    "coordinator/tests/test_phase07_final_stabilization.py": "134f6bddbf2b99e6c720ad688b674803e471f27c07406036f2e60af56a96f481",
+    "docs/PHASE07_RELIABILITY_FIX_HANDOFF.md": "bc1d350a866f4e5f5fb4dc7488ca30d65e3560161dd68500327252aa01320eda",
+    "prompts/07_FINAL_STABILIZATION.md": "9ed86aaae82284fd726a760697c5b6e12a56f4771f4f91c13bf4c1aa2064671b",
+    "src/program_coordinator/agents.py": "f4d04dce3354d0573a5a01ca0693e6521a7badfaa54edc1011867841f6d83c07",
+    "src/program_coordinator/harness.py": "44eb6245c2638f285f020e32a5dde39fd86027b3b286f81e7ad041daf78fb762",
+    "src/program_coordinator/models.py": "89a46e57501dec6e7eea6384db0dfbdc9318029c8fa2a77dc21c132c8bb8ba77",
+    "src/program_coordinator/policy.py": "53590ffe2f52909d4c555db324663a6aff19f7057445ee1c4b786e9117eb1b08",
+    "src/program_coordinator/sources.py": "fc54ba2136452b65dcbb692e5e58b5d04f3e5d04fcf36f3c58f72c6869655653",
+    "src/program_coordinator/status_inspection.py": "e0b42f4c1fe647316f0f52447396c309f14d25547151ae4d9f4f2f1227727246"
+  },
+  "preservation": {
+    "source_system_APIs": {
+      "unchanged": true,
+      "file_count": 21,
+      "hashes": {
+        "src/mock_enterprise/db.py": "76843623c9523685dfc4c55ba9f581ec885a6f5514c2cdc28bd094585ed3096a",
+        "src/mock_enterprise/snapshots.py": "113f1384908a647533b2b96d2d718d1eb5346e462af8d0926edcd93f374e9e0d",
+        "src/mock_enterprise/config.py": "2b82ab857dcd52206ce702cb5a3b53fe148f1cc8749d23b9e50bf56af9bb1008",
+        "src/mock_enterprise/approvals.py": "ed45e153aabfca0c2cef8b414c18e75853543fa28049d0f2a2a0d1d1432e0640",
+        "src/mock_enterprise/__init__.py": "0675d55f12d8117fcbd80bedad81d011d8869bec45e8b04834b1dc9a92e1ab34",
+        "src/mock_enterprise/core.py": "33345742f74cc9b87754f60d537d880df1b0b6a948cd3ef7139251fcd0e09435",
+        "src/mock_enterprise/seed.py": "02cad9a6fbe0f01be7e0e3b34821fd6029387affa056a458efd51c0b40db243c",
+        "src/mock_enterprise/schemas.py": "b7dd31d70a1f99144a74f8e900e33d6f1a8b0cba6dfe74d88f405235330acb78",
+        "src/mock_enterprise/cli.py": "6cec086d3592c4f6a4e2c646ec25e33a611313881074033a9f02c320ed9dd854",
+        "src/mock_enterprise/http.py": "98bbd96857a761c9a622f393336be58062f919479f204047db760342c5fd207a",
+        "src/mock_enterprise/portfolio_views.py": "7a131230c156a91112a7ec73292a6d3451f535b33eac63c40ba8dbf6bf82c767",
+        "src/mock_enterprise/app.py": "fb724dea9237ae1f2066bb65bf5aac6427ceb98dc278f6984a67b755eb60a9f5",
+        "src/mock_enterprise/portfolio.py": "90197b14f0d5fc2b2279f2e278e6dd277ff449cd485532958c50232e3d5e0332",
+        "src/mock_enterprise/views.py": "d0b20dffc669008f8380378ebf4f49e7100f6b3d9443e63101767a7931cf229e",
+        "src/mock_enterprise/domains/planner.py": "b30e49a3fb73126055f8d35131a3b4d639d3a73b944b3ddd1c8f526767b58381",
+        "src/mock_enterprise/domains/erp.py": "1a6582f70af13cbde01ea7ceec32bd8a4efd72ce48a660293d8db0dbafdc6b71",
+        "src/mock_enterprise/domains/__init__.py": "0acc528733fbb1abdc5066e4ffd6a455777d6e81a2613ed7b9528791e4e98629",
+        "src/mock_enterprise/domains/validation_rules.py": "0272e447b4534540981a4162966d25c3fa82c2fdb11da57ddddc5a2269825943",
+        "src/mock_enterprise/domains/manufacturing.py": "dd7adb1ec7d7b300996a50cd16140ca33aa44f4694fef53c0c2c752a486f5fea",
+        "src/mock_enterprise/domains/engineering.py": "4faa3ba9d53bd0387d8175dddc44661fa231c19a21b6d7dca5baf268aa34f8ff",
+        "src/mock_enterprise/domains/validation.py": "6c59fc0924ff467270f4fff1cf06f8eabd1552865d25cd3c4db50c0002a078c4"
+      }
+    },
+    "source_clients": {
+      "unchanged": true,
+      "file_count": 7,
+      "hashes": {
+        "src/enterprise_api/config.py": "a24877e6fadebd5653b72ecb509d5602e9b6d80756441b8ccd520f3f90ea501b",
+        "src/enterprise_api/models.py": "7e8ae51d394c7cc1ccc7c5aac4c5618a426b4fb0b8d5f5ca871c14586fbbe021",
+        "src/enterprise_api/transport.py": "ded28740a5e76802367edf83bd842f6840ee2431462bc543e183d7960fb59cd0",
+        "src/enterprise_api/client.py": "3c5b21203d471c1ea4177a2f3110b7b4be42e5489927b882bbe4f681aeed139e",
+        "src/enterprise_api/__init__.py": "14d9e2fe3975bd3797ac87fc456633c264aa65ece9bd3dbaf7e6ddfd37c4bf7f",
+        "src/enterprise_api/errors.py": "bcd6ee707fb8564afd8a1f27e38de314bab8466fac7a54ac5e6db0d2a1e4c994",
+        "src/enterprise_api/endpoints.py": "0aec1ee1fc804826fe1a75bff5f9f3f32a12e829240c757b83817eff095f2ad2"
+      }
+    },
+    "MCP_server": {
+      "unchanged": true,
+      "file_count": 6,
+      "hashes": {
+        "src/stratos_mcp/catalog.py": "68f423c78c1862948525cdbfddefef79463248b3964ef35e334c15e30fc61aec",
+        "src/stratos_mcp/service.py": "c2b9278755358934bd4f9650de21d10382fa52fe8715f64df57c4363ba1363d6",
+        "src/stratos_mcp/server.py": "d5f0012123d5debaa28fcace3f9477e82a1c9649a8d768dd8879aed8ba098e0e",
+        "src/stratos_mcp/config.py": "2827f33a3cc7ee8f2f66a01d9c52bb022a24d44738d31139be56c6bbd938f43f",
+        "src/stratos_mcp/__init__.py": "d0063dbe1286b0d73e94046b81ec726d975cd99d1b6ae85f0185196de1b0f72d",
+        "src/stratos_mcp/__main__.py": "cb2080eac20c3758b73a57af5b6a578cc9ff4f8228f65399eacdb15f93dd19ce"
+      }
+    },
+    "MCP_role_scopes": {
+      "unchanged": true,
+      "file_count": 2,
+      "hashes": {
+        "src/program_coordinator/controls.py": "d4724a43dcd5cf274760eced69dc1267cc187af56b811972818eefc6d3c47832",
+        "src/program_coordinator/mcp.py": "02dad4639e6d49acf5cd8d3ab3fc1e124040efd946f3a979e55ba967c93d6b45"
+      }
+    },
+    "Phase06_host_and_workflow_registry": {
+      "unchanged": true,
+      "file_count": 13,
+      "hashes": {
+        "src/program_coordinator/application/store.py": "c690a86b06967e35fd500da11ff6005648a226ea191376535dfeb8479d985cda",
+        "src/program_coordinator/application/service.py": "f9b36a04e938cf224a69652d5ce578a08bd505d6e34a187510e3ebad55fa8155",
+        "src/program_coordinator/application/execution.py": "f87d2a13342942a416b39715e4d764530a36ca1ba1d64983f5390494193bc8c6",
+        "src/program_coordinator/application/models.py": "ff7576a3487b13585ede730fef649132b46106db88993a5761127ff008490e0f",
+        "src/program_coordinator/application/registry.py": "31b3ea57a93a957b58a334a4f5477cc51d0a27d890de395797d7a921b62b209a",
+        "src/program_coordinator/application/__init__.py": "b7807e90097cdb4dc4608b3eaa07119f1a86c22b2a7d37d932baa920a1e3d669",
+        "src/program_coordinator/application/execution_models.py": "7c5b000c6ede3ab67ea2f32dcdae62650e046042d5db20d984d5eb1a7041ce14",
+        "src/program_coordinator/application/contracts.py": "c33c395be09348bd7a52e86f7a528e4bfdaf51b79a4e07152ca03ab83a53ef71",
+        "src/program_coordinator/application/demo_identity.py": "b86e0036f78357d6fe1308360fe27156665d9b32e7ec0c373082261c8c5b91e4",
+        "src/program_coordinator/application/execution_policy.py": "522a06888733b8b3cf039b9e505fda8c18ab5b8aeb85c74ab62b6a448b0c58ef",
+        "src/program_coordinator/application/execution_cli.py": "f9f56b637b79827c41159ce9dd19cd8c9306b6e6a10de16b3f3a2a66a8dd680e",
+        "src/program_coordinator/infrastructure/source_gateway.py": "ebe2defe45139cee57ac198ef027645c34adac16da65fff0d591bc13a2b02714",
+        "src/program_coordinator/infrastructure/__init__.py": "ab2c8a038c93a5811b8acd2460c8d99fd1ef3b9047b4ca51a225e7f0ba5f93a0"
+      }
+    },
+    "single_agent_baseline": {
+      "unchanged": true,
+      "file_count": 10,
+      "hashes": {
+        "src/program_investigator/revalidate.py": "ed4be3d394c7da2ea1d6baf35643a19b0d6fa6abfe342811295a7262846b982d",
+        "src/program_investigator/config.py": "2444e4c31ead6c8acc2a699d4dc28c14eca1f98307ec55b5ed5b36fadae1a2d5",
+        "src/program_investigator/models.py": "06480259416d13317ba090f4c38887f200d097c75c6f5a597d7c9e8c023f8c5c",
+        "src/program_investigator/instructions.py": "a491c93a4c40dc7ec527f653eb4b828267cf150783589cd4b7b5013b2df2a59a",
+        "src/program_investigator/__init__.py": "bbf905bb7fb2ee00df0f8d41cc30baaebefa9ae4d37842e74f752ad5f5034f7a",
+        "src/program_investigator/telemetry.py": "74ae608fca140c075097a397a373f22119f7d523bc0d0f0e1114e8ff5383dca0",
+        "src/program_investigator/mcp.py": "327758fd33f83bc4eff104cccf3cd82f93c0a79a6a04cf072aaac2499fd8e710",
+        "src/program_investigator/agent.py": "b800a7bd1ff35379f4d0d2ac2f7c689a527828ff055601bc9096684ddbdb1ed3",
+        "src/program_investigator/__main__.py": "377658dc35c9556a27669daba52d5c4dfe1412a82ed7c1eee65c876636689224",
+        "src/program_investigator/validation.py": "43e0386e0ce22a211f77afc26c5872a6608c39be6d1d5e7dd1dcfd9b664e091a"
+      }
+    },
+    "golden_fixtures": {
+      "unchanged": true,
+      "file_count": 11,
+      "hashes": {
+        "fixtures/.DS_Store": "0f49181bc3428fe8820ba6977a5fcf6a539184e7520a8acfe8c1eda9fb3e11eb",
+        "fixtures/seed.json": "1cebe1edd25addf2c11e930b81916bdff17e44cad589197366d1910130fba466",
+        "fixtures/documents/change_control_playbook.md": "4f5ea7635293d0634d7f845a6782e758cdfa86ce907397295f65ac454ea972f5",
+        "fixtures/documents/phase05_evidence_request.json": "e19f907c57a1fdb81483d7e6a394c56e0fcf65b31830c4c5dff3e95b911897c6",
+        "fixtures/documents/approval_policy.md": "9b6bf71cf68fba80ea42b3fee20eeaf188e281748e182bd456da03f1eea49e04",
+        "fixtures/documents/approved_baseline.md": "24819144b8fe1f55ebc55696ed7fc042d7834df31927086d6d9a73a0eacc55d2",
+        "fixtures/documents/supplemental_validation_procedure.md": "6efded26362f98c54249202cc0fa04163f8b711a3f1f92e11d31e9d9247afd2b",
+        "fixtures/documents/customer_change_request.md": "20b20f48305d3a314a5e204a7c17892bac422a5cf88e47eceb81fe4251221428",
+        "fixtures/documents/phase05_coordination_policy.json": "c09c1be3c4cbde5f1662ca0f1bdbd27df86edb3105934b18c045628d02953f86",
+        "fixtures/documents/configuration_scope.md": "674825d4b3e94f37026527335a23f979672bc906dcac1d929656e3591857c1a1",
+        "fixtures/documents/phase05_baseline_procedure.md": "2f037db1b0e8c7a5b48b1e269dc0b45841bd68a2f29802fb78c90aa313ef1178"
+      }
+    },
+    "evals_graders_and_live_fixtures": {
+      "unchanged": true,
+      "file_count": 22,
+      "hashes": {
+        "coordinator/evals/prepare_demo.py": "16276548a4941e747190a080fc047899e85ce9d3bacd8eb875ab32920a7b8768",
+        "coordinator/evals/phase06_offline_analysis.py": "d0aed4c96c121bb1bfd00c0c78aff337d596c89ab7a1a7c6a6a115087c4b1a5e",
+        "coordinator/evals/run_scenarios.py": "42db2e0f66123715d8de037f10adc45d7e1436046f2afc585459a1f70e0eb789",
+        "coordinator/evals/build_report.py": "8a6d8f0a559aad6cd141ce51e1a5e6dc64d99f31a9848c83923e08118965a565",
+        "coordinator/evals/verify_phase06.py": "6491b78edeb88719f39e868c9cef58002ef617ac212bd1d27b1c63d90099055f",
+        "coordinator/evals/phase07/runner.py": "9cac796c15ea0e0966030ef26afd9437fad1d45f89c243e68cfaffe963fb37c1",
+        "coordinator/evals/phase07/semantic.py": "822321eaf1fbecd697aef81d42b516564b6da3aa5479fe9ca31843d0cdaac0bb",
+        "coordinator/evals/phase07/service_probe.py": "6a8fd78c13624d4be8b47851a508f66a35a119fcf448acccf9b4e142f4c4abf5",
+        "coordinator/evals/phase07/models.py": "131fea2be24e43ded2b22717f7170d39aecc32fbac021e47172653ffee382c60",
+        "coordinator/evals/phase07/__init__.py": "baa26563e88905e8c698b9c440fcbed24fc0831dcefe52a9177efe516906831e",
+        "coordinator/evals/phase07/graders.py": "c2454ed232bd26ad19afc1080467c33c1c64480402f2a998c5e2162d34877894",
+        "coordinator/evals/phase07/dataset.py": "8710e08c0f67585efe2b37628dd703f96264e5f61e7d627bab4f6f30f0b67d85",
+        "coordinator/evals/phase07/live.py": "c991b0d47511e01597110ee107eaf9954bc5ad7957d081314d7aeeb9658e09f9",
+        "coordinator/evals/phase07/calculators.py": "40e15d59f595c94a12ba74ea900e130494fb3a76f505ec0ad4d0e8303909f01e",
+        "coordinator/evals/phase07/live_source.py": "2ce3b928762584a787ce066973b730cb7966ccf3cd234eea427fa49cd4f4aac8",
+        "coordinator/evals/phase07/execution_probe.py": "a522be2250181dbdc22c9a4ab95c6206bed05e3cd59d684fa306747017e572b2",
+        "coordinator/evals/phase07/__main__.py": "74fff10eb2bd330c92909b27a5a9ae84f41b3f268a5c04f51f849276919f19c6",
+        "coordinator/evals/phase07/reporting.py": "5e2bbb698ec047036c060c25bd4e0572d6f7a2ef9c992e5f384f24383a30e1cc",
+        "coordinator/evals/phase07/data/sources.json": "610bb6e42df729c779828c64342f2d07e64cae6d57f4dbcb15e7a9f6c40c02d2",
+        "coordinator/evals/phase07/data/eval-case.schema.json": "dc11dd1e7bc9efd3a293228bc96712a435813273ead969d93d8e09b951b85e20",
+        "coordinator/evals/phase07/data/observations.json": "ee8d85cbaaca4711e8324530c90b556df776fa69c736baa09bb4b061aa2b462e",
+        "coordinator/evals/phase07/data/cases.json": "1f8e787fd08d523eb9187a89758eb8d4e9d8fc1ed51292439b59b3e37cc04050"
+      }
+    },
+    "original_live_artifacts": {
+      "unchanged": true,
+      "file_count": 35,
+      "hashes": {
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_scheduled.result.json": "0e406f7ac6cf398c6e3ecd61e9de9544ff5fe8003df61b1380ec2474f5b6f59b",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/report.md": "3857c75fa619840dc8e3dd24332eafe84206e346ead8563c5ea676502697d015",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_wrong_software.result.json": "b77d573af3b511b53f141e7395ecd284adea801ebdef83888795823e82d37f68",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_covered.result.json": "dbb1037f41bfe886cf694771f8105eef3b9439bd2c58414a117ccbe58ba8c4ec",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/results.json": "bd8f1b3da6b8af682b9af54b8e7e930e9a2f28ed84fc6dce4fa0cb2485c8e726",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/observations.json": "d1f1c0118371e6988fb2fa6ed4f77705ac35747b340253cae107fdb55b8c8226",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_gap.result.json": "7d0982e047d5265a32fc52ad32a803980d2b75d935480346de0cfc93cb0b1a41",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_bypass.result.json": "a32068bc80d0a19dbb70e0825b16ffedeae72cf3edfe6916c2299f1ecea143e9",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/cr017_ambiguous.result.json": "497e78cc1f949daae35a20b32e7e7a4ce510523696bb3328fc65c4cb5e0225b5",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_wrong_software/event.json": "64e21c3dc3fd7e1a32ea7a299c7817859ad9d64cb9ffbd5dd4079688b2308c54",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_wrong_software/activity/workflow-index.json": "9754b87871464b09fc17cc86cc77ac6b2c5b81b85103485672d0602c46720740",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_covered/event.json": "64e21c3dc3fd7e1a32ea7a299c7817859ad9d64cb9ffbd5dd4079688b2308c54",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_covered/activity/workflow-index.json": "61f80932f706cc2ddc8ade2ff88c85f1dffb298a876353c896d77506c1e2e426",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_gap/event.json": "64e21c3dc3fd7e1a32ea7a299c7817859ad9d64cb9ffbd5dd4079688b2308c54",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_gap/activity/workflow-index.json": "38d8d54d69e0a0c437664692ba7f4727095ac6969b6b9faa4cdda1402e2479a4",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_ambiguous/event.json": "4c47dd3295569a082409201c32f525aa31934b50a93c78c980a1ea7d829839cd",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_ambiguous/activity/workflow-index.json": "b904836a094e50800dfd93bfcb5e66e7417e4e0682ce3d7eff653ea5a615fe43",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_bypass/event.json": "0bc65fbc1deea9d4a98568ae8459f2b33d8a7ae30feb34bf0d56acab6a43062a",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_bypass/activity/workflow-index.json": "9defe6734a8ebfb3f5060a1a952884761fa705d5a7b3a62adf8f1bd11cefd9d0",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_scheduled/event.json": "b508b2a6b22f0e60505f785cc373ab23ee5d8af8d0e9eaf5bce0a4c1fd216893",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_scheduled/activity/workflow-index.json": "7bfb4e02b4fdba345d9dff3a1e8aba641bd0ecee0e07796ff1f4865a70ae47ad",
+        ".cache/phase07/eval_1dac4b6dd4dc468e949b5fdde8a32d1e/live-cr017_scheduled/source/setup-activity/workflow-index.json": "060accd2dc821d3a94a1dfc5e08dbd55ee0e83b030f869466ca0695bcb88d774",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/tool-calls.json": "82c16e6f3c2194a86e46ec46a1cb38d5c8fc35f289a1fa3867c6a52e7ce87afc",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/report.json": "942409aa0ebeb0bc32957ce6d218e21012a75ebf08df98fe08029dd03cccd7e3",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/result.json": "6f03f02a5035f08489f20279d10123858b6e586814863a49e476309806f3b357",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/case-state.json": "e5b3dd8e53b27b8cad1efbb3cd5f8af0b21f05774b1d54bf4d695bd54bb9e5fb",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/trace-metadata.json": "8779a7d0e3effd68b5eb50293e20a1fe3b1867d543cdd2e0920f912a76b3928e",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/catalog.json": "ade40f2e9a7488711d1e8d4163842caeaff107bae4499be4601d67b9adbf3030",
+        ".cache/multi-agent/trace_c1c8073ad8374fb0b248d3444a88fc65/rejected-specialists.json": "481de23e89d81fb773ff825dfb257962d93af61dac79aaffbac1dab04eab1e4d",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/tool-calls.json": "f0e80184b2e6f7a078c7a9637390671ae75df99afd2fb53bf428a71466c4916e",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/report.json": "80dfa85d93636758325fdca50ca888277399aabfb7326a3fb98be8d30f348dc5",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/result.json": "6c830c63709941ef103dbd7ebbfb1eadfe38ba18d7dee4adc1de55bcb6fac606",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/case-state.json": "2666f62e615e5d63884f7dd880910dc09a22b5af5fb131fcdf130b10e9851159",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/trace-metadata.json": "728ea1eac001d2e4078254cf00ea8c0329c8f07bf81804ee0156d704ea45977a",
+        ".cache/multi-agent/trace_85d974228b784a04a0b0ec9442bfd784/catalog.json": "97192f05a0f5afe58c83fd79be4673a67090f21ef64e3c0ed532ab2f992b27f6"
+      }
+    },
+    "coordinator_dependencies": {
+      "unchanged": true,
+      "file_count": 2,
+      "hashes": {
+        "coordinator/pyproject.toml": "fe970f193c4b7c108a482ba472f8263635c932fa02eb7930668ad031ef88ac2c",
+        "coordinator/uv.lock": "c911803565252155f568251e0706ac0b0cfc9388f76ad783cf27c007ea61fd10"
+      }
+    }
+  },
+  "preserved_source_blocks": {
+    "record_contexts": {
+      "before": "b7fc0e5b4b527f4e9878405e1c8b24d87a4594f51bae9983d3784c35f9bcee91",
+      "after": "b7fc0e5b4b527f4e9878405e1c8b24d87a4594f51bae9983d3784c35f9bcee91",
+      "unchanged": true
+    },
+    "SourceRegistry": {
+      "before": "5603fe5a28513b94f8b3de68da3046ceb0e1184fe2f9f99d18a264431ea21791",
+      "after": "5603fe5a28513b94f8b3de68da3046ceb0e1184fe2f9f99d18a264431ea21791",
+      "unchanged": true
+    },
+    "full_validation_assessment": {
+      "before": "05ce8b7a3a73642a10a3ef045a0457207ccec806950f5b94acadeb590050f247",
+      "after": "05ce8b7a3a73642a10a3ef045a0457207ccec806950f5b94acadeb590050f247",
+      "unchanged": true
+    }
+  },
+  "verification": {
+    "coordinator": {
+      "tests": 542,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "source_phase06": {
+      "tests": 84,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    "new_regressions": 60,
+    "distinct_pytest_instances": 626,
+    "offline_eval": {
+      "hard_gate_status": "PASS",
+      "passed": 40,
+      "failed": 0,
+      "total": 40,
+      "critical_failures": [],
+      "semantic_score_average": null,
+      "artifact_directory": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase07/eval_162b9d5b110f4fe79ba41cca60ec8d19",
+      "skipped_checks": [
+        "Paid live agents not run. No live-model reasoning baseline measured.",
+        "Optional model-based semantic grader not run; semantic score is null."
+      ]
+    },
+    "phase06_smoke": {
+      "status": "PASS",
+      "notice": "SCRIPTED MOCK-SYSTEM INTEGRATION TEST \u2014 NO AI INFERENCE; ENGINEER IDENTITY IS SIMULATED.",
+      "analysis": "deterministic_existing_harness_model_double",
+      "paid_model_calls": 0,
+      "proposal_id": "plan-0de8b419517340f8a052b0a901304770",
+      "job_id": "job-3670be1ba9704d26a7a2bd9599ad26bd",
+      "link_id": "link-653fe90277ba45098cd03dd9c93b9339",
+      "source_restart": true,
+      "cli_process_resume": true,
+      "attempts": 2,
+      "verification_records": 4,
+      "case_closed": false,
+      "artifacts": "/Users/nelsonwang/Documents/Personal/OpenAI/openai_aaa_takehome/.cache/phase06/http-eb2bbfe7b8f94bd4a9568e16e118bb53"
+    },
+    "scripted_reproductions": {
+      "covered": {
+        "passed": true,
+        "checks": 90,
+        "output": {
+          "coverage_status": "sufficient",
+          "proposed_validation": false,
+          "escalation_required": false,
+          "scheduling_observed": false,
+          "validation_coverage": null,
+          "validation_passed": false,
+          "customer_accepted": false
+        },
+        "artifacts": ".cache/phase07/final-stabilization-20260911/reproductions/covered"
+      },
+      "scheduled": {
+        "passed": true,
+        "checks": 101,
+        "output": {
+          "coverage_status": "insufficient",
+          "proposed_validation": false,
+          "escalation_required": false,
+          "scheduling_observed": true,
+          "validation_coverage": "pending_test_results",
+          "validation_passed": false,
+          "customer_accepted": false
+        },
+        "artifacts": ".cache/phase07/final-stabilization-20260911/reproductions/scheduled"
+      }
+    }
+  },
+  "paid_model_calls": 0,
+  "paid_live_reruns_performed": false,
+  "graders_changed": false,
+  "permissions_changed": false,
+  "Phase06_authority_changed": false,
+  "original_live_artifacts_modified": false,
+  "Phase08_started": false,
+  "live_exit_pending": [
+    "cr017_covered",
+    "cr017_scheduled"
+  ],
+  "limitations": [
+    "Scripted model responses verify contracts/host behavior, not future semantic model choices.",
+    "Status route conservatively requires known CR-017 current plan/job/link; unusual read-only phrasing may stop.",
+    "Paid live and optional semantic checks remain unmeasured."
+  ]
+}

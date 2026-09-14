@@ -1,0 +1,580 @@
+{
+  "case_id": "case_db1192a484c84aad8b04cbec5c4cc6bf",
+  "customer_id": "CUST-FML01",
+  "program_id": "PRG-A17",
+  "classified_change_type": "workload_profile_change",
+  "change_summary": "CR-017 requests supplemental long-context evidence for REQ-042-V2/WF-LC-V2 on unchanged CFG-B-01. Existing evidence is insufficient. Validation reports one eligible deadline-meeting option, subject to human engineering authorization, subsequent testing and review. No option is selected or approved.",
+  "affected_scope": [
+    {
+      "statement": "The bounded scope is CUST-FML01 / PRG-A17, configuration CFG-B-01, milestone MS-ACCEPT-01 and order ORD-1204.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0008"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0008",
+          "pointer": "/customer_id",
+          "value_json": "\"CUST-FML01\""
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/program_id",
+          "value_json": "\"PRG-A17\""
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/configuration_id",
+          "value_json": "\"CFG-B-01\""
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/milestone_id",
+          "value_json": "\"MS-ACCEPT-01\""
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/order_id",
+          "value_json": "\"ORD-1204\""
+        }
+      ]
+    },
+    {
+      "statement": "The workload changes from context bins [8192, 32768] to [32768, 65536, 131072], and from 120 to 480 total suite minutes.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0021",
+        "src_0022"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0021",
+          "pointer": "/context_bins",
+          "value_json": "[8192,32768]"
+        },
+        {
+          "source_id": "src_0022",
+          "pointer": "/context_bins",
+          "value_json": "[32768,65536,131072]"
+        },
+        {
+          "source_id": "src_0021",
+          "pointer": "/total_suite_minutes",
+          "value_json": "120"
+        },
+        {
+          "source_id": "src_0022",
+          "pointer": "/total_suite_minutes",
+          "value_json": "480"
+        }
+      ]
+    }
+  ],
+  "specialist_findings": [
+    {
+      "invocation_id": "work_ebd1d3c8e5b44581b64b270ac86ecab0",
+      "specialist": "change_impact",
+      "summary": "Confirmed a workload-profile change, not a firmware change or redesign authorization. Configuration, model bundle, concurrency, output-token count and acceptance-criteria reference remain unchanged. The proposed requirement remains requested."
+    },
+    {
+      "invocation_id": "work_d8a117aaeb864552859ec51fe51e959e",
+      "specialist": "validation_evidence",
+      "summary": "Historical evidence does not satisfy the proposed requirement. Only SLOT-PRIORITY / SAMPLE-B-017 meets the reported resource, approval-eligibility and deadline checks. Eligibility is not authorization; modeled readiness is not a test result or acceptance."
+    },
+    {
+      "invocation_id": "work_b74324e7929c4761989973e418d8a08c",
+      "specialist": "program_commercial",
+      "summary": "The evidence milestone forecast has not been reassessed. ERP delivery is a separate commitment. Approved reservation rates provide cost context, not spending authorization. The evidence dependency remains pending, without an assigned job or owner."
+    },
+    {
+      "invocation_id": "work_38821fa3ca4e4e6895619d8c466da9b3",
+      "specialist": "manufacturing",
+      "summary": "Nested manufacturing review confirmed that SAMPLE-B-018's source lot LOT-4492 is under engineering_hold despite sample availability and no unit-level restrictions. The hold concerns traceability documentation, not recorded hardware failure; release timing is not established."
+    }
+  ],
+  "confirmed_facts": [
+    {
+      "statement": "REQ-042-V1 is approved; REQ-042-V2 remains requested. Both retain CFG-B-01 and acceptance-limits reference CRIT-BASE-V1.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0015",
+        "src_0016"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0015",
+          "pointer": "/status",
+          "value_json": "\"approved\""
+        },
+        {
+          "source_id": "src_0016",
+          "pointer": "/status",
+          "value_json": "\"requested\""
+        },
+        {
+          "source_id": "src_0015",
+          "pointer": "/configuration_id",
+          "value_json": "\"CFG-B-01\""
+        },
+        {
+          "source_id": "src_0016",
+          "pointer": "/configuration_id",
+          "value_json": "\"CFG-B-01\""
+        },
+        {
+          "source_id": "src_0015",
+          "pointer": "/acceptance_limits_ref",
+          "value_json": "\"CRIT-BASE-V1\""
+        },
+        {
+          "source_id": "src_0016",
+          "pointer": "/acceptance_limits_ref",
+          "value_json": "\"CRIT-BASE-V1\""
+        }
+      ]
+    },
+    {
+      "statement": "CR-017 remains pending impact assessment, has no current plan and is not scheduled.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0008"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0008",
+          "pointer": "/workflow_state",
+          "value_json": "\"pending_impact_assessment\""
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/current_plan_id",
+          "value_json": "null"
+        },
+        {
+          "source_id": "src_0008",
+          "pointer": "/execution_state",
+          "value_json": "\"not_scheduled\""
+        }
+      ]
+    }
+  ],
+  "evidence_gaps": [
+    {
+      "statement": "Existing evidence does not satisfy coverage. Baseline REV-B evidence has duration, context-bin and profile mismatches; long-context REV-A evidence has configuration and revision mismatches; the short REV-B run has insufficient duration. These gaps do not establish hardware failure.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0005"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0005",
+          "pointer": "/coverage_satisfied",
+          "value_json": "false"
+        },
+        {
+          "source_id": "src_0005",
+          "pointer": "/items/0/mismatch_reasons",
+          "value_json": "[\"INSUFFICIENT_DURATION\",\"MISSING_CONTEXT_BINS\",\"WRONG_PROFILE\"]"
+        },
+        {
+          "source_id": "src_0005",
+          "pointer": "/items/1/mismatch_reasons",
+          "value_json": "[\"WRONG_CONFIGURATION\",\"WRONG_PRODUCT_REVISION\"]"
+        },
+        {
+          "source_id": "src_0005",
+          "pointer": "/items/2/mismatch_reasons",
+          "value_json": "[\"INSUFFICIENT_DURATION\"]"
+        }
+      ]
+    },
+    {
+      "statement": "CRIT-BASE-V1 is approved and non-writable, but numerical thresholds are not modeled in this scheduling phase. This bounds the assessment to conditional scheduling and evidence planning, not independent numerical acceptance verification.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0028"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0028",
+          "pointer": "/status",
+          "value_json": "\"approved\""
+        },
+        {
+          "source_id": "src_0028",
+          "pointer": "/writable",
+          "value_json": "false"
+        },
+        {
+          "source_id": "src_0028",
+          "pointer": "/scope",
+          "value_json": "\"Existing functional, power, thermal and performance limits; numerical thresholds not modeled in this scheduling phase.\""
+        }
+      ]
+    }
+  ],
+  "available_options": [
+    {
+      "slot_id": "SLOT-PRIORITY",
+      "sample_id": "SAMPLE-B-017",
+      "unit_id": "UNIT-B-017",
+      "lot_id": "LOT-4491",
+      "configuration_id": "CFG-B-01",
+      "procedure_id": "PROC-LC-02",
+      "policy_id": "POLICY-APP-01",
+      "milestone_id": "MS-ACCEPT-01",
+      "rate_id": "RATE-PRIORITY",
+      "cost_cents": 180000,
+      "currency": "USD",
+      "resource_eligible": true,
+      "approval_eligible": true,
+      "meets_deadline": true,
+      "eligibility_reasons": [],
+      "approval_reasons": [],
+      "timing": {
+        "lab_start_at": "2026-11-18T06:00:00Z",
+        "execution_start_at": "2026-11-18T08:00:00Z",
+        "lab_end_at": "2026-11-18T16:00:00Z",
+        "review_ready_at": "2026-11-18T20:00:00Z",
+        "deadline_slack_minutes": 1320
+      },
+      "source_refs": [
+        "src_0007"
+      ]
+    }
+  ],
+  "relevant_constraints": [
+    {
+      "statement": "Approved PROC-LC-02 requires 120 setup minutes, 480 suite minutes, 160 minutes per bin and 240 review minutes.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0019"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0019",
+          "pointer": "/status",
+          "value_json": "\"approved\""
+        },
+        {
+          "source_id": "src_0019",
+          "pointer": "/setup_minutes",
+          "value_json": "120"
+        },
+        {
+          "source_id": "src_0019",
+          "pointer": "/suite_minutes",
+          "value_json": "480"
+        },
+        {
+          "source_id": "src_0019",
+          "pointer": "/per_bin_minutes",
+          "value_json": "160"
+        },
+        {
+          "source_id": "src_0019",
+          "pointer": "/review_minutes",
+          "value_json": "240"
+        }
+      ]
+    },
+    {
+      "statement": "POLICY-APP-01 identifies an engineer approver, permits PROC-LC-02 and limits incremental cost to 200000 USD cents. Its permitted actions are schedule_validation and link_program_plan; none is executed here.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0020"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0020",
+          "pointer": "/approver_role",
+          "value_json": "\"engineer\""
+        },
+        {
+          "source_id": "src_0020",
+          "pointer": "/permitted_procedure_ids",
+          "value_json": "[\"PROC-LC-02\"]"
+        },
+        {
+          "source_id": "src_0020",
+          "pointer": "/max_incremental_cost_cents",
+          "value_json": "200000"
+        },
+        {
+          "source_id": "src_0020",
+          "pointer": "/currency",
+          "value_json": "\"USD\""
+        },
+        {
+          "source_id": "src_0020",
+          "pointer": "/permitted_actions",
+          "value_json": "[\"schedule_validation\",\"link_program_plan\"]"
+        }
+      ]
+    },
+    {
+      "statement": "LOT-4492 remains under engineering_hold for administrative traceability disposition, not recorded hardware failure. Pilot Manufacturing Engineering must complete traceability review and record an authorized manufacturing disposition before release.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0024"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0024",
+          "pointer": "/restrictions",
+          "value_json": "[\"engineering_hold\"]"
+        },
+        {
+          "source_id": "src_0024",
+          "pointer": "/hold_details/0/rationale",
+          "value_json": "\"Pilot-lot traceability documentation is awaiting engineering disposition. This administrative restriction is not a recorded hardware failure.\""
+        },
+        {
+          "source_id": "src_0024",
+          "pointer": "/hold_details/0/responsible_team",
+          "value_json": "\"Pilot Manufacturing Engineering\""
+        },
+        {
+          "source_id": "src_0024",
+          "pointer": "/hold_details/0/release_conditions",
+          "value_json": "\"Complete the traceability review and record an authorized disposition in the manufacturing source system before releasing the lot. No release action is available in this demo.\""
+        }
+      ]
+    },
+    {
+      "statement": "Before any future execution, recheck sample availability, lab qualification and manufacturing restriction freshness against the procedure's 24-scenario-hour limit. Use the modeled 24/7 review calendar only for prospective planning.",
+      "basis": "recommendation",
+      "source_refs": [
+        "src_0026"
+      ],
+      "facts": []
+    }
+  ],
+  "program_impact": [
+    {
+      "statement": "MS-ACCEPT-01 has baseline and current forecast of 2026-11-19T18:00:00Z, but its forecast is explicitly not reassessed for the new request.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0010"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0010",
+          "pointer": "/baseline_at",
+          "value_json": "\"2026-11-19T18:00:00Z\""
+        },
+        {
+          "source_id": "src_0010",
+          "pointer": "/current_forecast_at",
+          "value_json": "\"2026-11-19T18:00:00Z\""
+        },
+        {
+          "source_id": "src_0010",
+          "pointer": "/forecast_status",
+          "value_json": "\"not_reassessed_for_new_request\""
+        }
+      ]
+    },
+    {
+      "statement": "The milestone's REQ-042-V2 evidence dependency remains pending_assessment, without an assigned job or owner.",
+      "basis": "fact",
+      "source_refs": [
+        "src_0011"
+      ],
+      "facts": [
+        {
+          "source_id": "src_0011",
+          "pointer": "/dependencies/0",
+          "value_json": "{\"kind\":\"requirement_evidence\",\"requirement_revision_id\":\"REQ-042-V2\",\"job_id\":null,\"state\":\"pending_assessment\",\"owner\":null,\"note\":null}"
+        }
+      ]
+    },
+    {
+      "statement": "The eligible priority option provides a conditional path to review readiness before the evidence deadline, not a revised milestone forecast or guaranteed outcome. Program/Commercial reports a separate ERP commitment of 100 accelerator_units for 2026-11-23T18:00:00Z; this assessment establishes neither a delivery slip nor a commitment change.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0007",
+        "src_0010",
+        "src_0012"
+      ],
+      "facts": []
+    },
+    {
+      "statement": "The priority reservation cost applies to the complete reservation, including setup and execution; it is not an hourly rate. Its approved rate does not grant spending authorization or establish customer chargeability.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0013",
+        "src_0020"
+      ],
+      "facts": []
+    }
+  ],
+  "risks": [
+    {
+      "statement": "Future test results and engineering disposition remain unknown. Historical passes and prospective review readiness do not establish the requested validation pass or customer acceptance.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0005",
+        "src_0007",
+        "src_0003"
+      ],
+      "facts": []
+    },
+    {
+      "statement": "Authorization delay or changed resource availability, qualification or restrictions could invalidate prospective timing. The standard option misses the evidence deadline, and other alternatives remain excluded by configuration, lab qualification or manufacturing restrictions.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0007",
+        "src_0026"
+      ],
+      "facts": []
+    },
+    {
+      "statement": "The unchanged configuration's response to the longer workload is not yet demonstrated. Potential performance, memory or sustained-operation limitations remain engineering risks, not established failures or reasons to assert a required redesign.",
+      "basis": "inference",
+      "source_refs": [
+        "src_0017",
+        "src_0021",
+        "src_0022"
+      ],
+      "facts": []
+    }
+  ],
+  "unresolved_questions": [],
+  "recommended_next_step": "The Program Coordinator should retain ownership and route a versioned, immutable conditional plan package for SLOT-PRIORITY / SAMPLE-B-017 to the designated engineer and program owner for review, without selecting or reserving it here. Include procedure, resources, full reservation cost, modeled timing, source versions and permitted actions. Assign the evidence-dependency owner through the authorized workflow, recheck resource and restriction freshness before execution, and require subsequent testing and engineering review against unchanged criteria. Keep delivery commitments, lot release and customer acceptance separate.",
+  "policy_path": "human_review_required",
+  "requires_human_review": true,
+  "escalation_reason": null,
+  "source_references": [
+    {
+      "source_id": "src_0003",
+      "tool_name": "get_document",
+      "record_id": "DOC-REQUEST-01",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0005",
+      "tool_name": "get_validation_coverage",
+      "record_id": "CR-017",
+      "content_version": null,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0007",
+      "tool_name": "get_validation_options",
+      "record_id": "CR-017",
+      "content_version": null,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0008",
+      "tool_name": "get_change_request",
+      "record_id": "CR-017",
+      "content_version": 1,
+      "record_version": 1
+    },
+    {
+      "source_id": "src_0010",
+      "tool_name": "get_program_milestone",
+      "record_id": "MS-ACCEPT-01",
+      "content_version": 1,
+      "record_version": 1
+    },
+    {
+      "source_id": "src_0011",
+      "tool_name": "get_dependencies",
+      "record_id": "MS-ACCEPT-01",
+      "content_version": null,
+      "record_version": 1
+    },
+    {
+      "source_id": "src_0012",
+      "tool_name": "get_customer_order",
+      "record_id": "ORD-1204",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0013",
+      "tool_name": "get_cost_rates",
+      "record_id": null,
+      "content_version": null,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0015",
+      "tool_name": "get_requirement_revision",
+      "record_id": "REQ-042-V1",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0016",
+      "tool_name": "get_requirement_revision",
+      "record_id": "REQ-042-V2",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0017",
+      "tool_name": "get_configuration",
+      "record_id": "CFG-B-01",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0019",
+      "tool_name": "get_procedure",
+      "record_id": "PROC-LC-02",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0020",
+      "tool_name": "get_policy",
+      "record_id": "POLICY-APP-01",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0021",
+      "tool_name": "get_workload_profile",
+      "record_id": "WF-LC-V1",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0022",
+      "tool_name": "get_workload_profile",
+      "record_id": "WF-LC-V2",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0024",
+      "tool_name": "get_manufacturing_lot",
+      "record_id": "LOT-4492",
+      "content_version": 2,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0026",
+      "tool_name": "get_document",
+      "record_id": "DOC-PROC-01",
+      "content_version": 1,
+      "record_version": null
+    },
+    {
+      "source_id": "src_0028",
+      "tool_name": "get_acceptance_criteria",
+      "record_id": "CRIT-BASE-V1",
+      "content_version": 1,
+      "record_version": null
+    }
+  ],
+  "business_actions_executed": false,
+  "approval_granted": false,
+  "customer_accepted": false,
+  "new_validation_pass_claimed": false
+}

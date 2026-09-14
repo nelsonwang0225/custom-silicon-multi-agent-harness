@@ -1,0 +1,720 @@
+/* Outcome-led utility surfaces. Source data, role gates and action handlers are unchanged. */
+.cp-root .rt-utilities {
+  min-width: 0;
+}
+.cp-root .rt-utilities > .cp-section,
+.cp-root .rt-disclosure,
+.cp-root .rt-presenter-opening {
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 18px;
+  padding: 26px 28px;
+  margin-bottom: 24px;
+}
+.cp-root .rt-utilities .cp-section-heading {
+  margin-bottom: 22px;
+}
+.cp-root .rt-utilities .cp-section-heading h2 {
+  font-size: 21px;
+  letter-spacing: -0.45px;
+}
+.cp-root .rt-utilities :is(.cp-section-heading p, .cp-heading p) {
+  max-width: 78ch;
+}
+.cp-root .rt-utilities h3 {
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+.cp-root .rt-utility-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  color: var(--cp-action);
+  background: var(--cp-agent-tint);
+  flex: 0 0 auto;
+}
+.cp-root .rt-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin: 24px 0;
+}
+.cp-root .rt-filter {
+  display: grid;
+  gap: 6px;
+  min-width: 150px;
+  font-size: 12px;
+  color: var(--cp-secondary);
+}
+.cp-root .rt-filter select {
+  min-height: 42px;
+  font-size: 14px;
+  max-width: 100%;
+}
+.cp-root .rt-result-count {
+  margin-left: auto;
+  align-self: center;
+  font-size: 13px;
+  color: var(--cp-secondary);
+  white-space: nowrap;
+}
+.cp-root .rt-review-shortcut {
+  min-height: 42px;
+  gap: 10px;
+}
+.cp-root .rt-review-shortcut[aria-pressed="true"] {
+  background: var(--cp-action-tint);
+  border-color: var(--cp-action);
+  color: var(--cp-action);
+}
+.cp-root .rt-review-shortcut strong {
+  font-size: 13px;
+}
+.cp-root .rt-segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.cp-root .rt-segmented button {
+  border-color: transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--cp-secondary);
+  font-size: 14px;
+}
+.cp-root .rt-segmented button[aria-pressed="true"] {
+  color: var(--cp-ink);
+  background: var(--cp-agent-tint);
+  font-weight: 600;
+}
+.cp-root .rt-inline-details {
+  margin-top: 18px;
+}
+.cp-root .rt-inline-details > summary {
+  width: fit-content;
+  font-size: 13px;
+  color: var(--cp-secondary);
+  cursor: pointer;
+}
+.cp-root .rt-inline-details[open] > summary {
+  margin-bottom: 14px;
+}
+.cp-root .rt-inline-details p + p {
+  margin-top: 10px;
+}
+.cp-root .rt-disclosure {
+  padding: 20px 24px;
+}
+.cp-root .rt-disclosure > summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cp-ink);
+}
+.cp-root .rt-disclosure > summary span {
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--cp-secondary);
+}
+.cp-root .rt-disclosure > .cp-section {
+  margin-top: 24px;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.cp-root .rt-disclosure[open] > summary {
+  margin-bottom: 16px;
+}
+.cp-root .rt-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  margin-top: 18px;
+  border-top: 1px solid var(--cp-border);
+  font-size: 14px;
+}
+.cp-root .rt-mini-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.cp-root .rt-mini-flow li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--cp-secondary);
+}
+.cp-root .rt-mini-flow li + li::before {
+  content: "→";
+  margin-right: 2px;
+  color: var(--cp-blue-mid);
+}
+/* Scenario paths retain their separate owners and endpoints. */
+.cp-root .rt-scenario-list {
+  display: grid;
+  gap: 16px;
+}
+.cp-root .rt-scenario {
+  padding: 24px 28px;
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+}
+.cp-root .rt-scenario-main {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto 24px;
+  gap: 20px;
+  align-items: center;
+}
+.cp-root .rt-scenario-main h2 {
+  margin: 4px 0 6px;
+  font-size: 22px;
+}
+.cp-root .rt-scenario-main p {
+  font-size: 14px;
+}
+.cp-root .rt-scenario .rt-mini-flow {
+  margin: 20px 0 0 68px;
+}
+.cp-root .rt-scenario .rt-inline-details {
+  margin-left: 68px;
+}
+/* A real citation chain, backed by KnowledgeEvent data when present. */
+.cp-root .rt-evidence-path {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1.2fr) 24px minmax(
+      0,
+      1fr
+    );
+  gap: 22px;
+  align-items: center;
+}
+.cp-root .rt-evidence-path > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+}
+.cp-root .rt-evidence-path > div > svg {
+  color: var(--cp-action);
+  margin-bottom: 5px;
+}
+.cp-root .rt-evidence-path strong,
+.cp-root .rt-evidence-path a {
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.cp-root .rt-evidence-path span {
+  color: var(--cp-secondary);
+  font-size: 13px;
+}
+.cp-root .rt-evidence-path small {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.cp-root .rt-path-arrow {
+  color: var(--cp-blue-mid);
+}
+.cp-root .rt-knowledge .kn-search {
+  background: var(--cp-canvas);
+  border: 1px solid var(--cp-border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.cp-root .rt-knowledge .kn-search > label {
+  font-size: 12px;
+}
+.cp-root .rt-knowledge .kn-search input:not([type="checkbox"]),
+.cp-root .rt-knowledge .kn-search select {
+  min-height: 44px;
+  font-size: 14px;
+}
+.cp-root .rt-knowledge .kn-library-tools {
+  align-items: end;
+  gap: 12px;
+}
+.cp-root .rt-knowledge .kn-library-search {
+  flex: 1 1 220px;
+  width: auto;
+  min-height: 42px;
+  font-size: 14px;
+}
+.cp-root .rt-knowledge .kn-run-filter {
+  min-height: 42px;
+  font-size: 12px;
+}
+.cp-root .rt-knowledge .kn-library-header,
+.cp-root .rt-knowledge .kn-library-row {
+  grid-template-columns: minmax(260px, 2fr) minmax(140px, 0.8fr) 100px 120px;
+}
+.cp-root .rt-knowledge .kn-library-row {
+  padding: 20px 12px;
+  border-radius: 0;
+  border-width: 0 0 1px;
+}
+.cp-root .rt-knowledge .kn-library-row:hover {
+  background: var(--cp-agent-tint);
+}
+.cp-root .rt-knowledge .kn-library-document > svg {
+  color: var(--cp-action);
+}
+.cp-root .rt-knowledge .kn-library-document strong {
+  font-size: 15px;
+}
+.cp-root .rt-knowledge .kn-result {
+  border-radius: 12px;
+  padding: 20px;
+}
+.cp-root .rt-knowledge .kn-passage {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.cp-root .rt-knowledge .kn-admin {
+  margin: 24px 0;
+}
+/* Accountable decision briefs. */
+.cp-root .rt-decision-brief.cp-decision-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(200px, 0.8fr) 140px;
+  gap: 24px;
+  padding: 26px 0;
+  align-items: start;
+}
+.cp-root .rt-decision-brief:first-of-type {
+  padding-top: 0;
+}
+.cp-root .rt-decision-topic h3 {
+  font-size: 20px;
+  margin: 6px 0 10px;
+}
+.cp-root .rt-decision-topic p {
+  font-size: 14px;
+  margin-bottom: 16px;
+  max-width: 62ch;
+}
+.cp-root .rt-decision-owner {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+.cp-root .rt-decision-owner > span {
+  color: var(--cp-secondary);
+  font-size: 12px;
+}
+.cp-root .rt-consequence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.cp-root .rt-consequence-grid > div {
+  padding: 22px;
+  border: 1px solid var(--cp-border);
+  border-radius: 12px;
+  background: var(--cp-canvas);
+}
+.cp-root .rt-consequence-grid > div:first-child {
+  background: var(--cp-agent-tint);
+}
+.cp-root .rt-consequence-grid small {
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+}
+.cp-root .rt-consequence-grid h3 {
+  font-size: 18px;
+}
+.cp-root .rt-consequence-grid p {
+  font-size: 14px;
+}
+.cp-root .rt-human-decision {
+  scroll-margin-top: 180px;
+}
+.cp-root .rt-human-decision textarea {
+  width: 100%;
+  min-height: 110px;
+}
+/* Registry-backed workflow routes and trigger boundaries. */
+.cp-root .rt-workflow-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.cp-root .rt-workflow-card {
+  padding: 24px;
+  border: 1px solid var(--cp-border);
+  border-radius: 14px;
+  min-width: 0;
+}
+.cp-root .rt-workflow-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.cp-root .rt-workflow-card-head .rt-utility-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+.cp-root .rt-workflow-card-head small {
+  margin-left: auto;
+}
+.cp-root .rt-workflow-card h3 {
+  font-size: 23px;
+}
+.cp-root .rt-workflow-card > p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.cp-root .rt-workflow-route {
+  display: grid;
+  grid-template-columns: 1fr 18px 1.1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 20px 0;
+  margin-top: 16px;
+  border-top: 1px solid var(--cp-border);
+}
+.cp-root .rt-workflow-route > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 14px;
+}
+.cp-root .rt-workflow-route > svg {
+  color: var(--cp-blue-mid);
+  margin-top: 28px;
+}
+.cp-root .rt-workflow-route span {
+  font-size: 12px;
+  color: var(--cp-secondary);
+}
+.cp-root .rt-workflow-support {
+  display: flex;
+  gap: 9px;
+  color: var(--cp-secondary);
+  font-size: 12px;
+}
+.cp-root .rt-workflow-support svg {
+  flex-shrink: 0;
+}
+.cp-root .rt-workflow-flow {
+  padding: 18px 0 24px;
+}
+/* Recorded outcomes are separate from current source state. */
+.cp-root .rt-operation-outcome .cp-section-heading {
+  align-items: end;
+}
+.cp-root .rt-operation-outcome .rt-filter {
+  max-width: 500px;
+  width: 45%;
+}
+.cp-root .rt-operation-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.cp-root .rt-operation-summary h3 {
+  font-size: 29px;
+  letter-spacing: -0.7px;
+  line-height: 1.25;
+  margin: 6px 0 10px;
+}
+.cp-root .rt-operation-summary p {
+  font-size: 13px;
+}
+.cp-root .rt-outcome-stages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 24px 0 4px;
+}
+.cp-root .rt-outcome-stages > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  border-left: 2px solid var(--cp-border);
+  padding-left: 18px;
+}
+.cp-root .rt-outcome-stages svg {
+  color: var(--cp-action);
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+.cp-root .rt-outcome-stages span {
+  display: grid;
+  gap: 6px;
+}
+.cp-root .rt-outcome-stages strong {
+  font-size: 14px;
+}
+.cp-root .rt-utilities .cp-table-scroll .rt-run-table {
+  min-width: 890px;
+}
+.cp-root .rt-run-table th {
+  font-size: 10px;
+  padding: 13px 14px;
+}
+.cp-root .rt-run-table td {
+  font-size: 13px;
+  padding: 20px 14px;
+  vertical-align: top;
+}
+.cp-root .rt-run-table td:nth-child(2) {
+  white-space: normal;
+  max-width: 270px;
+  min-width: 210px;
+}
+.cp-root .rt-run-table td:nth-child(3) {
+  min-width: 185px;
+  max-width: 230px;
+}
+.cp-root .rt-run-table td:last-child {
+  min-width: 100px;
+  width: 110px;
+}
+.cp-root .rt-run-table small {
+  margin-top: 5px;
+  display: block;
+  font-size: 11px;
+}
+.cp-root .rt-run-metadata {
+  font-size: 12px;
+}
+.cp-root .rt-run-metadata summary {
+  cursor: pointer;
+}
+.cp-root .rt-run-metadata dl {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+}
+.cp-root .rt-run-metadata dt {
+  font-size: 10px;
+  color: var(--cp-secondary);
+  margin-top: 6px;
+}
+.cp-root .rt-run-metadata dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.cp-root .rt-runtime-state {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cp-root .rt-runtime-state[data-state="completed"] {
+  color: var(--cp-success);
+}
+.cp-root .rt-runtime-state[data-state="running"] {
+  color: var(--cp-action);
+}
+.cp-root .rt-runtime-state[data-state="failed"] {
+  color: var(--cp-danger);
+}
+.cp-root .rt-utilities .cp-ops-filters label {
+  font-size: 11px;
+  gap: 5px;
+}
+.cp-root .rt-utilities .cp-ops-filters select,
+.cp-root .rt-utilities .cp-ops-filters input {
+  min-height: 40px;
+  font-size: 13px;
+}
+.cp-root .rt-presenter-opening h2 {
+  font-size: 22px;
+}
+.cp-root .rt-presenter-opening .rt-mini-flow {
+  margin: 22px 0 16px;
+}
+.cp-root .rt-presenter-opening .cp-demo-actions {
+  margin: 22px 0;
+}
+.cp-root .rt-demo-controls .cp-demo-actions {
+  align-items: end;
+}
+.cp-root .rt-demo-controls .cp-demo-actions label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+.cp-root .rt-demo-controls .cp-demo-actions :is(select, button) {
+  min-height: 44px;
+}
+.cp-root .rt-reset-panel .rt-inline-details {
+  max-width: 85ch;
+}
+.cp-root .cp-chat-context {
+  border-bottom: 1px solid var(--cp-border);
+  padding-block: 16px;
+}
+.cp-root .cp-chat-suggestions {
+  display: grid;
+  gap: 8px;
+}
+.cp-root .cp-chat-suggestions button {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--cp-agent-tint);
+}
+@media (max-width: 1000px) {
+  .cp-root .rt-scenario-main {
+    grid-template-columns: 42px minmax(0, 1fr) 24px;
+    gap: 14px;
+  }
+  .cp-root .rt-scenario-main > .cp-status {
+    grid-column: 2;
+  }
+  .cp-root .rt-scenario-main > a:last-child {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .cp-root .rt-decision-brief.cp-decision-row {
+    grid-template-columns: minmax(0, 1fr) 180px;
+  }
+  .cp-root .rt-decision-brief > .cp-status {
+    grid-column: 2;
+  }
+  .cp-root .rt-knowledge .kn-library-header,
+  .cp-root .rt-knowledge .kn-library-row {
+    grid-template-columns: minmax(210px, 2fr) minmax(120px, 1fr) 80px 105px;
+  }
+  .cp-root .rt-evidence-path {
+    gap: 12px;
+  }
+}
+@media (max-width: 760px) {
+  .cp-root .rt-utilities > .cp-section,
+  .cp-root .rt-disclosure,
+  .cp-root .rt-presenter-opening,
+  .cp-root .rt-scenario {
+    padding: 20px;
+    border-radius: 14px;
+  }
+  .cp-root .rt-workflow-catalog,
+  .cp-root .rt-consequence-grid,
+  .cp-root .rt-outcome-stages {
+    grid-template-columns: 1fr;
+  }
+  .cp-root .rt-evidence-path {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cp-root .rt-path-arrow {
+    transform: rotate(90deg);
+  }
+  .cp-root .rt-evidence-path > div {
+    padding-bottom: 8px;
+  }
+  .cp-root .rt-scenario-main {
+    grid-template-columns: 1fr auto;
+  }
+  .cp-root .rt-scenario-main > .rt-utility-icon {
+    display: none;
+  }
+  .cp-root .rt-scenario-main > div {
+    grid-column: 1;
+  }
+  .cp-root .rt-scenario-main > a:last-child {
+    grid-column: 2;
+  }
+  .cp-root .rt-scenario-main > .cp-status {
+    grid-column: 1;
+  }
+  .cp-root .rt-scenario .rt-mini-flow,
+  .cp-root .rt-scenario .rt-inline-details {
+    margin-left: 0;
+  }
+  .cp-root .rt-decision-brief.cp-decision-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cp-root .rt-decision-brief > .cp-status {
+    grid-column: 1;
+  }
+  .cp-root .rt-operation-outcome .cp-section-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .cp-root .rt-operation-outcome .rt-filter {
+    width: 100%;
+    max-width: none;
+  }
+  .cp-root .rt-operation-summary {
+    gap: 14px;
+  }
+  .cp-root .rt-operation-summary h3 {
+    font-size: 24px;
+  }
+  .cp-root .rt-knowledge .kn-library-header {
+    display: none;
+  }
+  .cp-root .rt-knowledge .kn-library-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cp-root .rt-knowledge .kn-library-document {
+    grid-column: 1/-1;
+  }
+  .cp-root .rt-filter-bar .rt-filter {
+    flex: 1 1 160px;
+  }
+  .cp-root .rt-workflow-card {
+    padding: 20px;
+  }
+}
+
+.cp-root .rt-future-workflows {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.cp-root .rt-future-workflows > p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.cp-root .rt-utilities .cp-ops-health-grid {
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.cp-root .rt-utilities .cp-ops-health-grid > .cp-section {
+  padding: 24px;
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  background: var(--cp-surface);
+  margin: 0;
+}
+.cp-root .rt-utilities .cp-ops-nav {
+  gap: 8px;
+}
+.cp-root .rt-utilities .cp-ops-nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.cp-root .rt-utilities .cp-ops-nav a:hover {
+  background: var(--cp-agent-tint);
+}
