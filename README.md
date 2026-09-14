@@ -1,42 +1,99 @@
-# STRATOS SILICON — Advanced Compute Programs
+# Custom Silicon Multi-Agent Harness
 
-The [live demo runtime](docs/PHASE10_LIVE_RUNTIME.md) now uses the existing
-GPT-6 Astra API for CR-017, CR-019, QE-004 and DR-009. QE-011 alone remains a
-scripted two-minute opening. New investigations are labeled Live AI; historical
-scripted results keep their original attribution. Source APIs, permissions and
-human approval requirements are preserved.
+STRATOS SILICON is a local end-to-end demo of agent-assisted semiconductor program
+management. It combines five fictional enterprise source systems, scoped HTTP and
+MCP interfaces, a Coordinator with four specialist roles, governed human approval
+boundaries, and a React control plane. All companies, programs, records and results
+are synthetic.
 
-The [master reset icon](docs/PHASE10_MASTER_RESET.md) beside Alerts restores all
-four demo cases and source systems, then automatically restarts QE-011. Select
-Program operator → Reset demo → Reset and restart.
+The current demo supports four connected cases: CR-017 requirement change,
+CR-019 standard validation intake, QE-004 quality recovery and DR-009 delivery
+readiness. Those cases can use the configured GPT-6 Astra runtime. QE-011 is a
+deterministic two-minute full-team opening that begins after an eight-second local
+Manufacturing event; it makes no model call. Source ownership, exact approvals and
+independent readback remain authoritative in both modes.
 
-Latest focused enhancement: [One-minute full-team QE-011 preview](docs/PHASE10_MINUTE_FULL_TEAM_OPENING.md).
-The scripted opening now lasts at least two minutes, with all four specialists
-and visible Coordinator triage/review/synthesis. Live models keep actual timing.
-The [automatic entry](docs/PHASE10_AUTOMATIC_TOUCHLESS_ENTRY.md) behavior remains.
-Opening the control plane arms one Manufacturing event after eight seconds in a
-cleared demo. QE-011 routes and verifies an approved standard investigation without
-a human decision; CR-017 can run concurrently and retains Engineering approval.
-All four specialists stay visible, with unused agents Idle. Completed openings
-remain recorded until reset; default local capacity is three runs.
-See the [runbook](docs/DEMO_RUNBOOK.md).
-The existing [Quality corpus](docs/PHASE10_QUALITY_CORPUS_HANDOFF.md), four golden
-cases and exact source/approval authority remain unchanged. Prior phase descriptions
-below retain their historical scope.
+## Quick start — offline and no API key
 
-**Current slice:** [Phase 09.4 demo harness and validation readiness](docs/PHASE09_4_HANDOFF.md).
-Use the authoritative [demo runbook](docs/DEMO_RUNBOOK.md): `./scripts/demo start`,
-`status`, `prepare`, `check` and `stop`. First use of the new dedicated
-`.demo/interview/` database requires explicit `./scripts/demo init --yes`.
-Startup/restart preserve state; only explicit prepare/reset invokes the existing
-[Phase 09.1 baseline restoration](docs/PHASE09_1_DEMO_BASELINE.md).
-No harness command invokes a paid model. Existing workflows, identities and exact
-approval/execution authority remain unchanged. See the
-[09.3 UX gallery](docs/screenshots/phase09-3/README.md),
-[09.4 runbook](docs/DEMO_RUNBOOK.md) and [verification](docs/PHASE09_4_VERIFICATION.json).
-Stop after 09.4. **This is not a code freeze:** Phase 09.5 manual/live validation
-may require targeted functional, model/prompt, persona, UX and performance fixes.
-Earlier phase sections below describe their historical scope.
+This path lets anyone clone and run the complete UI with deterministic agent
+doubles. It exercises the real local source APIs and MCP boundary, but it is
+scripted integration behavior, not live AI.
+
+Prerequisites:
+
+- Python 3.12
+- [uv](https://docs.astral.sh/uv/)
+- Node.js 22 or newer with npm
+- A modern desktop browser
+
+```sh
+git clone https://github.com/nelsonwang0225/custom-silicon-multi-agent-harness.git
+cd custom-silicon-multi-agent-harness
+
+uv sync --locked --python 3.12
+uv sync --project mcp_server --locked --python 3.12
+uv sync --project coordinator --locked --python 3.12
+npm --prefix mock_apps_ui ci
+```
+
+Start the deterministic source/MCP/control-host stack in one terminal:
+
+```sh
+PYTHONPATH=src:. coordinator/.venv/bin/python -m coordinator.evals.phase09_1.serve \
+  --root .cache/phase09-3/public-preview \
+  --port 18082 --source-port 18000 --mcp-port 19000 \
+  --ui-origin http://127.0.0.1:5188
+```
+
+Start the frontend in a second terminal:
+
+```sh
+MOCK_API_URL=http://127.0.0.1:18000 \
+CONTROL_HOST_URL=http://127.0.0.1:18082 \
+npm --prefix mock_apps_ui run dev -- --port 5188
+```
+
+Open [http://127.0.0.1:5188/control/overview](http://127.0.0.1:5188/control/overview).
+The first launch initializes isolated state under `.cache/phase09-3/public-preview`;
+later launches preserve it. Stop both processes with Ctrl-C.
+
+## Full live demo — optional OpenAI API access
+
+The owned demo harness uses `gpt-6-astra` for the four main investigations and
+Concierge. You need an OpenAI API key with access to that model; availability,
+rate limits and billing depend on your API account. See the
+[official GPT-6 Astra model page](https://developers.openai.com/api/docs/models/gpt-6-astra).
+
+Create an uncommitted `.env.local` containing `OPENAI_API_KEY`, then restrict it
+to the current user. Do not shell-source, print or commit the file.
+
+```dotenv
+OPENAI_API_KEY=replace_with_your_key
+```
+
+```sh
+chmod 600 .env.local
+
+# First use only: create the dedicated .demo/interview database.
+./scripts/demo init --yes
+./scripts/demo start
+./scripts/demo prepare --yes
+./scripts/demo check
+```
+
+Open [http://127.0.0.1:5188/control/overview](http://127.0.0.1:5188/control/overview).
+Initialization, startup, preparation and readiness checks do not call the model.
+Only an explicit investigation or Concierge send can incur API usage. State
+persists across restarts; use `./scripts/demo stop` to stop only owned processes.
+For custom ports, reset behavior, personas, walkthroughs and troubleshooting, use
+the authoritative [demo runbook](docs/DEMO_RUNBOOK.md).
+
+The [master reset](docs/PHASE10_MASTER_RESET.md) restores all four main cases and
+source systems, then restarts the deterministic QE-011 opening. The
+[full-team opening](docs/PHASE10_MINUTE_FULL_TEAM_OPENING.md) lasts at least two
+minutes and shows Coordinator triage, four parallel specialist assessments,
+reconciliation and synthesis. Historical sections below describe earlier slices
+and should not be read as the current launch procedure.
 
 Nine fictional customers, eleven custom-semiconductor programs and five interactive
 source-system applications. HELIOS AI / CR-017 remains the unchanged manual
@@ -146,7 +203,10 @@ exception for one automatic denied-read audit on the pre-existing server. The
 [six-slice plan](docs/PHASE08_IMPLEMENTATION_PLAN.md) govern later work.
 Stop for visual review before implementing 08.2.
 
-## Setup
+## Standalone source API setup
+
+Use this section when you want only the five mock source systems and their public
+business APIs. For the integrated control plane, follow Quick start above.
 
 Run these commands from this project directory. Python, environment and caches stay
 inside the project. `uv` must already be available; the development environment used
